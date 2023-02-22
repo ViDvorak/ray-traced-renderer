@@ -6,7 +6,7 @@ namespace rt004.Util
     internal static class ArgumentParser
     {
         /// <summary>
-        /// Parses Comand line parameters and if parameter is not specified then it useis configFile to define
+        /// Parses Comand line parameters and if parameter is not specified then it useis configFile to define.
         /// </summary>
         /// <param name="args">command line arguments</param>
         /// <param name="defaultConfigFile">default Path to configuration file</param>
@@ -18,8 +18,8 @@ namespace rt004.Util
             {
                 // Default values of all supported parameters
                 ["config"] = defaultConfigFile,
-                ["width"] = "600",
-                ["height"] = "450",
+                ["width"] = "640",
+                ["height"] = "360",
                 ["output"] = "output.pfm"
             };
 
@@ -48,7 +48,7 @@ namespace rt004.Util
         }
 
         /// <summary>
-        /// Parses parameters from streamReader
+        /// Parses parameters from streamReader.
         /// </summary>
         /// <param name="inputStream">Stream to parse</param>
         /// <param name="config">configuration dictionary to save the data</param>
@@ -64,10 +64,9 @@ namespace rt004.Util
 
                 if (line.Length != 0)//skip empty lines
                 {
-                    string[] paramValues = line.Split('=');
+                    string[] paramValues = line.Split('=', 2, StringSplitOptions.TrimEntries);
                     for (int i = 0; i < paramValues.Length; i++)
                     {
-                        paramValues[i] = paramValues[i].Trim();
                         paramValues[i] = paramValues[i].Trim('"');
                     }
 
@@ -82,7 +81,7 @@ namespace rt004.Util
                     }
                     else
                     {
-                        throw new ArgumentException("unknown parameter name", paramValues[0]);
+                        throw new ArgumentException($"unknown parameter name at line {lineNumber}", paramValues[0]);
                     }
                 }
             }
