@@ -1,0 +1,3 @@
+output = output.pfm
+width = 1280
+height = 720
