@@ -1,6 +1,6 @@
-﻿using rt004.Util;
+﻿using OpenTK.Mathematics;
+using rt004.Util;
 using Util;
-using OpenTK.Mathematics;
 
 namespace rt004;
 
