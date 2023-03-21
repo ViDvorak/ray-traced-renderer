@@ -1,5 +1,7 @@
 ﻿using OpenTK.Mathematics;
 using rt004.Util;
+using System.Text.Json;
+using System.Xml;
 using Util;
 
 namespace rt004;
@@ -8,15 +10,14 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Dictionary<string, string> config = ArgumentParser.ParseParameters(args);
+        (Scene scene, string output) = ArgumentParser.ParseScene(args);
 
         // HDR image.
-        FloatImage image = new FloatImage(int.Parse(config["width"]), int.Parse(config["height"]), 3);
-
-        image = GenerateCosImage(image);
+        FloatImage image = scene.RenderScene();
+        
 
         //fi.SaveHDR(fileName);   // Doesn't work well yet...
-        image.SavePFM(config["output"]);
+        image.SavePFM(output);
 
         Console.WriteLine("HDR image is finished.");
     }
