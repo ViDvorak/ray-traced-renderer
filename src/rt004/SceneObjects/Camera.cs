@@ -77,9 +77,6 @@ namespace rt004.SceneObjects
                     Color4 pixelColor = backgroundColor;
                     float distanceOfIntersectionSquared = maxRenderingDistanceSquered;
 
-                    //z = (int)width / 2;
-                    //y = (int)height / 2;
-
                     Vector3 pixelVectorInObjectSpace = new Vector3(1, (y - width / 2) / pixelDensity, -(z - height / 2) / pixelDensity); // position == rayVector in object space
                     Vector3 pixelRayDirection = ConvertFromObjectToWorldSpace(pixelVectorInObjectSpace, false);
 
