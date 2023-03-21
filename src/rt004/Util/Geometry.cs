@@ -2,35 +2,64 @@
 
 namespace rt004.Util
 {
-    record struct Line
+    /// <summary>
+    /// Represents line parametricly in 3D
+    /// </summary>
+    public record struct Line
     {
         public readonly Vector3 Position;
+        /// <summary>
+        /// Direction of line represented as vector with lenght of 1
+        /// </summary>
         public readonly Vector3 Direction;
 
         public Line(Vector3 position, Vector3 direction)
         {
             this.Position = position;
-            this.Direction = direction;
+            this.Direction = direction / direction.LengthFast;
+        }
+
+        /// <summary>
+        /// Computes point on the line with specified parameter
+        /// </summary>
+        /// <param name="parameter">Multiplier of direction vector</param>
+        /// <returns>Point on the line</returns>
+        public Vector3 GetPointOnLine(float parameter)
+        {
+            return Position + Direction * parameter;
         }
     }
 
-    record struct Plane
+    /// <summary>
+    /// represents Plane in 3D
+    /// </summary>
+    public record struct Plane
     {
         public readonly Vector3 PointOnPlane;
+        /// <summary>
+        /// Normal vector represented as vector with lenght of 1
+        /// </summary>
         public readonly Vector3 Normal;
 
         public Plane(Vector3 position, Vector3 normal)
         {
             this.PointOnPlane = position;
-            this.Normal = normal;
+            this.Normal = normal / normal.LengthFast;
         }
 
+        /// <summary>
+        /// computes constant d from general equation of a plane (aX + bY + cZ + d = 0)
+        /// </summary>
+        /// <returns>Returns constant d</returns>
         public float GetD(){
             var vector = Normal * PointOnPlane;
             return - (vector.X + vector.Y + vector.Z);
         }
     }
 
+    /// <summary>
+    /// Contains Funstions for computation intersections in 3D space.
+    /// </summary>
     internal static class Geometry
     {
         public static bool TryToIntresect(Plane plane1, Plane plane2, out Line intersection)
@@ -76,7 +105,7 @@ namespace rt004.Util
             var position2 = line2.Position + line2.Direction * param2;
 
             intersection = position1;
-            return position1 == position2;
+            return position1.isVectorEquals(position2);
         }
 
         public static bool TryToIntersect(Line line, Plane plane, out Vector3 intersection)
