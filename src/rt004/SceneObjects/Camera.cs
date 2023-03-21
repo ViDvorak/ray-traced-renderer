@@ -68,36 +68,36 @@ namespace rt004.SceneObjects
         {
             FloatImage image = new FloatImage((int)width, (int)height, 3);
 
-            float distanceOfIntersectionSquared = maxRenderingDistanceSquered;
+            float pixelDensity = width / (2 * MathF.Tan(fov / 2));
 
-            for (int z = 0; z < width; ++z)
+            for (int z = 0; z < height; ++z)
             {
-                for (int y = 0; y < height; ++y)
+                for (int y = 0; y < width; ++y)
                 {
-                    Color4 color = backgroundColor;
+                    Color4 pixelColor = backgroundColor;
+                    float distanceOfIntersectionSquared = maxRenderingDistanceSquered;
 
                     //z = (int)width / 2;
                     //y = (int)height / 2;
 
+                    Vector3 pixelVectorInObjectSpace = new Vector3(1, (y - width / 2) / pixelDensity, -(z - height / 2) / pixelDensity); // position == rayVector in object space
+                    Vector3 pixelRayDirection = ConvertFromObjectToWorldSpace(pixelVectorInObjectSpace, false);
+
+                    Line ray = new Line(Position, pixelRayDirection);
+
                     foreach (var body in RenderedBodies)
                     {
-                        float pixelDensity = width / (2 * MathF.Tan(fov / 2));
-                        Vector3 pixelVectorInObjectSpace = new Vector3(1, (y - height / 2) / pixelDensity, -(z - width / 2) / pixelDensity); // position == rayVector in object space
-                        Vector3 pixelRayDirection = ConvertFromObjectToWorldSpace(pixelVectorInObjectSpace, false);
-
-                        Line ray = new Line(Position, pixelRayDirection);
-
                         if (body.TryGetRayIntersection(ray, out Vector3 intersection))
                         {
                             var cameraToIntersection = intersection - Position;
                             if (cameraToIntersection.LengthSquared <= distanceOfIntersectionSquared)
                             {
                                 distanceOfIntersectionSquared = cameraToIntersection.LengthSquared;
-                                color = body.color;
+                                pixelColor = body.color;
                             }
                         }
                     }
-                    image.PutPixel(z, y, new float[] { color.R, color.G, color.B });
+                    image.PutPixel(y, z, new float[] { pixelColor.R, pixelColor.G, pixelColor.B });
                 }
             }
             return image;

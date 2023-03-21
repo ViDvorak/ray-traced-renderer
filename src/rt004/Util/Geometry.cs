@@ -16,7 +16,7 @@ namespace rt004.Util
         public Line(Vector3 position, Vector3 direction)
         {
             this.Position = position;
-            this.Direction = direction / direction.LengthFast;
+            this.Direction = direction / direction.Length;
         }
 
         /// <summary>
