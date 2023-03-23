@@ -44,7 +44,9 @@ namespace rt004.SceneObjects
 
         public override Vector3 GetNormalAt(Vector3 position)
         {
-            return position - Position;
+            Vector3 normal = (position - Position);
+            normal.Normalize();
+            return normal;
         }
     }
 }

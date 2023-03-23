@@ -86,16 +86,17 @@ namespace rt004.SceneObjects
                             {
                                 distanceOfIntersectionSquared = cameraToIntersection.LengthSquared;
 
+                                Vector4 pixelColorVector = (Vector4)Color4.Black;
                                 float intensity = 0;
                                 foreach (var light in ParentScene.lights)
                                 {
                                     intensity =+ light.LightIntensityAt(intersection);
+                                    intensity /= 1.5f;
+                                    float angle = Vector3.Dot(-body.GetNormalAt(intersection), (intersection - light.Position).Normalized());
+                                    pixelColorVector += intensity * (Vector4)body.color * MathF.Max(angle, 0);
                                 }
 
-                                intensity /= 1.5f;
-
-                                float angle = Vector3.Dot(-body.GetNormalAt(intersection), ray.Direction);
-                                pixelColor = (Color4)( intensity * (Vector4)body.color * MathF.Max(angle, 0));
+                                pixelColor = (Color4)pixelColorVector;
                             }
                         }
                     }
@@ -104,12 +105,13 @@ namespace rt004.SceneObjects
             }
             return image;
         }
-
+        /*
         private Color4 ComputePixelColor(Vector3 position, LightSource light, Vector3 cameraPosition, Vector3 normal)
         {
             Color4 OUT;
             if (light.Intensity > 0)
             {
+                
                 Vector3 lightDirection = light.Position - cameraPosition; //3D position in space of the surface
                 float distance = lightDirection.Length;
                 lightDirection.Normalize();
@@ -135,7 +137,7 @@ namespace rt004.SceneObjects
                 OUT.Specular = intensity * light.specularColor * light.specularPower / distance;
             }
             return OUT;
-        }
+        }*/
     }
 }
 
