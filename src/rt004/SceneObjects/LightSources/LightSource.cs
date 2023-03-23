@@ -20,13 +20,13 @@ namespace rt004.SceneObjects
             set { lightColor = value; }
         }
 
-        public LightSource(Vector3 position, Vector3 rotation, Color4 color, float intensity) : base(position, rotation)
+        public LightSource(Scene parentScene, Vector3 position, Vector3 rotation, Color4 color, float intensity) : base(parentScene, position, rotation)
         {
             Color = color;
             Intensity = intensity;
         }
 
-        abstract public bool isPointIluminated(Vector3 point, out float intensity);
+        abstract public float LightIntensityAt(Vector3 point);
     }
 }
 

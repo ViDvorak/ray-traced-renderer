@@ -7,18 +7,18 @@ namespace rt004.SceneObjects
     {
         public readonly float sideA;
         public readonly float sideB;
+        public readonly float sideC;
 
-        public Block() : base(Vector3.Zero, Vector3.Zero)
-        {
-            sideA = 2;
-            sideB = 1;
-        }
-
-
-        public Block(Vector3 position, Vector3 rotation, Color4 color, float sideA, float sideB) : base (position, rotation, color)
+        public Block(Scene parentScene, Vector3 position, Vector3 rotation, Color4 color, float sideA, float sideB, float sideC) : base (parentScene, position, rotation, color)
         {
             this.sideA = sideA;
             this.sideB = sideB;
+            this.sideC = sideC;
+        }
+
+        public override Vector3 GetNormalAt(Vector3 position)
+        {
+            throw new NotImplementedException();
         }
 
         public override bool TryGetRayIntersection(Line line, out float parameter)
@@ -34,21 +34,24 @@ namespace rt004.SceneObjects.Loading
     {
         public float sideA;
         public float sideB;
+        public float sideC;
 
         public BlockLoader()
         {
-
+            sideA = 2;
+            sideB = 1;
         }
 
-        public BlockLoader(Vector3 position, Vector3 rotation, Color4 color, float sideA, float sideB) : base(position, rotation, color)
+        public BlockLoader(Vector3 position, Vector3 rotation, Color4 color, float sideA, float sideB, float sideC) : base(position, rotation, color)
         {
             this.sideA = sideA;
             this.sideB = sideB;
+            this.sideC = sideC;
         }
 
-        public override SceneObject CreateInstance()
+        public override SceneObject CreateInstance(Scene parentScene)
         {
-            return new Block(position, rotation, color, sideA, sideB);
+            return new Block(parentScene, position, rotation, color, sideA, sideB, sideC);
         }
     }
 }

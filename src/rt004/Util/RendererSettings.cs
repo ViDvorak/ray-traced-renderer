@@ -10,7 +10,7 @@ namespace rt004.Util
 {
     internal static class RendererSettings
     {
-        public static float floatPrecision = 0.001f;
+        public static float floatPrecision = 0.000_001f;
 
         public static Color4 defaultBacgroundColor = Color4.Gray;
         public static Color4 defaultSolidColor = Color4.Lime;

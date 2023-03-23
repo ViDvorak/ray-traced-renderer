@@ -50,7 +50,7 @@
 			<LightSourceLoader xsi:type="PointLightLoader">
 				<position>
 					<X>5</X>
-					<Y>5</Y>
+					<Y>0</Y>
 					<Z>5</Z>
 				</position>
 				<rotation>

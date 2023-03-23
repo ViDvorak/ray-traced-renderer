@@ -11,9 +11,7 @@ namespace rt004.SceneObjects
     public abstract class SceneObject
     {
         private Vector3 position;
-        private Vector3 rotation;
-
-        private Matrix4 transformMatrix;
+        private Quaternion rotation;
 
         private Scene parentScene;
 
@@ -26,25 +24,10 @@ namespace rt004.SceneObjects
             set
             {
                 position = value;
-                transformMatrix = CreateTransformMatrix();
             }
         }
 
-        public Vector3 Rotation
-        {
-            get { return rotation; }
-            set
-            {
-                // modulo 2Pi
-                Vector3 tmp = value / (2 * MathF.PI);
-                tmp.X = MathF.Floor(tmp.X);
-                tmp.Y = MathF.Floor(tmp.Y);
-                tmp.Z = MathF.Floor(tmp.Z);
-                rotation = value - 2 * MathF.PI * tmp;
-
-                transformMatrix = CreateTransformMatrix();
-            }
-        }
+        public Quaternion Rotation { get; set; }
 
         public Scene ParentScene
         {
@@ -55,12 +38,16 @@ namespace rt004.SceneObjects
             }
         }
 
-        public SceneObject(Vector3 position, Vector3 rotation)
+        public SceneObject(Scene parentScene, Vector3 position, Vector3 rotation)
         {
+            this.parentScene = parentScene;
             this.position = position;
-            Rotation = rotation;
+            Rotation = new Quaternion( rotation);
+        }
 
-            transformMatrix = CreateTransformMatrix();
+        public Vector3 GetHeding()
+        {
+            return Vector3.Transform( Vector3.UnitX, rotation);
         }
 
         public Vector3 ConvertFromObjectToWorldSpace(Vector3 vectorInObjectSpace, bool isPosition)
@@ -68,12 +55,12 @@ namespace rt004.SceneObjects
             if (isPosition)
                 return Vector3.Add(position, vectorInObjectSpace);
             else
-                return Vector3.Transform(vectorInObjectSpace, new Quaternion(Rotation));
+                return Vector3.Transform(vectorInObjectSpace, Rotation);
         }
 
         private Matrix4 CreateTransformMatrix()
         {
-            var rotationMatrix = Matrix4.CreateFromQuaternion(new Quaternion(rotation));
+            var rotationMatrix = Matrix4.CreateFromQuaternion(rotation);
             var translationMatrix = Matrix4.CreateTranslation(position);
             return rotationMatrix * translationMatrix;
         }
@@ -102,6 +89,6 @@ namespace rt004.SceneObjects.Loading {
         /// Cteates Instance of corresponding SceneObject type
         /// </summary>
         /// <returns>instanciated object</returns>
-        abstract public SceneObject CreateInstance();
+        abstract public SceneObject CreateInstance(Scene parentScene);
     }
 }

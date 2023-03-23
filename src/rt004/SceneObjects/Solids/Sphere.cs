@@ -10,16 +10,10 @@ namespace rt004.SceneObjects
 
         private float radiusSquered;
 
-        public Sphere() : base(Vector3.Zero, Vector3.Zero)
+        public Sphere(Scene parentScene, Vector3 position, Vector3 rotation, Color4 color, float radius) : base(parentScene, position, rotation, color)
         {
-            this.radius = 1;
-            radiusSquered = radius * radius;
-        }
-
-        public Sphere(Vector3 position, Vector3 rotation, Color4 color, float diameter) : base(position, rotation, color)
-        {
-            this.radius = diameter;
-            radiusSquered = radius * radius;
+            this.radius = radius;
+            radiusSquered = this.radius * this.radius;
         }
 
         public override bool TryGetRayIntersection(Line ray, out float parameter)
@@ -46,6 +40,12 @@ namespace rt004.SceneObjects
             }
             return parameter > 0;
         }
+
+
+        public override Vector3 GetNormalAt(Vector3 position)
+        {
+            return position - Position;
+        }
     }
 }
 
@@ -62,9 +62,9 @@ namespace rt004.SceneObjects.Loading
             this.diameter = diameter;
         }
 
-        public override SceneObject CreateInstance()
+        public override SceneObject CreateInstance(Scene parentScene)
         {
-            return new Sphere(position, rotation, color, diameter);
+            return new Sphere(parentScene, position, rotation, color, diameter);
         }
     }
 }

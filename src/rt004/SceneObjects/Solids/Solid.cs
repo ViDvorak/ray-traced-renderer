@@ -10,15 +10,17 @@ namespace rt004.SceneObjects
     {
         public Color4 color;
 
-        public Solid(Vector3 position, Vector3 rotation) : base(position, rotation)
+        public Solid(Scene parentScene, Vector3 position, Vector3 rotation) : base(parentScene, position, rotation)
         {
             color = RendererSettings.defaultSolidColor;
         }
 
-        public Solid(Vector3 position, Vector3 rotation, Color4 color) : base(position, rotation)
+        public Solid(Scene parentScene, Vector3 position, Vector3 rotation, Color4 color) : base(parentScene, position, rotation)
         {
             this.color = color;
         }
+
+        abstract public Vector3 GetNormalAt(Vector3 position);
 
         abstract public bool TryGetRayIntersection(Line line, out float parameter);
 

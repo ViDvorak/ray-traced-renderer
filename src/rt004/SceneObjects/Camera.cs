@@ -1,6 +1,9 @@
 ﻿using OpenTK.Mathematics;
 using rt004.SceneObjects;
 using rt004.Util;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml.Serialization;
 using Util;
 
@@ -42,17 +45,9 @@ namespace rt004.SceneObjects
             }
         }
 
-        public Camera() : base(Vector3.Zero, Vector3.Zero)
+        public Camera(Scene parentScene, Vector3 position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height) : base(parentScene, position, rotation)
         {
-            this.backgroundColor = RendererSettings.defaultBacgroundColor;
-            fov = float.Pi / 3;
-            this.width = 1280;
-            this.height = 720;
-        }
-
-        public Camera(Vector3 position, Vector3 rotation, Color4 bacgroudColor, float fov, uint width, uint height) : base(position, rotation)
-        {
-            backgroundColor = bacgroudColor;
+            this.backgroundColor = backgroundColor;
             FoV = fov;
             this.width = width;
             this.height = height;
@@ -90,7 +85,17 @@ namespace rt004.SceneObjects
                             if (cameraToIntersection.LengthSquared <= distanceOfIntersectionSquared)
                             {
                                 distanceOfIntersectionSquared = cameraToIntersection.LengthSquared;
-                                pixelColor = body.color;
+
+                                float intensity = 0;
+                                foreach (var light in ParentScene.lights)
+                                {
+                                    intensity =+ light.LightIntensityAt(intersection);
+                                }
+
+                                intensity /= 1.5f;
+
+                                float angle = Vector3.Dot(-body.GetNormalAt(intersection), ray.Direction);
+                                pixelColor = (Color4)( intensity * (Vector4)body.color * MathF.Max(angle, 0));
                             }
                         }
                     }
@@ -98,6 +103,38 @@ namespace rt004.SceneObjects
                 }
             }
             return image;
+        }
+
+        private Color4 ComputePixelColor(Vector3 position, LightSource light, Vector3 cameraPosition, Vector3 normal)
+        {
+            Color4 OUT;
+            if (light.Intensity > 0)
+            {
+                Vector3 lightDirection = light.Position - cameraPosition; //3D position in space of the surface
+                float distance = lightDirection.Length;
+                lightDirection.Normalize();
+                distance = distance * distance;
+
+                //Intensity of the diffuse light. Saturate to keep within the 0-1 range.
+                float NdotL = Vector3.Dot(normal, lightDirection);
+                float intensity = saturate(NdotL);
+
+                // Calculate the diffuse light factoring in light color, power and the attenuation
+                OUT.Diffuse = intensity * light.diffuseColor * light.diffusePower / distance;
+
+                //Calculate the half vector between the light vector and the view vector.
+                //This is typically slower than calculating the actual reflection vector
+                // due to the normalize function's reciprocal square root
+                float3 H = normalize(lightDirection + viewDir);
+
+                //Intensity of the specular light
+                float NdotH = dot(normal, H);
+                intensity = pow(saturate(NdotH), specularHardness);
+
+                //Sum up the specular light factoring
+                OUT.Specular = intensity * light.specularColor * light.specularPower / distance;
+            }
+            return OUT;
         }
     }
 }
@@ -121,9 +158,9 @@ namespace rt004.SceneObjects.Loading
             this.height = height;
         }
 
-        public override SceneObject CreateInstance()
+        public override SceneObject CreateInstance(Scene parentScene)
         {
-            return new Camera(position, rotation, backgroundColor, fov, width, height);
+            return new Camera(parentScene, position, rotation, backgroundColor, fov, width, height);
         }
     }
 }

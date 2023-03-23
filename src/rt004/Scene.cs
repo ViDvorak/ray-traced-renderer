@@ -74,7 +74,7 @@ namespace rt004
             }
         }
 
-        public void AddBody (Solid body) => solids.Add(body);
+        public void AddSolid (Solid body) => solids.Add(body);
         public void RemoveBody (Solid body) => solids.Remove(body);
 
         public void AddLight(LightSource light ) => lights.Add(light);
@@ -105,43 +105,50 @@ namespace rt004
 
 
         #region IntersectionsWithScene
-        public bool TryToComputeIntersection(Line line, out float parameter)
+        public bool CastRay(Line line, out float distance)
         {
-            return TryToComputeIntersection(line, out parameter, out Solid body);
+            return CastRay(line, out distance, out Solid body);
         }
 
-        public bool TryToComputeIntersection(Line line, out float parameter, out Solid intersectedBody)
+        public bool CastRay(Line line, out float distance, float maxDistance, float minDistance = 0)
         {
-            float lowestParameter = float.MaxValue;
+            var isIntersecting = CastRay(line, out distance);
+            isIntersecting = isIntersecting && (distance > minDistance || distance.isFloatEquals(minDistance)) && distance < maxDistance;
+            return isIntersecting;
+        }
+
+        public bool CastRay(Line line, out float distance, out Solid intersectedBody)
+        {
+            float closestIntersection = float.MaxValue;
             bool hasIntersected = false;
             intersectedBody = null;
 
             foreach (Solid body in solids)
             {
-                if (hasIntersected = body.TryGetRayIntersection(line, out parameter))
+                if (hasIntersected = body.TryGetRayIntersection(line, out distance))
                 {
-                    if (lowestParameter > parameter)
+                    if (closestIntersection > distance)
                     {
-                        lowestParameter = parameter;
+                        closestIntersection = distance;
                         intersectedBody = body;
                     }
                 }
             }
-            parameter = lowestParameter;
+            distance = closestIntersection;
 
             return hasIntersected;
         }
 
-        public bool TryToComputeIntersection( Line line, out Vector3 closestIntersection)
+        public bool CastRay( Line line, out Vector3 closestIntersection)
         {
-            bool hasIntersected = TryToComputeIntersection(line, out float parameter);
+            bool hasIntersected = CastRay(line, out float parameter);
             closestIntersection = line.GetPointOnLine(parameter);
             return hasIntersected;
         }
 
-        public bool TryToComputeIntersection(Line line, out Vector3 closestIntersection, out Solid intersectedBody)
+        public bool CastRay(Line line, out Vector3 closestIntersection, out Solid intersectedBody)
         {
-            bool hasIntersected = TryToComputeIntersection(line, out float parameter, out intersectedBody);
+            bool hasIntersected = CastRay(line, out float parameter, out intersectedBody);
             closestIntersection = line.GetPointOnLine(parameter);
             return hasIntersected;
         }
@@ -161,25 +168,25 @@ namespace rt004.SceneObjects.Loading
 
         public Scene CreateInstance()
         {
+            Scene scene = new Scene();
+
             Camera[] cameras = new Camera[cameraLoaders.Count];
             Solid[] solids = new Solid[solidLoaders.Count];
             LightSource[] lights= new LightSource[lightLoaders.Count];
             
             for (int i = 0; i < cameras.Length; i++)
             {
-                cameras[i] = (Camera)cameraLoaders[i].CreateInstance();
+                scene.AddCamera((Camera)cameraLoaders[i].CreateInstance(scene));
             }
             for (int i = 0; i < solids.Length; i++)
             {
-                solids[i] = (Solid)solidLoaders[i].CreateInstance();
+                scene.AddSolid((Solid)solidLoaders[i].CreateInstance(scene));
             }
             for (int i = 0; i < lights.Length; i++)
             {
-                lights[i] = (LightSource)lightLoaders[i].CreateInstance();
+                scene.AddLight((LightSource)lightLoaders[i].CreateInstance(scene));
             }
 
-            Scene scene = new Scene(cameras, solids, lights);
-            scene.MainCamera = scene.GetCameras()[0];
             return scene;
         }
     }
