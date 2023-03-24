@@ -96,7 +96,6 @@ namespace rt004.SceneObjects
                                 foreach (var light in ParentScene.GetLightSources())
                                 {
                                     intensity =+ light.LightIntensityAt(intersection);
-                                    intensity /= 1.5f;
 
                                     Vector3 intersectionToLight = (intersection - light.Position);
                                     intersectionToLight.Normalize();
