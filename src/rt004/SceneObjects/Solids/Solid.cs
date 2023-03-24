@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace rt004.SceneObjects
 {
-    [XmlInclude(typeof(Sphere)), XmlInclude(typeof(Block))]
+    [XmlInclude(typeof(Sphere)), XmlInclude(typeof(Plane))]
     public abstract class Solid : SceneObject
     {
         public Color4 color;
@@ -41,7 +41,7 @@ namespace rt004.SceneObjects
 
 namespace rt004.SceneObjects.Loading
 {
-    [XmlInclude(typeof(SphereLoader)), XmlInclude(typeof(BlockLoader))]
+    [XmlInclude(typeof(SphereLoader)), XmlInclude(typeof(PlaneLoader))]
     public abstract class SolidLoader : SceneObjectLoader
     {
         public Color4 color;

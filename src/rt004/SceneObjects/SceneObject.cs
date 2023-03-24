@@ -1,74 +1,56 @@
 ﻿using OpenTK.Mathematics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace rt004.SceneObjects
 {
     public abstract class SceneObject
     {
-        private Vector3 position;
-        private Quaternion rotation;
-
         private Scene parentScene;
 
-        public Vector3 Position
-        {
-            get
-            {
-                return position;
-            }
-            set
-            {
-                position = value;
-            }
-        }
-
+        public Vector3 Position { get; set; }
         public Quaternion Rotation { get; set; }
 
         public Scene ParentScene
         {
-            get { return parentScene; }
+            get => parentScene;
             set {
-                if (value == null) { throw new ArgumentNullException(); }
+                Scene previusScene = parentScene;
                 parentScene = value;
+                if (previusScene is not null)
+                    previusScene.RemoveSceneObject(this);
+
+                if (value is not null)
+                    value.AddSceneObject(this);
             }
         }
 
         public SceneObject(Scene parentScene, Vector3 position, Vector3 rotation)
         {
             this.parentScene = parentScene;
-            this.position = position;
+            Position = position;
             Rotation = new Quaternion( rotation);
         }
 
         public Vector3 GetHeding()
         {
-            return Vector3.Transform( Vector3.UnitX, rotation);
+            return Vector3.Transform( Vector3.UnitX, Rotation);
         }
 
         public Vector3 ConvertFromObjectToWorldSpace(Vector3 vectorInObjectSpace, bool isPosition)
         {
             if (isPosition)
-                return Vector3.Add(position, vectorInObjectSpace);
+                return Vector3.Add(Position, vectorInObjectSpace);
             else
                 return Vector3.Transform(vectorInObjectSpace, Rotation);
         }
-
-        private Matrix4 CreateTransformMatrix()
-        {
-            var rotationMatrix = Matrix4.CreateFromQuaternion(rotation);
-            var translationMatrix = Matrix4.CreateTranslation(position);
-            return rotationMatrix * translationMatrix;
-        }
     }
-
 }
 
 namespace rt004.SceneObjects.Loading {
+
+    /// <summary>
+    /// Abstract class used for loading of SceneObject. SceneObjectLoader inheratance structure must be parallel to the SceneObject one.
+    /// </summary>
     [XmlInclude(typeof(CameraLoader)), XmlInclude(typeof(SolidLoader)), XmlInclude(typeof(LightSourceLoader))]
     public abstract class SceneObjectLoader
     {

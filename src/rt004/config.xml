@@ -26,6 +26,24 @@
 			</CameraLoader>
 		</cameraLoaders>
 		<solidLoaders>
+			<SolidLoader xsi:type="PlaneLoader">
+				<position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>-3</Z>
+				</position>
+				<rotation>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</rotation>
+				<color>
+					<R>0.5</R>
+					<G>0.5</G>
+					<B>0</B>
+					<A>1</A>
+				</color>
+			</SolidLoader>
 			<SolidLoader xsi:type="SphereLoader">
 				<position>
 					<X>5</X>
@@ -41,6 +59,25 @@
 					<R>0</R>
 					<G>1</G>
 					<B>0</B>
+					<A>1</A>
+				</color>
+				<diameter>1</diameter>
+			</SolidLoader>
+			<SolidLoader xsi:type="SphereLoader">
+				<position>
+					<X>5</X>
+					<Y>4</Y>
+					<Z>0</Z>
+				</position>
+				<rotation>
+					<X>3</X>
+					<Y>2</Y>
+					<Z>1</Z>
+				</rotation>
+				<color>
+					<R>0</R>
+					<G>0</G>
+					<B>1</B>
 					<A>1</A>
 				</color>
 				<diameter>1</diameter>

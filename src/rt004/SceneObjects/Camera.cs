@@ -59,7 +59,12 @@ namespace rt004.SceneObjects
             this.height = height;
         }
 
-        public FloatImage RenderImage(Solid[] RenderedBodies)
+
+        /// <summary>
+        /// Renderes image from scene
+        /// </summary>
+        /// <returns>Returns FlaotImage containing redered image for scene.</returns>
+        public FloatImage RenderImage()
         {
             FloatImage image = new FloatImage((int)width, (int)height, 3);
 
@@ -77,9 +82,9 @@ namespace rt004.SceneObjects
 
                     Line ray = new Line(Position, pixelRayDirection);
 
-                    foreach (var body in RenderedBodies)
+                    foreach (var solid in ParentScene.GetSolids())
                     {
-                        if (body.TryGetRayIntersection(ray, out Vector3 intersection))
+                        if (solid.TryGetRayIntersection(ray, out Vector3 intersection))
                         {
                             var cameraToIntersection = intersection - Position;
                             if (cameraToIntersection.LengthSquared <= distanceOfIntersectionSquared)
@@ -88,12 +93,16 @@ namespace rt004.SceneObjects
 
                                 Vector4 pixelColorVector = (Vector4)Color4.Black;
                                 float intensity = 0;
-                                foreach (var light in ParentScene.lights)
+                                foreach (var light in ParentScene.GetLightSources())
                                 {
                                     intensity =+ light.LightIntensityAt(intersection);
                                     intensity /= 1.5f;
-                                    float angle = Vector3.Dot(-body.GetNormalAt(intersection), (intersection - light.Position).Normalized());
-                                    pixelColorVector += intensity * (Vector4)body.color * MathF.Max(angle, 0);
+
+                                    Vector3 intersectionToLight = (intersection - light.Position);
+                                    intersectionToLight.Normalize();
+                                    
+                                    float angle = Vector3.Dot(-solid.GetNormalAt(intersection), intersectionToLight);
+                                    pixelColorVector += intensity * (Vector4)solid.color * MathF.Max(angle, 0);
                                 }
 
                                 pixelColor = (Color4)pixelColorVector;
@@ -105,39 +114,6 @@ namespace rt004.SceneObjects
             }
             return image;
         }
-        /*
-        private Color4 ComputePixelColor(Vector3 position, LightSource light, Vector3 cameraPosition, Vector3 normal)
-        {
-            Color4 OUT;
-            if (light.Intensity > 0)
-            {
-                
-                Vector3 lightDirection = light.Position - cameraPosition; //3D position in space of the surface
-                float distance = lightDirection.Length;
-                lightDirection.Normalize();
-                distance = distance * distance;
-
-                //Intensity of the diffuse light. Saturate to keep within the 0-1 range.
-                float NdotL = Vector3.Dot(normal, lightDirection);
-                float intensity = saturate(NdotL);
-
-                // Calculate the diffuse light factoring in light color, power and the attenuation
-                OUT.Diffuse = intensity * light.diffuseColor * light.diffusePower / distance;
-
-                //Calculate the half vector between the light vector and the view vector.
-                //This is typically slower than calculating the actual reflection vector
-                // due to the normalize function's reciprocal square root
-                float3 H = normalize(lightDirection + viewDir);
-
-                //Intensity of the specular light
-                float NdotH = dot(normal, H);
-                intensity = pow(saturate(NdotH), specularHardness);
-
-                //Sum up the specular light factoring
-                OUT.Specular = intensity * light.specularColor * light.specularPower / distance;
-            }
-            return OUT;
-        }*/
     }
 }
 

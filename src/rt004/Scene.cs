@@ -11,10 +11,9 @@ namespace rt004
     {
         private Camera mainCamera;
 
-        
-        public readonly HashSet<Camera> cameras;
-        public readonly HashSet<Solid> solids;
-        public readonly HashSet<LightSource> lights;
+        private readonly HashSet<Camera> cameras;
+        private readonly HashSet<Solid> solids;
+        private readonly HashSet<LightSource> lights;
 
         public Scene()
         {
@@ -51,7 +50,8 @@ namespace rt004
 
         public void AddCamera(Camera camera, bool setAsMain = false)
         {
-            cameras.Add(camera);
+            if (cameras.Add(camera))
+                camera.ParentScene = this;
             if (setAsMain || mainCamera == null)
             {
                 mainCamera = camera;
@@ -64,7 +64,8 @@ namespace rt004
 
         public void RemoveCamera(Camera camera)
         {
-            cameras.Remove(camera);
+            if (cameras.Remove(camera))
+                camera.ParentScene = null;
 
             if (mainCamera == camera) {
                 var enumer = cameras.GetEnumerator();
@@ -74,13 +75,76 @@ namespace rt004
             }
         }
 
-        public void AddSolid (Solid body) => solids.Add(body);
-        public void RemoveBody (Solid body) => solids.Remove(body);
+        public void AddSolid(Solid solid)
+        {
+            if (solids.Add(solid))
+                solid.ParentScene = this;
+        }
+        public void RemoveSolid(Solid solid) {
+            if (solids.Remove(solid))
+                solid.ParentScene = null;
+        }
+        public Solid[] GetSolids() => solids.ToArray();
 
-        public void AddLight(LightSource light ) => lights.Add(light);
-        public void RemoveLight(LightSource light) => lights.Remove(light);
+        public void AddLight(LightSource light)
+        {
+            if (lights.Add(light))
+                light.ParentScene = this;
+        }
 
-        public Solid[] GetBodies() => solids.ToArray();
+        public void RemoveLight(LightSource light)
+        {
+            if (lights.Remove(light))
+                light.ParentScene = null;
+        }
+
+        public void AddSceneObject(SceneObject sceneObject)
+        {
+            if (sceneObject is Camera camera)
+            {
+                AddCamera(camera);
+            }
+
+            else if(sceneObject is Solid solid)
+            {
+                AddSolid(solid);
+            }
+
+            else if (sceneObject is LightSource light)
+            {
+                AddLight(light);
+            }
+
+            else
+            {
+                throw new NotImplementedException("not known class derived from SceneObject");
+            }
+        }
+
+        public void RemoveSceneObject(SceneObject sceneObject)
+        {
+            if (sceneObject is Camera camera)
+            {
+                RemoveCamera(camera);
+            }
+
+            else if (sceneObject is Solid solid)
+            {
+                RemoveSolid(solid);
+            }
+
+            else if (sceneObject is LightSource light)
+            {
+                RemoveLight(light);
+            }
+
+            else
+            {
+                throw new NotImplementedException("not known class derived from SceneObject");
+            }
+        }
+
+        public LightSource[] GetLightSources() => lights.ToArray();
 
         public FloatImage RenderScene() {
             if (mainCamera == null)
@@ -90,15 +154,15 @@ namespace rt004
                 else
                     throw new ArgumentNullException("No main camera in scene");
             }
-            return mainCamera.RenderImage(GetBodies());
+            return mainCamera.RenderImage();
         }
 
         public FloatImage[] RenderSceneWithAllCameras() {
             List<FloatImage> images = new List<FloatImage>();
-            Solid[] bodies = GetBodies();
+            Solid[] bodies = GetSolids();
             foreach (Camera camera in cameras)
             {
-                images.Add(camera.RenderImage(bodies));
+                images.Add(camera.RenderImage());
             }
             return images.ToArray();
         }
