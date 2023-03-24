@@ -33,7 +33,7 @@ namespace rt004.Util
     /// <summary>
     /// represents Plane in 3D
     /// </summary>
-    public record struct Plane
+    public record struct PlaneStruct
     {
         public readonly Vector3 PointOnPlane;
         /// <summary>
@@ -41,7 +41,7 @@ namespace rt004.Util
         /// </summary>
         public readonly Vector3 Normal;
 
-        public Plane(Vector3 position, Vector3 normal)
+        public PlaneStruct(Vector3 position, Vector3 normal)
         {
             this.PointOnPlane = position;
             this.Normal = normal / normal.LengthFast;
@@ -62,7 +62,7 @@ namespace rt004.Util
     /// </summary>
     internal static class Geometry
     {
-        public static bool TryToIntresect(Plane plane1, Plane plane2, out Line intersection)
+        public static bool TryToIntresect(PlaneStruct plane1, PlaneStruct plane2, out Line intersection)
         {
             if (Vector3.Dot(plane1.Normal, plane2.Normal) == plane1.Normal.Length * plane2.Normal.Length)
             {
@@ -108,7 +108,7 @@ namespace rt004.Util
             return position1.isVectorEquals(position2);
         }
 
-        public static bool TryToIntersect(Line line, Plane plane, out Vector3 intersection)
+        public static bool TryToIntersect(Line line, PlaneStruct plane, out float distance)
         {
             float aLine, xLine, bLine, yLine, cLine, zLine;
             aLine = line.Direction.X;
@@ -125,15 +125,16 @@ namespace rt004.Util
             cPlane = plane.Normal.Z;
 
 
-            if (Vector3.Dot(plane.Normal, line.Direction) != 0)
+            float cosineOfAngle = Vector3.Dot(-plane.Normal, line.Direction);
+            // line is paralel to the Plane
+            if (cosineOfAngle.isFloatEquals(0f) || cosineOfAngle < 0)
             {
-                intersection = line.Position;
+                distance = 0;
                 return false;
             }
 
-            float param = (aPlane * xLine + bPlane * yLine + cPlane * zLine + plane.GetD()) / (aPlane * aLine + bPlane * bLine + cPlane * cLine);
-
-            intersection = line.Position + line.Direction * param;
+            distance = (Vector3.Dot(plane.Normal, line.Position) + plane.GetD()) / cosineOfAngle;
+            //distance = (aPlane * xLine + bPlane * yLine + cPlane * zLine + plane.GetD()) / (aPlane * aLine + bPlane * bLine + cPlane * cLine);
             return true;
         }
     }
