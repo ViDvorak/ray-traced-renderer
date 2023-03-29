@@ -38,10 +38,7 @@ namespace rt004.SceneObjects.Loading
         public float intensity;
         public Color4 lightColor;
 
-        public LightSourceLoader()
-        {
-
-        }
+        public LightSourceLoader() { }
 
         public LightSourceLoader(Vector3 position, Vector3 rotation, Color4 lightColor, float intensity) : base(position, rotation)
         {

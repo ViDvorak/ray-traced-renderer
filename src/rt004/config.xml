@@ -38,9 +38,9 @@
 					<Z>0</Z>
 				</rotation>
 				<color>
-					<R>0.5</R>
+					<R>0</R>
 					<G>0.5</G>
-					<B>0</B>
+					<B>0.5</B>
 					<A>1</A>
 				</color>
 			</SolidLoader>

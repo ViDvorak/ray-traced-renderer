@@ -36,7 +36,7 @@ namespace rt004.SceneObjects.Loading
 
         public override SceneObject CreateInstance(Scene parentScene)
         {
-            return new Plane(parentScene, position, rotation);
+            return new Plane(parentScene, position, rotation, color);
         }
     }
 }
