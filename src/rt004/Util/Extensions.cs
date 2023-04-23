@@ -1,20 +1,27 @@
 ﻿using OpenTK.Mathematics;
 using rt004.Util;
+using System.Reflection.Metadata.Ecma335;
 
 namespace rt004
 {
     public static class Extensions
     {
-        public static bool isFloatEquals(this float value, float other)
+        public static bool isFloatEqual(this double value, double other)
         {
-            return value + RendererSettings.floatPrecision > other && value - RendererSettings.floatPrecision < other;
+            return value + RendererSettings.epsilon > other && value - RendererSettings.epsilon < other;
         }
 
-        public static bool isVectorEquals(this Vector3 vector, Vector3 other)
+        public static bool isFloatEquals(this float value, float other)
         {
-            return  vector[0].isFloatEquals(other[0]) &&
-                    vector[1].isFloatEquals(other[1]) &&
-                    vector[2].isFloatEquals(other[2]);
+            return value + RendererSettings.epsilon > other && value - RendererSettings.epsilon < other;
+        }
+
+
+        public static bool isVectorEquals(this Vector3d vector, Vector3d other)
+        {
+            return  vector[0].isFloatEqual(other[0]) &&
+                    vector[1].isFloatEqual(other[1]) &&
+                    vector[2].isFloatEqual(other[2]);
         }
     }
 }

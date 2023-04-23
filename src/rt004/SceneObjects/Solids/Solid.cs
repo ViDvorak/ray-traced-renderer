@@ -2,27 +2,28 @@
 using rt004.SceneObjects;
 using rt004.Util;
 using System.Xml.Serialization;
+using rt004.Materials;
+using rt004.Materials.Loading;
 
 namespace rt004.SceneObjects
 {
-    [XmlInclude(typeof(Sphere)), XmlInclude(typeof(Plane))]
     public abstract class Solid : SceneObject
     {
-        public Color4 color;
+        public Material material { get; set; }
 
-        public Solid(Scene parentScene, Vector3 position, Vector3 rotation) : base(parentScene, position, rotation)
+        public Solid(Scene parentScene, Point3D position, Vector3 rotation) : base(parentScene, position, rotation)
         {
-            color = RendererSettings.defaultSolidColor;
+            material = new Material(null, null, null, null);
         }
 
-        public Solid(Scene parentScene, Vector3 position, Vector3 rotation, Color4 color) : base(parentScene, position, rotation)
+        public Solid(Scene parentScene, Point3D position, Vector3 rotation, Material material) : base(parentScene, position, rotation)
         {
-            this.color = color;
+            this.material = material;
         }
 
-        abstract public Vector3 GetNormalAt(Vector3 position);
+        abstract public Vector3D GetNormalAt(Point3D position);
 
-        abstract public bool TryGetRayIntersection(Line line, out float parameter);
+        abstract public bool TryGetRayIntersection(Ray line, out double distance);
 
         /// <summary>
         /// Computes closest intersection from line.Position
@@ -30,10 +31,19 @@ namespace rt004.SceneObjects
         /// <param name="ray">Ray to intersect with</param>
         /// <param name="intersection">closest intersection point</param>
         /// <returns>true if ray intersects with the object, otherwise false</returns>
-        public bool TryGetRayIntersection(Line ray, out Vector3 intersection)
+        public bool TryGetRayIntersection(Ray ray, out Point3D intersection)
         {
-            bool isIntersecting = TryGetRayIntersection(ray, out float parameter);
-            intersection = ray.GetPointOnLine(parameter);
+            bool isIntersecting = TryGetRayIntersection(ray, out double distance);
+            intersection = ray.GetPointOnRay(distance);
+            return isIntersecting;
+        }
+
+        abstract public bool TryGetRayIntersection(Ray ray, out double distance, out Point2D uvCoord);
+
+        public bool TryGetRayIntersection(Ray ray, out Point3D intersection, out Point2D uvCoord)
+        {
+            bool isIntersecting = TryGetRayIntersection(ray, out double distance, out uvCoord);
+            intersection = ray.GetPointOnRay(distance);
             return isIntersecting;
         }
     }
@@ -44,13 +54,13 @@ namespace rt004.SceneObjects.Loading
     [XmlInclude(typeof(SphereLoader)), XmlInclude(typeof(PlaneLoader))]
     public abstract class SolidLoader : SceneObjectLoader
     {
-        public Color4 color;
+        public MaterialLoader material;
 
         public SolidLoader() { }
 
-        public SolidLoader(Vector3 position, Vector3 rotation ,Color4 color) : base(position, rotation)
+        public SolidLoader(Point3D position, Vector3 rotation, MaterialLoader material) : base(position, rotation)
         {
-            this.color = color;
+            this.material = material;
         }
     }
 }

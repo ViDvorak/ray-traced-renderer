@@ -1,5 +1,6 @@
 ﻿using OpenTK.Mathematics;
 using System.Xml.Serialization;
+using rt004.Util;
 
 namespace rt004.SceneObjects
 {
@@ -7,7 +8,7 @@ namespace rt004.SceneObjects
     {
         private Scene parentScene;
 
-        public Vector3 Position { get; set; }
+        public Point3D Position { get; set; }
         public Quaternion Rotation { get; set; }
 
         public Scene ParentScene
@@ -24,11 +25,11 @@ namespace rt004.SceneObjects
             }
         }
 
-        public SceneObject(Scene parentScene, Vector3 position, Vector3 rotation)
+        public SceneObject(Scene parentScene, Point3D position, Vector3 rotation)
         {
             this.parentScene = parentScene;
             Position = position;
-            Rotation = new Quaternion( rotation);
+            Rotation = new Quaternion(rotation);
         }
 
         public Vector3 GetHeding()
@@ -36,12 +37,14 @@ namespace rt004.SceneObjects
             return Vector3.Transform( Vector3.UnitX, Rotation);
         }
 
-        public Vector3 ConvertFromObjectToWorldSpace(Vector3 vectorInObjectSpace, bool isPosition)
+        public Vector3D ConvertFromObjectToWorldSpace(Vector3D vectorInObjectSpace)
         {
-            if (isPosition)
-                return Vector3.Add(Position, vectorInObjectSpace);
-            else
-                return Vector3.Transform(vectorInObjectSpace, Rotation);
+            return Vector3D.Transform(vectorInObjectSpace, Rotation);
+        }
+
+        public Point3D ConvertFromObjectToWorldSpace(Point3D pointInObjectSpace)
+        {
+            return new Point3D((Vector3)Position + (Vector3)pointInObjectSpace);
         }
     }
 }
@@ -59,9 +62,9 @@ namespace rt004.SceneObjects.Loading {
 
         public SceneObjectLoader() { }
 
-        public SceneObjectLoader(Vector3 position, Vector3 rotation)
+        public SceneObjectLoader(Point3D position, Vector3 rotation)
         {
-            this.position = position;
+            this.position = (Vector3)position;
             this.rotation = rotation;
         }
 

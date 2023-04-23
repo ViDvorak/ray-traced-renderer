@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 using rt004.SceneObjects.Loading;
+using rt004.Materials.Loading;
+using rt004.Materials;
 
 namespace rt004.Util
 {
@@ -38,13 +40,20 @@ namespace rt004.Util
             var serializer = new XmlSerializer(typeof(DataLoader));
 
             DataLoader data = new DataLoader();
-            /*// tests
+            // tests
             data.output = "output.pfm";
             
             SceneLoader scene = new SceneLoader();
-            scene.solidLoaders.Add(new SphereLoader(new Vector3(1, 2, 3), new Vector3(3, 2, 1), new Color4(255, 255, 255, 255), 1) );
-            scene.lightLoaders.Add(new PointLightLoader(new Vector3(5,5,5), Vector3.Zero, Color4.Azure, 10));
-            scene.cameraLoaders.Add( new CameraLoader(Vector3.Zero, Vector3.Zero, Color4.DimGray, MathF.PI / 2, 780, 600));
+            TextureLoader whiteUniform = new UniformTextureLoader(Color4.White);
+
+            /*
+            var material = new MaterialLoader(Color4.Gold, 0.5f, 0.5f, 1f);
+
+            scene.solidLoaders.Add(new SphereLoader(new Point3D(1, 2, 3), new Vector3(3, 2, 1), material, 1));
+            scene.solidLoaders.Add(new PlaneLoader(new Point3D(0, 0, 0), new Vector3(0, 0, 0), material));
+
+            scene.lightLoaders.Add(new PointLightLoader(new Point3D(5,5,5), Vector3.Zero, Color4.Azure, 10, 0.5f, 0.5f));
+            scene.cameraLoaders.Add( new CameraLoader(Point3D.Zero, Vector3.Zero, Color4.DimGray, MathF.PI / 2, 780, 600));
             data.sceneLoader = scene;
 
             serializer.Serialize(Console.Out, data); // Problem not Serialized, result is {}

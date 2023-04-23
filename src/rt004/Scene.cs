@@ -4,35 +4,49 @@ using Util;
 using OpenTK.Mathematics;
 using rt004.Util;
 using System.Xml.Serialization;
+using System.Collections.Specialized;
 
 namespace rt004
 {
     public class Scene
     {
-        private Camera mainCamera;
+        private Camera? mainCamera;
+
+        public Color4 AmbientLightColor { get; set; }
+        public float AmbientLightIntensity { get; set; }
 
         private readonly HashSet<Camera> cameras;
         private readonly HashSet<Solid> solids;
         private readonly HashSet<LightSource> lights;
 
+
         public Scene()
-        {
-            mainCamera = null;
-            this.cameras = new HashSet<Camera>();
-            this.solids = new HashSet<Solid>();
-            this.lights = new HashSet<LightSource>();
+        { 
+            cameras = new HashSet<Camera>();
+            solids = new HashSet<Solid>();
+            lights = new HashSet<LightSource>();
         }
 
-        public Scene(Camera[] cameras, Solid[] solids, LightSource[] lights)
+        public Scene(Camera[]? cameras, Solid[]? solids, LightSource[]? lights, Color4 ambientLightColor, float ambientLightIntensity = RendererSettings.defaultAmbientLightFactor)
         {
-            if (cameras.Length > 0)
-                mainCamera = cameras[0];
-            this.cameras = new HashSet<Camera>(cameras);
-            this.solids  = new HashSet<Solid>(solids);
-            this.lights  = new HashSet<LightSource>(lights);
+            if (cameras != null)
+            {
+                this.cameras = new HashSet<Camera>(cameras);
+                if (cameras.Length > 0)
+                    mainCamera = cameras[0];
+            }
+            else
+                this.cameras = new HashSet<Camera>();
+
+
+            this.solids  = solids == null ? new HashSet<Solid>() : new HashSet<Solid>(solids);
+            this.lights  = lights == null ? new HashSet<LightSource>() : new HashSet<LightSource>(lights);
+
+            this.AmbientLightColor = ambientLightColor;
+            this.AmbientLightIntensity = ambientLightIntensity;
         }
 
-        public Camera MainCamera
+        public Camera? MainCamera
         {
             get
             {
@@ -40,7 +54,8 @@ namespace rt004
             }
             set
             {
-                mainCamera.ParentScene = this;
+                if (mainCamera != null)
+                    mainCamera.ParentScene = this;
                 if (value != null)
                 {
                     mainCamera = value;
@@ -117,7 +132,7 @@ namespace rt004
 
             else
             {
-                throw new NotImplementedException("not known class derived from SceneObject");
+                throw new NotImplementedException("not known class derived from SceneObject" + sceneObject.GetType());
             }
         }
 
@@ -140,7 +155,7 @@ namespace rt004
 
             else
             {
-                throw new NotImplementedException("not known class derived from SceneObject");
+                throw new NotImplementedException("Not known class derived from SceneObject");
             }
         }
 
@@ -169,28 +184,51 @@ namespace rt004
 
 
         #region IntersectionsWithScene
-        public bool CastRay(Line line, out float distance)
+
+        /// <summary>
+        /// Casts ray in a scene and checks for intersections with Solids.
+        /// </summary>
+        /// <param name="ray">ray to cast</param>
+        /// <param name="distance">return value of distance from ray origin</param>
+        /// <returns>true when any object is intersected by ray and distance is in beatween min and max distances</returns>
+        public bool CastRay(Ray ray, out double distance)
         {
-            return CastRay(line, out distance, out Solid body);
+            return CastRay(ray, out distance, out Solid intersectedBody);
         }
 
-        public bool CastRay(Line line, out float distance, float maxDistance, float minDistance = 0)
+        /// <summary>
+        /// Casts ray in a scene and checks for intersections with Solids.
+        /// </summary>
+        /// <param name="ray">ray to cast</param>
+        /// <param name="distance">return value of distance from ray origin</param>
+        /// <param name="maxDistance">maximal value of distance</param>
+        /// <param name="minDistance">minimal distance of value</param>
+        /// <returns>true when any object is intersected by ray and distance is in beatween min and max distances</returns>
+        public bool CastRay(Ray ray, out double distance, double maxDistance, double minDistance = 0d)
         {
-            var isIntersecting = CastRay(line, out distance);
-            isIntersecting = isIntersecting && (distance > minDistance || distance.isFloatEquals(minDistance)) && distance < maxDistance;
+            var isIntersecting = CastRay(ray, out distance);
+            isIntersecting = isIntersecting && (distance > minDistance || distance.isFloatEqual(minDistance)) && distance < maxDistance;
             return isIntersecting;
         }
 
-        public bool CastRay(Line line, out float distance, out Solid intersectedBody)
+        /// <summary>
+        /// Casts ray in a scene and checks for intersections with Solids.
+        /// </summary>
+        /// <param name="ray">ray to cast</param>
+        /// <param name="distance">return value of distance from ray origin</param>
+        /// <param name="intersectedBody">returns the closest intersected solid</param>
+        /// <returns>true when any object is intersected by ray</returns>
+        public bool CastRay(Ray ray, out double distance, out Solid intersectedBody)
         {
-            float closestIntersection = float.MaxValue;
+            double closestIntersection = double.MaxValue;
             bool hasIntersected = false;
             intersectedBody = null;
 
             foreach (Solid body in solids)
             {
-                if (hasIntersected = body.TryGetRayIntersection(line, out distance))
+                if (body.TryGetRayIntersection(ray, out distance))
                 {
+                    hasIntersected = true;
                     if (closestIntersection > distance)
                     {
                         closestIntersection = distance;
@@ -203,17 +241,17 @@ namespace rt004
             return hasIntersected;
         }
 
-        public bool CastRay( Line line, out Vector3 closestIntersection)
+        public bool CastRay( Ray ray, out Point3D closestIntersection)
         {
-            bool hasIntersected = CastRay(line, out float parameter);
-            closestIntersection = line.GetPointOnLine(parameter);
+            bool hasIntersected = CastRay(ray, out double parameter);
+            closestIntersection = ray.GetPointOnRay(parameter);
             return hasIntersected;
         }
 
-        public bool CastRay(Line line, out Vector3 closestIntersection, out Solid intersectedBody)
+        public bool CastRay(Ray ray, out Point3D closestIntersection, out Solid intersectedBody)
         {
-            bool hasIntersected = CastRay(line, out float parameter, out intersectedBody);
-            closestIntersection = line.GetPointOnLine(parameter);
+            bool hasIntersected = CastRay(ray, out double parameter, out intersectedBody);
+            closestIntersection = ray.GetPointOnRay(parameter);
             return hasIntersected;
         }
 
@@ -226,6 +264,9 @@ namespace rt004.SceneObjects.Loading
 {
     public class SceneLoader
     {
+        public Color4 ambientLightColor;
+        public float ambientLightIntensity;
+
         public List<CameraLoader> cameraLoaders = new List<CameraLoader>();
         public List<SolidLoader> solidLoaders = new List<SolidLoader>();
         public List<LightSourceLoader> lightLoaders = new List<LightSourceLoader>();
@@ -233,6 +274,9 @@ namespace rt004.SceneObjects.Loading
         public Scene CreateInstance()
         {
             Scene scene = new Scene();
+
+            scene.AmbientLightIntensity = ambientLightIntensity;
+            scene.AmbientLightColor = ambientLightColor;
 
             Camera[] cameras = new Camera[cameraLoaders.Count];
             Solid[] solids = new Solid[solidLoaders.Count];

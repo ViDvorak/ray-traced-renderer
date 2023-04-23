@@ -1,6 +1,9 @@
 ﻿using OpenTK.Mathematics;
+using rt004.Materials;
 using rt004.Util;
 using System.Net.Security;
+using rt004.Materials.Loading;
+using System.Xml.Linq;
 
 namespace rt004.SceneObjects
 {
@@ -10,29 +13,38 @@ namespace rt004.SceneObjects
 
         private float radiusSquered;
 
-        public Sphere(Scene parentScene, Vector3 position, Vector3 rotation, Color4 color, float radius) : base(parentScene, position, rotation, color)
+        public Sphere(Scene parentScene, Point3D position, Vector3 rotation, Material material, float radius) : base(parentScene, position, rotation, material)
         {
             this.radius = radius;
             radiusSquered = this.radius * this.radius;
         }
 
-        public override bool TryGetRayIntersection(Line ray, out float parameter)
+
+        public override Vector3D GetNormalAt(Point3D position)
+        {
+            Vector3D normal = (position - Position);
+            normal.Normalize();
+            return normal;
+        }
+
+
+        public override bool TryGetRayIntersection(Ray ray, out double parameter)
         {
             // It is not needed to consider rotation in this case (sphere)
 
             // computes intersections
-            Vector3 dif = Position - ray.Position;
+            Vector3D dif = Position - ray.Origin;
             //const float a = 1f; //Vector3.Dot(ray.Direction, ray.Direction) is always 1
-            float b = -2 * Vector3.Dot(dif, ray.Direction);
-            float c = Vector3.Dot(dif, dif) - radiusSquered;
+            double b = -2 * Vector3D.Dot(dif, ray.Direction);
+            double c = Vector3D.Dot(dif, dif) - radiusSquered;
 
             // compute discriminant
-             float discriminant = b * b - 4 * c;
+             double discriminant = b * b - 4 * c;
 
             if (discriminant >= 0f)
             {
-                float d = MathF.Sqrt(discriminant);
-                parameter = (-b - d) / 2;
+                double d = Math.Sqrt(discriminant);
+                parameter = (float)((-b - d) / 2);
             }
             else
             {
@@ -42,11 +54,30 @@ namespace rt004.SceneObjects
         }
 
 
-        public override Vector3 GetNormalAt(Vector3 position)
+        public override bool TryGetRayIntersection(Ray ray, out double distance, out Point2D uvCoord)
         {
-            Vector3 normal = (position - Position);
-            normal.Normalize();
-            return normal;
+            bool isIntersecting = TryGetRayIntersection(ray, out distance);
+            
+            if (isIntersecting){
+                Point3D intersection = ray.GetPointOnRay(distance);
+                Vector3D vector = intersection - Position;
+
+                double vectorXZAngle = Math.Atan(vector.X / vector.Z);
+                double vectorXYAngle = Math.Atan(vector.X / vector.Y);
+
+                Vector4 objectRotation = Rotation.ToAxisAngle();
+
+                double XYrotation = objectRotation.Z + vectorXYAngle;
+                double XZrotation = objectRotation.Y + vectorXZAngle;
+
+                uvCoord = new Point2D((float)XYrotation, (float)XZrotation);
+            }
+            else
+            {
+                uvCoord = Point2D.Zero;
+            }
+
+            return isIntersecting;
         }
     }
 }
@@ -59,14 +90,14 @@ namespace rt004.SceneObjects.Loading
 
         public SphereLoader() { }
 
-        public SphereLoader(Vector3 position, Vector3 rotation, Color4 color, float diameter) : base(position, rotation, color)
+        public SphereLoader(Point3D position, Vector3 rotation, MaterialLoader material, float diameter) : base(position, rotation, material)
         {
             this.diameter = diameter;
         }
 
         public override SceneObject CreateInstance(Scene parentScene)
         {
-            return new Sphere(parentScene, position, rotation, color, diameter);
+            return new Sphere(parentScene, new Point3D(position), rotation, material.CreateInstance(), diameter);
         }
     }
 }
