@@ -108,7 +108,7 @@ namespace rt004.SceneObjects
                     {
                         if (solid.TryGetRayIntersection(ray, out Point3D intersection, out Point2D uvCoordinates))
                         {
-                            var intersectionToCamera = intersection - Position;
+                            var intersectionToCamera = Position - intersection;
                             if (intersectionToCamera.LengthSquared <= distanceOfIntersectionSquared)
                             {
                                 // Phong model implemented
@@ -140,7 +140,7 @@ namespace rt004.SceneObjects
                                     Vector3D halfVector = (intersectionToCamera + intersectionToLightSource);
                                     halfVector.Normalize();
 
-                                    Vector3D reflectedLightDirection = intersectionToLightSource - normal * (Vector3D.Dot(normal, intersectionToLightSource) * 2);
+                                    Vector3D reflectedLightDirection = normal * (Vector3D.Dot(normal, intersectionToLightSource) * 2) - intersectionToLightSource;
 
                                     intensity = specularPower * solid.material.GetSpecularFactor(uvCoordinates);
                                     float shininess = (float)solid.material.GetShininessFactor(uvCoordinates);
