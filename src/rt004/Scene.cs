@@ -203,13 +203,17 @@ namespace rt004
         /// <param name="distance">return value of distance from ray origin</param>
         /// <param name="maxDistance">maximal value of distance</param>
         /// <param name="minDistance">minimal distance of value</param>
-        /// <returns>true when any object is intersected by ray and distance is in beatween min and max distances</returns>
+        /// <returns>true when any object is intersected by ray and distance is in beatween min and max distances otherwise retunrs false</returns>
         public bool CastRay(Ray ray, out double distance, double maxDistance, double minDistance = 0d)
         {
             var isIntersecting = CastRay(ray, out distance);
-            isIntersecting = isIntersecting && (distance > minDistance || distance.isFloatEqual(minDistance)) && distance < maxDistance;
+
+            isIntersecting = isIntersecting &&
+                             (distance >= minDistance || distance.isFloatEqual(minDistance)) &&
+                             (distance <= maxDistance || distance.isFloatEqual(maxDistance));
             return isIntersecting;
         }
+
 
         /// <summary>
         /// Casts ray in a scene and checks for intersections with Solids.
@@ -241,6 +245,13 @@ namespace rt004
             return hasIntersected;
         }
 
+
+        /// <summary>
+        /// Casts ray in scene and intersect with scene objects.
+        /// </summary>
+        /// <param name="ray">Ray to cast</param>
+        /// <param name="closestIntersection">ClosestIntersection point with the closest intersected object in scene. Sensible value only when function returns true</param>
+        /// <returns>Returns true if intersection has been found, otherwise false.</returns>
         public bool CastRay( Ray ray, out Point3D closestIntersection)
         {
             bool hasIntersected = CastRay(ray, out double parameter);
@@ -248,6 +259,13 @@ namespace rt004
             return hasIntersected;
         }
 
+        /// <summary>
+        /// Casts ray in scene and intersect with scene objects.
+        /// </summary>
+        /// <param name="ray">Ray to cast</param>
+        /// <param name="closestIntersection">ClosestIntersection point with the closest intersected object in scene. Sensible value only when function returns true</param>
+        /// <param name="intersectedBody">The closest intersected body, Sansible value only when function retruns true</param>
+        /// <returns>Returns true if intersection has been found, otherwise false.</returns>
         public bool CastRay(Ray ray, out Point3D closestIntersection, out Solid intersectedBody)
         {
             bool hasIntersected = CastRay(ray, out double parameter, out intersectedBody);
