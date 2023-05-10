@@ -1,6 +1,7 @@
 ﻿using OpenTK.Mathematics;
 using rt004.SceneObjects;
 using rt004.Util;
+using rt004.Util.LightModels;
 using Util;
 
 namespace rt004.SceneObjects
@@ -11,6 +12,8 @@ namespace rt004.SceneObjects
 
         private const float maxFoV = float.Pi - float.Pi / 180; // 179° in radians
         private float fov;
+
+        public ILightModel lightModel;
 
 
         public float FoV
@@ -53,11 +56,12 @@ namespace rt004.SceneObjects
             }
         }
 
-        public Camera(Scene parentScene, Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height) : base(parentScene, position, rotation)
+        public Camera(Scene parentScene, Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height, ILightModel lightModel ) : base(parentScene, position, rotation)
         {
             this.backgroundColor = backgroundColor;
             FoV = fov;
             SetResolution(width, height);
+            this.lightModel = lightModel;
         }
 
         public void SetResolution(uint width, uint height)
@@ -119,38 +123,12 @@ namespace rt004.SceneObjects
                                 Vector4 baseColor = (Vector4)solid.material.GetBaseColor(uvCoordinates);
 
                                 Vector4 pixelColorVector = baseColor * (Vector4)ParentScene.AmbientLightColor * ParentScene.AmbientLightIntensity;
-                                float intensity = 0;
+                                
                                 foreach (LightSource light in ParentScene.GetLightSources())
                                 {
-                                    Vector3D intersectionToLightSource = (light.Position - intersection).Normalized();
-
-                                    (var diffusePower, var specularPower) = light.LightIntensityAt(intersection); //TODO detect if the point is directly lit 
-                                    
-                                    Vector3D normal = solid.GetNormalAt(intersection);
-
-
-                                    //diffuse light part
-                                    intensity = diffusePower * solid.material.GetDiffuseFactor(uvCoordinates);
-
-                                    float cosOfAngleLightSourceToNormal = (float)Vector3D.Dot(normal, intersectionToLightSource);
-                                    Vector4 diffuseColor = baseColor * intensity * MathF.Max(0, cosOfAngleLightSourceToNormal);
-
-
-                                    //specluar light part
-                                    Vector3D halfVector = (intersectionToCamera + intersectionToLightSource);
-                                    halfVector.Normalize();
-
-                                    Vector3D reflectedLightDirection = normal * (Vector3D.Dot(normal, intersectionToLightSource) * 2) - intersectionToLightSource;
-
-                                    intensity = specularPower * solid.material.GetSpecularFactor(uvCoordinates);
-                                    float shininess = (float)solid.material.GetShininessFactor(uvCoordinates);
-
-                                    Vector4 specularColor = (Vector4)light.Color * intensity * MathF.Pow( (float)Math.Max(Vector3D.Dot(intersectionToCamera, reflectedLightDirection), 0), shininess);                                     
-                                    
-                                    //add to result pixel color
-                                    pixelColorVector += specularColor + diffuseColor;
+                                    pixelColorVector += lightModel.ComputeLightColor(ray, intersection, uvCoordinates, solid, light);
                                 }
-                                // get fianl color
+                                // get fianal color
                                 pixelColor = (Color4)pixelColorVector;
                             }
                         }
@@ -190,7 +168,7 @@ namespace rt004.SceneObjects.Loading
         {
             if (!hasCameraFoVBeenConverted)
                 fov = fov / 180 * MathF.PI;
-            return new Camera(parentScene, new Point3D(position), rotation, backgroundColor, fov, width, height);
+            return new Camera(parentScene, new Point3D(position), rotation, backgroundColor, fov, width, height, new NonRefractionPhongModel());
         }
     }
 }
