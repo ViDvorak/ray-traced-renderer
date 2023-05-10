@@ -40,13 +40,15 @@ namespace rt004.Util
             var serializer = new XmlSerializer(typeof(DataLoader));
 
             DataLoader data = new DataLoader();
+            
+            /*
             // tests
             data.output = "output.pfm";
             
             SceneLoader scene = new SceneLoader();
             TextureLoader whiteUniform = new UniformTextureLoader(Color4.White);
 
-            /*
+            
             var material = new MaterialLoader(Color4.Gold, 0.5f, 0.5f, 1f);
 
             scene.solidLoaders.Add(new SphereLoader(new Point3D(1, 2, 3), new Vector3(3, 2, 1), material, 1));
