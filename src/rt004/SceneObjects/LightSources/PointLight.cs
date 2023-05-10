@@ -36,10 +36,16 @@ namespace rt004.SceneObjects
         /// <returns>Returns two light intensities (Diffuse, Specular)</returns>
         public override (float, float) LightIntensityAt(Point3D point)
         {
-            Vector3D lightToPoint = point - Position;
-            float intensity = (float)(LightPower / (param1 * lightToPoint.LengthSquared + param2 * lightToPoint.Length + param3));
-            bool isPathClear = !ParentScene.CastRay(new Ray(Position, lightToPoint), out double param, 1);
-            return isPathClear ? ( diffuseFactor * intensity, specularFactor * intensity) : (0f, 0f);
+            Vector3D pointToLight = Position - point;
+            float intensity = (float)(LightPower / (param1 * pointToLight.LengthSquared + param2 * pointToLight.Length + param3));
+            bool isPathClear = !ParentScene.CastRay(new Ray(point, pointToLight), out double param, pointToLight.Length);
+
+            var result = (diffuseFactor * intensity, specularFactor * intensity);
+            if (!isPathClear)
+                result = (0, 0);
+
+            return result;
+            //return isPathClear ? ( diffuseFactor * intensity, specularFactor * intensity) : (0f, 0f);
         }
     }
 }
