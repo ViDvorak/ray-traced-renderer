@@ -64,6 +64,11 @@ namespace rt004.SceneObjects
             this.lightModel = lightModel;
         }
 
+        /// <summary>
+        /// sets resolution of the camera
+        /// </summary>
+        /// <param name="width">camera width in pixels</param>
+        /// <param name="height">camera height in pixels</param>
         public void SetResolution(uint width, uint height)
         {
             this.width = width;
@@ -71,6 +76,10 @@ namespace rt004.SceneObjects
             pixelDensity = Math.Max(width, height) / (2 * Math.Tan(fov / 2));
         }
 
+        /// <summary>
+        /// gets camera resolution.
+        /// </summary>
+        /// <returns>returns tuple of uints representing width and height respectivly</returns>
         public (uint, uint) GetResolution()
         {
             return (width, height);

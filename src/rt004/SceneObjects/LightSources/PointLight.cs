@@ -13,6 +13,12 @@ namespace rt004.SceneObjects
         public PointLight(Scene parentScene, Point3D position, Vector3 rotation, Color4 color, float intensity, float diffuseFactor, float specularFactor) :
                    base(parentScene, position, rotation, color, intensity, diffuseFactor, specularFactor) { }
 
+
+        /// <summary>
+        /// Computes diffuse intensity of light from this light at specified point
+        /// </summary>
+        /// <param name="point">point to compute intensity at</param>
+        /// <returns>Returns the intensity</returns>
         public override float DiffuseLightIntensityAt(Point3D point)
         {
             Vector3D lightToPoint = point - Position;
@@ -21,6 +27,11 @@ namespace rt004.SceneObjects
             return isPathClear ? (float)intensity : 0f;
         }
 
+        /// <summary>
+        /// Computes specular intensity of light from this light at specified point
+        /// </summary>
+        /// <param name="point">point to compute intensity at</param>
+        /// <returns>Returns the intensity</returns>
         public override float SpecularLightIntensityAt(Point3D point)
         {
             Vector3D lightToPoint = point - Position;
