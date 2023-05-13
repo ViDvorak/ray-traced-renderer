@@ -46,6 +46,9 @@ namespace rt004
             this.AmbientLightIntensity = ambientLightIntensity;
         }
 
+        /// <summary>
+        /// Main Camera to render from by default
+        /// </summary>
         public Camera? MainCamera
         {
             get
@@ -63,6 +66,12 @@ namespace rt004
             }
         }
 
+
+        /// <summary>
+        /// Adds camera to scene
+        /// </summary>
+        /// <param name="camera">camrera to add</param>
+        /// <param name="setAsMain">defines if the camera should be set as mainCamera or not(it is set automaticly if there is no MainCamera)</param>
         public void AddCamera(Camera camera, bool setAsMain = false)
         {
             if (cameras.Add(camera))
@@ -73,10 +82,18 @@ namespace rt004
             }
         }
 
+        /// <summary>
+        /// Gets all cameras in scene
+        /// </summary>
+        /// <returns>returns array of cameras</returns>
         public Camera[] GetCameras() {
             return cameras.ToArray();
         }
 
+        /// <summary>
+        /// Remove camera from scene
+        /// </summary>
+        /// <param name="camera">camera to remove</param>
         public void RemoveCamera(Camera camera)
         {
             if (cameras.Remove(camera))
@@ -89,30 +106,60 @@ namespace rt004
                 enumer.Dispose();
             }
         }
-
+        
+        /// <summary>
+        /// Adds solid to scene
+        /// </summary>
+        /// <param name="solid">solid to add</param>
         public void AddSolid(Solid solid)
         {
             if (solids.Add(solid))
                 solid.ParentScene = this;
         }
+
+        /// <summary>
+        /// Removes an solid from the scene
+        /// </summary>
+        /// <param name="solid">Solid to remove</param>
         public void RemoveSolid(Solid solid) {
             if (solids.Remove(solid))
                 solid.ParentScene = null;
         }
+
+        /// <summary>
+        /// Gets all solids in scene
+        /// </summary>
+        /// <returns>Returns array of all solids in scene</returns>
         public Solid[] GetSolids() => solids.ToArray();
 
+        /// <summary>
+        /// Add LightSource from the scene
+        /// </summary>
+        /// <param name="light">LightSource to add</param>
         public void AddLight(LightSource light)
         {
             if (lights.Add(light))
                 light.ParentScene = this;
         }
 
+
+        /// <summary>
+        /// Removes LightSource from the scene
+        /// </summary>
+        /// <param name="light">LightSource to remove</param>
         public void RemoveLight(LightSource light)
         {
             if (lights.Remove(light))
                 light.ParentScene = null;
         }
 
+
+        /// <summary>
+        /// Adds an SceneObject to scene.
+        /// It is better to use: AddCamera(), AddSolid(), AddLightSource()
+        /// </summary>
+        /// <param name="sceneObject">Scene object to add</param>
+        /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
         public void AddSceneObject(SceneObject sceneObject)
         {
             if (sceneObject is Camera camera)
@@ -136,6 +183,12 @@ namespace rt004
             }
         }
 
+        /// <summary>
+        /// Removes an SceneObject from scene.
+        /// It is better to use: RemoveCamera(), RemoveSolid(), RemoveLightSource()
+        /// </summary>
+        /// <param name="sceneObject">Scene object to remove</param>
+        /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
         public void RemoveSceneObject(SceneObject sceneObject)
         {
             if (sceneObject is Camera camera)
@@ -155,12 +208,21 @@ namespace rt004
 
             else
             {
-                throw new NotImplementedException("Not known class derived from SceneObject");
+                throw new NotImplementedException("Not known class, derived from SceneObject");
             }
         }
 
+        /// <summary>
+        /// Gets array of all light sources from scene
+        /// </summary>
+        /// <returns>Returns array of light sources</returns>
         public LightSource[] GetLightSources() => lights.ToArray();
 
+        /// <summary>
+        /// Renders image from main camera
+        /// </summary>
+        /// <returns>Returns rendered image</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public FloatImage RenderScene() {
             if (mainCamera == null)
             {
@@ -172,6 +234,10 @@ namespace rt004
             return mainCamera.RenderImage();
         }
 
+        /// <summary>
+        /// Renderes images from all cameras in scene
+        /// </summary>
+        /// <returns>Array of rendered images</returns>
         public FloatImage[] RenderSceneWithAllCameras() {
             List<FloatImage> images = new List<FloatImage>();
             Solid[] bodies = GetSolids();
