@@ -10,18 +10,14 @@ namespace rt004.SceneObjects
         BasicPlane plane;
 
         public Plane(Scene parentScene, Point3D position, Vector3 rotation)
-            : this(parentScene, position, rotation,
-                  new Material(
-                      new UniformTexture( RendererSettings.defaultSolidColor),
-                      new MonochromeUniformTexture( RendererSettings.defaultMaterialDiffuseFactor),
-                      new MonochromeUniformTexture( RendererSettings.defaultMaterialSpecularFactor),
-                      new MonochromeUniformTexture( RendererSettings.defaultMaterialShininessFactor)
-                      )
-                  )
+            : this(parentScene, position, rotation, Material.GetMaterialFor(RendererSettings.lightModel))
         { }
 
         public Plane(Scene parentScene, Point3D position, Vector3 rotation, Material material) : base(parentScene, position, rotation, material)
         {
+            if (material.GetType() != Material.GetMaterialFor(RendererSettings.lightModel).GetType())
+                throw new InvalidCastException("Set material is not of the same type as set in renderer");
+
             plane = new BasicPlane(position, new Vector3D( Vector3.Transform( Vector3.UnitZ, Rotation)));
         }
 
@@ -38,7 +34,7 @@ namespace rt004.SceneObjects
         public override bool TryGetRayIntersection(Ray ray, out double distance, out Point2D uvCoord)
         {
             bool hasIntersected = TryGetRayIntersection(ray, out distance);
-            var intersection = ray.Origin + ray.Direction * distance;
+            var intersection = ray.GetPointOnRay( distance);
 
             uvCoord = Point2D.Zero;
             if (hasIntersected)

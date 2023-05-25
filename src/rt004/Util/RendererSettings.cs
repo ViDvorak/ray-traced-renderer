@@ -1,27 +1,118 @@
 ﻿using OpenTK.Mathematics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using rt004.Util;
+using rt004.Util.LightModels;
 
 namespace rt004.Util
 {
     internal static class RendererSettings
     {
-        public const float epsilon = 0.000_001f;
+        public static float         epsilon = 0.001f;
 
-        public static readonly Color4 defaultBacgroundColor = Color4.Gray;
-        public static readonly Color4 defaultSolidColor = Color4.Lime;
+        public static Color4        defaultBacgroundColor            = Color4.Gray;
+        public static Color4        defaultSolidColor                = Color4.Lime;
                
+        //Phong material default values
+        public static float         defaultMaterialSpecularFactor       = 0f;
+        public static float         defaultMaterialReflectivnessFactor  = 0f;
+        public static float         defaultMaterialDiffuseFactor        = 1f;
+        public static float         defaultMaterialShininessFactor      = 2f;
+        public static float         defaultMaterialIndexOfRefraction    = 0.9f;
 
-        public const float defaultMaterialSpecularFactor = 0f;
-        public const float defaultMaterialDiffuseFactor = 1f;
-        public const float defaultMaterialShininessFactor = 2f;
+        public static float         defaultMaterialRoughnessFactor      = 1f;
 
 
-        public const float defaultAmbientLightFactor = 0.1f;
-        public static readonly Color4 defaultAmbientLightColor = Color4.White;
+
+        public static float         defaultAmbientLightFactor        = 0.1f;
+        public static Color4        defaultAmbientLightColor         = Color4.White;
+        public static float         defaultMaterialReflectionIntensity = 0.9f;
+
+
+        //rendering settings
+        public static LightModel    lightModel                       = LightModel.PhongModel;
+        public static uint          maxReflectionDepth               = 8;
+        public static bool          shadows                          = false;
+        public static bool          reflections                      = false;
+        public static float         minRayContribution               = 0.001f;
+    }
+
+
+
+    public enum LightModel
+    {
+        PhongModel
+    }
+
+    public static class LightModelExtensions
+    {
+        public static LightModelComputation GetLightModelComputation(this LightModel lightModel)
+        {
+            LightModelComputation model;
+            switch (lightModel)
+            {
+                case LightModel.PhongModel:
+                    model = new PhongModel();
+                    break;
+                default:
+                    throw new NotImplementedException("Light model is not known");
+            }
+
+            return model;
+        }
+    }
+}
+
+namespace rt004.UtilLoading
+{
+    public class RendererSettingsLoader
+    {
+        public float epsilon = RendererSettings.epsilon;
+
+        public Color4 defaultBacgroundColor = RendererSettings.defaultBacgroundColor;
+        public Color4 defaultSolidColor = RendererSettings.defaultSolidColor;
+
+
+        public float defaultSpecularFactor = RendererSettings.defaultMaterialSpecularFactor;
+        public float defaultDiffuseFactor = RendererSettings.defaultMaterialDiffuseFactor;
+        public float defaultRoughnessFactor = RendererSettings.defaultMaterialRoughnessFactor;
+        public float defaultShininessFactor = RendererSettings.defaultMaterialShininessFactor;
+        public float defaultIndexOfRefraction = RendererSettings.defaultMaterialIndexOfRefraction;
+
+
+        public float defaultAmbientLightFactor = RendererSettings.defaultAmbientLightFactor;
+        public Color4 defaultAmbientLightColor = RendererSettings.defaultAmbientLightColor;
+        
+        
+        public string lightModel = "PhongModel";
+        public uint maxReflectionDepth = 8;
+        public bool shadows = false;
+        public bool reflections = false;
+        public float minRayContribution = 0.001f;
+
+
+
+
+        public void SaveLoadedSettings()
+        {
+            RendererSettings.epsilon = epsilon;
+
+            RendererSettings.defaultBacgroundColor = defaultBacgroundColor;
+            RendererSettings.defaultSolidColor = defaultSolidColor;
+
+            RendererSettings.defaultMaterialSpecularFactor = defaultSpecularFactor;
+            RendererSettings.defaultMaterialDiffuseFactor = defaultDiffuseFactor;
+            RendererSettings.defaultMaterialRoughnessFactor = defaultRoughnessFactor;
+            RendererSettings.defaultMaterialShininessFactor = defaultShininessFactor;
+            RendererSettings.defaultMaterialIndexOfRefraction = defaultIndexOfRefraction;
+
+            RendererSettings.defaultAmbientLightColor = defaultAmbientLightColor;
+            RendererSettings.defaultAmbientLightFactor = defaultAmbientLightFactor;
+
+
+            RendererSettings.lightModel = (LightModel)Enum.Parse(typeof(LightModel), lightModel);
+            RendererSettings.shadows = shadows;
+            RendererSettings.reflections = reflections;
+            RendererSettings.minRayContribution = minRayContribution;
+            RendererSettings.maxReflectionDepth = maxReflectionDepth;
+        }
     }
 }

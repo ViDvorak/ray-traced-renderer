@@ -1,5 +1,4 @@
 ﻿using OpenTK.Mathematics;
-using rt004.SceneObjects;
 using rt004.Util;
 using rt004.Util.LightModels;
 using Util;
@@ -12,8 +11,6 @@ namespace rt004.SceneObjects
 
         private const float maxFoV = float.Pi - float.Pi / 180; // 179° in radians
         private float fov;
-
-        public ILightModel lightModel;
 
 
         public float FoV
@@ -56,12 +53,12 @@ namespace rt004.SceneObjects
             }
         }
 
-        public Camera(Scene parentScene, Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height, ILightModel lightModel ) : base(parentScene, position, rotation)
+        public Camera(Scene parentScene, Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height ) 
+            : base(parentScene, position, rotation)
         {
             this.backgroundColor = backgroundColor;
             FoV = fov;
             SetResolution(width, height);
-            this.lightModel = lightModel;
         }
 
         /// <summary>
@@ -104,44 +101,27 @@ namespace rt004.SceneObjects
         public FloatImage RenderImage()
         {
             float maxIntensity = 0;
-
+            float debugX = 0, debugY = 449;
 
             FloatImage image = new FloatImage((int)width, (int)height, 3);
+
+            LightModelComputation lightModel = RendererSettings.lightModel.GetLightModelComputation();
 
             for (int y = 0; y < height; ++y)
             {
                 for (int x = 0; x < width; ++x)
                 {
-                    Color4 pixelColor = backgroundColor;
-                    double distanceOfIntersectionSquared = maxRenderingDistanceSquered;
+                    if (x == debugX && y == debugY)
+                    { /* For Debug */ }
 
+                    Color4 pixelColor = backgroundColor;
                     Ray ray = GetRayFromScreenSpace(x + 0.5, y + 0.5);
 
-                    foreach (var solid in ParentScene.GetSolids())
+                    if (ParentScene.CastRay(ray, out IntersectionProperties properties))
                     {
-                        if (solid.TryGetRayIntersection(ray, out Point3D intersection, out Point2D uvCoordinates))
-                        {
-                            var intersectionToCamera = Position - intersection;
-                            if (intersectionToCamera.LengthSquared <= distanceOfIntersectionSquared)
-                            {
-                                // Phong model implemented
-                                distanceOfIntersectionSquared = intersectionToCamera.LengthSquared;
-                                
-                                intersectionToCamera.Normalize();
-
-                                Vector4 baseColor = (Vector4)solid.material.GetBaseColor(uvCoordinates);
-
-                                Vector4 pixelColorVector = baseColor * (Vector4)ParentScene.AmbientLightColor * ParentScene.AmbientLightIntensity;
-                                
-                                foreach (LightSource light in ParentScene.GetLightSources())
-                                {
-                                    pixelColorVector += lightModel.ComputeLightColor(ray, intersection, uvCoordinates, solid, light);
-                                }
-                                // get fianal color
-                                pixelColor = (Color4)pixelColorVector;
-                            }
-                        }
+                        pixelColor = lightModel.ComputeLightColor(properties, backgroundColor, ParentScene.GetLightSources());
                     }
+
                     image.PutPixel(x, y, new float[] { pixelColor.R, pixelColor.G, pixelColor.B });
                 }
             }
@@ -160,12 +140,14 @@ namespace rt004.SceneObjects.Loading
 
         public uint width, height;
 
+        public string lightModelName;
 
         private bool hasCameraFoVBeenConverted = false;
 
-        public CameraLoader() {}
+        public CameraLoader() { }
 
-        public CameraLoader(Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height) : base(position, rotation)
+        public CameraLoader(Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height)
+            : base(position, rotation)
         {
             this.backgroundColor = backgroundColor;
             this.fov = fov; hasCameraFoVBeenConverted = true;
@@ -177,7 +159,7 @@ namespace rt004.SceneObjects.Loading
         {
             if (!hasCameraFoVBeenConverted)
                 fov = fov / 180 * MathF.PI;
-            return new Camera(parentScene, new Point3D(position), rotation, backgroundColor, fov, width, height, new NonRefractionPhongModel());
+            return new Camera(parentScene, new Point3D(position), rotation, backgroundColor, fov, width, height);
         }
     }
 }

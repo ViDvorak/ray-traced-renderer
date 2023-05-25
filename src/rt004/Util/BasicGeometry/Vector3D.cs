@@ -168,6 +168,10 @@ namespace rt004.Util
 
 
 
+        public static Vector3D operator *(Vector3D vector, Vector3D scale)
+        {
+            return new Vector3D(vector.AsVector * scale.AsVector);
+        }
 
         public static Vector3D operator *(Vector3D vector, Vector3d scale)
         {

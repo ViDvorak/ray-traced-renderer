@@ -38,23 +38,23 @@ namespace rt004.SceneObjects
         /// </summary>
         /// <param name="point">Position where to compute the intensity</param>
         /// <returns>returns diffuse intensity</returns>
-        abstract public float DiffuseLightIntensityAt(Point3D point);
+        abstract public float DiffuseLightIntensityAt(Point3D point, bool areShadowsEnabled);
 
         /// <summary>
         /// Computes specular light intensity at specified position.
         /// </summary>
         /// <param name="point">Position where to compute the intensity</param>
         /// <returns>returns Specular intensity</returns>
-        abstract public float SpecularLightIntensityAt(Point3D point);
+        abstract public float SpecularLightIntensityAt(Point3D point, bool areShadowsEnabled);
 
         /// <summary>
         /// Computes Diffuse and Specular light insnsity at specific point.
         /// </summary>
         /// <param name="point">position where to compute intensity</param>
         /// <returns>Returns two light intensities (Diffuse, Specular)</returns>
-        public virtual (float, float) LightIntensityAt(Point3D point)
+        public virtual (float, float) LightIntensityAt(Point3D point, bool areShadowsEnabled)
         {
-            return (DiffuseLightIntensityAt(point), SpecularLightIntensityAt(point));
+            return (DiffuseLightIntensityAt(point, areShadowsEnabled), SpecularLightIntensityAt(point, areShadowsEnabled));
         }
     }
 }

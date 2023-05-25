@@ -151,6 +151,11 @@ namespace rt004.Util
 
 
 
+        public static Vector2D operator *(Vector2D vector, Vector2D scale)
+        {
+            return new Vector2D(vector.AsVector * scale.AsVector);
+        }
+
         public static Vector2D operator *(Vector2D direction, Vector2d scale)
         {
             return new Vector2D(direction.AsVector * scale);

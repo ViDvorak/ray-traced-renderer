@@ -50,8 +50,8 @@ namespace rt004.Util
             int xBasicRounding = (int)position.X;
             int yBasicRounding = (int)position.Y;
 
-            int xCoord = position.X.isFloatEquals(xBasicRounding) ? xBasicRounding : xBasicRounding + 1;
-            int yCoord = position.Y.isFloatEquals(yBasicRounding) ? yBasicRounding : yBasicRounding + 1;
+            int xCoord = position.X.isFloatEqual(xBasicRounding) ? xBasicRounding : xBasicRounding + 1;
+            int yCoord = position.Y.isFloatEqual(yBasicRounding) ? yBasicRounding : yBasicRounding + 1;
             return (xCoord, yCoord);
         }
 
@@ -65,8 +65,8 @@ namespace rt004.Util
             int xBasicRounding = (int)position.X;
             int yBasicRounding = (int)position.Y;
 
-            int xCoord = position.X.isFloatEquals(xBasicRounding + 1) ? xBasicRounding + 1 : xBasicRounding;
-            int yCoord = position.Y.isFloatEquals(yBasicRounding + 1) ? yBasicRounding + 1 : yBasicRounding;
+            int xCoord = position.X.isFloatEqual(xBasicRounding + 1) ? xBasicRounding + 1 : xBasicRounding;
+            int yCoord = position.Y.isFloatEqual(yBasicRounding + 1) ? yBasicRounding + 1 : yBasicRounding;
             return (xCoord, yCoord);
         }
 
@@ -104,7 +104,7 @@ namespace rt004.Util
 
         public static bool operator ==(Point2D value, Point2D other)
         {
-            return value.X.isFloatEquals(other.X) && value.Y.isFloatEquals(other.Y);
+            return value.X.isFloatEqual(other.X) && value.Y.isFloatEqual(other.Y);
         }
 
         public static bool operator !=(Point2D value, Point2D other)

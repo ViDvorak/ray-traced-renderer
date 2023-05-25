@@ -1,22 +1,17 @@
 ﻿using OpenTK.Mathematics;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace rt004.Util
 {
     public struct Point3D
     {
-        readonly Vector3 position;
+        readonly Vector3d position;
 
-        public readonly Vector3 AsVector { get => position; }
+        public readonly Vector3d AsVector { get => position; }
 
-        public float X { get => position.X; }
-        public float Y { get => position.Y; }
-        public float Z { get => position.Z; }
+        public double X { get => position.X; }
+        public double Y { get => position.Y; }
+        public double Z { get => position.Z; }
 
         public readonly double DistanceFromOrigin { get => position.Length; }
         public readonly double DistanceFromOriginSquared { get => position.LengthSquared; }
@@ -27,14 +22,14 @@ namespace rt004.Util
 
 
 
-        public Point3D(Vector3 position)
+        public Point3D(Vector3d position)
         {
             this.position = position;
         }
 
-        public Point3D(float x, float y, float z)
+        public Point3D(double x, double y, double z)
         {
-            this.position = new Vector3(x, y, z);
+            this.position = new Vector3d(x, y, z);
         }
 
 
@@ -50,9 +45,9 @@ namespace rt004.Util
             int yBasicRounding = (int)position.Y;
             int zBasicRounding = (int)position.Z;
 
-            int xCoord = position.X.isFloatEquals(xBasicRounding) ? xBasicRounding : xBasicRounding + 1;
-            int yCoord = position.Y.isFloatEquals(yBasicRounding) ? yBasicRounding : yBasicRounding + 1;
-            int zCoord = position.Z.isFloatEquals(zBasicRounding) ? zBasicRounding : zBasicRounding + 1;
+            int xCoord = position.X.isFloatEqual(xBasicRounding) ? xBasicRounding : xBasicRounding + 1;
+            int yCoord = position.Y.isFloatEqual(yBasicRounding) ? yBasicRounding : yBasicRounding + 1;
+            int zCoord = position.Z.isFloatEqual(zBasicRounding) ? zBasicRounding : zBasicRounding + 1;
             return (xCoord, yCoord, zCoord);
         }
 
@@ -67,9 +62,9 @@ namespace rt004.Util
             int yBasicRounding = (int)position.Y;
             int zBasicRounding = (int)position.Z;
 
-            int xCoord = position.X.isFloatEquals(xBasicRounding + 1) ? xBasicRounding + 1 : xBasicRounding;
-            int yCoord = position.Y.isFloatEquals(yBasicRounding + 1) ? yBasicRounding + 1 : yBasicRounding;
-            int zCoord = position.Z.isFloatEquals(zBasicRounding + 1) ? zBasicRounding + 1 : zBasicRounding;
+            int xCoord = position.X.isFloatEqual(xBasicRounding + 1) ? xBasicRounding + 1 : xBasicRounding;
+            int yCoord = position.Y.isFloatEqual(yBasicRounding + 1) ? yBasicRounding + 1 : yBasicRounding;
+            int zCoord = position.Z.isFloatEqual(zBasicRounding + 1) ? zBasicRounding + 1 : zBasicRounding;
             return (xCoord, yCoord, zCoord);
         }
 
@@ -95,9 +90,8 @@ namespace rt004.Util
 
 
         #region Operators
-
-        public static explicit operator Vector3(Point3D point) => point.position;
-        public static explicit operator Vector3d(Point3D point) => (Vector3d)point.position;
+        public static explicit operator Vector3(Point3D point) => (Vector3)point.position;
+        public static explicit operator Vector3d(Point3D point) => point.position;
 
 
 
@@ -109,7 +103,7 @@ namespace rt004.Util
 
         public static bool operator ==(Point3D value, Point3D other)
         {
-            return value.X.isFloatEquals(other.X) && value.Y.isFloatEquals(other.Y) && value.Z.isFloatEquals(other.Z);
+            return value.X.isFloatEqual(other.X) && value.Y.isFloatEqual(other.Y) && value.Z.isFloatEqual(other.Z);
         }
 
         public static bool operator !=(Point3D value, Point3D other)
@@ -160,6 +154,11 @@ namespace rt004.Util
         }
 
         public static Point3D operator /(Point3D point, Vector3 scale)
+        {
+            return point / (Vector3d)scale;
+        }
+
+        public static Point3D operator /(Point3D point, Vector3d scale)
         {
             return new Point3D(point.AsVector / scale);
         }

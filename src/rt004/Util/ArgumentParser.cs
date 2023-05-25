@@ -8,6 +8,8 @@ using rt004.Materials.Loading;
 using rt004.Materials;
 using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
+using rt004.UtilLoading;
+using rt004.MaterialLoading;
 
 namespace rt004.Util
 {
@@ -43,21 +45,34 @@ namespace rt004.Util
 
 			DataLoader data = new DataLoader();
 			
-			/*
+			
 			// tests
 			data.output = "output.pfm";
 			
 			SceneLoader scene = new SceneLoader();
 			TextureLoader whiteUniform = new UniformTextureLoader(Color4.White);
 
-			
-			var material = new MaterialLoader(Color4.Gold, 0.5f, 0.5f, 1f);
+			/*
+			var rendererSetting = new RendererSettingsLoader();
+			rendererSetting.lightModel = "PhongModel";
+			var materialYellow = new PhongMaterialLoader(new Color4(1f, 1f, 0.2f, 1f), 0.2f, 0.5f, 10f, 1f);
+			var materialBlue = new PhongMaterialLoader	(new Color4(0.2f, 0.3f, 1f, 1f), 0.5f, 0.5f, 150f, 1f);
+			var materialRed = new PhongMaterialLoader	(new Color4(0.8f, 0.2f, 0.2f, 1f), 0.4f, 0.5f, 80f, 1f);
+			var materialGold = new PhongMaterialLoader	(new Color4(0.3f, 0.2f, 0f, 1f), 0.8f, 0.5f, 400f, 1f);
+			var materialWhite = new PhongMaterialLoader	(new Color4(0.9f, 0.9f, 0.9f, 1f), 0.4f, 0.5f, 80f, 1f);
 
-			scene.solidLoaders.Add(new SphereLoader(new Point3D(1, 2, 3), new Vector3(3, 2, 1), material, 1));
-			scene.solidLoaders.Add(new PlaneLoader(new Point3D(0, 0, 0), new Vector3(0, 0, 0), material));
+			scene.solidLoaders.Add(new SphereLoader(new Point3D(0, 0, 0), new Vector3(0, 0, 0), materialYellow, 1f));
+			scene.solidLoaders.Add(new SphereLoader(new Point3D(1.4f, -0.7, -0.5), new Vector3(0, 0, 0), materialBlue, 0.6f));
+			scene.solidLoaders.Add(new SphereLoader(new Point3D(-0.7f, 0.7f, -0.8f), new Vector3(0, 0, 0), materialRed, 0.1f));
+			scene.solidLoaders.Add(new SphereLoader(new Point3D(1.5f, 0.6f, 0.1f), new Vector3(0, 0, 0), materialGold, 0.5f));
+			scene.solidLoaders.Add(new PlaneLoader (new Point3D(0, -1.3f, 0), new Vector3(0, 0, 0), materialWhite));
 
-			scene.lightLoaders.Add(new PointLightLoader(new Point3D(5,5,5), Vector3.Zero, Color4.Azure, 10, 0.5f, 0.5f));
-			scene.cameraLoaders.Add( new CameraLoader(Point3D.Zero, Vector3.Zero, Color4.DimGray, MathF.PI / 2, 780, 600));
+			scene.ambientLightIntensity = 1f;
+			scene.ambientLightColor = Color4.White;
+			scene.lightLoaders.Add(new PointLightLoader(new Point3D(-10f, 8f, -6f), Vector3.Zero, Color4.White, 1, 1f, 1f));
+			scene.lightLoaders.Add(new PointLightLoader(new Point3D( 0f, 20f, -3f), Vector3.Zero, new Color4(0.3f, 0.3f, 0.3f, 1f), 1, 1f, 1f));
+
+			scene.cameraLoaders.Add( new CameraLoader(new Point3D(0.6f, 0f, -5.6f), new Vector3(0f, -0.03f, 0), new Color4(0.1f, 0.2f, 0.3f, 0f), MathF.PI * 4f / 9f, 600, 450));
 			data.sceneLoader = scene;
 
 			serializer.Serialize(Console.Out, data);
@@ -134,10 +149,19 @@ namespace rt004.Util
 				throw new ArgumentNullException("io input has been loaded");
 
 
-            int startIndex = input.IndexOf("<variables>") + "<variables>\n".Length + 1;
+            int startIndex = input.IndexOf("<variables>");
             int endIndex = input.IndexOf("</variables>");
 
-            string variableDefinitions = input.Substring(startIndex, endIndex - startIndex);
+
+			string variableDefinitions = "";
+			if (startIndex != -1 && endIndex != -1)
+			{
+				startIndex +="<variables>\n".Length + 1;
+
+                variableDefinitions = input.Substring(startIndex, endIndex - startIndex);
+			}
+			else if (startIndex != -1 ^ endIndex != -1)
+				throw new ArgumentException("section for variables is not correctly delimited");
 
             variables = ParseVariables(variableDefinitions);
 			return (input, variables);
@@ -184,7 +208,7 @@ namespace rt004.Util
 
 
 		/// <summary>
-		/// Parses config file to scene and output path.
+		/// Parses config file to scene, output path and saves rendererSettings.
 		/// </summary>
 		/// <param name="args">Command line parameters</param>
 		/// <param name="configFile">Path to config file</param>
@@ -193,12 +217,15 @@ namespace rt004.Util
 		{
 			DataLoader loadedData = ParseParameters(args, configFile);
 
+			loadedData.rendererSettings.SaveLoadedSettings();
+
 			return (loadedData.sceneLoader.CreateInstance(), loadedData.output);
 		}
 
 		public struct DataLoader
 		{
 			public string output;
+			public RendererSettingsLoader rendererSettings;
 			public SceneLoader sceneLoader;
 		}
 	}

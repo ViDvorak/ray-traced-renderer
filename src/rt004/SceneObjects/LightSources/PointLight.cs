@@ -19,11 +19,13 @@ namespace rt004.SceneObjects
         /// </summary>
         /// <param name="point">point to compute intensity at</param>
         /// <returns>Returns the intensity</returns>
-        public override float DiffuseLightIntensityAt(Point3D point)
+        public override float DiffuseLightIntensityAt(Point3D point, bool areShadowsEnabled)
         {
             Vector3D lightToPoint = point - Position;
             double intensity = diffuseFactor * this.LightPower / (param1 * lightToPoint.LengthSquared + param2 * lightToPoint.Length + param3);
-            bool isPathClear = !ParentScene.CastRay(new Ray(Position, lightToPoint), out double param, 1);
+            bool isPathClear = true;
+            if (areShadowsEnabled)
+                isPathClear = !ParentScene.CastRay(new Ray(Position, lightToPoint), out double param, lightToPoint.Length, 0.001f);
             return isPathClear ? (float)intensity : 0f;
         }
 
@@ -32,11 +34,13 @@ namespace rt004.SceneObjects
         /// </summary>
         /// <param name="point">point to compute intensity at</param>
         /// <returns>Returns the intensity</returns>
-        public override float SpecularLightIntensityAt(Point3D point)
+        public override float SpecularLightIntensityAt(Point3D point, bool areShadowsEnabled)
         {
-            Vector3D lightToPoint = point - Position;
-            double intensity = specularFactor * this.LightPower / (param1 * lightToPoint.LengthSquared + param2 * lightToPoint.Length + param3);
-            bool isPathClear = !ParentScene.CastRay(new Ray(Position, lightToPoint), out double param, 1);
+            Vector3D pointToLight = Position - point;
+            double intensity = specularFactor * this.LightPower / (param1 * pointToLight.LengthSquared + param2 * pointToLight.Length + param3);
+            bool isPathClear = true;
+            if (areShadowsEnabled)
+                isPathClear = !ParentScene.CastRay(new Ray(Position, pointToLight), out double param, pointToLight.Length, 0.001f);
             return isPathClear ? (float)intensity : 0f;
         }
 
@@ -45,11 +49,13 @@ namespace rt004.SceneObjects
         /// </summary>
         /// <param name="point">position where to compute intensity</param>
         /// <returns>Returns two light intensities (Diffuse, Specular)</returns>
-        public override (float, float) LightIntensityAt(Point3D point)
+        public override (float, float) LightIntensityAt(Point3D point, bool areShadowsEnabled)
         {
             Vector3D pointToLight = Position - point;
             float intensity = (float)(LightPower / (param1 * pointToLight.LengthSquared + param2 * pointToLight.Length + param3));
-            bool isPathClear = !ParentScene.CastRay(new Ray(point, pointToLight), out double param, pointToLight.Length);
+            bool isPathClear = true;
+            if (areShadowsEnabled)
+                isPathClear = !ParentScene.CastRay(new Ray(point, pointToLight), out double param);
 
             var result = (diffuseFactor * intensity, specularFactor * intensity);
             if (!isPathClear)

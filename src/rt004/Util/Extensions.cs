@@ -1,6 +1,5 @@
 ﻿using OpenTK.Mathematics;
 using rt004.Util;
-using System.Reflection.Metadata.Ecma335;
 
 namespace rt004
 {
@@ -11,7 +10,7 @@ namespace rt004
             return value + RendererSettings.epsilon > other && value - RendererSettings.epsilon < other;
         }
 
-        public static bool isFloatEquals(this float value, float other)
+        public static bool isFloatEqual(this float value, float other)
         {
             return value + RendererSettings.epsilon > other && value - RendererSettings.epsilon < other;
         }

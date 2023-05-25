@@ -1,10 +1,7 @@
-﻿using rt004.SceneObjects;
-using System.Collections.Generic;
-using Util;
-using OpenTK.Mathematics;
+﻿using OpenTK.Mathematics;
+using rt004.SceneObjects;
 using rt004.Util;
-using System.Xml.Serialization;
-using System.Collections.Specialized;
+using Util;
 
 namespace rt004
 {
@@ -27,7 +24,12 @@ namespace rt004
             lights = new HashSet<LightSource>();
         }
 
-        public Scene(Camera[]? cameras, Solid[]? solids, LightSource[]? lights, Color4 ambientLightColor, float ambientLightIntensity = RendererSettings.defaultAmbientLightFactor)
+        public Scene(Camera[]? cameras, Solid[]? solids, LightSource[]? lights)
+            : this(cameras, solids, lights, RendererSettings.defaultAmbientLightColor, RendererSettings.defaultAmbientLightFactor)
+        { }
+
+
+        public Scene(Camera[]? cameras, Solid[]? solids, LightSource[]? lights, Color4 ambientLightColor, float ambientLightIntensity)
         {
             if (cameras != null)
             {
@@ -294,19 +296,52 @@ namespace rt004
             bool hasIntersected = false;
             intersectedBody = null;
 
-            foreach (Solid body in solids)
+            foreach (Solid solid in solids)
             {
-                if (body.TryGetRayIntersection(ray, out distance))
+                if (solid.TryGetRayIntersection(ray, out distance))
                 {
                     hasIntersected = true;
                     if (closestIntersection > distance)
                     {
                         closestIntersection = distance;
-                        intersectedBody = body;
+                        intersectedBody = solid;
                     }
                 }
             }
             distance = closestIntersection;
+
+            return hasIntersected;
+        }
+
+
+
+
+
+        public bool CastRay(Ray ray, out IntersectionProperties properties)
+        {
+            return CastRay(ray, out properties, double.MaxValue);
+        }
+
+
+        public bool CastRay(Ray ray, out IntersectionProperties properties, double maxDistance, double minDistance = 0d)
+        {
+            double closestIntersection = double.MaxValue;
+            bool hasIntersected = false;
+
+            properties = new IntersectionProperties();
+
+            foreach (Solid solid in solids.Where(solid => (solid.Position - ray.Origin).Length < maxDistance && (solid.Position - ray.Origin).Length > minDistance))
+            {
+                if (solid.TryGetRayIntersection(ray, out IntersectionProperties currentPropertes))
+                {
+                    if (closestIntersection > currentPropertes.distance)
+                    {
+                        hasIntersected = true;
+                        closestIntersection = currentPropertes.distance;
+                        properties = currentPropertes; 
+                    }
+                }
+            }
 
             return hasIntersected;
         }

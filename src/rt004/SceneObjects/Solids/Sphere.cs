@@ -1,9 +1,7 @@
 ﻿using OpenTK.Mathematics;
 using rt004.Materials;
 using rt004.Util;
-using System.Net.Security;
 using rt004.Materials.Loading;
-using System.Xml.Linq;
 
 namespace rt004.SceneObjects
 {

@@ -33,7 +33,7 @@ namespace rt004.Util
             return - Vector3d.Dot((Vector3d)Normal, (Vector3d)PointOnPlane);
         }
 
-        public (Vector3D axisA, Vector3D axisB) GetAxesOnPlane()
+        public (Vector3D axisA, Vector3D axisB) GetAxisOnPlane()
         {
             var vector1 = Vector3D.OneX + Vector3D.OneZ;
             var vector2 = new Vector3D(1,1,1);

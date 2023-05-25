@@ -82,16 +82,17 @@ namespace rt004.Util
             if (cosineOfAngle.isFloatEqual(1f))
             {
                 distance = 0;
-                (var axis1, var axis2) = plane.GetAxesOnPlane();
+                (var axis1, var axis2) = plane.GetAxisOnPlane();
                 // is ray parallel and is origin point on plane
                 return IsLinearCombination(plane.PointOnPlane, axis1, axis2, ray.Origin, out Vector2d scale);
             }
-            return !double.IsNaN(distance) && distance >= 0d;
+            return !double.IsNaN(distance) && distance >= 0d && !distance.isFloatEqual(0d);
         }
 
 
         public static Vector2d LinearCombination(Point3D startPoint, Vector3D vector1, Vector3D vector2, Point3D target)
         {
+            // TODO fix problem with computation
             var scale = new Vector2d();
             scale.X = (float)((target.X - startPoint.X - vector2.X * (target.Y - startPoint.Y) / vector2.Y) / (vector1.X * (vector1.Y + vector1.X * vector2.Y)));
             scale.Y = (float)((target.Y - startPoint.Y - scale.X * vector1.Y) / vector2.Y);
@@ -111,7 +112,7 @@ namespace rt004.Util
         public static bool IsLinearCombination(Point3D startPoint, Vector3D vector1, Vector3D vector2, Point3D target, out Vector2d scale)
         {
             scale = LinearCombination(startPoint, vector1, vector2, target);
-            return scale.X * vector1.Z + scale.Y * vector2.Z + startPoint.Z == target.Z;
+            return (scale.X * vector1.Z + scale.Y * vector2.Z + startPoint.Z).isFloatEqual( target.Z );// check if Z coordiante is equal to the resut linear combination
         }
 
         public static bool IsLinearCombination(Vector3D vector1, Vector3D vector2, Point3D target, out Vector2d scale) => IsLinearCombination(Point3D.Zero , vector1, vector2, target, out scale);
