@@ -71,7 +71,7 @@ namespace rt004.SceneObjects.Loading {
 
 
         /// <summary>
-        /// Cteates Instance of corresponding SceneObject type
+        /// Creates instance of corresponding SceneObject type
         /// </summary>
         /// <returns>instanciated object</returns>
         abstract public SceneObject CreateInstance(Scene parentScene);

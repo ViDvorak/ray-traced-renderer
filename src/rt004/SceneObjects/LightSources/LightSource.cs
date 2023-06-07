@@ -1,5 +1,4 @@
 ﻿using OpenTK.Mathematics;
-using rt004.SceneObjects;
 using System.Xml.Serialization;
 using rt004.Util;
 

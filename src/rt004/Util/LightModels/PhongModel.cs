@@ -6,8 +6,6 @@ namespace rt004.Util.LightModels
 {
     internal class PhongModel : LightModelComputation
     {
-        int maxItereation = 10;
-
         public override Color4 ComputeLightColor(IntersectionProperties intersection, Color4 backgroundColor, LightSource[] lights)
         {
             return (Color4)ReflectionLight(intersection, backgroundColor, lights, RendererSettings.maxReflectionDepth);
