@@ -21,7 +21,7 @@ namespace rt004.SceneObjects
             plane = new BasicPlane(position, new Vector3D( Vector3.Transform( Vector3.UnitZ, Rotation)));
         }
 
-        public override Vector3D GetNormalAt(Point3D position)
+        public override Vector3D GetNormalAt(Point3D globalPosition)
         {
             return plane.Normal;
         }
@@ -39,8 +39,8 @@ namespace rt004.SceneObjects
             uvCoord = Point2D.Zero;
             if (hasIntersected)
             {
-                var xAxis = ConvertFromObjectToWorldSpace(Vector3D.OneX);
-                var yAxis = ConvertFromObjectToWorldSpace(Vector3D.OneY);
+                var xAxis = ToWorldSpace(Vector3D.OneX);
+                var yAxis = ToWorldSpace(Vector3D.OneY);
                 uvCoord = new Point2D(Geometry.LinearCombination(plane.PointOnPlane, yAxis, xAxis, intersection));
             }
             

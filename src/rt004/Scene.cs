@@ -12,41 +12,42 @@ namespace rt004
         public Color4 AmbientLightColor { get; set; }
         public float AmbientLightIntensity { get; set; }
 
-        private readonly HashSet<Camera> cameras;
-        private readonly HashSet<Solid> solids;
-        private readonly HashSet<LightSource> lights;
+        private readonly HashSet<Camera> cameras        = new HashSet<Camera>();
+        private readonly HashSet<Solid> solids          = new HashSet<Solid>();
+        private readonly HashSet<LightSource> lights    = new HashSet<LightSource>();
+
+        public readonly InnerSceneObject rootSceneObject;
 
 
-        public Scene()
-        { 
-            cameras = new HashSet<Camera>();
-            solids = new HashSet<Solid>();
-            lights = new HashSet<LightSource>();
-        }
-
-        public Scene(Camera[]? cameras, Solid[]? solids, LightSource[]? lights)
-            : this(cameras, solids, lights, RendererSettings.defaultAmbientLightColor, RendererSettings.defaultAmbientLightFactor)
+        public Scene(out InnerSceneObject rootHierarchyNode)
+            : this(out rootHierarchyNode, RendererSettings.defaultAmbientLightColor, RendererSettings.defaultAmbientLightFactor)
         { }
 
 
-        public Scene(Camera[]? cameras, Solid[]? solids, LightSource[]? lights, Color4 ambientLightColor, float ambientLightIntensity)
+        public Scene(out InnerSceneObject rootHierarchyNode, Color4 ambientLightColor, float ambientLightIntensity)
         {
-            if (cameras != null)
+            rootHierarchyNode = new InnerSceneObject(this, Point3D.Zero, Vector3.Zero);
+            rootSceneObject = rootHierarchyNode;
+
+            var allLeafs = new List<SceneObject>();
+            rt004.Loading.SceneLoader.ExtractChildren(rootHierarchyNode, in allLeafs);
+
+
+            foreach (SceneObject leaf in allLeafs)
             {
-                this.cameras = new HashSet<Camera>(cameras);
-                if (cameras.Length > 0)
-                    mainCamera = cameras[0];
+                AddSceneObject(leaf.ParentObject, leaf);
+                if (leaf is Camera camera && mainCamera == null)
+                    mainCamera = camera;// here is used field instead of Property because HashSets are NOT INICIALISED yet.
             }
-            else
-                this.cameras = new HashSet<Camera>();
-
-
-            this.solids  = solids == null ? new HashSet<Solid>() : new HashSet<Solid>(solids);
-            this.lights  = lights == null ? new HashSet<LightSource>() : new HashSet<LightSource>(lights);
 
             this.AmbientLightColor = ambientLightColor;
             this.AmbientLightIntensity = ambientLightIntensity;
         }
+
+        /// <summary>
+        /// Gets root object of the scene.
+        /// </summary>
+        public InnerSceneObject RootObject {  get { return rootSceneObject; } }
 
         /// <summary>
         /// Main Camera to render from by default
@@ -59,8 +60,10 @@ namespace rt004
             }
             set
             {
-                if (mainCamera != null)
-                    mainCamera.ParentScene = this;
+                if (!cameras.Contains(value))
+                {
+                    throw new KeyNotFoundException("Camera is not inhierarchy. You must add it to hierarchy before assignement as mainCamera");
+                }
                 if (value != null)
                 {
                     mainCamera = value;
@@ -68,16 +71,17 @@ namespace rt004
             }
         }
 
-
         /// <summary>
         /// Adds camera to scene
         /// </summary>
+        /// <param name="parentSceneObject">Parent object of this camera in scene hierarchy</param>
         /// <param name="camera">camrera to add</param>
         /// <param name="setAsMain">defines if the camera should be set as mainCamera or not(it is set automaticly if there is no MainCamera)</param>
-        public void AddCamera(Camera camera, bool setAsMain = false)
+        public void AddCamera(InnerSceneObject parentSceneObject, Camera camera, bool setAsMain = false)
         {
-            if (cameras.Add(camera))
-                camera.ParentScene = this;
+            BasicAddPrecedure(parentSceneObject, camera);
+            cameras.Add(camera);
+
             if (setAsMain || mainCamera == null)
             {
                 mainCamera = camera;
@@ -85,7 +89,7 @@ namespace rt004
         }
 
         /// <summary>
-        /// Gets all cameras in scene
+        /// Gets shallow copy of array with all cameras in the scene.
         /// </summary>
         /// <returns>returns array of cameras</returns>
         public Camera[] GetCameras() {
@@ -98,14 +102,14 @@ namespace rt004
         /// <param name="camera">camera to remove</param>
         public void RemoveCamera(Camera camera)
         {
-            if (cameras.Remove(camera))
-                camera.ParentScene = null;
+            BasicRemovePrecedure(camera);
+            cameras.Remove(camera);
 
-            if (mainCamera == camera) {
-                var enumer = cameras.GetEnumerator();
-                enumer.MoveNext();
-                mainCamera = enumer.Current;
-                enumer.Dispose();
+            if ( Object.ReferenceEquals(mainCamera, camera)) {
+                if (cameras.Count > 0)
+                    mainCamera = cameras.First<Camera>();
+                else
+                    MainCamera = null;
             }
         }
         
@@ -113,10 +117,10 @@ namespace rt004
         /// Adds solid to scene
         /// </summary>
         /// <param name="solid">solid to add</param>
-        public void AddSolid(Solid solid)
+        public void AddSolid(InnerSceneObject parentSceneObject, Solid solid)
         {
-            if (solids.Add(solid))
-                solid.ParentScene = this;
+            BasicAddPrecedure(parentSceneObject, solid);
+            solids.Add(solid);
         }
 
         /// <summary>
@@ -124,8 +128,8 @@ namespace rt004
         /// </summary>
         /// <param name="solid">Solid to remove</param>
         public void RemoveSolid(Solid solid) {
-            if (solids.Remove(solid))
-                solid.ParentScene = null;
+            BasicRemovePrecedure(solid);
+            solids.Remove(solid);
         }
 
         /// <summary>
@@ -138,12 +142,11 @@ namespace rt004
         /// Add LightSource from the scene
         /// </summary>
         /// <param name="light">LightSource to add</param>
-        public void AddLight(LightSource light)
+        public void AddLight(InnerSceneObject parentObject, LightSource light)
         {
-            if (lights.Add(light))
-                light.ParentScene = this;
+            BasicAddPrecedure(parentObject, light);
+            lights.Add(light);
         }
-
 
         /// <summary>
         /// Removes LightSource from the scene
@@ -151,33 +154,43 @@ namespace rt004
         /// <param name="light">LightSource to remove</param>
         public void RemoveLight(LightSource light)
         {
-            if (lights.Remove(light))
-                light.ParentScene = null;
+            BasicRemovePrecedure(light);
+            lights.Remove(light);
         }
 
 
         /// <summary>
-        /// Adds an SceneObject to scene.
-        /// It is better to use: AddCamera(), AddSolid(), AddLightSource()
+        /// Gets array of all light sources from scene
         /// </summary>
+        /// <returns>Returns array of light sources</returns>
+        public LightSource[] GetLightSources() => lights.ToArray();
+
+
+        /// <summary>
+        /// Adds an SceneObject to scene.
+        /// </summary>
+        /// <param name="parentSceneObject">Object to add to sceneObject as child</param>
         /// <param name="sceneObject">Scene object to add</param>
         /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
-        public void AddSceneObject(SceneObject sceneObject)
+        public void AddSceneObject(InnerSceneObject parentSceneObject, SceneObject sceneObject)
         {
             if (sceneObject is Camera camera)
             {
-                AddCamera(camera);
+                AddCamera(parentSceneObject, camera);
             }
 
-            else if(sceneObject is Solid solid)
+            else if (sceneObject is Solid solid)
             {
-                AddSolid(solid);
+                AddSolid(parentSceneObject, solid);
             }
 
             else if (sceneObject is LightSource light)
             {
-                AddLight(light);
+                AddLight(parentSceneObject, light);
             }
+
+            else if (sceneObject is InnerSceneObject)
+                BasicAddPrecedure(parentSceneObject, sceneObject);
 
             else
             {
@@ -185,9 +198,41 @@ namespace rt004
             }
         }
 
+        private void BasicAddPrecedure(InnerSceneObject parent, SceneObject child)
+        {
+            if (child.ParentObject is not null)
+                child.ParentObject.UnRegisterChild(child);
+            child.ParentObject = parent;
+            parent.RegisterChild(child);
+
+            child.ParentScene = parent.ParentScene;
+        }
+
+
+        /// <summary>
+        /// Runs basic removal of SceneObject from Scene
+        /// </summary>
+        /// <param name="sceneObject">The sceneObject to remove</param>
+        /// <exception cref="InvalidOperationException"></exception>
+        private void BasicRemovePrecedure(SceneObject sceneObject)
+        {
+            if (sceneObject.ParentScene is null)
+                throw new InvalidOperationException("The SceneObject does not have assigned parentScene");
+
+            if (sceneObject.ParentObject is null)
+                throw new InvalidOperationException("The parentObject was not assigned to any parentObject");
+
+
+            sceneObject.ParentObject.UnRegisterChild(sceneObject);
+            sceneObject.ParentObject = null;
+            // unregister all children deeply
+
+            sceneObject.ParentScene = null;
+        }
+
+
         /// <summary>
         /// Removes an SceneObject from scene.
-        /// It is better to use: RemoveCamera(), RemoveSolid(), RemoveLightSource()
         /// </summary>
         /// <param name="sceneObject">Scene object to remove</param>
         /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
@@ -208,17 +253,16 @@ namespace rt004
                 RemoveLight(light);
             }
 
+            else if (sceneObject is InnerSceneObject)
+                BasicRemovePrecedure(sceneObject);
+
             else
             {
                 throw new NotImplementedException("Not known class, derived from SceneObject");
             }
         }
 
-        /// <summary>
-        /// Gets array of all light sources from scene
-        /// </summary>
-        /// <returns>Returns array of light sources</returns>
-        public LightSource[] GetLightSources() => lights.ToArray();
+
 
         /// <summary>
         /// Renders image from main camera
@@ -330,7 +374,7 @@ namespace rt004
 
             properties = new IntersectionProperties();
 
-            foreach (Solid solid in solids.Where(solid => (solid.Position - ray.Origin).Length < maxDistance && (solid.Position - ray.Origin).Length > minDistance))
+            foreach (Solid solid in solids.Where(solid => (solid.GlobalPosition - ray.Origin).Length < maxDistance && (solid.GlobalPosition - ray.Origin).Length > minDistance))
             {
                 if (solid.TryGetRayIntersection(ray, out IntersectionProperties currentPropertes))
                 {
@@ -379,42 +423,48 @@ namespace rt004
 }
 
 
-namespace rt004.SceneObjects.Loading
+namespace rt004.Loading
 {
+    using rt004.SceneObjects.Loading;
+
     public class SceneLoader
     {
         public Color4 ambientLightColor;
         public float ambientLightIntensity;
 
-        public List<CameraLoader> cameraLoaders = new List<CameraLoader>();
-        public List<SolidLoader> solidLoaders = new List<SolidLoader>();
-        public List<LightSourceLoader> lightLoaders = new List<LightSourceLoader>();
+        public List<SceneObjectLoader> sceneObjectLoaders = new List<SceneObjectLoader>();
+        public object cameraLoaders;
+
+        public SceneLoader() { }
 
         public Scene CreateInstance()
         {
-            Scene scene = new Scene();
+            InnerSceneObject rootSceneObject;
+            Scene scene = new Scene(out rootSceneObject);
 
             scene.AmbientLightIntensity = ambientLightIntensity;
             scene.AmbientLightColor = ambientLightColor;
 
-            Camera[] cameras = new Camera[cameraLoaders.Count];
-            Solid[] solids = new Solid[solidLoaders.Count];
-            LightSource[] lights= new LightSource[lightLoaders.Count];
-            
-            for (int i = 0; i < cameras.Length; i++)
+
+            foreach( SceneObjectLoader loader in sceneObjectLoaders)
             {
-                scene.AddCamera((Camera)cameraLoaders[i].CreateInstance(scene));
-            }
-            for (int i = 0; i < solids.Length; i++)
-            {
-                scene.AddSolid((Solid)solidLoaders[i].CreateInstance(scene));
-            }
-            for (int i = 0; i < lights.Length; i++)
-            {
-                scene.AddLight((LightSource)lightLoaders[i].CreateInstance(scene));
+                SceneObject rootChild = loader.CreateInstance(scene);
+                scene.AddSceneObject(rootSceneObject, rootChild);
             }
 
             return scene;
+        }
+
+        public static void ExtractChildren(InnerSceneObject parentObject, in List<SceneObject> allChildren)
+        {
+            foreach (SceneObject child in parentObject.GetChildren())
+                if (child is InnerSceneObject innerNodeChild)
+                {
+                    allChildren.Add(innerNodeChild);
+                    ExtractChildren(innerNodeChild, in allChildren);
+                }
+                else
+                    allChildren.Add(child);
         }
     }
 }

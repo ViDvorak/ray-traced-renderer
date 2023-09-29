@@ -31,11 +31,10 @@ namespace rt004.SceneObjects
 
 
         public PrespectiveCamera(Scene parentScene, Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height ) 
-            : base(parentScene, position, rotation)
+            : base(parentScene, position, rotation, width, height)
         {
             this.backgroundColor = backgroundColor;
             FoV = fov;
-            SetResolution(width, height);
         }
 
 
@@ -53,11 +52,11 @@ namespace rt004.SceneObjects
         /// </summary>
         /// <param name="u">width coordinate in pixels</param>
         /// <param name="v">height coordinate in pixels</param>
-        /// <returns>Returns line from camera position to position on screen</returns>
+        /// <returns>Returns line from camera GlobalPosition to GlobalPosition on screen</returns>
         private Ray GetRayFromScreenSpace(double u, double v)
         {
             var pixelVectorInObjectSpace = new Vector3D((u - width / 2) / pixelDensity, -(v - height / 2) / pixelDensity, 1);
-            return new Ray( Position, ConvertFromObjectToWorldSpace(pixelVectorInObjectSpace));
+            return new Ray( GlobalPosition, ToWorldSpace(pixelVectorInObjectSpace));
         }
 
         /// <summary>

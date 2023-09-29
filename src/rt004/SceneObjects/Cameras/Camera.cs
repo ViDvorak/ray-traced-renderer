@@ -9,9 +9,9 @@ namespace rt004.SceneObjects
     {
         protected uint width, height;
 
-        public Camera(Scene parentScene, Point3D position, Vector3 rotation) : base(parentScene, position, rotation)
+        public Camera(Scene parentScene, Point3D position, Vector3 rotation, uint width, uint height) : base(parentScene, position, rotation)
         {
-
+            SetResolution(width, height);
         }
 
         public abstract FloatImage RenderImage();

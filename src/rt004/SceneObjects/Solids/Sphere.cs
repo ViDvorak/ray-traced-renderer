@@ -20,7 +20,7 @@ namespace rt004.SceneObjects
 
         public override Vector3D GetNormalAt(Point3D position)
         {
-            Vector3D normal = (position - Position);
+            Vector3D normal = (position - GlobalPosition);
             normal.Normalize();
             return normal;
         }
@@ -31,8 +31,9 @@ namespace rt004.SceneObjects
             // It is not needed to consider rotation in this case (sphere)
 
             // computes intersections
-            Vector3D dif = Position - ray.Origin;
-            //const float a = 1f; //Vector3.Dot(ray.Direction, ray.Direction) is always 1
+            Vector3D dif = GlobalPosition - ray.Origin;
+
+            // const float a = 1f;      // Vector3.Dot(ray.Direction, ray.Direction)     // is always 1
             double b = -2 * Vector3D.Dot(dif, ray.Direction);
             double c = Vector3D.Dot(dif, dif) - radiusSquered;
 
@@ -58,7 +59,7 @@ namespace rt004.SceneObjects
             
             if (isIntersecting){
                 Point3D intersection = ray.GetPointOnRay(distance);
-                Vector3D vector = intersection - Position;
+                Vector3D vector = intersection - GlobalPosition;
 
                 double vectorXZAngle = Math.Atan(vector.X / vector.Z);
                 double vectorXYAngle = Math.Atan(vector.X / vector.Y);

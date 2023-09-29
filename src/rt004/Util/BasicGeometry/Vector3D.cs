@@ -217,6 +217,11 @@ namespace rt004.Util
             return new Vector3D(Vector3d.Transform((Vector3d)vector, new Quaterniond((Vector3d)rotation.ToEulerAngles())));
         }
 
+        public static Vector3D Transform(Vector3D vector, Matrix4d transform)
+        {
+            return new Vector3D(Vector3d.TransformVector((Vector3d)vector, transform));
+        }
+
 
 
 

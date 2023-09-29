@@ -165,6 +165,12 @@ namespace rt004.Util
         #endregion Operators
 
 
+        public static Point3D Transform(Point3D point, Matrix4d transformation)
+        {
+            return new Point3D(Vector3d.TransformPosition((Vector3d)point, transformation));
+        }
+
+
         public override int GetHashCode()
         {
             return base.GetHashCode();

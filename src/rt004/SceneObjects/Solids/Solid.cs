@@ -25,7 +25,12 @@ namespace rt004.SceneObjects
                 throw new InvalidCastException("Material is not usable for LightModel");
         }
 
-        abstract public Vector3D GetNormalAt(Point3D position);
+        /// <summary>
+        /// Gets normal of this object at specifed position.
+        /// </summary>
+        /// <param name="globalPosition">Postion, where the normal should be start on the solid side or edge. In world coordinates</param>
+        /// <returns>Returns normal of the object at specified position</returns>
+        abstract public Vector3D GetNormalAt(Point3D globalPosition);
 
         abstract public bool TryGetRayIntersection(Ray ray, out double distance);
 
@@ -59,7 +64,7 @@ namespace rt004.SceneObjects
 
             intersection = new IntersectionProperties()
             {
-                position = intersectionPoint,
+                globalPosition = intersectionPoint,
                 distance = distance,
                 intersectedSolid = this,
                 normal = GetNormalAt(intersectionPoint),
@@ -74,7 +79,7 @@ namespace rt004.SceneObjects
 
     public record struct IntersectionProperties
     {
-        public Point3D position;
+        public Point3D globalPosition;
         public Vector3D normal;
         public Solid intersectedSolid;
         public Point2D uvCoordinates;

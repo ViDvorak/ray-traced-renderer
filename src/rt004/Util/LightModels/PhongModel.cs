@@ -33,9 +33,9 @@ namespace rt004.Util.LightModels
                 float specularIntensity = 0f;
                 float diffuseIntensity = 0f;
                 
-                (var diffusePower, var specularPower) = light.LightIntensityAt(intersection.position, RendererSettings.shadows);
+                (var diffusePower, var specularPower) = light.LightIntensityAt(intersection.globalPosition, RendererSettings.shadows);
 
-                Vector3D intersectionToLightSource = (light.Position - intersection.position).Normalized();
+                Vector3D intersectionToLightSource = (light.GlobalPosition - intersection.globalPosition).Normalized();
 
 
                 //diffuse light part
@@ -58,7 +58,7 @@ namespace rt004.Util.LightModels
             }
 
 
-            Ray reflectionRay = new Ray(intersection.position, normal * 2f * Vector3D.Dot(normal, intersectionToCamera) - intersectionToCamera);
+            Ray reflectionRay = new Ray(intersection.globalPosition, normal * 2f * Vector3D.Dot(normal, intersectionToCamera) - intersectionToCamera);
 
             Vector4 reflectedColor = Vector4.Zero;
             if (RendererSettings.reflections)

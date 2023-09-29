@@ -1,13 +1,11 @@
 ﻿using rt004.SceneObjects;
 using OpenTK.Mathematics;
-using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
-using rt004.SceneObjects.Loading;
+using rt004.Loading;
 using rt004.Materials.Loading;
 using rt004.Materials;
 using System.Text.RegularExpressions;
-using System.Runtime.CompilerServices;
 using rt004.UtilLoading;
 using rt004.MaterialLoading;
 
