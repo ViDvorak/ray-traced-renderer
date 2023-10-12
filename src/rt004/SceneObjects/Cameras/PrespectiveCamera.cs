@@ -35,6 +35,7 @@ namespace rt004.SceneObjects
         {
             this.backgroundColor = backgroundColor;
             FoV = fov;
+            SetResolution(width, height);//in this case there must be set FoV before pixelDensity computation
         }
 
 
@@ -66,7 +67,7 @@ namespace rt004.SceneObjects
         public override FloatImage RenderImage()
         {
             float maxIntensity = 0;
-            float debugX = 0, debugY = 449;
+            float debugX = 599, debugY = 449;
 
             FloatImage image = new FloatImage((int)width, (int)height, 3);
 
