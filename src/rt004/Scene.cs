@@ -79,7 +79,6 @@ namespace rt004
         /// <param name="setAsMain">defines if the camera should be set as mainCamera or not(it is set automaticly if there is no MainCamera)</param>
         public void AddCamera(InnerSceneObject parentSceneObject, Camera camera, bool setAsMain = false)
         {
-            BasicAddPrecedure(parentSceneObject, camera);
             cameras.Add(camera);
 
             if (setAsMain || mainCamera == null)
@@ -102,7 +101,6 @@ namespace rt004
         /// <param name="camera">camera to remove</param>
         public void RemoveCamera(Camera camera)
         {
-            BasicRemovePrecedure(camera);
             cameras.Remove(camera);
 
             if ( Object.ReferenceEquals(mainCamera, camera)) {
@@ -119,7 +117,6 @@ namespace rt004
         /// <param name="solid">solid to add</param>
         public void AddSolid(InnerSceneObject parentSceneObject, Solid solid)
         {
-            BasicAddPrecedure(parentSceneObject, solid);
             solids.Add(solid);
         }
 
@@ -128,7 +125,6 @@ namespace rt004
         /// </summary>
         /// <param name="solid">Solid to remove</param>
         public void RemoveSolid(Solid solid) {
-            BasicRemovePrecedure(solid);
             solids.Remove(solid);
         }
 
@@ -144,7 +140,6 @@ namespace rt004
         /// <param name="light">LightSource to add</param>
         public void AddLight(InnerSceneObject parentObject, LightSource light)
         {
-            BasicAddPrecedure(parentObject, light);
             lights.Add(light);
         }
 
@@ -154,7 +149,6 @@ namespace rt004
         /// <param name="light">LightSource to remove</param>
         public void RemoveLight(LightSource light)
         {
-            BasicRemovePrecedure(light);
             lights.Remove(light);
         }
 
@@ -172,7 +166,7 @@ namespace rt004
         /// <param name="parentSceneObject">Object to add to sceneObject as child</param>
         /// <param name="sceneObject">Scene object to add</param>
         /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
-        public void AddSceneObject(InnerSceneObject parentSceneObject, SceneObject sceneObject)
+        public async void AddSceneObject(InnerSceneObject parentSceneObject, SceneObject sceneObject)
         {
             if (sceneObject is Camera camera)
             {
@@ -189,13 +183,20 @@ namespace rt004
                 AddLight(parentSceneObject, light);
             }
 
-            else if (sceneObject is InnerSceneObject)
-                BasicAddPrecedure(parentSceneObject, sceneObject);
+            else if (sceneObject is InnerSceneObject innerSceneObject)
+            {
+                foreach (SceneObject child in innerSceneObject.GetChildren())
+                {
+                    AddSceneObject(innerSceneObject, child);
+                }
+            }
 
             else
             {
                 throw new NotImplementedException("not known class derived from SceneObject" + sceneObject.GetType());
             }
+
+            BasicAddPrecedure(parentSceneObject, sceneObject);
         }
 
         private void BasicAddPrecedure(InnerSceneObject parent, SceneObject child)
@@ -204,6 +205,7 @@ namespace rt004
                 child.ParentObject.UnRegisterChild(child);
             child.ParentObject = parent;
             parent.RegisterChild(child);
+            //AddSceneObject(parent, child);
 
             child.ParentScene = parent.ParentScene;
         }
@@ -253,13 +255,13 @@ namespace rt004
                 RemoveLight(light);
             }
 
-            else if (sceneObject is InnerSceneObject)
-                BasicRemovePrecedure(sceneObject);
+            else if (sceneObject is InnerSceneObject) { }
 
             else
             {
                 throw new NotImplementedException("Not known class, derived from SceneObject");
             }
+            BasicRemovePrecedure(sceneObject);
         }
 
 
@@ -375,6 +377,7 @@ namespace rt004
             properties = new IntersectionProperties();
 
             foreach (Solid solid in solids.Where(solid => (solid.GlobalPosition - ray.Origin).Length < maxDistance && (solid.GlobalPosition - ray.Origin).Length > minDistance))
+            //foreach (Solid solid in solids)
             {
                 if (solid.TryGetRayIntersection(ray, out IntersectionProperties currentPropertes))
                 {
@@ -433,9 +436,6 @@ namespace rt004.Loading
         public float ambientLightIntensity;
 
         public List<SceneObjectLoader> sceneObjectLoaders = new List<SceneObjectLoader>();
-        public object cameraLoaders;
-
-        public SceneLoader() { }
 
         public Scene CreateInstance()
         {

@@ -18,7 +18,7 @@ namespace rt004.SceneObjects
             if (material.GetType() != Material.GetMaterialFor(RendererSettings.lightModel).GetType())
                 throw new InvalidCastException("Set material is not of the same type as set in renderer");
 
-            plane = new BasicPlane(position, new Vector3D( Vector3.Transform( Vector3.UnitZ, Rotation)));
+            plane = new BasicPlane(position, new Vector3D( Vector3d.TransformNormal( Vector3.UnitZ, Extensions.RotationMatrix(rotation))));
         }
 
         public override Vector3D GetNormalAt(Point3D globalPosition)

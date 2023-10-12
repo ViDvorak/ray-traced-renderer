@@ -11,9 +11,6 @@ namespace rt004.Util.LightModels
             return (Color4)ReflectionLight(intersection, backgroundColor, lights, RendererSettings.maxReflectionDepth);
         }
 
-
-        //TODO make shure that without intersection there is camera.beckgroundColor assigned and ambient color is needed to be added in each reflection
-
         private Vector4 ReflectionLight(IntersectionProperties intersection, Color4 backgroundColor, LightSource[] lights, uint iteration)
          {
             Solid intersectedSolid = intersection.intersectedSolid;

@@ -45,7 +45,7 @@ namespace rt004.SceneObjects
             }
         }
 
-        public Quaternion Rotation { get; set; }
+        public Vector3 Rotation { get; set; }
 
         public virtual Scene ParentScene
         {
@@ -63,7 +63,7 @@ namespace rt004.SceneObjects
         {
             this.parentScene = parentScene;
             Position = position;
-            Rotation = new Quaternion(rotation);
+            Rotation = rotation;
         }
 
         public Vector3d GetLocalHeding()
@@ -91,7 +91,11 @@ namespace rt004.SceneObjects
         {
             Matrix4d matrix;
             if (parentObject is not null)
-                matrix = GetLocalTransformMatrix() * parentObject.GetLocalToWorldTransformMatrix();
+            {
+                var parentTransformMatrix = parentObject.GetLocalToWorldTransformMatrix();
+                var localTransformMatrix = GetLocalTransformMatrix();
+                matrix = localTransformMatrix * parentTransformMatrix;
+            }
             else
                 matrix = GetLocalTransformMatrix();
             return matrix;
@@ -105,7 +109,15 @@ namespace rt004.SceneObjects
 
         public Matrix4d GetLocalTransformMatrix()
         {
-            return Matrix4d.CreateTranslation((float)Position.X, (float)Position.Y, (float)Position.Z) * Matrix4d.CreateFromQuaternion(new Quaterniond(Rotation.ToEulerAngles()));
+            var rotationMatrix = Extensions.RotationMatrix(Rotation);
+            var translationMatrix = Matrix4d.CreateTranslation((float)Position.X, (float)Position.Y, (float)Position.Z);
+
+            rotationMatrix.Transpose();
+            translationMatrix.Transpose();
+
+            var tmp = translationMatrix * rotationMatrix;
+            tmp.Transpose();
+            return tmp;
         }
 
         public Matrix4d GetLocalInverseTransformMatrix() => GetLocalTransformMatrix().Inverted();

@@ -64,7 +64,7 @@ namespace rt004.SceneObjects
                 double vectorXZAngle = Math.Atan(vector.X / vector.Z);
                 double vectorXYAngle = Math.Atan(vector.X / vector.Y);
 
-                Vector4 objectRotation = Rotation.ToAxisAngle();
+                Vector4 objectRotation = new Vector4(Rotation);
 
                 double XYrotation = objectRotation.Z + vectorXYAngle;
                 double XZrotation = objectRotation.Y + vectorXZAngle;

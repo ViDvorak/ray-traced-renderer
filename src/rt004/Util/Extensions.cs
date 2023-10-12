@@ -22,5 +22,10 @@ namespace rt004
                     vector[1].isFloatEqual(other[1]) &&
                     vector[2].isFloatEqual(other[2]);
         }
+
+        public static Matrix4d RotationMatrix(Vector3 eulerAngles)
+        {
+            return Matrix4d.RotateX(eulerAngles.X) * Matrix4d.RotateY(eulerAngles.Y) * Matrix4d.RotateZ(eulerAngles.Z);
+        }
     }
 }

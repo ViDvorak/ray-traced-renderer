@@ -33,13 +33,11 @@ namespace rt004_tests
             SceneLoader sceneLoader = new SceneLoader();
             sceneLoader.sceneObjectLoaders.Add(new SphereLoader(new Point3D(0, 0, 0), new Vector3(0, 0, 0), materialYellow, 1f));// 0
 
-            SceneObjectLoader sphereLoader1 = new SphereLoader(new Point3D(1, -1, -1), new Vector3(0, 0, 0), materialBlue, 0.6f);
-            //sceneLoader.sceneObjectLoaders.Add(sphereLoader1);//1.0
-            SceneObjectLoader sphereLoader2 = new SphereLoader(new Point3D(-1, 1, -1), new Vector3(0, 0, 0), materialRed, 0.1f);
-            //sceneLoader.sceneObjectLoaders.Add(sphereLoader2);//1.1
+            SceneObjectLoader sphereLoader1 = new SphereLoader(new Point3D(4, 0, 0), new Vector3(0, 0, 0), materialBlue, 0.6f);//1.0
+            SceneObjectLoader sphereLoader2 = new SphereLoader(new Point3D(0, 4, -1), new Vector3(0, 0, 0), materialRed, 0.1f);//1.1
 
             SceneObjectLoader[] sphereLoaders = new SceneObjectLoader[] {sphereLoader1, sphereLoader2};
-            sceneLoader.sceneObjectLoaders.Add(new InnerSceneObjectLoader() { children = sphereLoaders });
+            sceneLoader.sceneObjectLoaders.Add(new InnerSceneObjectLoader(new Point3D(0,0,0), new Vector3(0,0,MathF.PI / 4)) { children = sphereLoaders });
             
             
             
@@ -63,12 +61,15 @@ namespace rt004_tests
         public void GlobalPositionTest()
         {
             Assert.IsTrue(testScene.rootSceneObject.GetChildren()[0].GlobalPosition == Point3D.Zero);
-            Assert.IsTrue(((InnerSceneObject)testScene.rootSceneObject.GetChildren()[1]).GetChildren()[0].GlobalPosition == new Point3D(1, -1, -1));
-            Assert.IsTrue(((InnerSceneObject)testScene.rootSceneObject.GetChildren()[1]).GetChildren()[1].GlobalPosition == new Point3D(-1, 1, -1));
+
+            
+            InnerSceneObject rootChildAtIndexOne = (InnerSceneObject)testScene.rootSceneObject.GetChildren()[1];
+            Assert.IsTrue(rootChildAtIndexOne.GetChildren()[0].GlobalPosition == new Point3D(2.8284f, 2.8284f, 0), $"object at indexes 1.0 is is not at [2, 2, 0] but at {rootChildAtIndexOne.GetChildren()[0].GlobalPosition}");
+            Assert.IsTrue(rootChildAtIndexOne.GetChildren()[1].GlobalPosition == new Point3D(-2.8284f, 2.8284f, -1), $"object at indexes 1.1 is is not at [-2, 2, -1] but at {rootChildAtIndexOne.GetChildren()[1].GlobalPosition}");
 
             InnerSceneObject rootChildAtIndexFour = (InnerSceneObject)testScene.rootSceneObject.GetChildren()[4];
             Assert.IsTrue(rootChildAtIndexFour.GetChildren()[0].GlobalPosition == new Point3D(-9, -7, 7), $"object at indexes 4.0 is is not at [-9, -7, 7] but at {rootChildAtIndexFour.GetChildren()[0].GlobalPosition}");
-            Assert.IsTrue(rootChildAtIndexFour.GetChildren()[1].GlobalPosition == new Point3D(1, -19, 4), $"object at indexes 4.0 is is not at [1, -19, 4] but at {rootChildAtIndexFour.GetChildren()[0].GlobalPosition}");
+            Assert.IsTrue(rootChildAtIndexFour.GetChildren()[1].GlobalPosition == new Point3D(1, -19, 4), $"object at indexes 4.1 is is not at [1, -19, 4] but at {rootChildAtIndexFour.GetChildren()[1].GlobalPosition}");
         }
     }
 }
