@@ -80,15 +80,32 @@ namespace rt004.SceneObjects
                     if (x == debugX && y == debugY)
                     { /* For Debug */ }
 
-                    Color4 pixelColor = backgroundColor;
-                    Ray ray = GetRayFromScreenSpace(x + 0.5, y + 0.5);
+                    Vector4 pixelColor = Vector4.Zero;
+                    //Ray ray = GetRayFromScreenSpace(x + 0.5, y + 0.5);
 
-                    if (ParentScene.CastRay(ray, out IntersectionProperties properties))
+                    double step = 1f / RendererSettings.AntialiasingSize;
+                    int oddFactor = (RendererSettings.AntialiasingSize - 1) % 2;
+
+                    for (int i = 0; i < RendererSettings.AntialiasingSize; ++i)
                     {
-                        pixelColor = lightModel.ComputeLightColor(properties, backgroundColor, ParentScene.GetLightSources());
+                        for (int j = 0; j < RendererSettings.AntialiasingSize; ++j)
+                        {
+                            Ray ray = GetRayFromScreenSpace(x + i * step + oddFactor * step / 2, y + j * step + oddFactor * step / 2);
+                            // sum pixles
+                            if (ParentScene.CastRay(ray, out IntersectionProperties properties))
+                            {
+                                pixelColor += (Vector4)lightModel.ComputeLightColor(properties, backgroundColor, ParentScene.GetLightSources());
+                            }
+                        }
                     }
 
-                    image.PutPixel(x, y, new float[] { pixelColor.R, pixelColor.G, pixelColor.B });
+                    int pixelCount = RendererSettings.AntialiasingSize * RendererSettings.AntialiasingSize;
+
+                    image.PutPixel(x, y, new float[] {
+                        pixelColor[0] / pixelCount + backgroundColor.R,
+                        pixelColor[1] / pixelCount + backgroundColor.G,
+                        pixelColor[2] / pixelCount + backgroundColor.B
+                    });
                 }
             }
             Console.WriteLine($"max specular intensity is {maxIntensity}");

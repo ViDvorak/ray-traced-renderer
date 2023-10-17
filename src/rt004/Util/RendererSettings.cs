@@ -33,6 +33,7 @@ namespace rt004.Util
         public static bool          shadows                          = false;
         public static bool          reflections                      = false;
         public static float         minRayContribution               = 0.001f;
+        public static int           AntialiasingSize                 = 3;
     }
 
 
