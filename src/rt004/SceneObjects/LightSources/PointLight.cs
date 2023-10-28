@@ -21,11 +21,13 @@ namespace rt004.SceneObjects
         /// <returns>Returns the intensity</returns>
         public override float DiffuseLightIntensityAt(Point3D point, bool areShadowsEnabled)
         {
-            Vector3D lightToPoint = GlobalPosition - point;
-            double intensity = diffuseFactor * this.LightPower / (param1 * lightToPoint.LengthSquared + param2 * lightToPoint.Length + param3);
+            Vector3D pointToLight = GlobalPosition - point;
+            double intensity = diffuseFactor * this.LightPower / (param1 * pointToLight.LengthSquared + param2 * pointToLight.Length + param3);
             bool isPathClear = true;
+            
             if (areShadowsEnabled)
-                isPathClear = !ParentScene.CastRay(new Ray(GlobalPosition, lightToPoint), out double param, lightToPoint.Length, 0.001f);
+                isPathClear = !ParentScene.CastRay(new Ray(point, pointToLight), out double param, pointToLight.Length, RendererSettings.epsilon);
+            
             return isPathClear ? (float)intensity : 0f;
         }
 
@@ -39,8 +41,10 @@ namespace rt004.SceneObjects
             Vector3D pointToLight = GlobalPosition - point;
             double intensity = specularFactor * this.LightPower / (param1 * pointToLight.LengthSquared + param2 * pointToLight.Length + param3);
             bool isPathClear = true;
+
             if (areShadowsEnabled)
-                isPathClear = !ParentScene.CastRay(new Ray(GlobalPosition, pointToLight), out double param, pointToLight.Length, 0.001f);
+                isPathClear = !ParentScene.CastRay(new Ray(point, pointToLight), out double param, pointToLight.Length, RendererSettings.epsilon);
+            
             return isPathClear ? (float)intensity : 0f;
         }
 
@@ -54,8 +58,9 @@ namespace rt004.SceneObjects
             Vector3D pointToLight = GlobalPosition - point;
             float intensity = (float)(LightPower / (param1 * pointToLight.LengthSquared + param2 * pointToLight.Length + param3));
             bool isPathClear = true;
+
             if (areShadowsEnabled)
-                isPathClear = !ParentScene.CastRay(new Ray(GlobalPosition, pointToLight), out double param);
+                isPathClear = !ParentScene.CastRay(new Ray(point, pointToLight), out double param, pointToLight.Length, RendererSettings.epsilon);
 
             var result = (diffuseFactor * intensity, specularFactor * intensity);
             if (!isPathClear)

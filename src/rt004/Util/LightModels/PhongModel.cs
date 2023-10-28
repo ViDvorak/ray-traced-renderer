@@ -1,17 +1,24 @@
 ﻿using OpenTK.Mathematics;
 using rt004.SceneObjects;
 using rt004.Materials;
+using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
 
 namespace rt004.Util.LightModels
 {
     internal class PhongModel : LightModelComputation
     {
+        LightSource[] lights;
+
         public override Color4 ComputeLightColor(IntersectionProperties intersection, Color4 backgroundColor, LightSource[] lights)
         {
-            return (Color4)ReflectionLight(intersection, backgroundColor, lights, RendererSettings.maxReflectionDepth);
+            this.lights = lights;
+            return (Color4)ReflectionLight( intersection, backgroundColor, RendererSettings.defaultMaterialIndexOfRefraction,
+                                            1f, RendererSettings.maxReflectionDepth);
         }
 
-        private Vector4 ReflectionLight(IntersectionProperties intersection, Color4 backgroundColor, LightSource[] lights, uint iteration)
+        private Vector4 ReflectionLight( IntersectionProperties intersection, Color4 backgroundColor,
+                                         float currentIOR, float contribution, uint iteration)
          {
             Solid intersectedSolid = intersection.intersectedSolid;
             PhongMaterial material = (PhongMaterial)intersectedSolid.material;
@@ -24,6 +31,8 @@ namespace rt004.Util.LightModels
 
             Vector3D intersectionToCamera = -intersection.incommingRay.Direction;
             Vector3D normal = intersection.normal;
+
+            // compute color contribution by lights and base material.
 
             foreach (LightSource light in lights)
             {
@@ -55,22 +64,60 @@ namespace rt004.Util.LightModels
             }
 
 
-            Ray reflectionRay = new Ray(intersection.globalPosition, normal * 2f * Vector3D.Dot(normal, intersectionToCamera) - intersectionToCamera);
 
+            var transparency = 0f;
+
+            // Reflections
             Vector4 reflectedColor = Vector4.Zero;
             if (RendererSettings.reflections)
             {
+                transparency = material.GetTransparencyFactor(intersection.uvCoordinates);
                 Vector4 reflectionColor;
-                if (iteration > 0 && parentScene.CastRay(reflectionRay, out IntersectionProperties reflectedProperties, double.MaxValue, RendererSettings.epsilon))
-                    reflectionColor = ReflectionLight(reflectedProperties, backgroundColor, lights, --iteration);
+                
+                var reflectionIntensity = material.GetSpecularFactor(intersection.uvCoordinates);
+                Ray reflectionRay = new Ray(intersection.globalPosition, normal * 2f * Vector3D.Dot(normal, intersectionToCamera) - intersectionToCamera);
+                
+                if (iteration > 0 && contribution > RendererSettings.minRayContribution &&
+                    parentScene.CastRay(reflectionRay, out IntersectionProperties reflectedProperties,
+                                        double.MaxValue, RendererSettings.epsilon))
+                {
+                    var nextContribution = contribution * reflectionIntensity * (1 - transparency);
+                    reflectionColor = ReflectionLight(reflectedProperties, backgroundColor, currentIOR, nextContribution, --iteration);
+                }
                 else
                     reflectionColor = (Vector4)backgroundColor;
 
-                var reflectionIntensity = material.GetSpecularFactor(intersection.uvCoordinates);
                 reflectedColor = reflectionIntensity * reflectionColor;
             }
 
-            return ambientColor + diffuseColor + specularColor + reflectedColor;
+            
+
+            // Refractions
+            Vector4 refractedColor = Vector4.Zero;
+            if (RendererSettings.refractions)
+            {
+                double distance;
+                float ior = currentIOR / material.GetIndexOfRefraction(intersection.uvCoordinates);
+                double dot = Vector3D.Dot(intersection.normal, intersectionToCamera);
+                
+                Vector3D t = intersection.normal * (ior * dot - Math.Sqrt(1 - ior * ior * (1 - dot * dot))) - intersectionToCamera * ior;
+                Ray RefractedRay = new Ray(intersection.globalPosition, t);
+
+                if (iteration > 0 && contribution > RendererSettings.minRayContribution &&
+                    parentScene.CastRay(RefractedRay, out IntersectionProperties refractionProperties,
+                                        double.MaxValue, RendererSettings.epsilon))
+                {
+                    transparency = contribution * transparency;
+                    refractedColor = ReflectionLight(refractionProperties, backgroundColor, ior, contribution, iteration - 1);
+                }
+                else
+                    refractedColor = (Vector4)backgroundColor;
+
+                //var refractionIntensity = material.GetTransparencyFactor(intersection.uvCoordinates);
+                // refractedColor = refractedColor * refractionIntensity;
+            }
+
+            return (1 - transparency) * (ambientColor + diffuseColor + specularColor + reflectedColor) + transparency * refractedColor;
         }
     }
 }

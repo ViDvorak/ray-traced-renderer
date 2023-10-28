@@ -67,7 +67,7 @@ namespace rt004.SceneObjects
         public override FloatImage RenderImage()
         {
             float maxIntensity = 0;
-            float debugX = 599, debugY = 449;
+            float debugX = 300, debugY = 300;
 
             FloatImage image = new FloatImage((int)width, (int)height, 3);
 
@@ -81,14 +81,14 @@ namespace rt004.SceneObjects
                     { /* For Debug */ }
 
                     Vector4 pixelColor = Vector4.Zero;
-                    //Ray ray = GetRayFromScreenSpace(x + 0.5, y + 0.5);
 
-                    double step = 1f / RendererSettings.AntialiasingSize;
-                    int oddFactor = (RendererSettings.AntialiasingSize - 1) % 2;
+                    // anti-aliasing
+                    double step = 1f / RendererSettings.AntialiasingFraquency;
+                    int oddFactor = (RendererSettings.AntialiasingFraquency - 1) % 2;
 
-                    for (int i = 0; i < RendererSettings.AntialiasingSize; ++i)
+                    for (int i = 0; i < RendererSettings.AntialiasingFraquency; ++i)
                     {
-                        for (int j = 0; j < RendererSettings.AntialiasingSize; ++j)
+                        for (int j = 0; j < RendererSettings.AntialiasingFraquency; ++j)
                         {
                             Ray ray = GetRayFromScreenSpace(x + i * step + oddFactor * step / 2, y + j * step + oddFactor * step / 2);
                             // sum pixles
@@ -99,7 +99,7 @@ namespace rt004.SceneObjects
                         }
                     }
 
-                    int pixelCount = RendererSettings.AntialiasingSize * RendererSettings.AntialiasingSize;
+                    int pixelCount = RendererSettings.AntialiasingFraquency * RendererSettings.AntialiasingFraquency;
 
                     image.PutPixel(x, y, new float[] {
                         pixelColor[0] / pixelCount + backgroundColor.R,

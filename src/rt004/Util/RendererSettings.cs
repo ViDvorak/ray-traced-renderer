@@ -1,4 +1,5 @@
 ﻿using OpenTK.Mathematics;
+using rt004.Materials;
 using rt004.Util;
 using rt004.Util.LightModels;
 
@@ -8,12 +9,12 @@ namespace rt004.Util
     {
         public static float         epsilon = 0.001f;
 
-        public static Color4        defaultBacgroundColor            = Color4.Gray;
-        public static Color4        defaultSolidColor                = Color4.Lime;
+        public static Color4        defaultBacgroundColor               = Color4.Gray;
+        public static Color4        defaultSolidColor                   = Color4.Lime;
                
         //Phong material default values
         public static float         defaultMaterialSpecularFactor       = 0f;
-        public static float         defaultMaterialReflectivnessFactor  = 0f;
+        public static float         defaultMaterialTransparencyFactor   = 0f;
         public static float         defaultMaterialDiffuseFactor        = 1f;
         public static float         defaultMaterialShininessFactor      = 2f;
         public static float         defaultMaterialIndexOfRefraction    = 0.9f;
@@ -21,19 +22,19 @@ namespace rt004.Util
         public static float         defaultMaterialRoughnessFactor      = 1f;
 
 
-
-        public static float         defaultAmbientLightFactor        = 0.1f;
-        public static Color4        defaultAmbientLightColor         = Color4.White;
-        public static float         defaultMaterialReflectionIntensity = 0.9f;
+        public static float         defaultAmbientLightFactor           = 0.1f;
+        public static Color4        defaultAmbientLightColor            = Color4.White;
+        public static float         defaultMaterialReflectionIntensity  = 0.9f;
 
 
         //rendering settings
-        public static LightModel    lightModel                       = LightModel.PhongModel;
-        public static uint          maxReflectionDepth               = 8;
-        public static bool          shadows                          = false;
-        public static bool          reflections                      = false;
-        public static float         minRayContribution               = 0.001f;
-        public static int           AntialiasingSize                 = 3;
+        public static LightModel    lightModel                          = LightModel.PhongModel;
+        public static uint          maxReflectionDepth                  = 8;
+        public static bool          shadows                             = false;
+        public static bool          reflections                         = false;
+        public static bool          refractions                         = false;
+        public static float         minRayContribution                  = 0.001f;
+        public static int           AntialiasingFraquency               = 3;
     }
 
 
@@ -87,6 +88,7 @@ namespace rt004.UtilLoading
         public uint maxReflectionDepth = 8;
         public bool shadows = false;
         public bool reflections = false;
+        public bool refractions = false;
         public float minRayContribution = 0.001f;
 
 
@@ -112,6 +114,7 @@ namespace rt004.UtilLoading
             RendererSettings.lightModel = (LightModel)Enum.Parse(typeof(LightModel), lightModel);
             RendererSettings.shadows = shadows;
             RendererSettings.reflections = reflections;
+            RendererSettings.refractions = refractions;
             RendererSettings.minRayContribution = minRayContribution;
             RendererSettings.maxReflectionDepth = maxReflectionDepth;
         }

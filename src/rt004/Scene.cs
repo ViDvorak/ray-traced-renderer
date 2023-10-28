@@ -369,15 +369,15 @@ namespace rt004
         }
 
 
-        public bool CastRay(Ray ray, out IntersectionProperties properties, double maxDistance, double minDistance = 0d)
+        public bool CastRay(Ray ray, out IntersectionProperties properties, double maxDistance, double minDistance = 0)
         {
             double closestIntersection = double.MaxValue;
             bool hasIntersected = false;
 
             properties = new IntersectionProperties();
 
-            foreach (Solid solid in solids.Where(solid => (solid.GlobalPosition - ray.Origin).Length < maxDistance && (solid.GlobalPosition - ray.Origin).Length > minDistance))
-            //foreach (Solid solid in solids)
+            //foreach (Solid solid in solids.Where(solid => (solid.GlobalPosition - ray.Origin).Length < maxDistance && (solid.GlobalPosition - ray.Origin).Length > minDistance))
+            foreach (Solid solid in solids)
             {
                 if (solid.TryGetRayIntersection(ray, out IntersectionProperties currentPropertes))
                 {
