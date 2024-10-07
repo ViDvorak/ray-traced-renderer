@@ -14,7 +14,9 @@ namespace rt004.SceneObjects
 
         private double pixelDensity;
 
-
+        /// <summary>
+        /// Field of view in radians
+        /// </summary>
         public float FoV
         {
             get
@@ -39,6 +41,11 @@ namespace rt004.SceneObjects
         }
 
 
+        /// <summary>
+        /// Sets resolution of the camera in pixels
+        /// </summary>
+        /// <param name="width">number of pixels horizontally</param>
+        /// <param name="height">number of pixels vertically</param>
         public override void SetResolution(uint width, uint height)
         {
             this.width = width;
@@ -77,9 +84,6 @@ namespace rt004.SceneObjects
             {
                 for (int x = 0; x < width; ++x)
                 {
-                    if (x == debugX && y == debugY)
-                    { /* For Debug */ }
-
                     Vector4 pixelColor = Vector4.Zero;
 
                     // anti-aliasing
@@ -118,9 +122,9 @@ namespace rt004.SceneObjects.Loading
 {
     public class PrespectiveCameraLoader : CameraLoader
     {
-        public float fov;// loaded as degrees
+        public float fov; //loaded as degrees
 
-        public string lightModelName;
+        public string lightModelName = "";
 
         private bool hasCameraFoVBeenConverted = false;
 

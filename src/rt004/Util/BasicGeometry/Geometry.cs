@@ -9,6 +9,14 @@ namespace rt004.Util
     /// </summary>
     internal static class Geometry
     {
+
+        /// <summary>
+        /// Computes intersection of two BasicPlanes. resulting in ray.
+        /// </summary>
+        /// <param name="plane1"></param>
+        /// <param name="plane2"></param>
+        /// <param name="intersection"></param>
+        /// <returns></returns>
         public static bool TryToIntersect(BasicPlane plane1, BasicPlane plane2, out Ray intersection)
         {
             if (Vector3D.Dot(plane1.Normal, plane2.Normal).isFloatEqual(plane1.Normal.Length * plane2.Normal.Length))
@@ -89,10 +97,16 @@ namespace rt004.Util
             return !double.IsNaN(distance) && distance >= 0d && !distance.isFloatEqual(0d);
         }
 
-
+        /// <summary>
+        /// Compures scale of two vectors such that scaled vectors added to startPoint will reach terget
+        /// </summary>
+        /// <param name="startPoint">point to add vectors to</param>
+        /// <param name="vector1">vector to scale</param>
+        /// <param name="vector2">vector to scale</param>
+        /// <param name="target">point to reach by adding scaled vectors to startPoint</param>
+        /// <returns>Returns vector representing scale of vector1 and vector2</returns>
         public static Vector2d LinearCombination(Point3D startPoint, Vector3D vector1, Vector3D vector2, Point3D target)
         {
-            // TODO fix problem with computation
             var scale = new Vector2d();
             scale.X = (float)((target.X - startPoint.X - vector2.X * (target.Y - startPoint.Y) / vector2.Y) / (vector1.X * (vector1.Y + vector1.X * vector2.Y)));
             scale.Y = (float)((target.Y - startPoint.Y - scale.X * vector1.Y) / vector2.Y);
@@ -107,14 +121,39 @@ namespace rt004.Util
             return scale;
         }
 
+        /// <summary>
+        /// Compures scale of two vectors such that scaled vectors added together will reach terget.
+        /// </summary>
+        /// <param name="vector1">vector to scale</param>
+        /// <param name="vector2">vector to scale</param>
+        /// <param name="target">point to reach by adding scaled vectors to startPoint</param>
+        /// <returns>Returns vector representing scale of vector1 and vector2</returns>
         public static Vector2d LinearCombination(Vector3D vector1, Vector3D vector2, Point3D target) => LinearCombination(Point3D.Zero, vector1, vector2, target);
 
+        /// <summary>
+        /// Checks if target point can be reached by scaling vectors and adding them up with startPoint
+        /// </summary>
+        /// <param name="startPoint">Point to add scaled vectors to</param>
+        /// <param name="vector1">vector to scale</param>
+        /// <param name="vector2">vector to scale</param>
+        /// <param name="target">Point to reach by adding scaled vector to startPoint</param>
+        /// <param name="scale">returns vector with computed scale factors</param>
+        /// <returns>true if target can be reached else false</returns>
         public static bool IsLinearCombination(Point3D startPoint, Vector3D vector1, Vector3D vector2, Point3D target, out Vector2d scale)
         {
             scale = LinearCombination(startPoint, vector1, vector2, target);
             return (scale.X * vector1.Z + scale.Y * vector2.Z + startPoint.Z).isFloatEqual( target.Z );// check if Z coordiante is equal to the resut linear combination
         }
 
+        /// <summary>
+        /// Checks if target point can be reached with scaled vectors by adding them up 
+        /// </summary>
+        /// <param name="startPoint">Point to add scaled vectors to</param>
+        /// <param name="vector1">vector to scale</param>
+        /// <param name="vector2">vector to scale</param>
+        /// <param name="target">Point to reach by adding scaled vector to startPoint</param>
+        /// <param name="scale">returns vector with computed scale factors</param>
+        /// <returns>true if target can be reached else false</returns>
         public static bool IsLinearCombination(Vector3D vector1, Vector3D vector2, Point3D target, out Vector2d scale) => IsLinearCombination(Point3D.Zero , vector1, vector2, target, out scale);
     }
 }

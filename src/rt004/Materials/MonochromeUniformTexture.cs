@@ -11,12 +11,23 @@ namespace rt004.Materials
         {
             this.value = value;
         }
-
+        /// <summary>
+        /// Gets represented value coded to color.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="v"></param>
+        /// <returns>Returns value coded to Color4 as (value, value, value, 0)</returns>
         public override Color4 GetColorAt(float u, float v)
         {
             return new Color4(value, value, value, 1);
         }
 
+        /// <summary>
+        /// Gets the represented value regardless of passed arguments
+        /// </summary>
+        /// <param name="u">horizonata coord</param>
+        /// <param name="v">vertical coord</param>
+        /// <returns></returns>
         public override float GetFactorAt(float u, float v)
         {
             return value;

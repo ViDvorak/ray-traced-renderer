@@ -50,33 +50,6 @@ namespace rt004.Util
 			SceneLoader scene = new SceneLoader();
 			TextureLoader whiteUniform = new UniformTextureLoader(Color4.White);
 
-			/*
-			var rendererSetting = new RendererSettingsLoader();
-			rendererSetting.lightModel = "PhongModel";
-			var materialYellow = new PhongMaterialLoader(new Color4(1f, 1f, 0.2f, 1f), 0.2f, 0.5f, 10f, 1f);
-			var materialBlue = new PhongMaterialLoader	(new Color4(0.2f, 0.3f, 1f, 1f), 0.5f, 0.5f, 150f, 1f);
-			var materialRed = new PhongMaterialLoader	(new Color4(0.8f, 0.2f, 0.2f, 1f), 0.4f, 0.5f, 80f, 1f);
-			var materialGold = new PhongMaterialLoader	(new Color4(0.3f, 0.2f, 0f, 1f), 0.8f, 0.5f, 400f, 1f);
-			var materialWhite = new PhongMaterialLoader	(new Color4(0.9f, 0.9f, 0.9f, 1f), 0.4f, 0.5f, 80f, 1f);
-
-			scene.solidLoaders.Add(new SphereLoader(new Point3D(0, 0, 0), new Vector3(0, 0, 0), materialYellow, 1f));
-			scene.solidLoaders.Add(new SphereLoader(new Point3D(1.4f, -0.7, -0.5), new Vector3(0, 0, 0), materialBlue, 0.6f));
-			scene.solidLoaders.Add(new SphereLoader(new Point3D(-0.7f, 0.7f, -0.8f), new Vector3(0, 0, 0), materialRed, 0.1f));
-			scene.solidLoaders.Add(new SphereLoader(new Point3D(1.5f, 0.6f, 0.1f), new Vector3(0, 0, 0), materialGold, 0.5f));
-			scene.solidLoaders.Add(new PlaneLoader (new Point3D(0, -1.3f, 0), new Vector3(0, 0, 0), materialWhite));
-
-			scene.ambientLightIntensity = 1f;
-			scene.ambientLightColor = Color4.White;
-			scene.lightLoaders.Add(new PointLightLoader(new Point3D(-10f, 8f, -6f), Vector3.Zero, Color4.White, 1, 1f, 1f));
-			scene.lightLoaders.Add(new PointLightLoader(new Point3D( 0f, 20f, -3f), Vector3.Zero, new Color4(0.3f, 0.3f, 0.3f, 1f), 1, 1f, 1f));
-
-			scene.cameraLoaders.Add( new CameraLoader(new Point3D(0.6f, 0f, -5.6f), new Vector3(0f, -0.03f, 0), new Color4(0.1f, 0.2f, 0.3f, 0f), MathF.PI * 4f / 9f, 600, 450));
-			data.sceneLoader = scene;
-
-			serializer.Serialize(Console.Out, data);
-			*/
-
-
 			// parsing XML config file
 			using (Stream stream = File.Open(config["config"], FileMode.Open))
 			{
@@ -104,9 +77,9 @@ namespace rt004.Util
 			while (!inputStream.EndOfStream)
 			{
 				lineNumber++;
-				string line = inputStream.ReadLine();
+				string? line = inputStream.ReadLine();
 
-				if (line.Length != 0)//skip empty lines
+				if (line is not null && line.Length != 0)//skip empty lines
 				{
 					line = line.Trim();
 					string[] paramValues = line.Split('=', 2, StringSplitOptions.TrimEntries);
@@ -136,7 +109,13 @@ namespace rt004.Util
 
 
 
-
+		/// <summary>
+		/// Initialize variables from textReader
+		/// </summary>
+		/// <param name="reader">Reader to initialize variable from</param>
+		/// <returns>Returns pair of TextReader contents without variable definitions and dictionary with variables and their contents</returns>
+		/// <exception cref="ArgumentNullException">throws if the reader is empty</exception>
+		/// <exception cref="ArgumentException">Throws if there is a problem with variable section delimitation</exception>
 		private static (string, Dictionary<string,string>) InitializeVariables(TextReader reader)
 		{
             Dictionary<string, string> variables = new Dictionary<string, string>();
@@ -166,6 +145,15 @@ namespace rt004.Util
 		}
 
 
+		/// <summary>
+		/// Parses variables in XML format from string.
+		/// </summary>
+		/// <remarks>
+		/// If variable is defined multiple times, then it is registered only as one, associated with last instance contents.
+		/// </remarks>
+		/// <param name="variableDefinitions">String contatining variable definitions in XML format. Should not contain variable start nor end tags.</param>
+		/// <returns>Returns dictionary with variable names and asociated contents.</returns>
+		/// <exception cref="ArgumentException"></exception>
 		private static Dictionary<string, string> ParseVariables(string variableDefinitions)
 		{
 			Dictionary<string, string> result = new Dictionary<string, string>();
@@ -177,7 +165,7 @@ namespace rt004.Util
 				var variableName = match.Groups[1].Value;
 				string variableContentPattern = $"{variableName}>" + @"\s*(.*)\s*" + $"</{variableName}";
 
-				//Match variable content
+				// Match variable content
 				Match variableContentMatch = Regex.Match(match.Groups[0].Value, variableContentPattern, RegexOptions.Singleline);
 				if (variableContentMatch.Success)
 				{
@@ -192,7 +180,12 @@ namespace rt004.Util
 		}
 
 
-
+		/// <summary>
+		/// Replaces all variable instances in input with variable contents
+		/// </summary>
+		/// <param name="input">The whole input to replace variabels with</param>
+		/// <param name="variableDefinitions">definitions of variables and ther contents</param>
+		/// <returns>Returns input with replaced variables</returns>
 		public static string replaceVariables(string input, Dictionary<string, string> variableDefinitions)
 		{
 			foreach ( (string name, string content) in variableDefinitions)
@@ -220,6 +213,9 @@ namespace rt004.Util
 			return (loadedData.sceneLoader.CreateInstance(), loadedData.output);
 		}
 
+		/// <summary>
+		/// Data structure to facilitate loading from XML file
+		/// </summary>
 		public struct DataLoader
 		{
 			public string output;

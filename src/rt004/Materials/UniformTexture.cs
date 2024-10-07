@@ -2,6 +2,9 @@
 
 namespace rt004.Materials
 {
+    /// <summary>
+    /// Represents texture with only one color at every position
+    /// </summary>
     public class UniformTexture : Texture
     {
         Color4 color { get; set; }

@@ -25,7 +25,7 @@ internal class Program
 
 
     /// <summary>
-    /// Writes to the image 2D consinus function
+    /// Writes to the image 2D cosinus function
     /// </summary>
     /// <param name="image">image to write to</param>
     private static FloatImage GenerateCosImage(FloatImage image)

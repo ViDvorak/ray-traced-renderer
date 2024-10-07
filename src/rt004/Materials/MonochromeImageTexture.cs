@@ -3,6 +3,9 @@
 
 namespace rt004.Materials
 {
+    /// <summary>
+    /// Represents grayscale image texture
+    /// </summary>
     public class MonochromeImageTexture : MonochromeTexture
     {
         float[,] data;
@@ -15,11 +18,11 @@ namespace rt004.Materials
 
 
         /// <summary>
-        /// Gets bilinaerli interpolated value from near image pixel values.
+        /// Gets bilinaerly interpolated value from near image pixel values.
         /// </summary>
         /// <param name="u">u coordinate</param>
         /// <param name="v">v coordinate</param>
-        /// <returns>bilinearli interpolated value from image</returns>
+        /// <returns>bilinearly interpolated value from image</returns>
         public override float GetFactorAt(float u, float v)
         {
             if ( u >= 0 && u <= data.GetLength(0) && v >= 0 && v <= data.GetLength(1))
@@ -44,7 +47,12 @@ namespace rt004.Materials
             return bilinear;
         }
 
-
+        /// <summary>
+        /// returns value represented in color
+        /// </summary>
+        /// <param name="u">horizontal coord</param>
+        /// <param name="v">vertical coord</param>
+        /// <returns>returns factor in Color4 represented as (value, value, value, 1)</returns>
         public override Color4 GetColorAt(float u, float v)
         {
             float intensity = GetFactorAt(u, v);

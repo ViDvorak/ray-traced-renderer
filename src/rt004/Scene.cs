@@ -166,7 +166,7 @@ namespace rt004
         /// <param name="parentSceneObject">Object to add to sceneObject as child</param>
         /// <param name="sceneObject">Scene object to add</param>
         /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
-        public async void AddSceneObject(InnerSceneObject parentSceneObject, SceneObject sceneObject)
+        public void AddSceneObject(InnerSceneObject parentSceneObject, SceneObject sceneObject)
         {
             if (sceneObject is Camera camera)
             {
@@ -199,6 +199,11 @@ namespace rt004
             BasicAddPrecedure(parentSceneObject, sceneObject);
         }
 
+        /// <summary>
+        /// registers an object to their new parent a unregisters it from previus
+        /// </summary>
+        /// <param name="parent">new parent object to register to</param>
+        /// <param name="child">child to register</param>
         private void BasicAddPrecedure(InnerSceneObject parent, SceneObject child)
         {
             if (child.ParentObject is not null)
@@ -362,13 +367,25 @@ namespace rt004
 
 
 
-
+        /// <summary>
+        /// Casts ray in the scene and checks for closest intersections with a SceneObject without distance limit
+        /// </summary>
+        /// <param name="ray">Ray to cast</param>
+        /// <param name="properties">Returned properties of the closest intersection</param>
+        /// <returns>Returns true if an intersection is found else false</returns>
         public bool CastRay(Ray ray, out IntersectionProperties properties)
         {
             return CastRay(ray, out properties, double.MaxValue);
         }
 
-
+        /// <summary>
+        /// Casts ray in the scene and checks for closest intersections with a SceneObject without distance limit
+        /// </summary>
+        /// <param name="ray">Ray to cast</param>
+        /// <param name="properties">Returned properties of the closest intersection</param>
+        /// <param name="maxDistance">max distance of the intersection from camera postion</param>
+        /// <param name="minDistance">min distance of the intersection from camera position</param>
+        /// <returns>Returns true if an intersection is found else false</returns>
         public bool CastRay(Ray ray, out IntersectionProperties properties, double maxDistance, double minDistance = 0)
         {
             double closestIntersection = double.MaxValue;
@@ -437,6 +454,11 @@ namespace rt004.Loading
 
         public List<SceneObjectLoader> sceneObjectLoaders = new List<SceneObjectLoader>();
 
+
+        /// <summary>
+        /// Creates Scene from loaded data
+        /// </summary>
+        /// <returns></returns>
         public Scene CreateInstance()
         {
             InnerSceneObject rootSceneObject;
@@ -455,6 +477,11 @@ namespace rt004.Loading
             return scene;
         }
 
+        /// <summary>
+        /// Recursivly loads children and adds them to the parentObject
+        /// </summary>
+        /// <param name="parentObject">SceneObject to add children to</param>
+        /// <param name="allChildren">Children to add</param>
         public static void ExtractChildren(InnerSceneObject parentObject, in List<SceneObject> allChildren)
         {
             foreach (SceneObject child in parentObject.GetChildren())

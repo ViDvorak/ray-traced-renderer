@@ -1,8 +1,6 @@
 ﻿using OpenTK.Mathematics;
 using rt004.SceneObjects;
 using rt004.Materials;
-using System.Diagnostics.CodeAnalysis;
-using System.Drawing;
 
 namespace rt004.Util.LightModels
 {

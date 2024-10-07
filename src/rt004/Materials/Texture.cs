@@ -13,6 +13,12 @@ namespace rt004.Materials
             this.height = height;
         }
 
+        /// <summary>
+        /// Color4 at the position 
+        /// </summary>
+        /// <param name="u">horizontal coord</param>
+        /// <param name="v">vertical coord</param>
+        /// <returns></returns>
         public abstract Color4 GetColorAt(float u, float v);
     }
 }
