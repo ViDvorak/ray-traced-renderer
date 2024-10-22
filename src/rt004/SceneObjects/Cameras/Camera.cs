@@ -63,10 +63,10 @@ namespace rt004.SceneObjects
 
 namespace rt004.SceneObjects.Loading
 {
-    [XmlInclude(typeof(PrespectiveCameraLoader))]
+    [XmlInclude(typeof(PerspectiveCameraLoader))]
     public abstract class CameraLoader : SceneObjectLoader
     {
-        public uint width, height;
+        public uint width = RendererSettings.defaultCameraWidth, height = RendererSettings.defaultCameraHeight  ;
         public Color4 backgroundColor;
 
         public CameraLoader()

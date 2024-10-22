@@ -11,6 +11,8 @@ namespace rt004.Util
 
         public static Color4        defaultBacgroundColor               = Color4.Gray;
         public static Color4        defaultSolidColor                   = Color4.Lime;
+        public static uint          defaultCameraWidth                  = 600;
+        public static uint          defaultCameraHeight                 = 480;
                
         //Phong material default values
         public static float         defaultMaterialSpecularFactor       = 0f;
@@ -30,8 +32,8 @@ namespace rt004.Util
         //rendering settings
         public static LightModel    lightModel                          = LightModel.PhongModel;
         public static uint          maxReflectionDepth                  = 8;
-        public static bool          shadows                             = false;
-        public static bool          reflections                         = false;
+        public static bool          shadows                             = true;
+        public static bool          reflections                         = true;
         public static bool          refractions                         = false;
         public static float         minRayContribution                  = 0.001f;
         public static int           AntialiasingFraquency               = 3;
@@ -71,10 +73,13 @@ namespace rt004.UtilLoading
 
         public Color4 defaultBacgroundColor = RendererSettings.defaultBacgroundColor;
         public Color4 defaultSolidColor = RendererSettings.defaultSolidColor;
+        public static uint defaultCameraWidth = RendererSettings.defaultCameraWidth;
+        public static uint defaultCameraHeight = RendererSettings.defaultCameraHeight;
 
 
         public float defaultSpecularFactor = RendererSettings.defaultMaterialSpecularFactor;
         public float defaultDiffuseFactor = RendererSettings.defaultMaterialDiffuseFactor;
+        public float defaultTransparencyFactor = RendererSettings.defaultMaterialTransparencyFactor;
         public float defaultRoughnessFactor = RendererSettings.defaultMaterialRoughnessFactor;
         public float defaultShininessFactor = RendererSettings.defaultMaterialShininessFactor;
         public float defaultIndexOfRefraction = RendererSettings.defaultMaterialIndexOfRefraction;
@@ -85,12 +90,11 @@ namespace rt004.UtilLoading
         
         
         public string lightModel = "PhongModel";
-        public uint maxReflectionDepth = 8;
-        public bool shadows = false;
-        public bool reflections = false;
-        public bool refractions = false;
-        public float minRayContribution = 0.001f;
-
+        public uint maxReflectionDepth = RendererSettings.maxReflectionDepth;
+        public float minRayContribution = RendererSettings.minRayContribution;
+        public bool shadows = RendererSettings.shadows;
+        public bool reflections = RendererSettings.reflections;
+        public bool refractions = RendererSettings.refractions;
 
 
 
@@ -100,6 +104,8 @@ namespace rt004.UtilLoading
 
             RendererSettings.defaultBacgroundColor = defaultBacgroundColor;
             RendererSettings.defaultSolidColor = defaultSolidColor;
+            RendererSettings.defaultCameraWidth = defaultCameraWidth;
+            RendererSettings.defaultCameraHeight = defaultCameraHeight;
 
             RendererSettings.defaultMaterialSpecularFactor = defaultSpecularFactor;
             RendererSettings.defaultMaterialDiffuseFactor = defaultDiffuseFactor;
@@ -115,8 +121,8 @@ namespace rt004.UtilLoading
             RendererSettings.shadows = shadows;
             RendererSettings.reflections = reflections;
             RendererSettings.refractions = refractions;
-            RendererSettings.minRayContribution = minRayContribution;
             RendererSettings.maxReflectionDepth = maxReflectionDepth;
+            RendererSettings.minRayContribution = minRayContribution;
         }
     }
 }

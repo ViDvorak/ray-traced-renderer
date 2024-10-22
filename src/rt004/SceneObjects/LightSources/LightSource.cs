@@ -62,11 +62,11 @@ namespace rt004.SceneObjects.Loading
     [XmlInclude(typeof(PointLightLoader))]
     public abstract class LightSourceLoader : SceneObjectLoader
     {
-        public float intensity;
-        public Color4 lightColor;
+        public float intensity = 1;
+        public Color4 lightColor = Color4.White;
 
-        public float diffuseFactor;
-        public float specularFactor;
+        public float diffuseFactor = 0.5f;
+        public float specularFactor = 0.5f;
 
         public LightSourceLoader() { }
 

@@ -12,14 +12,19 @@ internal class Program
     {
         (Scene scene, string output) = ArgumentParser.ParseScene(args);
 
-        // HDR image.
-        FloatImage image = scene.RenderScene();
-        
+        // render HDR image.
+        try { 
+            FloatImage image = scene.RenderScene();
 
-        //fi.SaveHDR(fileName);   // Doesn't work well yet...
-        image.SavePFM(output);
+            image.SavePFM(output);
 
-        Console.WriteLine("HDR image is finished.");
+            Console.WriteLine("HDR image is finished.");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("An error ocurred:");
+            Console.WriteLine(e.ToString());
+        }
     }
 
 

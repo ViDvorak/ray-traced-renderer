@@ -44,7 +44,7 @@ namespace rt004.Util
             string? str = reader.ReadLine();
             bool hasEndOfVariable = false;
 
-            while (str != null)
+            while (str is not null)
             {
                 initialString.AppendLine(str);
                 if (hasEndOfVariable)

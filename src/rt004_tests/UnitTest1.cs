@@ -52,7 +52,7 @@ namespace rt004_tests
             sceneLoader.sceneObjectLoaders.Add(new InnerSceneObjectLoader(new Point3D(1,1,1), new Vector3(MathF.PI, 0, 0)) { children = lights});
 
 
-            sceneLoader.sceneObjectLoaders.Add(new PrespectiveCameraLoader(new Point3D(0.6f, 0f, -5.6f), new Vector3(0f, -0.03f, 0), new Color4(0.1f, 0.2f, 0.3f, 0f), MathF.PI * 4f / 9f, 600, 450));
+            sceneLoader.sceneObjectLoaders.Add(new PerspectiveCameraLoader(new Point3D(0.6f, 0f, -5.6f), new Vector3(0f, -0.03f, 0), new Color4(0.1f, 0.2f, 0.3f, 0f), MathF.PI * 4f / 9f, 600, 450));
 
             testScene = sceneLoader.CreateInstance();
         }

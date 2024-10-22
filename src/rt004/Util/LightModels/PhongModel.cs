@@ -43,7 +43,7 @@ namespace rt004.Util.LightModels
 
 
                 //diffuse light part
-                diffuseIntensity = diffusePower * material.GetDiffuseFactor(intersection.uvCoordinates);
+                diffuseIntensity = diffusePower * material.GetDiffuseFactor(intersection.uvCoordinates); // maybe random number of rays in all directions?
 
                 float cosOfAngleLightSourceToNormal = (float)Vector3D.Dot(normal, intersectionToLightSource);
                 diffuseColor += baseColor * diffuseIntensity * MathF.Max(0, cosOfAngleLightSourceToNormal);
@@ -73,6 +73,7 @@ namespace rt004.Util.LightModels
                 Vector4 reflectionColor;
                 
                 var reflectionIntensity = material.GetSpecularFactor(intersection.uvCoordinates);
+
                 Ray reflectionRay = new Ray(intersection.globalPosition, normal * 2f * Vector3D.Dot(normal, intersectionToCamera) - intersectionToCamera);
                 
                 if (iteration > 0 && contribution > RendererSettings.minRayContribution &&
@@ -94,7 +95,6 @@ namespace rt004.Util.LightModels
             Vector4 refractedColor = Vector4.Zero;
             if (RendererSettings.refractions)
             {
-                double distance;
                 float ior = currentIOR / material.GetIndexOfRefraction(intersection.uvCoordinates);
                 double dot = Vector3D.Dot(intersection.normal, intersectionToCamera);
                 

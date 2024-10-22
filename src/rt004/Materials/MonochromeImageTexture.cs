@@ -65,11 +65,13 @@ namespace rt004.Materials.Loading
 {
     public class MonochromeImageTextureLoader : MonochromeTextureLoader
     {
+        string path = "";
+
         public MonochromeImageTextureLoader() { }
 
         public override Texture GetInstance()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("Monochrome image texture loading not implemented");
         }
     }
 }

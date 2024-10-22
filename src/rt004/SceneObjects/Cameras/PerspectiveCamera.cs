@@ -5,7 +5,7 @@ using Util;
 
 namespace rt004.SceneObjects
 {
-    public class PrespectiveCamera : Camera
+    public class PerspectiveCamera : Camera
     {
         public Color4 backgroundColor = RendererSettings.defaultBacgroundColor;
 
@@ -32,7 +32,7 @@ namespace rt004.SceneObjects
 
 
 
-        public PrespectiveCamera(Scene parentScene, Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height ) 
+        public PerspectiveCamera(Scene parentScene, Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height ) 
             : base(parentScene, position, rotation, width, height)
         {
             this.backgroundColor = backgroundColor;
@@ -74,7 +74,6 @@ namespace rt004.SceneObjects
         public override FloatImage RenderImage()
         {
             float maxIntensity = 0;
-            float debugX = 300, debugY = 300;
 
             FloatImage image = new FloatImage((int)width, (int)height, 3);
 
@@ -120,7 +119,7 @@ namespace rt004.SceneObjects
 
 namespace rt004.SceneObjects.Loading
 {
-    public class PrespectiveCameraLoader : CameraLoader
+    public class PerspectiveCameraLoader : CameraLoader
     {
         public float fov; //loaded as degrees
 
@@ -128,9 +127,9 @@ namespace rt004.SceneObjects.Loading
 
         private bool hasCameraFoVBeenConverted = false;
 
-        public PrespectiveCameraLoader() { }
+        public PerspectiveCameraLoader() { }
 
-        public PrespectiveCameraLoader(Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height)
+        public PerspectiveCameraLoader(Point3D position, Vector3 rotation, Color4 backgroundColor, float fov, uint width, uint height)
             : base(position, rotation, backgroundColor, width, height)
         {
             this.fov = fov; hasCameraFoVBeenConverted = true;
@@ -140,7 +139,7 @@ namespace rt004.SceneObjects.Loading
         {
             if (!hasCameraFoVBeenConverted)
                 fov = fov / 180 * MathF.PI;
-            return new PrespectiveCamera(parentScene, new Point3D(position), rotation, backgroundColor, fov, width, height);
+            return new PerspectiveCamera(parentScene, new Point3D(position), rotation, backgroundColor, fov, width, height);
         }
     }
 }
