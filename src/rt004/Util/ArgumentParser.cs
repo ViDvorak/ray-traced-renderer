@@ -19,7 +19,6 @@ namespace rt004.Util
 		ArgumentLoading
 	}
 
-
 	public static class ArgumentParser
 	{
 		/// <summary>
@@ -36,7 +35,7 @@ namespace rt004.Util
 			{
 				// Default values of all supported parameters
 				["config"] = configFile,
-                ["output"] = "output.pfm",
+                ["output"] = RendererSettings.DefaultOutputFile,
             };
 
 
@@ -61,7 +60,7 @@ namespace rt004.Util
                 data = d ?? throw new ArgumentException("Configurtion file is empty");
 			}
 
-			if (String.IsNullOrEmpty( data.output) )
+			if ( config["output"] != RendererSettings.DefaultOutputFile )
 				data.output = config["output"];
 
 			return data;
@@ -100,10 +99,11 @@ namespace rt004.Util
 							throw new ArgumentException("Expected =, but not found.");
 
 						currentLoading = ParsingStage.ArgumentLoading;
-						(word, delim) = ReadUntil(reader, delimiters);
+						//(word, delim) = ReadUntil(reader, delimiters);
 						break;
 					case ParsingStage.ArgumentLoading:
-						if (delim == '"' || delim == '\'' )
+                        (word, delim) = ReadUntil(reader, delimiters);
+                        if (delim == '"' || delim == '\'' )
 						{
 							if (!String.IsNullOrEmpty(word.Trim()))
 								throw new ArgumentException("Argument name can not contain \" nor ' symobols outside the begining or the end");

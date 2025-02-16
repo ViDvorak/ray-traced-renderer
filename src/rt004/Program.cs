@@ -10,7 +10,19 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        (Scene scene, string output) = ArgumentParser.ParseScene(args);
+        Scene scene;
+        string output;
+        try
+        {
+            (scene, output) = ArgumentParser.ParseScene(args);
+            Console.WriteLine("the output file is " + output);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("An error ocurred during comand line argument parsing:");
+            Console.WriteLine(e.ToString());
+            return;
+        }
 
         // render HDR image.
         try { 

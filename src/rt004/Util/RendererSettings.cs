@@ -8,7 +8,7 @@ namespace rt004.Util
     {
         public static float         epsilon = 0.001f;
 
-        public static Color4        defaultBackgroundColor               = Color4.Gray;
+        public static Color4        defaultBackgroundColor              = Color4.Gray;
         public static Color4        defaultSolidColor                   = Color4.Lime;
         public static uint          defaultCameraWidth                  = 600;
         public static uint          defaultCameraHeight                 = 480;
@@ -36,6 +36,9 @@ namespace rt004.Util
         public static bool          refractions                         = false;
         public static float         minRayContribution                  = 0.001f;
         public static int           AntialiasingFraquency               = 3;
+
+        public static string        DefaultOutputFile                   = "output.pfm";
+        public static string        DefaultConfigFile                   = "config.xml";
     }
 
 
@@ -94,7 +97,6 @@ namespace rt004.UtilLoading
         public bool shadows = RendererSettings.shadows;
         public bool reflections = RendererSettings.reflections;
         public bool refractions = RendererSettings.refractions;
-
 
 
         public void SaveLoadedSettings()
