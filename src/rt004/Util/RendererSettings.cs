@@ -1,5 +1,4 @@
 ﻿using OpenTK.Mathematics;
-using rt004.Materials;
 using rt004.Util;
 using rt004.Util.LightModels;
 
@@ -9,7 +8,7 @@ namespace rt004.Util
     {
         public static float         epsilon = 0.001f;
 
-        public static Color4        defaultBacgroundColor               = Color4.Gray;
+        public static Color4        defaultBackgroundColor               = Color4.Gray;
         public static Color4        defaultSolidColor                   = Color4.Lime;
         public static uint          defaultCameraWidth                  = 600;
         public static uint          defaultCameraHeight                 = 480;
@@ -71,7 +70,7 @@ namespace rt004.UtilLoading
     {
         public float epsilon = RendererSettings.epsilon;
 
-        public Color4 defaultBacgroundColor = RendererSettings.defaultBacgroundColor;
+        public Color4 defaultBacgroundColor = RendererSettings.defaultBackgroundColor;
         public Color4 defaultSolidColor = RendererSettings.defaultSolidColor;
         public static uint defaultCameraWidth = RendererSettings.defaultCameraWidth;
         public static uint defaultCameraHeight = RendererSettings.defaultCameraHeight;
@@ -102,7 +101,7 @@ namespace rt004.UtilLoading
         {
             RendererSettings.epsilon = epsilon;
 
-            RendererSettings.defaultBacgroundColor = defaultBacgroundColor;
+            RendererSettings.defaultBackgroundColor = defaultBacgroundColor;
             RendererSettings.defaultSolidColor = defaultSolidColor;
             RendererSettings.defaultCameraWidth = defaultCameraWidth;
             RendererSettings.defaultCameraHeight = defaultCameraHeight;

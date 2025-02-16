@@ -1,11 +1,9 @@
 ﻿using OpenTK.Mathematics;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
 
 namespace rt004.Util
 {
     /// <summary>
-    /// Contains Funstions for computation intersections in 3D space.
+    /// Contains static functions for computation of intersections in 3D space.
     /// </summary>
     internal static class Geometry
     {
@@ -16,10 +14,10 @@ namespace rt004.Util
         /// <param name="plane1"></param>
         /// <param name="plane2"></param>
         /// <param name="intersection"></param>
-        /// <returns></returns>
+        /// <returns>Returns true if the Planes intersect, else false (they are parallel and does not overlap)</returns>
         public static bool TryToIntersect(BasicPlane plane1, BasicPlane plane2, out Ray intersection)
         {
-            if (Vector3D.Dot(plane1.Normal, plane2.Normal).isFloatEqual(plane1.Normal.Length * plane2.Normal.Length))
+            if (Vector3D.Dot(plane1.Normal, plane2.Normal).IsFloatEqual(plane1.Normal.Length * plane2.Normal.Length))
             {
                 intersection = new Ray();
                 return false;
@@ -37,7 +35,7 @@ namespace rt004.Util
         }
 
         /// <summary>
-        /// Computes intersection of two rays.
+        /// Computes intersection of two rays with epsilon precision.
         /// </summary>
         /// <param name="line1">first ray</param>
         /// <param name="line2">second ray</param>
@@ -87,14 +85,14 @@ namespace rt004.Util
             distance = (Vector3d.Dot((Vector3d)plane.Normal, (Vector3d)ray.Origin) + plane.GetD()) / cosineOfAngle;
             
             // line is paralel to the Plane
-            if (cosineOfAngle.isFloatEqual(1f))
+            if (cosineOfAngle.IsFloatEqual(1f))
             {
                 distance = 0;
                 (var axis1, var axis2) = plane.GetAxisOnPlane();
                 // is ray parallel and is origin point on plane
                 return IsLinearCombination(plane.PointOnPlane, axis1, axis2, ray.Origin, out Vector2d scale);
             }
-            return !double.IsNaN(distance) && distance >= 0d && !distance.isFloatEqual(0d);
+            return !double.IsNaN(distance) && distance >= 0d && !distance.IsFloatEqual(0d);
         }
 
         /// <summary>
@@ -142,13 +140,12 @@ namespace rt004.Util
         public static bool IsLinearCombination(Point3D startPoint, Vector3D vector1, Vector3D vector2, Point3D target, out Vector2d scale)
         {
             scale = LinearCombination(startPoint, vector1, vector2, target);
-            return (scale.X * vector1.Z + scale.Y * vector2.Z + startPoint.Z).isFloatEqual( target.Z );// check if Z coordiante is equal to the resut linear combination
+            return (scale.X * vector1.Z + scale.Y * vector2.Z + startPoint.Z).IsFloatEqual( target.Z );// check if Z coordiante is equal to the resut linear combination
         }
 
         /// <summary>
         /// Checks if target point can be reached with scaled vectors by adding them up 
         /// </summary>
-        /// <param name="startPoint">Point to add scaled vectors to</param>
         /// <param name="vector1">vector to scale</param>
         /// <param name="vector2">vector to scale</param>
         /// <param name="target">Point to reach by adding scaled vector to startPoint</param>

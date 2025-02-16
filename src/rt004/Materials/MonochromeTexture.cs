@@ -25,6 +25,9 @@ namespace rt004.Materials
 
 namespace rt004.Materials.Loading
 {
+    /// <summary>
+    /// Abstract support class used for loading a monochrome texture.
+    /// </summary>
     [XmlInclude(typeof(MonochromeImageTextureLoader)), XmlInclude(typeof(MonochromeUniformTextureLoader))]
     abstract public class MonochromeTextureLoader : TextureLoader
     {

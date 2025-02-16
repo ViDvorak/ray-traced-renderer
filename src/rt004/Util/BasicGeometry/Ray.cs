@@ -1,8 +1,7 @@
-﻿
-namespace rt004.Util
+﻿namespace rt004.Util
 {
     /// <summary>
-    /// Represents line parametricly in 3D
+    /// Represents a line parametricly in 3D using Point and Vector
     /// </summary>
     public record struct Ray
     {
@@ -25,7 +24,7 @@ namespace rt004.Util
         }
 
         /// <summary>
-        /// Computes point on the line with specified parameter
+        /// Computes point on the line by multipling the parameter with normalized directional vector.
         /// </summary>
         /// <param name="distance">Distance, how far from position in direction of Direction is the point</param>
         /// <returns>Point on the line</returns>

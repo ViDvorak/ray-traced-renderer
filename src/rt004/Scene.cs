@@ -60,12 +60,12 @@ namespace rt004
             }
             set
             {
-                if (!cameras.Contains(value))
+                if (value is not null)
                 {
-                    throw new KeyNotFoundException("Camera is not inhierarchy. You must add it to hierarchy before assignement as mainCamera");
-                }
-                if (value != null)
-                {
+                    if (!cameras.Contains(value))
+                    {
+                        throw new KeyNotFoundException("Camera is not inhierarchy. You must add it to hierarchy before assignement as mainCamera");
+                    }
                     mainCamera = value;
                 }
             }
@@ -328,8 +328,8 @@ namespace rt004
             var isIntersecting = CastRay(ray, out distance);
 
             isIntersecting = isIntersecting &&
-                             (distance >= minDistance || distance.isFloatEqual(minDistance)) &&
-                             (distance <= maxDistance || distance.isFloatEqual(maxDistance));
+                             (distance >= minDistance || distance.IsFloatEqual(minDistance)) &&
+                             (distance <= maxDistance || distance.IsFloatEqual(maxDistance));
             return isIntersecting;
         }
 

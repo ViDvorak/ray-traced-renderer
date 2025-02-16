@@ -1,8 +1,4 @@
-﻿
-
-using OpenTK.Mathematics;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using OpenTK.Mathematics;
 
 namespace rt004.Util
 {

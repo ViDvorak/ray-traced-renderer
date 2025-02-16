@@ -16,8 +16,12 @@ namespace rt004.Util.LightModels
 
 
 
-
-        static Dictionary<LightModel, LightModelComputation> LightModelConversion = new Dictionary<LightModel, LightModelComputation>()
+        /// <summary>
+        /// Contains apropriate LightModelComputation for each LightModel.
+        /// 
+        /// Note: When creating new LightModelComputation they needs to be registered here.
+        /// </summary>
+        private static Dictionary<LightModel, LightModelComputation> LightModelConversion = new Dictionary<LightModel, LightModelComputation>()
         {
             { LightModel.PhongModel, new PhongModel() },
 
@@ -27,7 +31,7 @@ namespace rt004.Util.LightModels
         /// Gets apropriate light computation model based on enum
         /// </summary>
         /// <param name="lightModel"></param>
-        /// <returns>Return LightModelComputation apropriate for lightModel</returns>
+        /// <returns>Returns LightModelComputation apropriate for lightModel</returns>
         public static LightModelComputation GetCorrectLightModel(LightModel lightModel)
         {
             return LightModelConversion[lightModel];

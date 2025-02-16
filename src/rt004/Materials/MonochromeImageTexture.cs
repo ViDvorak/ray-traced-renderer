@@ -8,6 +8,9 @@ namespace rt004.Materials
     /// </summary>
     public class MonochromeImageTexture : MonochromeTexture
     {
+        /// <summary>
+        /// All information of the image is saved in here.
+        /// </summary>
         float[,] data;
 
         public MonochromeImageTexture(uint u, uint v) : base(u,v)
@@ -63,12 +66,19 @@ namespace rt004.Materials
 
 namespace rt004.Materials.Loading
 {
+    /// <summary>
+    /// Loader of image in the texture. Currently not fully implemented!
+    /// </summary>
     public class MonochromeImageTextureLoader : MonochromeTextureLoader
     {
         string path = "";
 
         public MonochromeImageTextureLoader() { }
 
+        /// <summary>
+        /// Creates a new instance of <see cref="MonochromeImageTexture"/> with the specified color.
+        /// </summary>
+        /// <returns>A new <see cref="MonochromeImageTexture"/> instance initialized with the specified color.</returns>
         public override Texture GetInstance()
         {
             throw new NotImplementedException("Monochrome image texture loading not implemented");
