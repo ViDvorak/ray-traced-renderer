@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004
+  commentId: N:rt004
+  id: rt004
+  children:
+  - rt004.Extensions
+  - rt004.Scene
+  langs:
+  - csharp
+  - vb
+  name: rt004
+  nameWithType: rt004
+  fullName: rt004
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.Scene
+  commentId: T:rt004.Scene
+  parent: rt004
+  href: rt004.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: rt004.Scene
+- uid: rt004.Extensions
+  commentId: T:rt004.Extensions
+  href: rt004.Extensions.html
+  name: Extensions
+  nameWithType: Extensions
+  fullName: rt004.Extensions
+- uid: rt004
+  commentId: N:rt004
+  href: rt004.html
+  name: rt004
+  nameWithType: rt004
+  fullName: rt004

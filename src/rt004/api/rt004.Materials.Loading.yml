@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Materials.Loading
+  commentId: N:rt004.Materials.Loading
+  id: rt004.Materials.Loading
+  children:
+  - rt004.Materials.Loading.MaterialLoader
+  - rt004.Materials.Loading.MonochromeImageTextureLoader
+  - rt004.Materials.Loading.MonochromeTextureLoader
+  - rt004.Materials.Loading.MonochromeUniformTextureLoader
+  - rt004.Materials.Loading.TextureLoader
+  - rt004.Materials.Loading.UniformTextureLoader
+  langs:
+  - csharp
+  - vb
+  name: rt004.Materials.Loading
+  nameWithType: rt004.Materials.Loading
+  fullName: rt004.Materials.Loading
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.Materials.Loading.MaterialLoader
+  commentId: T:rt004.Materials.Loading.MaterialLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.MaterialLoader.html
+  name: MaterialLoader
+  nameWithType: MaterialLoader
+  fullName: rt004.Materials.Loading.MaterialLoader
+- uid: rt004.Materials.Loading.MonochromeImageTextureLoader
+  commentId: T:rt004.Materials.Loading.MonochromeImageTextureLoader
+  href: rt004.Materials.Loading.MonochromeImageTextureLoader.html
+  name: MonochromeImageTextureLoader
+  nameWithType: MonochromeImageTextureLoader
+  fullName: rt004.Materials.Loading.MonochromeImageTextureLoader
+- uid: rt004.Materials.Loading.MonochromeTextureLoader
+  commentId: T:rt004.Materials.Loading.MonochromeTextureLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.MonochromeTextureLoader.html
+  name: MonochromeTextureLoader
+  nameWithType: MonochromeTextureLoader
+  fullName: rt004.Materials.Loading.MonochromeTextureLoader
+- uid: rt004.Materials.Loading.MonochromeUniformTextureLoader
+  commentId: T:rt004.Materials.Loading.MonochromeUniformTextureLoader
+  href: rt004.Materials.Loading.MonochromeUniformTextureLoader.html
+  name: MonochromeUniformTextureLoader
+  nameWithType: MonochromeUniformTextureLoader
+  fullName: rt004.Materials.Loading.MonochromeUniformTextureLoader
+- uid: rt004.Materials.Loading.TextureLoader
+  commentId: T:rt004.Materials.Loading.TextureLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.TextureLoader.html
+  name: TextureLoader
+  nameWithType: TextureLoader
+  fullName: rt004.Materials.Loading.TextureLoader
+- uid: rt004.Materials.Loading.UniformTextureLoader
+  commentId: T:rt004.Materials.Loading.UniformTextureLoader
+  href: rt004.Materials.Loading.UniformTextureLoader.html
+  name: UniformTextureLoader
+  nameWithType: UniformTextureLoader
+  fullName: rt004.Materials.Loading.UniformTextureLoader
+- uid: rt004.Materials.Loading
+  commentId: N:rt004.Materials.Loading
+  href: rt004.html
+  name: rt004.Materials.Loading
+  nameWithType: rt004.Materials.Loading
+  fullName: rt004.Materials.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html

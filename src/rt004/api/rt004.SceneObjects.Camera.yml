@@ -1,0 +1,1115 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.SceneObjects.Camera
+  commentId: T:rt004.SceneObjects.Camera
+  id: Camera
+  parent: rt004.SceneObjects
+  children:
+  - rt004.SceneObjects.Camera.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,System.UInt32,System.UInt32)
+  - rt004.SceneObjects.Camera.GetResolution
+  - rt004.SceneObjects.Camera.Height
+  - rt004.SceneObjects.Camera.MaxRenderingDistance
+  - rt004.SceneObjects.Camera.RenderImage
+  - rt004.SceneObjects.Camera.SetResolution(System.UInt32,System.UInt32)
+  - rt004.SceneObjects.Camera.Width
+  - rt004.SceneObjects.Camera.height
+  - rt004.SceneObjects.Camera.maxRenderingDistanceSquered
+  - rt004.SceneObjects.Camera.width
+  langs:
+  - csharp
+  - vb
+  name: Camera
+  nameWithType: Camera
+  fullName: rt004.SceneObjects.Camera
+  type: Class
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Camera
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 10
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Represents an abstract base class for cameras within the scene, defining basic properties and methods.
+  example: []
+  syntax:
+    content: 'public abstract class Camera : SceneObject'
+    content.vb: Public MustInherit Class Camera Inherits SceneObject
+  inheritance:
+  - System.Object
+  - rt004.SceneObjects.SceneObject
+  derivedClasses:
+  - rt004.SceneObjects.PerspectiveCamera
+  inheritedMembers:
+  - rt004.SceneObjects.SceneObject.parentScene
+  - rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  - rt004.SceneObjects.SceneObject.Position
+  - rt004.SceneObjects.SceneObject.GlobalPosition
+  - rt004.SceneObjects.SceneObject.Rotation
+  - rt004.SceneObjects.SceneObject.ParentScene
+  - rt004.SceneObjects.SceneObject.ParentObject
+  - rt004.SceneObjects.SceneObject.GetLocalHeding
+  - rt004.SceneObjects.SceneObject.GetGlobalHeading
+  - rt004.SceneObjects.SceneObject.GetGlobalPosition
+  - rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  - rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  - rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.SceneObjects.Camera.width
+  commentId: F:rt004.SceneObjects.Camera.width
+  id: width
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: width
+  nameWithType: Camera.width
+  fullName: rt004.SceneObjects.Camera.width
+  type: Field
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: width
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 15
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: The width of the camera in pixels.
+  example: []
+  syntax:
+    content: protected uint width
+    return:
+      type: System.UInt32
+    content.vb: Protected width As UInteger
+- uid: rt004.SceneObjects.Camera.height
+  commentId: F:rt004.SceneObjects.Camera.height
+  id: height
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: height
+  nameWithType: Camera.height
+  fullName: rt004.SceneObjects.Camera.height
+  type: Field
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: height
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 20
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: The height of the camera in pixels.
+  example: []
+  syntax:
+    content: protected uint height
+    return:
+      type: System.UInt32
+    content.vb: Protected height As UInteger
+- uid: rt004.SceneObjects.Camera.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,System.UInt32,System.UInt32)
+  commentId: M:rt004.SceneObjects.Camera.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,System.UInt32,System.UInt32)
+  id: '#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,System.UInt32,System.UInt32)'
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: Camera(Scene, Point3D, Vector3, uint, uint)
+  nameWithType: Camera.Camera(Scene, Point3D, Vector3, uint, uint)
+  fullName: rt004.SceneObjects.Camera.Camera(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3, uint, uint)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 30
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Initializes a new instance of the <xref href="rt004.SceneObjects.Camera" data-throw-if-not-resolved="false"></xref> class with specified parameters.
+  example: []
+  syntax:
+    content: public Camera(Scene parentScene, Point3D position, Vector3 rotation, uint width, uint height)
+    parameters:
+    - id: parentScene
+      type: rt004.Scene
+      description: The parent scene to which this camera belongs.
+    - id: position
+      type: rt004.Util.Point3D
+      description: The position of the camera within the scene.
+    - id: rotation
+      type: OpenTK.Mathematics.Vector3
+      description: The rotation of the camera within the scene.
+    - id: width
+      type: System.UInt32
+      description: The width of the camera resolution in pixels.
+    - id: height
+      type: System.UInt32
+      description: The height of the camera resolution in pixels.
+    content.vb: Public Sub New(parentScene As Scene, position As Point3D, rotation As Vector3, width As UInteger, height As UInteger)
+  overload: rt004.SceneObjects.Camera.#ctor*
+  nameWithType.vb: Camera.New(Scene, Point3D, Vector3, UInteger, UInteger)
+  fullName.vb: rt004.SceneObjects.Camera.New(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3, UInteger, UInteger)
+  name.vb: New(Scene, Point3D, Vector3, UInteger, UInteger)
+- uid: rt004.SceneObjects.Camera.RenderImage
+  commentId: M:rt004.SceneObjects.Camera.RenderImage
+  id: RenderImage
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: RenderImage()
+  nameWithType: Camera.RenderImage()
+  fullName: rt004.SceneObjects.Camera.RenderImage()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RenderImage
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 39
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Renders an image of the scene from the camera's perspective.
+  example: []
+  syntax:
+    content: public abstract FloatImage RenderImage()
+    return:
+      type: Util.FloatImage
+      description: A <xref href="Util.FloatImage" data-throw-if-not-resolved="false"></xref> representing the rendered scene image.
+    content.vb: Public MustOverride Function RenderImage() As FloatImage
+  overload: rt004.SceneObjects.Camera.RenderImage*
+- uid: rt004.SceneObjects.Camera.maxRenderingDistanceSquered
+  commentId: F:rt004.SceneObjects.Camera.maxRenderingDistanceSquered
+  id: maxRenderingDistanceSquered
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: maxRenderingDistanceSquered
+  nameWithType: Camera.maxRenderingDistanceSquered
+  fullName: rt004.SceneObjects.Camera.maxRenderingDistanceSquered
+  type: Field
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: maxRenderingDistanceSquered
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 44
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: The maximum rendering distance squared, defining how far the camera can render objects.
+  example: []
+  syntax:
+    content: protected float maxRenderingDistanceSquered
+    return:
+      type: System.Single
+    content.vb: Protected maxRenderingDistanceSquered As Single
+- uid: rt004.SceneObjects.Camera.MaxRenderingDistance
+  commentId: P:rt004.SceneObjects.Camera.MaxRenderingDistance
+  id: MaxRenderingDistance
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: MaxRenderingDistance
+  nameWithType: Camera.MaxRenderingDistance
+  fullName: rt004.SceneObjects.Camera.MaxRenderingDistance
+  type: Property
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: MaxRenderingDistance
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 49
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Gets or sets the maximum rendering distance of the camera.
+  example: []
+  syntax:
+    content: public float MaxRenderingDistance { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property MaxRenderingDistance As Single
+  overload: rt004.SceneObjects.Camera.MaxRenderingDistance*
+- uid: rt004.SceneObjects.Camera.Width
+  commentId: P:rt004.SceneObjects.Camera.Width
+  id: Width
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: Camera.Width
+  fullName: rt004.SceneObjects.Camera.Width
+  type: Property
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Width
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 65
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: >-
+    Gets or sets the width of the camera's resolution.
+
+    Setting this property updates the resolution.
+  example: []
+  syntax:
+    content: public uint Width { get; set; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property Width As UInteger
+  overload: rt004.SceneObjects.Camera.Width*
+- uid: rt004.SceneObjects.Camera.Height
+  commentId: P:rt004.SceneObjects.Camera.Height
+  id: Height
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: Camera.Height
+  fullName: rt004.SceneObjects.Camera.Height
+  type: Property
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Height
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 75
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: >-
+    Gets or sets the height of the camera's resolution.
+
+    Setting this property updates the resolution.
+  example: []
+  syntax:
+    content: public uint Height { get; set; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property Height As UInteger
+  overload: rt004.SceneObjects.Camera.Height*
+- uid: rt004.SceneObjects.Camera.SetResolution(System.UInt32,System.UInt32)
+  commentId: M:rt004.SceneObjects.Camera.SetResolution(System.UInt32,System.UInt32)
+  id: SetResolution(System.UInt32,System.UInt32)
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: SetResolution(uint, uint)
+  nameWithType: Camera.SetResolution(uint, uint)
+  fullName: rt004.SceneObjects.Camera.SetResolution(uint, uint)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: SetResolution
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 86
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Sets the resolution of the camera.
+  example: []
+  syntax:
+    content: public abstract void SetResolution(uint width, uint height)
+    parameters:
+    - id: width
+      type: System.UInt32
+      description: The width of the resolution in pixels.
+    - id: height
+      type: System.UInt32
+      description: The height of the resolution in pixels.
+    content.vb: Public MustOverride Sub SetResolution(width As UInteger, height As UInteger)
+  overload: rt004.SceneObjects.Camera.SetResolution*
+  nameWithType.vb: Camera.SetResolution(UInteger, UInteger)
+  fullName.vb: rt004.SceneObjects.Camera.SetResolution(UInteger, UInteger)
+  name.vb: SetResolution(UInteger, UInteger)
+- uid: rt004.SceneObjects.Camera.GetResolution
+  commentId: M:rt004.SceneObjects.Camera.GetResolution
+  id: GetResolution
+  parent: rt004.SceneObjects.Camera
+  langs:
+  - csharp
+  - vb
+  name: GetResolution()
+  nameWithType: Camera.GetResolution()
+  fullName: rt004.SceneObjects.Camera.GetResolution()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Cameras/Camera.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetResolution
+    path: SceneObjects/Cameras/Camera.cs
+    startLine: 92
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Gets the current resolution of the camera.
+  example: []
+  syntax:
+    content: public (uint, uint) GetResolution()
+    return:
+      type: System.ValueTuple{System.UInt32,System.UInt32}
+      description: A tuple of <code>uint</code> representing the width and height, respectively.
+    content.vb: Public Function GetResolution() As (UInteger, UInteger)
+  overload: rt004.SceneObjects.Camera.GetResolution*
+references:
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  href: rt004.html
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.SceneObjects.SceneObject
+  commentId: T:rt004.SceneObjects.SceneObject
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.SceneObject.html
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: rt004.SceneObjects.SceneObject
+- uid: rt004.SceneObjects.SceneObject.parentScene
+  commentId: F:rt004.SceneObjects.SceneObject.parentScene
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_parentScene
+  name: parentScene
+  nameWithType: SceneObject.parentScene
+  fullName: rt004.SceneObjects.SceneObject.parentScene
+- uid: rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  commentId: F:rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_dirtyGlobalPosition
+  name: dirtyGlobalPosition
+  nameWithType: SceneObject.dirtyGlobalPosition
+  fullName: rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+- uid: rt004.SceneObjects.SceneObject.Position
+  commentId: P:rt004.SceneObjects.SceneObject.Position
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Position
+  name: Position
+  nameWithType: SceneObject.Position
+  fullName: rt004.SceneObjects.SceneObject.Position
+- uid: rt004.SceneObjects.SceneObject.GlobalPosition
+  commentId: P:rt004.SceneObjects.SceneObject.GlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GlobalPosition
+  name: GlobalPosition
+  nameWithType: SceneObject.GlobalPosition
+  fullName: rt004.SceneObjects.SceneObject.GlobalPosition
+- uid: rt004.SceneObjects.SceneObject.Rotation
+  commentId: P:rt004.SceneObjects.SceneObject.Rotation
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Rotation
+  name: Rotation
+  nameWithType: SceneObject.Rotation
+  fullName: rt004.SceneObjects.SceneObject.Rotation
+- uid: rt004.SceneObjects.SceneObject.ParentScene
+  commentId: P:rt004.SceneObjects.SceneObject.ParentScene
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentScene
+  name: ParentScene
+  nameWithType: SceneObject.ParentScene
+  fullName: rt004.SceneObjects.SceneObject.ParentScene
+- uid: rt004.SceneObjects.SceneObject.ParentObject
+  commentId: P:rt004.SceneObjects.SceneObject.ParentObject
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentObject
+  name: ParentObject
+  nameWithType: SceneObject.ParentObject
+  fullName: rt004.SceneObjects.SceneObject.ParentObject
+- uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalHeding
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  name: GetLocalHeding()
+  nameWithType: SceneObject.GetLocalHeding()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalHeding()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+    name: GetLocalHeding
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+    name: GetLocalHeding
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+  commentId: M:rt004.SceneObjects.SceneObject.GetGlobalHeading
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  name: GetGlobalHeading()
+  nameWithType: SceneObject.GetGlobalHeading()
+  fullName: rt004.SceneObjects.SceneObject.GetGlobalHeading()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+    name: GetGlobalHeading
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+    name: GetGlobalHeading
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+  commentId: M:rt004.SceneObjects.SceneObject.GetGlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  name: GetGlobalPosition()
+  nameWithType: SceneObject.GetGlobalPosition()
+  fullName: rt004.SceneObjects.SceneObject.GetGlobalPosition()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+    name: GetGlobalPosition
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+    name: GetGlobalPosition
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  name: GetLocalToWorldTransformMatrix()
+  nameWithType: SceneObject.GetLocalToWorldTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+    name: GetLocalToWorldTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+    name: GetLocalToWorldTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  name: GetWorldToLocalTransformMatrix()
+  nameWithType: SceneObject.GetWorldToLocalTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+    name: GetWorldToLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+    name: GetWorldToLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  name: GetLocalTransformMatrix()
+  nameWithType: SceneObject.GetLocalTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+    name: GetLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+    name: GetLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  name: GetLocalInverseTransformMatrix()
+  nameWithType: SceneObject.GetLocalInverseTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+    name: GetLocalInverseTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+    name: GetLocalInverseTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  commentId: M:rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  name: ToWorldSpace(Vector3D)
+  nameWithType: SceneObject.ToWorldSpace(Vector3D)
+  fullName: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  - name: (
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  - name: (
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  commentId: M:rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  name: ToWorldSpace(Point3D)
+  nameWithType: SceneObject.ToWorldSpace(Point3D)
+  fullName: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: rt004.SceneObjects.Camera
+  commentId: T:rt004.SceneObjects.Camera
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.Camera.html
+  name: Camera
+  nameWithType: Camera
+  fullName: rt004.SceneObjects.Camera
+- uid: rt004.SceneObjects.Camera.#ctor*
+  commentId: Overload:rt004.SceneObjects.Camera.#ctor
+  href: rt004.SceneObjects.Camera.html#rt004_SceneObjects_Camera__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_System_UInt32_System_UInt32_
+  name: Camera
+  nameWithType: Camera.Camera
+  fullName: rt004.SceneObjects.Camera.Camera
+  nameWithType.vb: Camera.New
+  fullName.vb: rt004.SceneObjects.Camera.New
+  name.vb: New
+- uid: rt004.Scene
+  commentId: T:rt004.Scene
+  parent: rt004
+  href: rt004.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: rt004.Scene
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: OpenTK.Mathematics.Vector3
+  commentId: T:OpenTK.Mathematics.Vector3
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: OpenTK.Mathematics.Vector3
+- uid: rt004
+  commentId: N:rt004
+  href: rt004.html
+  name: rt004
+  nameWithType: rt004
+  fullName: rt004
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: Util.FloatImage
+  commentId: T:Util.FloatImage
+  parent: Util
+  href: Util.FloatImage.html
+  name: FloatImage
+  nameWithType: FloatImage
+  fullName: Util.FloatImage
+- uid: rt004.SceneObjects.Camera.RenderImage*
+  commentId: Overload:rt004.SceneObjects.Camera.RenderImage
+  href: rt004.SceneObjects.Camera.html#rt004_SceneObjects_Camera_RenderImage
+  name: RenderImage
+  nameWithType: Camera.RenderImage
+  fullName: rt004.SceneObjects.Camera.RenderImage
+- uid: Util
+  commentId: N:Util
+  href: Util.html
+  name: Util
+  nameWithType: Util
+  fullName: Util
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: rt004.SceneObjects.Camera.MaxRenderingDistance*
+  commentId: Overload:rt004.SceneObjects.Camera.MaxRenderingDistance
+  href: rt004.SceneObjects.Camera.html#rt004_SceneObjects_Camera_MaxRenderingDistance
+  name: MaxRenderingDistance
+  nameWithType: Camera.MaxRenderingDistance
+  fullName: rt004.SceneObjects.Camera.MaxRenderingDistance
+- uid: rt004.SceneObjects.Camera.Width*
+  commentId: Overload:rt004.SceneObjects.Camera.Width
+  href: rt004.SceneObjects.Camera.html#rt004_SceneObjects_Camera_Width
+  name: Width
+  nameWithType: Camera.Width
+  fullName: rt004.SceneObjects.Camera.Width
+- uid: rt004.SceneObjects.Camera.Height*
+  commentId: Overload:rt004.SceneObjects.Camera.Height
+  href: rt004.SceneObjects.Camera.html#rt004_SceneObjects_Camera_Height
+  name: Height
+  nameWithType: Camera.Height
+  fullName: rt004.SceneObjects.Camera.Height
+- uid: rt004.SceneObjects.Camera.SetResolution*
+  commentId: Overload:rt004.SceneObjects.Camera.SetResolution
+  href: rt004.SceneObjects.Camera.html#rt004_SceneObjects_Camera_SetResolution_System_UInt32_System_UInt32_
+  name: SetResolution
+  nameWithType: Camera.SetResolution
+  fullName: rt004.SceneObjects.Camera.SetResolution
+- uid: rt004.SceneObjects.Camera.GetResolution*
+  commentId: Overload:rt004.SceneObjects.Camera.GetResolution
+  href: rt004.SceneObjects.Camera.html#rt004_SceneObjects_Camera_GetResolution
+  name: GetResolution
+  nameWithType: Camera.GetResolution
+  fullName: rt004.SceneObjects.Camera.GetResolution
+- uid: System.ValueTuple{System.UInt32,System.UInt32}
+  commentId: T:System.ValueTuple{System.UInt32,System.UInt32}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: (uint, uint)
+  nameWithType: (uint, uint)
+  fullName: (uint, uint)
+  nameWithType.vb: (UInteger, UInteger)
+  fullName.vb: (UInteger, UInteger)
+  name.vb: (UInteger, UInteger)
+  spec.csharp:
+  - name: (
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: ','
+  - name: " "
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: ','
+  - name: " "
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )

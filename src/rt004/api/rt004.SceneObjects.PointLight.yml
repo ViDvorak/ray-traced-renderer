@@ -1,0 +1,1071 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.SceneObjects.PointLight
+  commentId: T:rt004.SceneObjects.PointLight
+  id: PointLight
+  parent: rt004.SceneObjects
+  children:
+  - rt004.SceneObjects.PointLight.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single)
+  - rt004.SceneObjects.PointLight.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  - rt004.SceneObjects.PointLight.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  - rt004.SceneObjects.PointLight.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: PointLight
+  nameWithType: PointLight
+  fullName: rt004.SceneObjects.PointLight
+  type: Class
+  source:
+    remote:
+      path: src/rt004/SceneObjects/LightSources/PointLight.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PointLight
+    path: SceneObjects/LightSources/PointLight.cs
+    startLine: 5
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  syntax:
+    content: 'public class PointLight : LightSource'
+    content.vb: Public Class PointLight Inherits LightSource
+  inheritance:
+  - System.Object
+  - rt004.SceneObjects.SceneObject
+  - rt004.SceneObjects.LightSource
+  inheritedMembers:
+  - rt004.SceneObjects.LightSource.diffuseFactor
+  - rt004.SceneObjects.LightSource.specularFactor
+  - rt004.SceneObjects.LightSource.LightPower
+  - rt004.SceneObjects.LightSource.Color
+  - rt004.SceneObjects.SceneObject.parentScene
+  - rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  - rt004.SceneObjects.SceneObject.Position
+  - rt004.SceneObjects.SceneObject.GlobalPosition
+  - rt004.SceneObjects.SceneObject.Rotation
+  - rt004.SceneObjects.SceneObject.ParentScene
+  - rt004.SceneObjects.SceneObject.ParentObject
+  - rt004.SceneObjects.SceneObject.GetLocalHeding
+  - rt004.SceneObjects.SceneObject.GetGlobalHeading
+  - rt004.SceneObjects.SceneObject.GetGlobalPosition
+  - rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  - rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  - rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.SceneObjects.PointLight.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single)
+  commentId: M:rt004.SceneObjects.PointLight.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single)
+  id: '#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single)'
+  parent: rt004.SceneObjects.PointLight
+  langs:
+  - csharp
+  - vb
+  name: PointLight(Scene, Point3D, Vector3, Color4, float, float, float)
+  nameWithType: PointLight.PointLight(Scene, Point3D, Vector3, Color4, float, float, float)
+  fullName: rt004.SceneObjects.PointLight.PointLight(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3, OpenTK.Mathematics.Color4, float, float, float)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/SceneObjects/LightSources/PointLight.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: SceneObjects/LightSources/PointLight.cs
+    startLine: 12
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  syntax:
+    content: public PointLight(Scene parentScene, Point3D position, Vector3 rotation, Color4 color, float intensity, float diffuseFactor, float specularFactor)
+    parameters:
+    - id: parentScene
+      type: rt004.Scene
+    - id: position
+      type: rt004.Util.Point3D
+    - id: rotation
+      type: OpenTK.Mathematics.Vector3
+    - id: color
+      type: OpenTK.Mathematics.Color4
+    - id: intensity
+      type: System.Single
+    - id: diffuseFactor
+      type: System.Single
+    - id: specularFactor
+      type: System.Single
+    content.vb: Public Sub New(parentScene As Scene, position As Point3D, rotation As Vector3, color As Color4, intensity As Single, diffuseFactor As Single, specularFactor As Single)
+  overload: rt004.SceneObjects.PointLight.#ctor*
+  nameWithType.vb: PointLight.New(Scene, Point3D, Vector3, Color4, Single, Single, Single)
+  fullName.vb: rt004.SceneObjects.PointLight.New(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3, OpenTK.Mathematics.Color4, Single, Single, Single)
+  name.vb: New(Scene, Point3D, Vector3, Color4, Single, Single, Single)
+- uid: rt004.SceneObjects.PointLight.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  commentId: M:rt004.SceneObjects.PointLight.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  id: DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  parent: rt004.SceneObjects.PointLight
+  langs:
+  - csharp
+  - vb
+  name: DiffuseLightIntensityAt(Point3D, bool)
+  nameWithType: PointLight.DiffuseLightIntensityAt(Point3D, bool)
+  fullName: rt004.SceneObjects.PointLight.DiffuseLightIntensityAt(rt004.Util.Point3D, bool)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/LightSources/PointLight.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: DiffuseLightIntensityAt
+    path: SceneObjects/LightSources/PointLight.cs
+    startLine: 21
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Computes diffuse intensity of light from this light at specified point
+  example: []
+  syntax:
+    content: public override float DiffuseLightIntensityAt(Point3D point, bool areShadowsEnabled)
+    parameters:
+    - id: point
+      type: rt004.Util.Point3D
+      description: point to compute intensity at, in global coord
+    - id: areShadowsEnabled
+      type: System.Boolean
+    return:
+      type: System.Single
+      description: Returns the intensity
+    content.vb: Public Overrides Function DiffuseLightIntensityAt(point As Point3D, areShadowsEnabled As Boolean) As Single
+  overridden: rt004.SceneObjects.LightSource.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  overload: rt004.SceneObjects.PointLight.DiffuseLightIntensityAt*
+  nameWithType.vb: PointLight.DiffuseLightIntensityAt(Point3D, Boolean)
+  fullName.vb: rt004.SceneObjects.PointLight.DiffuseLightIntensityAt(rt004.Util.Point3D, Boolean)
+  name.vb: DiffuseLightIntensityAt(Point3D, Boolean)
+- uid: rt004.SceneObjects.PointLight.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  commentId: M:rt004.SceneObjects.PointLight.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  id: SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  parent: rt004.SceneObjects.PointLight
+  langs:
+  - csharp
+  - vb
+  name: SpecularLightIntensityAt(Point3D, bool)
+  nameWithType: PointLight.SpecularLightIntensityAt(Point3D, bool)
+  fullName: rt004.SceneObjects.PointLight.SpecularLightIntensityAt(rt004.Util.Point3D, bool)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/LightSources/PointLight.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: SpecularLightIntensityAt
+    path: SceneObjects/LightSources/PointLight.cs
+    startLine: 38
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Computes specular intensity of light from this light at specified point
+  example: []
+  syntax:
+    content: public override float SpecularLightIntensityAt(Point3D point, bool areShadowsEnabled)
+    parameters:
+    - id: point
+      type: rt004.Util.Point3D
+      description: point to compute intensity at
+    - id: areShadowsEnabled
+      type: System.Boolean
+    return:
+      type: System.Single
+      description: Returns the intensity
+    content.vb: Public Overrides Function SpecularLightIntensityAt(point As Point3D, areShadowsEnabled As Boolean) As Single
+  overridden: rt004.SceneObjects.LightSource.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  overload: rt004.SceneObjects.PointLight.SpecularLightIntensityAt*
+  nameWithType.vb: PointLight.SpecularLightIntensityAt(Point3D, Boolean)
+  fullName.vb: rt004.SceneObjects.PointLight.SpecularLightIntensityAt(rt004.Util.Point3D, Boolean)
+  name.vb: SpecularLightIntensityAt(Point3D, Boolean)
+- uid: rt004.SceneObjects.PointLight.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  commentId: M:rt004.SceneObjects.PointLight.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  id: LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  parent: rt004.SceneObjects.PointLight
+  langs:
+  - csharp
+  - vb
+  name: LightIntensityAt(Point3D, bool)
+  nameWithType: PointLight.LightIntensityAt(Point3D, bool)
+  fullName: rt004.SceneObjects.PointLight.LightIntensityAt(rt004.Util.Point3D, bool)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/LightSources/PointLight.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: LightIntensityAt
+    path: SceneObjects/LightSources/PointLight.cs
+    startLine: 55
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Computes Diffuse and Specular light insnsity at specific point.
+  example: []
+  syntax:
+    content: public override (float, float) LightIntensityAt(Point3D point, bool areShadowsEnabled)
+    parameters:
+    - id: point
+      type: rt004.Util.Point3D
+      description: Position where to compute intensity. In global coordinates.
+    - id: areShadowsEnabled
+      type: System.Boolean
+    return:
+      type: System.ValueTuple{System.Single,System.Single}
+      description: Returns two light intensities (Diffuse, Specular)
+    content.vb: Public Overrides Function LightIntensityAt(point As Point3D, areShadowsEnabled As Boolean) As (Single, Single)
+  overridden: rt004.SceneObjects.LightSource.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  overload: rt004.SceneObjects.PointLight.LightIntensityAt*
+  nameWithType.vb: PointLight.LightIntensityAt(Point3D, Boolean)
+  fullName.vb: rt004.SceneObjects.PointLight.LightIntensityAt(rt004.Util.Point3D, Boolean)
+  name.vb: LightIntensityAt(Point3D, Boolean)
+references:
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  href: rt004.html
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.SceneObjects.SceneObject
+  commentId: T:rt004.SceneObjects.SceneObject
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.SceneObject.html
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: rt004.SceneObjects.SceneObject
+- uid: rt004.SceneObjects.LightSource
+  commentId: T:rt004.SceneObjects.LightSource
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.LightSource.html
+  name: LightSource
+  nameWithType: LightSource
+  fullName: rt004.SceneObjects.LightSource
+- uid: rt004.SceneObjects.LightSource.diffuseFactor
+  commentId: F:rt004.SceneObjects.LightSource.diffuseFactor
+  parent: rt004.SceneObjects.LightSource
+  href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_diffuseFactor
+  name: diffuseFactor
+  nameWithType: LightSource.diffuseFactor
+  fullName: rt004.SceneObjects.LightSource.diffuseFactor
+- uid: rt004.SceneObjects.LightSource.specularFactor
+  commentId: F:rt004.SceneObjects.LightSource.specularFactor
+  parent: rt004.SceneObjects.LightSource
+  href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_specularFactor
+  name: specularFactor
+  nameWithType: LightSource.specularFactor
+  fullName: rt004.SceneObjects.LightSource.specularFactor
+- uid: rt004.SceneObjects.LightSource.LightPower
+  commentId: P:rt004.SceneObjects.LightSource.LightPower
+  parent: rt004.SceneObjects.LightSource
+  href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_LightPower
+  name: LightPower
+  nameWithType: LightSource.LightPower
+  fullName: rt004.SceneObjects.LightSource.LightPower
+- uid: rt004.SceneObjects.LightSource.Color
+  commentId: P:rt004.SceneObjects.LightSource.Color
+  parent: rt004.SceneObjects.LightSource
+  href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_Color
+  name: Color
+  nameWithType: LightSource.Color
+  fullName: rt004.SceneObjects.LightSource.Color
+- uid: rt004.SceneObjects.SceneObject.parentScene
+  commentId: F:rt004.SceneObjects.SceneObject.parentScene
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_parentScene
+  name: parentScene
+  nameWithType: SceneObject.parentScene
+  fullName: rt004.SceneObjects.SceneObject.parentScene
+- uid: rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  commentId: F:rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_dirtyGlobalPosition
+  name: dirtyGlobalPosition
+  nameWithType: SceneObject.dirtyGlobalPosition
+  fullName: rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+- uid: rt004.SceneObjects.SceneObject.Position
+  commentId: P:rt004.SceneObjects.SceneObject.Position
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Position
+  name: Position
+  nameWithType: SceneObject.Position
+  fullName: rt004.SceneObjects.SceneObject.Position
+- uid: rt004.SceneObjects.SceneObject.GlobalPosition
+  commentId: P:rt004.SceneObjects.SceneObject.GlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GlobalPosition
+  name: GlobalPosition
+  nameWithType: SceneObject.GlobalPosition
+  fullName: rt004.SceneObjects.SceneObject.GlobalPosition
+- uid: rt004.SceneObjects.SceneObject.Rotation
+  commentId: P:rt004.SceneObjects.SceneObject.Rotation
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Rotation
+  name: Rotation
+  nameWithType: SceneObject.Rotation
+  fullName: rt004.SceneObjects.SceneObject.Rotation
+- uid: rt004.SceneObjects.SceneObject.ParentScene
+  commentId: P:rt004.SceneObjects.SceneObject.ParentScene
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentScene
+  name: ParentScene
+  nameWithType: SceneObject.ParentScene
+  fullName: rt004.SceneObjects.SceneObject.ParentScene
+- uid: rt004.SceneObjects.SceneObject.ParentObject
+  commentId: P:rt004.SceneObjects.SceneObject.ParentObject
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentObject
+  name: ParentObject
+  nameWithType: SceneObject.ParentObject
+  fullName: rt004.SceneObjects.SceneObject.ParentObject
+- uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalHeding
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  name: GetLocalHeding()
+  nameWithType: SceneObject.GetLocalHeding()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalHeding()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+    name: GetLocalHeding
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+    name: GetLocalHeding
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+  commentId: M:rt004.SceneObjects.SceneObject.GetGlobalHeading
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  name: GetGlobalHeading()
+  nameWithType: SceneObject.GetGlobalHeading()
+  fullName: rt004.SceneObjects.SceneObject.GetGlobalHeading()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+    name: GetGlobalHeading
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+    name: GetGlobalHeading
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+  commentId: M:rt004.SceneObjects.SceneObject.GetGlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  name: GetGlobalPosition()
+  nameWithType: SceneObject.GetGlobalPosition()
+  fullName: rt004.SceneObjects.SceneObject.GetGlobalPosition()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+    name: GetGlobalPosition
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+    name: GetGlobalPosition
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  name: GetLocalToWorldTransformMatrix()
+  nameWithType: SceneObject.GetLocalToWorldTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+    name: GetLocalToWorldTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+    name: GetLocalToWorldTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  name: GetWorldToLocalTransformMatrix()
+  nameWithType: SceneObject.GetWorldToLocalTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+    name: GetWorldToLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+    name: GetWorldToLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  name: GetLocalTransformMatrix()
+  nameWithType: SceneObject.GetLocalTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+    name: GetLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+    name: GetLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  name: GetLocalInverseTransformMatrix()
+  nameWithType: SceneObject.GetLocalInverseTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+    name: GetLocalInverseTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+    name: GetLocalInverseTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  commentId: M:rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  name: ToWorldSpace(Vector3D)
+  nameWithType: SceneObject.ToWorldSpace(Vector3D)
+  fullName: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  - name: (
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  - name: (
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  commentId: M:rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  name: ToWorldSpace(Point3D)
+  nameWithType: SceneObject.ToWorldSpace(Point3D)
+  fullName: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: rt004.SceneObjects.PointLight.#ctor*
+  commentId: Overload:rt004.SceneObjects.PointLight.#ctor
+  href: rt004.SceneObjects.PointLight.html#rt004_SceneObjects_PointLight__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_OpenTK_Mathematics_Color4_System_Single_System_Single_System_Single_
+  name: PointLight
+  nameWithType: PointLight.PointLight
+  fullName: rt004.SceneObjects.PointLight.PointLight
+  nameWithType.vb: PointLight.New
+  fullName.vb: rt004.SceneObjects.PointLight.New
+  name.vb: New
+- uid: rt004.Scene
+  commentId: T:rt004.Scene
+  parent: rt004
+  href: rt004.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: rt004.Scene
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: OpenTK.Mathematics.Vector3
+  commentId: T:OpenTK.Mathematics.Vector3
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: OpenTK.Mathematics.Vector3
+- uid: OpenTK.Mathematics.Color4
+  commentId: T:OpenTK.Mathematics.Color4
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Color4
+  nameWithType: Color4
+  fullName: OpenTK.Mathematics.Color4
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: rt004
+  commentId: N:rt004
+  href: rt004.html
+  name: rt004
+  nameWithType: rt004
+  fullName: rt004
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.SceneObjects.LightSource.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  commentId: M:rt004.SceneObjects.LightSource.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  parent: rt004.SceneObjects.LightSource
+  isExternal: true
+  href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_DiffuseLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  name: DiffuseLightIntensityAt(Point3D, bool)
+  nameWithType: LightSource.DiffuseLightIntensityAt(Point3D, bool)
+  fullName: rt004.SceneObjects.LightSource.DiffuseLightIntensityAt(rt004.Util.Point3D, bool)
+  nameWithType.vb: LightSource.DiffuseLightIntensityAt(Point3D, Boolean)
+  fullName.vb: rt004.SceneObjects.LightSource.DiffuseLightIntensityAt(rt004.Util.Point3D, Boolean)
+  name.vb: DiffuseLightIntensityAt(Point3D, Boolean)
+  spec.csharp:
+  - uid: rt004.SceneObjects.LightSource.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+    name: DiffuseLightIntensityAt
+    href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_DiffuseLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.LightSource.DiffuseLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+    name: DiffuseLightIntensityAt
+    href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_DiffuseLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: rt004.SceneObjects.PointLight.DiffuseLightIntensityAt*
+  commentId: Overload:rt004.SceneObjects.PointLight.DiffuseLightIntensityAt
+  href: rt004.SceneObjects.PointLight.html#rt004_SceneObjects_PointLight_DiffuseLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  name: DiffuseLightIntensityAt
+  nameWithType: PointLight.DiffuseLightIntensityAt
+  fullName: rt004.SceneObjects.PointLight.DiffuseLightIntensityAt
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: rt004.SceneObjects.LightSource.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  commentId: M:rt004.SceneObjects.LightSource.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  parent: rt004.SceneObjects.LightSource
+  isExternal: true
+  href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_SpecularLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  name: SpecularLightIntensityAt(Point3D, bool)
+  nameWithType: LightSource.SpecularLightIntensityAt(Point3D, bool)
+  fullName: rt004.SceneObjects.LightSource.SpecularLightIntensityAt(rt004.Util.Point3D, bool)
+  nameWithType.vb: LightSource.SpecularLightIntensityAt(Point3D, Boolean)
+  fullName.vb: rt004.SceneObjects.LightSource.SpecularLightIntensityAt(rt004.Util.Point3D, Boolean)
+  name.vb: SpecularLightIntensityAt(Point3D, Boolean)
+  spec.csharp:
+  - uid: rt004.SceneObjects.LightSource.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+    name: SpecularLightIntensityAt
+    href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_SpecularLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.LightSource.SpecularLightIntensityAt(rt004.Util.Point3D,System.Boolean)
+    name: SpecularLightIntensityAt
+    href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_SpecularLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: rt004.SceneObjects.PointLight.SpecularLightIntensityAt*
+  commentId: Overload:rt004.SceneObjects.PointLight.SpecularLightIntensityAt
+  href: rt004.SceneObjects.PointLight.html#rt004_SceneObjects_PointLight_SpecularLightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  name: SpecularLightIntensityAt
+  nameWithType: PointLight.SpecularLightIntensityAt
+  fullName: rt004.SceneObjects.PointLight.SpecularLightIntensityAt
+- uid: rt004.SceneObjects.LightSource.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  commentId: M:rt004.SceneObjects.LightSource.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+  parent: rt004.SceneObjects.LightSource
+  isExternal: true
+  href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_LightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  name: LightIntensityAt(Point3D, bool)
+  nameWithType: LightSource.LightIntensityAt(Point3D, bool)
+  fullName: rt004.SceneObjects.LightSource.LightIntensityAt(rt004.Util.Point3D, bool)
+  nameWithType.vb: LightSource.LightIntensityAt(Point3D, Boolean)
+  fullName.vb: rt004.SceneObjects.LightSource.LightIntensityAt(rt004.Util.Point3D, Boolean)
+  name.vb: LightIntensityAt(Point3D, Boolean)
+  spec.csharp:
+  - uid: rt004.SceneObjects.LightSource.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+    name: LightIntensityAt
+    href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_LightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.LightSource.LightIntensityAt(rt004.Util.Point3D,System.Boolean)
+    name: LightIntensityAt
+    href: rt004.SceneObjects.LightSource.html#rt004_SceneObjects_LightSource_LightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: rt004.SceneObjects.PointLight.LightIntensityAt*
+  commentId: Overload:rt004.SceneObjects.PointLight.LightIntensityAt
+  href: rt004.SceneObjects.PointLight.html#rt004_SceneObjects_PointLight_LightIntensityAt_rt004_Util_Point3D_System_Boolean_
+  name: LightIntensityAt
+  nameWithType: PointLight.LightIntensityAt
+  fullName: rt004.SceneObjects.PointLight.LightIntensityAt
+- uid: System.ValueTuple{System.Single,System.Single}
+  commentId: T:System.ValueTuple{System.Single,System.Single}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: (float, float)
+  nameWithType: (float, float)
+  fullName: (float, float)
+  nameWithType.vb: (Single, Single)
+  fullName.vb: (Single, Single)
+  name.vb: (Single, Single)
+  spec.csharp:
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )

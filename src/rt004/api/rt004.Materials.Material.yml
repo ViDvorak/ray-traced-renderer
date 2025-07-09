@@ -1,0 +1,442 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Materials.Material
+  commentId: T:rt004.Materials.Material
+  id: Material
+  parent: rt004.Materials
+  children:
+  - rt004.Materials.Material.GetMaterialFor(rt004.Util.LightModel)
+  - rt004.Materials.Material.IsCorrectMaterialFor(rt004.Util.LightModel)
+  langs:
+  - csharp
+  - vb
+  name: Material
+  nameWithType: Material
+  fullName: rt004.Materials.Material
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Materials/Material.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Material
+    path: Materials/Material.cs
+    startLine: 10
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Represents an abstract base class for different types of materials used in rendering.
+  example: []
+  syntax:
+    content: public abstract class Material
+    content.vb: Public MustInherit Class Material
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.Materials.Material.IsCorrectMaterialFor(rt004.Util.LightModel)
+  commentId: M:rt004.Materials.Material.IsCorrectMaterialFor(rt004.Util.LightModel)
+  id: IsCorrectMaterialFor(rt004.Util.LightModel)
+  parent: rt004.Materials.Material
+  langs:
+  - csharp
+  - vb
+  name: IsCorrectMaterialFor(LightModel)
+  nameWithType: Material.IsCorrectMaterialFor(LightModel)
+  fullName: rt004.Materials.Material.IsCorrectMaterialFor(rt004.Util.LightModel)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/Material.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: IsCorrectMaterialFor
+    path: Materials/Material.cs
+    startLine: 17
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Determines if the material is compatible with a specified lighting model.
+  example: []
+  syntax:
+    content: public abstract bool IsCorrectMaterialFor(LightModel lightModel)
+    parameters:
+    - id: lightModel
+      type: rt004.Util.LightModel
+      description: The lighting model to check for compatibility.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the material is compatible with the specified lighting model; otherwise, <code>false</code>.
+    content.vb: Public MustOverride Function IsCorrectMaterialFor(lightModel As LightModel) As Boolean
+  overload: rt004.Materials.Material.IsCorrectMaterialFor*
+- uid: rt004.Materials.Material.GetMaterialFor(rt004.Util.LightModel)
+  commentId: M:rt004.Materials.Material.GetMaterialFor(rt004.Util.LightModel)
+  id: GetMaterialFor(rt004.Util.LightModel)
+  parent: rt004.Materials.Material
+  langs:
+  - csharp
+  - vb
+  name: GetMaterialFor(LightModel)
+  nameWithType: Material.GetMaterialFor(LightModel)
+  fullName: rt004.Materials.Material.GetMaterialFor(rt004.Util.LightModel)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/Material.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetMaterialFor
+    path: Materials/Material.cs
+    startLine: 25
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Selects the appropriate material for a specified lighting model.
+  example: []
+  syntax:
+    content: public static Material GetMaterialFor(LightModel lightModel)
+    parameters:
+    - id: lightModel
+      type: rt004.Util.LightModel
+      description: The lighting model for which to select the material.
+    return:
+      type: rt004.Materials.Material
+      description: A <xref href="rt004.Materials.Material" data-throw-if-not-resolved="false"></xref> instance that is compatible with the specified lighting model.
+    content.vb: Public Shared Function GetMaterialFor(lightModel As LightModel) As Material
+  overload: rt004.Materials.Material.GetMaterialFor*
+  exceptions:
+  - type: System.NotImplementedException
+    commentId: T:System.NotImplementedException
+    description: Thrown if there is no defined material for the specified lighting model.
+references:
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: rt004.Materials.Material.IsCorrectMaterialFor*
+  commentId: Overload:rt004.Materials.Material.IsCorrectMaterialFor
+  href: rt004.Materials.Material.html#rt004_Materials_Material_IsCorrectMaterialFor_rt004_Util_LightModel_
+  name: IsCorrectMaterialFor
+  nameWithType: Material.IsCorrectMaterialFor
+  fullName: rt004.Materials.Material.IsCorrectMaterialFor
+- uid: rt004.Util.LightModel
+  commentId: T:rt004.Util.LightModel
+  parent: rt004.Util
+  href: rt004.Util.LightModel.html
+  name: LightModel
+  nameWithType: LightModel
+  fullName: rt004.Util.LightModel
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: rt004.Materials.Material
+  commentId: T:rt004.Materials.Material
+  parent: rt004.Materials
+  href: rt004.Materials.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: rt004.Materials.Material
+- uid: System.NotImplementedException
+  commentId: T:System.NotImplementedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notimplementedexception
+  name: NotImplementedException
+  nameWithType: NotImplementedException
+  fullName: System.NotImplementedException
+- uid: rt004.Materials.Material.GetMaterialFor*
+  commentId: Overload:rt004.Materials.Material.GetMaterialFor
+  href: rt004.Materials.Material.html#rt004_Materials_Material_GetMaterialFor_rt004_Util_LightModel_
+  name: GetMaterialFor
+  nameWithType: Material.GetMaterialFor
+  fullName: rt004.Materials.Material.GetMaterialFor

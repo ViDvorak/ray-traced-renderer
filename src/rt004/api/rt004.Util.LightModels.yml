@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.LightModels
+  commentId: N:rt004.Util.LightModels
+  id: rt004.Util.LightModels
+  children:
+  - rt004.Util.LightModels.LightModelComputation
+  langs:
+  - csharp
+  - vb
+  name: rt004.Util.LightModels
+  nameWithType: rt004.Util.LightModels
+  fullName: rt004.Util.LightModels
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.Util.LightModels.LightModelComputation
+  commentId: T:rt004.Util.LightModels.LightModelComputation
+  parent: rt004.Util.LightModels
+  href: rt004.Util.LightModels.LightModelComputation.html
+  name: LightModelComputation
+  nameWithType: LightModelComputation
+  fullName: rt004.Util.LightModels.LightModelComputation
+- uid: rt004.Util.LightModels
+  commentId: N:rt004.Util.LightModels
+  href: rt004.html
+  name: rt004.Util.LightModels
+  nameWithType: rt004.Util.LightModels
+  fullName: rt004.Util.LightModels
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  - name: .
+  - uid: rt004.Util.LightModels
+    name: LightModels
+    href: rt004.Util.LightModels.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  - name: .
+  - uid: rt004.Util.LightModels
+    name: LightModels
+    href: rt004.Util.LightModels.html

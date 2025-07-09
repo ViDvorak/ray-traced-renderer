@@ -12,17 +12,33 @@ using System.ComponentModel;
 
 namespace rt004.Util
 {
+	/// <summary>
+	/// Represents the different stages of parsing command line arguments.
+	/// </summary>
 	enum ParsingStage
 	{
+		/// <summary>
+		/// Waiting for a comma or parameter delimiter (-).
+		/// </summary>
 		CommaLoading,
+		/// <summary>
+		/// Currently parsing a parameter name.
+		/// </summary>
 		ParameterLoading,
+		/// <summary>
+		/// Currently parsing an argument value.
+		/// </summary>
 		ArgumentLoading
 	}
 
+	/// <summary>
+	/// Provides static methods for parsing command line arguments and XML configuration files.
+	/// Handles variable substitution and creates scene objects from configuration data.
+	/// </summary>
 	public static class ArgumentParser
 	{
 		/// <summary>
-		/// Parses Comand line parameters. If parameter is not specified, then it uses XML configFile to define it.
+		/// Parses Command line parameters. If parameter is not specified, then it uses XML configFile to define it.
 		/// </summary>
 		/// <param name="args">command line arguments</param>
 		/// <param name="configFile">Default path to XML configuration file</param>
@@ -40,7 +56,7 @@ namespace rt004.Util
 
 
 			StringReader reader = new StringReader( String.Join(" ", args));
-            // parse command line arguments to potencialy change config File path
+            // parse command line arguments to potentially change config File path
             Parse( reader, config);
 
 			var serializer = new XmlSerializer(typeof(DataLoader));
@@ -57,7 +73,7 @@ namespace rt004.Util
 
 				var d = (DataLoader?)(serializer.Deserialize(new StringReader(xmlData)));
 
-                data = d ?? throw new ArgumentException("Configurtion file is empty");
+                data = d ?? throw new ArgumentException("Configuration file is empty");
 			}
 
 			if ( config["output"] != RendererSettings.DefaultOutputFile )
@@ -66,7 +82,13 @@ namespace rt004.Util
 			return data;
 		}
 
-
+        /// <summary>
+        /// Parses command line arguments from a string reader and populates the configuration dictionary.
+        /// </summary>
+        /// <param name="reader">The string reader containing the command line arguments to parse.</param>
+        /// <param name="config">The configuration dictionary to populate with parsed parameter-value pairs.</param>
+        /// <returns>The updated configuration dictionary with parsed values.</returns>
+        /// <exception cref="ArgumentException">Thrown when the argument format is invalid or unexpected characters are encountered.</exception>
         private static Dictionary<string, string> Parse(StringReader reader, Dictionary<string, string> config)
 		{
 			ParsingStage currentLoading = ParsingStage.CommaLoading;
@@ -106,7 +128,7 @@ namespace rt004.Util
                         if (delim == '"' || delim == '\'' )
 						{
 							if (!String.IsNullOrEmpty(word.Trim()))
-								throw new ArgumentException("Argument name can not contain \" nor ' symobols outside the begining or the end");
+								throw new ArgumentException("Argument name can not contain \" nor ' symbols outside the beginning or the end");
 
 							int previusDelimiter = delim;
 
@@ -139,7 +161,7 @@ namespace rt004.Util
 							word = String.Empty;
 						}
 						else
-							throw new ArgumentException($"Symbol {(delim == -1 ? "EndOfInput" : (char)delim) } not expected at the begining of an argument");
+							throw new ArgumentException($"Symbol {(delim == -1 ? "EndOfInput" : (char)delim) } not expected at the beginning of an argument");
 						
 						
 						currentLoading = ParsingStage.CommaLoading;
@@ -150,8 +172,12 @@ namespace rt004.Util
 			return config;
 		}
 
-
-
+        /// <summary>
+        /// Reads characters from a string reader until a specific delimiter is encountered.
+        /// </summary>
+        /// <param name="reader">The string reader to read from.</param>
+        /// <param name="delimiter">The delimiter character to stop reading at.</param>
+        /// <returns>A tuple containing the read string and the encountered delimiter character (or -1 if end of input).</returns>
         private static (string word, int delim) ReadUntil(StringReader reader, char delimiter)
         {
 
@@ -166,8 +192,12 @@ namespace rt004.Util
             return (word.ToString(), c);
         }
 
-
-
+        /// <summary>
+        /// Reads characters from a string reader until any of the specified delimiters is encountered.
+        /// </summary>
+        /// <param name="reader">The string reader to read from.</param>
+        /// <param name="delimiters">A set of delimiter characters to stop reading at.</param>
+        /// <returns>A tuple containing the read string and the encountered delimiter character (or -1 if end of input).</returns>
         private static (string readString, int encounteredDelimiter) ReadUntil(StringReader reader, HashSet<char> delimiters)
 		{
 
@@ -204,7 +234,7 @@ namespace rt004.Util
 
 			// contains at least 3 <variables> or </variables> tags than throw an error
 			if (input.IndexOf("<variables>", startIndex + 1) != -1 || input.IndexOf("</variables>", endIndex + 1) != -1)
-				throw new ArgumentException("There is to much variables tegs");
+				throw new ArgumentException("There is to much variables tags");
 
 			string variableDefinitions = "";
 			if (startIndex != -1 && endIndex != -1)
@@ -227,8 +257,8 @@ namespace rt004.Util
 		/// <remarks>
 		/// If variable is defined multiple times, then it is registered only as one, associated with last instance contents.
 		/// </remarks>
-		/// <param name="variableDefinitions">String contatining variable definitions in XML format. Should not contain variable start nor end tags.</param>
-		/// <returns>Returns dictionary with variable names and asociated contents.</returns>
+		/// <param name="variableDefinitions">String containing variable definitions in XML format. Should not contain variable start nor end tags.</param>
+		/// <returns>Returns dictionary with variable names and associated contents.</returns>
 		/// <exception cref="ArgumentException"></exception>
 		private static Dictionary<string, string> ParseVariables(string variableDefinitions)
 		{
@@ -259,8 +289,8 @@ namespace rt004.Util
 		/// <summary>
 		/// Replaces all variable instances in input with variable contents
 		/// </summary>
-		/// <param name="input">The whole input to replace variabels with</param>
-		/// <param name="variableDefinitions">definitions of variables and ther contents</param>
+		/// <param name="input">The whole input to replace variables with</param>
+		/// <param name="variableDefinitions">definitions of variables and their contents</param>
 		/// <returns>Returns input with replaced variables</returns>
 		public static string replaceVariables(string input, Dictionary<string, string> variableDefinitions)
 		{
@@ -279,7 +309,7 @@ namespace rt004.Util
 		/// </summary>
 		/// <param name="args">Command line parameters</param>
 		/// <param name="configFile">Default path to config file</param>
-		/// <returns>Returns tuple (initialized Scean, output path where to save rendered image)</returns>
+		/// <returns>Returns tuple (initialized Scene, output path where to save rendered image)</returns>
 		public static (Scene, string) ParseScene( string[] args, string configFile = "config.xml")
 		{
 			DataLoader loadedData = ParseParameters(args, configFile);
@@ -290,12 +320,24 @@ namespace rt004.Util
 		}
 
 		/// <summary>
-		/// Data structure to facilitate loading from XML file
+		/// Data structure to facilitate loading from XML file.
+		/// Contains all necessary information for scene creation and rendering configuration.
 		/// </summary>
 		public struct DataLoader
 		{
+			/// <summary>
+			/// Gets or sets the output file path where the rendered image will be saved.
+			/// </summary>
 			public string output;
+			
+			/// <summary>
+			/// Gets or sets the renderer settings loader that contains rendering configuration options.
+			/// </summary>
 			public RendererSettingsLoader rendererSettings;
+			
+			/// <summary>
+			/// Gets or sets the scene loader that contains scene object definitions and hierarchy.
+			/// </summary>
 			public SceneLoader sceneLoader;
 		}
 	}

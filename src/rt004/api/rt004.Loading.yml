@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Loading
+  commentId: N:rt004.Loading
+  id: rt004.Loading
+  children:
+  - rt004.Loading.SceneLoader
+  langs:
+  - csharp
+  - vb
+  name: rt004.Loading
+  nameWithType: rt004.Loading
+  fullName: rt004.Loading
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.Loading.SceneLoader
+  commentId: T:rt004.Loading.SceneLoader
+  parent: rt004.Loading
+  href: rt004.Loading.SceneLoader.html
+  name: SceneLoader
+  nameWithType: SceneLoader
+  fullName: rt004.Loading.SceneLoader
+- uid: rt004.Loading
+  commentId: N:rt004.Loading
+  href: rt004.html
+  name: rt004.Loading
+  nameWithType: rt004.Loading
+  fullName: rt004.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Loading
+    name: Loading
+    href: rt004.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Loading
+    name: Loading
+    href: rt004.Loading.html

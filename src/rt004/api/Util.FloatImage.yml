@@ -1,0 +1,2015 @@
+### YamlMime:ManagedReference
+items:
+- uid: Util.FloatImage
+  commentId: T:Util.FloatImage
+  id: FloatImage
+  parent: Util
+  children:
+  - Util.FloatImage.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  - Util.FloatImage.#ctor(Util.FloatImage)
+  - Util.FloatImage.AssertMinBorder(System.Int32)
+  - Util.FloatImage.BLUE_WEIGHT
+  - Util.FloatImage.Blur(System.Boolean)
+  - Util.FloatImage.Channels
+  - Util.FloatImage.ComputeBorder(System.Int32)
+  - Util.FloatImage.Contrast(System.Double@,System.Double@)
+  - Util.FloatImage.Data
+  - Util.FloatImage.Exposure(System.Byte[],System.Double,System.Double)
+  - Util.FloatImage.FromFile(System.String)
+  - Util.FloatImage.GREEN_WEIGHT
+  - Util.FloatImage.GetGray(System.Int32,System.Int32)
+  - Util.FloatImage.GetPixel(System.Int32,System.Int32,System.Single[])
+  - Util.FloatImage.GetSample(System.Double@,System.Double@,System.Double,System.Random)
+  - Util.FloatImage.GrayImage(System.Boolean,System.Double)
+  - Util.FloatImage.Height
+  - Util.FloatImage.MAD(Util.FloatImage)
+  - Util.FloatImage.MAD(Util.FloatImage,System.Int32)
+  - Util.FloatImage.PrepareCdf(System.Int32)
+  - Util.FloatImage.PutPixel(System.Int32,System.Int32,System.Single)
+  - Util.FloatImage.PutPixel(System.Int32,System.Int32,System.Single[])
+  - Util.FloatImage.RED_WEIGHT
+  - Util.FloatImage.Resize(System.Int32)
+  - Util.FloatImage.SaveHDR(System.String)
+  - Util.FloatImage.SavePFM(System.String)
+  - Util.FloatImage.Scan0
+  - Util.FloatImage.SetBorder(System.Int32)
+  - Util.FloatImage.Stride
+  - Util.FloatImage.Width
+  - Util.FloatImage.border
+  - Util.FloatImage.cdf
+  - Util.FloatImage.channels
+  - Util.FloatImage.data
+  - Util.FloatImage.height
+  - Util.FloatImage.init(System.Int32,System.Int32,System.Int32,System.Int32,System.Single[])
+  - Util.FloatImage.origin
+  - Util.FloatImage.setAccelerators
+  - Util.FloatImage.stride
+  - Util.FloatImage.widChannels
+  - Util.FloatImage.width
+  langs:
+  - csharp
+  - vb
+  name: FloatImage
+  nameWithType: FloatImage
+  fullName: Util.FloatImage
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: FloatImage
+    path: Util/FloatImage.cs
+    startLine: 1216
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: >-
+    Multi-channel float raster image.
+
+    Can compute mirrored borders.
+  example: []
+  syntax:
+    content: public class FloatImage
+    content.vb: Public Class FloatImage
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Util.FloatImage.RED_WEIGHT
+  commentId: F:Util.FloatImage.RED_WEIGHT
+  id: RED_WEIGHT
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: RED_WEIGHT
+  nameWithType: FloatImage.RED_WEIGHT
+  fullName: Util.FloatImage.RED_WEIGHT
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RED_WEIGHT
+    path: Util/FloatImage.cs
+    startLine: 13
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: public const float RED_WEIGHT = 0.2989
+    return:
+      type: System.Single
+    content.vb: Public Const RED_WEIGHT As Single = 0.2989
+- uid: Util.FloatImage.GREEN_WEIGHT
+  commentId: F:Util.FloatImage.GREEN_WEIGHT
+  id: GREEN_WEIGHT
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: GREEN_WEIGHT
+  nameWithType: FloatImage.GREEN_WEIGHT
+  fullName: Util.FloatImage.GREEN_WEIGHT
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GREEN_WEIGHT
+    path: Util/FloatImage.cs
+    startLine: 14
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: public const float GREEN_WEIGHT = 0.5866
+    return:
+      type: System.Single
+    content.vb: Public Const GREEN_WEIGHT As Single = 0.5866
+- uid: Util.FloatImage.BLUE_WEIGHT
+  commentId: F:Util.FloatImage.BLUE_WEIGHT
+  id: BLUE_WEIGHT
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: BLUE_WEIGHT
+  nameWithType: FloatImage.BLUE_WEIGHT
+  fullName: Util.FloatImage.BLUE_WEIGHT
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: BLUE_WEIGHT
+    path: Util/FloatImage.cs
+    startLine: 15
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: public const float BLUE_WEIGHT = 0.1144
+    return:
+      type: System.Single
+    content.vb: Public Const BLUE_WEIGHT As Single = 0.1144
+- uid: Util.FloatImage.data
+  commentId: F:Util.FloatImage.data
+  id: data
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: data
+  nameWithType: FloatImage.data
+  fullName: Util.FloatImage.data
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: data
+    path: Util/FloatImage.cs
+    startLine: 20
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Raw image data with optional border.
+  example: []
+  syntax:
+    content: protected float[]? data
+    return:
+      type: System.Single[]
+    content.vb: Protected data As Single()
+- uid: Util.FloatImage.Data
+  commentId: P:Util.FloatImage.Data
+  id: Data
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: FloatImage.Data
+  fullName: Util.FloatImage.Data
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Data
+    path: Util/FloatImage.cs
+    startLine: 25
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Raw data array (use Scan0 and Stride).
+  example: []
+  syntax:
+    content: public float[]? Data { get; }
+    parameters: []
+    return:
+      type: System.Single[]
+    content.vb: Public ReadOnly Property Data As Single()
+  overload: Util.FloatImage.Data*
+- uid: Util.FloatImage.width
+  commentId: F:Util.FloatImage.width
+  id: width
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: width
+  nameWithType: FloatImage.width
+  fullName: Util.FloatImage.width
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: width
+    path: Util/FloatImage.cs
+    startLine: 27
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: protected int width
+    return:
+      type: System.Int32
+    content.vb: Protected width As Integer
+- uid: Util.FloatImage.Width
+  commentId: P:Util.FloatImage.Width
+  id: Width
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: FloatImage.Width
+  fullName: Util.FloatImage.Width
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Width
+    path: Util/FloatImage.cs
+    startLine: 32
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Image width in pixels.
+  example: []
+  syntax:
+    content: public int Width { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Width As Integer
+  overload: Util.FloatImage.Width*
+- uid: Util.FloatImage.height
+  commentId: F:Util.FloatImage.height
+  id: height
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: height
+  nameWithType: FloatImage.height
+  fullName: Util.FloatImage.height
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: height
+    path: Util/FloatImage.cs
+    startLine: 34
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: protected int height
+    return:
+      type: System.Int32
+    content.vb: Protected height As Integer
+- uid: Util.FloatImage.Height
+  commentId: P:Util.FloatImage.Height
+  id: Height
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: FloatImage.Height
+  fullName: Util.FloatImage.Height
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Height
+    path: Util/FloatImage.cs
+    startLine: 39
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Image height in pixels.
+  example: []
+  syntax:
+    content: public int Height { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Height As Integer
+  overload: Util.FloatImage.Height*
+- uid: Util.FloatImage.channels
+  commentId: F:Util.FloatImage.channels
+  id: channels
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: channels
+  nameWithType: FloatImage.channels
+  fullName: Util.FloatImage.channels
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: channels
+    path: Util/FloatImage.cs
+    startLine: 41
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: protected int channels
+    return:
+      type: System.Int32
+    content.vb: Protected channels As Integer
+- uid: Util.FloatImage.Channels
+  commentId: P:Util.FloatImage.Channels
+  id: Channels
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Channels
+  nameWithType: FloatImage.Channels
+  fullName: Util.FloatImage.Channels
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Channels
+    path: Util/FloatImage.cs
+    startLine: 46
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Number of image channels (number of float numbers per pixel).
+  example: []
+  syntax:
+    content: public int Channels { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Channels As Integer
+  overload: Util.FloatImage.Channels*
+- uid: Util.FloatImage.border
+  commentId: F:Util.FloatImage.border
+  id: border
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: border
+  nameWithType: FloatImage.border
+  fullName: Util.FloatImage.border
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: border
+    path: Util/FloatImage.cs
+    startLine: 51
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Internal image border allocated around the whole image.
+  example: []
+  syntax:
+    content: protected int border
+    return:
+      type: System.Int32
+    content.vb: Protected border As Integer
+- uid: Util.FloatImage.stride
+  commentId: F:Util.FloatImage.stride
+  id: stride
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: stride
+  nameWithType: FloatImage.stride
+  fullName: Util.FloatImage.stride
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: stride
+    path: Util/FloatImage.cs
+    startLine: 56
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Array stride in floats (indices).
+  example: []
+  syntax:
+    content: protected int stride
+    return:
+      type: System.Int32
+    content.vb: Protected stride As Integer
+- uid: Util.FloatImage.widChannels
+  commentId: F:Util.FloatImage.widChannels
+  id: widChannels
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: widChannels
+  nameWithType: FloatImage.widChannels
+  fullName: Util.FloatImage.widChannels
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: widChannels
+    path: Util/FloatImage.cs
+    startLine: 58
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: protected int widChannels
+    return:
+      type: System.Int32
+    content.vb: Protected widChannels As Integer
+- uid: Util.FloatImage.origin
+  commentId: F:Util.FloatImage.origin
+  id: origin
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: origin
+  nameWithType: FloatImage.origin
+  fullName: Util.FloatImage.origin
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: origin
+    path: Util/FloatImage.cs
+    startLine: 63
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Origin of the image itself (skipping over the optional borders).
+  example: []
+  syntax:
+    content: protected int origin
+    return:
+      type: System.Int32
+    content.vb: Protected origin As Integer
+- uid: Util.FloatImage.Scan0
+  commentId: P:Util.FloatImage.Scan0
+  id: Scan0
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Scan0
+  nameWithType: FloatImage.Scan0
+  fullName: Util.FloatImage.Scan0
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Scan0
+    path: Util/FloatImage.cs
+    startLine: 68
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Offset of the upper-left image corner from the array origin (in array indices).
+  example: []
+  syntax:
+    content: public int Scan0 { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Scan0 As Integer
+  overload: Util.FloatImage.Scan0*
+- uid: Util.FloatImage.Stride
+  commentId: P:Util.FloatImage.Stride
+  id: Stride
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Stride
+  nameWithType: FloatImage.Stride
+  fullName: Util.FloatImage.Stride
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Stride
+    path: Util/FloatImage.cs
+    startLine: 73
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Image stride in array indices.
+  example: []
+  syntax:
+    content: public int Stride { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Stride As Integer
+  overload: Util.FloatImage.Stride*
+- uid: Util.FloatImage.setAccelerators
+  commentId: M:Util.FloatImage.setAccelerators
+  id: setAccelerators
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: setAccelerators()
+  nameWithType: FloatImage.setAccelerators()
+  fullName: Util.FloatImage.setAccelerators()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: setAccelerators
+    path: Util/FloatImage.cs
+    startLine: 75
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: protected void setAccelerators()
+    content.vb: Protected Sub setAccelerators()
+  overload: Util.FloatImage.setAccelerators*
+- uid: Util.FloatImage.init(System.Int32,System.Int32,System.Int32,System.Int32,System.Single[])
+  commentId: M:Util.FloatImage.init(System.Int32,System.Int32,System.Int32,System.Int32,System.Single[])
+  id: init(System.Int32,System.Int32,System.Int32,System.Int32,System.Single[])
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: init(int, int, int, int, float[]?)
+  nameWithType: FloatImage.init(int, int, int, int, float[]?)
+  fullName: Util.FloatImage.init(int, int, int, int, float[]?)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: init
+    path: Util/FloatImage.cs
+    startLine: 81
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: protected void init(int wid, int hei, int ch = 1, int bor = 0, float[]? d = null)
+    parameters:
+    - id: wid
+      type: System.Int32
+    - id: hei
+      type: System.Int32
+    - id: ch
+      type: System.Int32
+    - id: bor
+      type: System.Int32
+    - id: d
+      type: System.Single[]
+    content.vb: Protected Sub init(wid As Integer, hei As Integer, ch As Integer = 1, bor As Integer = 0, d As Single() = Nothing)
+  overload: Util.FloatImage.init*
+  nameWithType.vb: FloatImage.init(Integer, Integer, Integer, Integer, Single())
+  fullName.vb: Util.FloatImage.init(Integer, Integer, Integer, Integer, Single())
+  name.vb: init(Integer, Integer, Integer, Integer, Single())
+- uid: Util.FloatImage.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:Util.FloatImage.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32,System.Int32)'
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: FloatImage(int, int, int, int)
+  nameWithType: FloatImage.FloatImage(int, int, int, int)
+  fullName: Util.FloatImage.FloatImage(int, int, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/FloatImage.cs
+    startLine: 106
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Create a HDR image of required dimensions.
+  example: []
+  syntax:
+    content: public FloatImage(int wid, int hei, int ch = 1, int bor = 0)
+    parameters:
+    - id: wid
+      type: System.Int32
+      description: Image width in pixels.
+    - id: hei
+      type: System.Int32
+      description: Image height in pixels.
+    - id: ch
+      type: System.Int32
+      description: Number of channels.
+    - id: bor
+      type: System.Int32
+      description: Border width in pixels.
+    content.vb: Public Sub New(wid As Integer, hei As Integer, ch As Integer = 1, bor As Integer = 0)
+  overload: Util.FloatImage.#ctor*
+  nameWithType.vb: FloatImage.New(Integer, Integer, Integer, Integer)
+  fullName.vb: Util.FloatImage.New(Integer, Integer, Integer, Integer)
+  name.vb: New(Integer, Integer, Integer, Integer)
+- uid: Util.FloatImage.#ctor(Util.FloatImage)
+  commentId: M:Util.FloatImage.#ctor(Util.FloatImage)
+  id: '#ctor(Util.FloatImage)'
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: FloatImage(FloatImage?)
+  nameWithType: FloatImage.FloatImage(FloatImage?)
+  fullName: Util.FloatImage.FloatImage(Util.FloatImage?)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/FloatImage.cs
+    startLine: 111
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: public FloatImage(FloatImage? from)
+    parameters:
+    - id: from
+      type: Util.FloatImage
+    content.vb: Public Sub New(from As FloatImage)
+  overload: Util.FloatImage.#ctor*
+  nameWithType.vb: FloatImage.New(FloatImage)
+  fullName.vb: Util.FloatImage.New(Util.FloatImage)
+  name.vb: New(FloatImage)
+- uid: Util.FloatImage.GrayImage(System.Boolean,System.Double)
+  commentId: M:Util.FloatImage.GrayImage(System.Boolean,System.Double)
+  id: GrayImage(System.Boolean,System.Double)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: GrayImage(bool, double)
+  nameWithType: FloatImage.GrayImage(bool, double)
+  fullName: Util.FloatImage.GrayImage(bool, double)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GrayImage
+    path: Util/FloatImage.cs
+    startLine: 170
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: public FloatImage GrayImage(bool inv = false, double gamma = 0)
+    parameters:
+    - id: inv
+      type: System.Boolean
+    - id: gamma
+      type: System.Double
+    return:
+      type: Util.FloatImage
+    content.vb: Public Function GrayImage(inv As Boolean = False, gamma As Double = 0) As FloatImage
+  overload: Util.FloatImage.GrayImage*
+  nameWithType.vb: FloatImage.GrayImage(Boolean, Double)
+  fullName.vb: Util.FloatImage.GrayImage(Boolean, Double)
+  name.vb: GrayImage(Boolean, Double)
+- uid: Util.FloatImage.SetBorder(System.Int32)
+  commentId: M:Util.FloatImage.SetBorder(System.Int32)
+  id: SetBorder(System.Int32)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: SetBorder(int)
+  nameWithType: FloatImage.SetBorder(int)
+  fullName: Util.FloatImage.SetBorder(int)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: SetBorder
+    path: Util/FloatImage.cs
+    startLine: 211
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: >-
+    Sets the required border size (exactly).
+
+    Does not compute the border pixels yet!
+  example: []
+  syntax:
+    content: public void SetBorder(int newBorder)
+    parameters:
+    - id: newBorder
+      type: System.Int32
+      description: Required border size in pixels. Zero value means 'no border'.
+    content.vb: Public Sub SetBorder(newBorder As Integer)
+  overload: Util.FloatImage.SetBorder*
+  nameWithType.vb: FloatImage.SetBorder(Integer)
+  fullName.vb: Util.FloatImage.SetBorder(Integer)
+  name.vb: SetBorder(Integer)
+- uid: Util.FloatImage.AssertMinBorder(System.Int32)
+  commentId: M:Util.FloatImage.AssertMinBorder(System.Int32)
+  id: AssertMinBorder(System.Int32)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: AssertMinBorder(int)
+  nameWithType: FloatImage.AssertMinBorder(int)
+  fullName: Util.FloatImage.AssertMinBorder(int)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: AssertMinBorder
+    path: Util/FloatImage.cs
+    startLine: 249
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: >-
+    Asserts minimal border value.
+
+    Computes actual border pixels.
+  example: []
+  syntax:
+    content: public void AssertMinBorder(int minBorder)
+    parameters:
+    - id: minBorder
+      type: System.Int32
+      description: Minimal border size needed.
+    content.vb: Public Sub AssertMinBorder(minBorder As Integer)
+  overload: Util.FloatImage.AssertMinBorder*
+  nameWithType.vb: FloatImage.AssertMinBorder(Integer)
+  fullName.vb: Util.FloatImage.AssertMinBorder(Integer)
+  name.vb: AssertMinBorder(Integer)
+- uid: Util.FloatImage.ComputeBorder(System.Int32)
+  commentId: M:Util.FloatImage.ComputeBorder(System.Int32)
+  id: ComputeBorder(System.Int32)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: ComputeBorder(int)
+  nameWithType: FloatImage.ComputeBorder(int)
+  fullName: Util.FloatImage.ComputeBorder(int)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: ComputeBorder
+    path: Util/FloatImage.cs
+    startLine: 262
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Computes the image border.
+  example: []
+  syntax:
+    content: protected void ComputeBorder(int type = 0)
+    parameters:
+    - id: type
+      type: System.Int32
+      description: Border type, ignored (only mirror border is implemented).
+    content.vb: Protected Sub ComputeBorder(type As Integer = 0)
+  overload: Util.FloatImage.ComputeBorder*
+  nameWithType.vb: FloatImage.ComputeBorder(Integer)
+  fullName.vb: Util.FloatImage.ComputeBorder(Integer)
+  name.vb: ComputeBorder(Integer)
+- uid: Util.FloatImage.GetPixel(System.Int32,System.Int32,System.Single[])
+  commentId: M:Util.FloatImage.GetPixel(System.Int32,System.Int32,System.Single[])
+  id: GetPixel(System.Int32,System.Int32,System.Single[])
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: GetPixel(int, int, float[])
+  nameWithType: FloatImage.GetPixel(int, int, float[])
+  fullName: Util.FloatImage.GetPixel(int, int, float[])
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetPixel
+    path: Util/FloatImage.cs
+    startLine: 337
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Reads one HDR color pixel.
+  example: []
+  syntax:
+    content: public bool GetPixel(int x, int y, float[] pix)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: X-coordinate.
+    - id: y
+      type: System.Int32
+      description: Y-coordinate.
+    - id: pix
+      type: System.Single[]
+      description: Pre-allocated output array.
+    return:
+      type: System.Boolean
+      description: True if Ok.
+    content.vb: Public Function GetPixel(x As Integer, y As Integer, pix As Single()) As Boolean
+  overload: Util.FloatImage.GetPixel*
+  nameWithType.vb: FloatImage.GetPixel(Integer, Integer, Single())
+  fullName.vb: Util.FloatImage.GetPixel(Integer, Integer, Single())
+  name.vb: GetPixel(Integer, Integer, Single())
+- uid: Util.FloatImage.GetGray(System.Int32,System.Int32)
+  commentId: M:Util.FloatImage.GetGray(System.Int32,System.Int32)
+  id: GetGray(System.Int32,System.Int32)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: GetGray(int, int)
+  nameWithType: FloatImage.GetGray(int, int)
+  fullName: Util.FloatImage.GetGray(int, int)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetGray
+    path: Util/FloatImage.cs
+    startLine: 355
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Reads one grayscale pixel.
+  example: []
+  syntax:
+    content: public float GetGray(int x, int y)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: X-coordinate.
+    - id: y
+      type: System.Int32
+      description: Y-coordinate.
+    return:
+      type: System.Single
+      description: Gray value or -1.0f if out of range.
+    content.vb: Public Function GetGray(x As Integer, y As Integer) As Single
+  overload: Util.FloatImage.GetGray*
+  nameWithType.vb: FloatImage.GetGray(Integer, Integer)
+  fullName.vb: Util.FloatImage.GetGray(Integer, Integer)
+  name.vb: GetGray(Integer, Integer)
+- uid: Util.FloatImage.PutPixel(System.Int32,System.Int32,System.Single[])
+  commentId: M:Util.FloatImage.PutPixel(System.Int32,System.Int32,System.Single[])
+  id: PutPixel(System.Int32,System.Int32,System.Single[])
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: PutPixel(int, int, float[]?)
+  nameWithType: FloatImage.PutPixel(int, int, float[]?)
+  fullName: Util.FloatImage.PutPixel(int, int, float[]?)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PutPixel
+    path: Util/FloatImage.cs
+    startLine: 372
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Sets the required pixel to a new value.
+  example: []
+  syntax:
+    content: public void PutPixel(int x, int y, float[]? pix)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: X-coordinate.
+    - id: y
+      type: System.Int32
+      description: Y-coordinate.
+    - id: pix
+      type: System.Single[]
+      description: New pixel value.
+    content.vb: Public Sub PutPixel(x As Integer, y As Integer, pix As Single())
+  overload: Util.FloatImage.PutPixel*
+  nameWithType.vb: FloatImage.PutPixel(Integer, Integer, Single())
+  fullName.vb: Util.FloatImage.PutPixel(Integer, Integer, Single())
+  name.vb: PutPixel(Integer, Integer, Single())
+- uid: Util.FloatImage.PutPixel(System.Int32,System.Int32,System.Single)
+  commentId: M:Util.FloatImage.PutPixel(System.Int32,System.Int32,System.Single)
+  id: PutPixel(System.Int32,System.Int32,System.Single)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: PutPixel(int, int, float)
+  nameWithType: FloatImage.PutPixel(int, int, float)
+  fullName: Util.FloatImage.PutPixel(int, int, float)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PutPixel
+    path: Util/FloatImage.cs
+    startLine: 390
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Sets the gray-value pixel.
+  example: []
+  syntax:
+    content: public void PutPixel(int x, int y, float val)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: X-coordinate.
+    - id: y
+      type: System.Int32
+      description: Y-coordinate.
+    - id: val
+      type: System.Single
+      description: New pixel value.
+    content.vb: Public Sub PutPixel(x As Integer, y As Integer, val As Single)
+  overload: Util.FloatImage.PutPixel*
+  nameWithType.vb: FloatImage.PutPixel(Integer, Integer, Single)
+  fullName.vb: Util.FloatImage.PutPixel(Integer, Integer, Single)
+  name.vb: PutPixel(Integer, Integer, Single)
+- uid: Util.FloatImage.MAD(Util.FloatImage)
+  commentId: M:Util.FloatImage.MAD(Util.FloatImage)
+  id: MAD(Util.FloatImage)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: MAD(FloatImage)
+  nameWithType: FloatImage.MAD(FloatImage)
+  fullName: Util.FloatImage.MAD(Util.FloatImage)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: MAD
+    path: Util/FloatImage.cs
+    startLine: 407
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Mean Absolute Difference of two images.
+  example: []
+  syntax:
+    content: public float MAD(FloatImage b)
+    parameters:
+    - id: b
+      type: Util.FloatImage
+      description: The other image.
+    return:
+      type: System.Single
+      description: Sum of absolute pixel differences divided by number of pixels.
+    content.vb: Public Function MAD(b As FloatImage) As Single
+  overload: Util.FloatImage.MAD*
+- uid: Util.FloatImage.MAD(Util.FloatImage,System.Int32)
+  commentId: M:Util.FloatImage.MAD(Util.FloatImage,System.Int32)
+  id: MAD(Util.FloatImage,System.Int32)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: MAD(FloatImage, int)
+  nameWithType: FloatImage.MAD(FloatImage, int)
+  fullName: Util.FloatImage.MAD(Util.FloatImage, int)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: MAD
+    path: Util/FloatImage.cs
+    startLine: 439
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Mean Absolute Difference of two images, one channel only.
+  example: []
+  syntax:
+    content: public float MAD(FloatImage b, int ch)
+    parameters:
+    - id: b
+      type: Util.FloatImage
+      description: The other image.
+    - id: ch
+      type: System.Int32
+      description: Channel number.
+    return:
+      type: System.Single
+      description: Sum of absolute pixel differences divided by number of pixels.
+    content.vb: Public Function MAD(b As FloatImage, ch As Integer) As Single
+  overload: Util.FloatImage.MAD*
+  nameWithType.vb: FloatImage.MAD(FloatImage, Integer)
+  fullName.vb: Util.FloatImage.MAD(Util.FloatImage, Integer)
+  name.vb: MAD(FloatImage, Integer)
+- uid: Util.FloatImage.Blur(System.Boolean)
+  commentId: M:Util.FloatImage.Blur(System.Boolean)
+  id: Blur(System.Boolean)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Blur(bool)
+  nameWithType: FloatImage.Blur(bool)
+  fullName: Util.FloatImage.Blur(bool)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Blur
+    path: Util/FloatImage.cs
+    startLine: 470
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Image blur - Gaussian or uniform.
+  example: []
+  syntax:
+    content: public void Blur(bool gauss = false)
+    parameters:
+    - id: gauss
+      type: System.Boolean
+      description: Use Gaussian filter? (3x3 window)
+    content.vb: Public Sub Blur(gauss As Boolean = False)
+  overload: Util.FloatImage.Blur*
+  nameWithType.vb: FloatImage.Blur(Boolean)
+  fullName.vb: Util.FloatImage.Blur(Boolean)
+  name.vb: Blur(Boolean)
+- uid: Util.FloatImage.Resize(System.Int32)
+  commentId: M:Util.FloatImage.Resize(System.Int32)
+  id: Resize(System.Int32)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Resize(int)
+  nameWithType: FloatImage.Resize(int)
+  fullName: Util.FloatImage.Resize(int)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Resize
+    path: Util/FloatImage.cs
+    startLine: 516
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Image resize by an integral subsample factor.
+  example: []
+  syntax:
+    content: public void Resize(int factor)
+    parameters:
+    - id: factor
+      type: System.Int32
+      description: Subsample factor.
+    content.vb: Public Sub Resize(factor As Integer)
+  overload: Util.FloatImage.Resize*
+  nameWithType.vb: FloatImage.Resize(Integer)
+  fullName.vb: Util.FloatImage.Resize(Integer)
+  name.vb: Resize(Integer)
+- uid: Util.FloatImage.Contrast(System.Double@,System.Double@)
+  commentId: M:Util.FloatImage.Contrast(System.Double@,System.Double@)
+  id: Contrast(System.Double@,System.Double@)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Contrast(out double, out double)
+  nameWithType: FloatImage.Contrast(out double, out double)
+  fullName: Util.FloatImage.Contrast(out double, out double)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Contrast
+    path: Util/FloatImage.cs
+    startLine: 570
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Computes image range (min and max pixel values).
+  example: []
+  syntax:
+    content: public void Contrast(out double minY, out double maxY)
+    parameters:
+    - id: minY
+      type: System.Double
+      description: Output (nonzero) min value.
+    - id: maxY
+      type: System.Double
+      description: Output max value.
+    content.vb: Public Sub Contrast(minY As Double, maxY As Double)
+  overload: Util.FloatImage.Contrast*
+  nameWithType.vb: FloatImage.Contrast(Double, Double)
+  fullName.vb: Util.FloatImage.Contrast(Double, Double)
+  name.vb: Contrast(Double, Double)
+- uid: Util.FloatImage.cdf
+  commentId: F:Util.FloatImage.cdf
+  id: cdf
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: cdf
+  nameWithType: FloatImage.cdf
+  fullName: Util.FloatImage.cdf
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: cdf
+    path: Util/FloatImage.cs
+    startLine: 606
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: >-
+    Cumulative distribution function in discrete form.
+
+    Support data structure for efficient sampling.
+
+    If allocated, it should have 'image resolution' + 1 values.
+  example: []
+  syntax:
+    content: protected double[]? cdf
+    return:
+      type: System.Double[]
+    content.vb: Protected cdf As Double()
+- uid: Util.FloatImage.PrepareCdf(System.Int32)
+  commentId: M:Util.FloatImage.PrepareCdf(System.Int32)
+  id: PrepareCdf(System.Int32)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: PrepareCdf(int)
+  nameWithType: FloatImage.PrepareCdf(int)
+  fullName: Util.FloatImage.PrepareCdf(int)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PrepareCdf
+    path: Util/FloatImage.cs
+    startLine: 612
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Prepare support cdf array.
+  example: []
+  syntax:
+    content: public void PrepareCdf(int ch = 0)
+    parameters:
+    - id: ch
+      type: System.Int32
+      description: Optional channel index.
+    content.vb: Public Sub PrepareCdf(ch As Integer = 0)
+  overload: Util.FloatImage.PrepareCdf*
+  nameWithType.vb: FloatImage.PrepareCdf(Integer)
+  fullName.vb: Util.FloatImage.PrepareCdf(Integer)
+  name.vb: PrepareCdf(Integer)
+- uid: Util.FloatImage.GetSample(System.Double@,System.Double@,System.Double,System.Random)
+  commentId: M:Util.FloatImage.GetSample(System.Double@,System.Double@,System.Double,System.Random)
+  id: GetSample(System.Double@,System.Double@,System.Double,System.Random)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: GetSample(out double, out double, double, Random?)
+  nameWithType: FloatImage.GetSample(out double, out double, double, Random?)
+  fullName: Util.FloatImage.GetSample(out double, out double, double, System.Random?)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetSample
+    path: Util/FloatImage.cs
+    startLine: 643
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: CDF-based sampling.
+  example: []
+  syntax:
+    content: public void GetSample(out double x, out double y, double random, Random? rnd = null)
+    parameters:
+    - id: x
+      type: System.Double
+      description: Output horizontal coordinate from the [0.0,width) range.
+    - id: y
+      type: System.Double
+      description: Output vertical coordinate from the [0.0,height) range.
+    - id: random
+      type: System.Double
+      description: '[0,1] uniform random value.'
+    - id: rnd
+      type: System.Random
+      description: Optional random generator instance. If provided, internal randomization is possible.
+    content.vb: Public Sub GetSample(x As Double, y As Double, random As Double, rnd As Random = Nothing)
+  overload: Util.FloatImage.GetSample*
+  nameWithType.vb: FloatImage.GetSample(Double, Double, Double, Random)
+  fullName.vb: Util.FloatImage.GetSample(Double, Double, Double, System.Random)
+  name.vb: GetSample(Double, Double, Double, Random)
+- uid: Util.FloatImage.Exposure(System.Byte[],System.Double,System.Double)
+  commentId: M:Util.FloatImage.Exposure(System.Byte[],System.Double,System.Double)
+  id: Exposure(System.Byte[],System.Double,System.Double)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: Exposure(byte[]?, double, double)
+  nameWithType: FloatImage.Exposure(byte[]?, double, double)
+  fullName: Util.FloatImage.Exposure(byte[]?, double, double)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Exposure
+    path: Util/FloatImage.cs
+    startLine: 693
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Computes simple exposure from HDR to LDR format. Optional gamma pre-compensation
+  example: []
+  syntax:
+    content: public byte[]? Exposure(byte[]? result, double exp, double gamma = 0)
+    parameters:
+    - id: result
+      type: System.Byte[]
+      description: Optional pre-allocated Bitmap.
+    - id: exp
+      type: System.Double
+      description: Exposure coefficient.
+    - id: gamma
+      type: System.Double
+      description: Optional target gammma (if zero, no pre-compensation is done).
+    return:
+      type: System.Byte[]
+      description: Output LDR Bitbap.
+    content.vb: Public Function Exposure(result As Byte(), exp As Double, gamma As Double = 0) As Byte()
+  overload: Util.FloatImage.Exposure*
+  nameWithType.vb: FloatImage.Exposure(Byte(), Double, Double)
+  fullName.vb: Util.FloatImage.Exposure(Byte(), Double, Double)
+  name.vb: Exposure(Byte(), Double, Double)
+- uid: Util.FloatImage.FromFile(System.String)
+  commentId: M:Util.FloatImage.FromFile(System.String)
+  id: FromFile(System.String)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: FromFile(string)
+  nameWithType: FloatImage.FromFile(string)
+  fullName: Util.FloatImage.FromFile(string)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: FromFile
+    path: Util/FloatImage.cs
+    startLine: 1222
+  assemblies:
+  - rt004
+  namespace: Util
+  summary: Read HDR image from the given disk file.
+  example: []
+  syntax:
+    content: public static FloatImage? FromFile(string fileName)
+    parameters:
+    - id: fileName
+      type: System.String
+    return:
+      type: Util.FloatImage
+      description: Result or 'null' in case of failure.
+    content.vb: Public Shared Function FromFile(fileName As String) As FloatImage
+  overload: Util.FloatImage.FromFile*
+  nameWithType.vb: FloatImage.FromFile(String)
+  fullName.vb: Util.FloatImage.FromFile(String)
+  name.vb: FromFile(String)
+- uid: Util.FloatImage.SaveHDR(System.String)
+  commentId: M:Util.FloatImage.SaveHDR(System.String)
+  id: SaveHDR(System.String)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: SaveHDR(string)
+  nameWithType: FloatImage.SaveHDR(string)
+  fullName: Util.FloatImage.SaveHDR(string)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: SaveHDR
+    path: Util/FloatImage.cs
+    startLine: 1238
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: public void SaveHDR(string fileName)
+    parameters:
+    - id: fileName
+      type: System.String
+    content.vb: Public Sub SaveHDR(fileName As String)
+  overload: Util.FloatImage.SaveHDR*
+  nameWithType.vb: FloatImage.SaveHDR(String)
+  fullName.vb: Util.FloatImage.SaveHDR(String)
+  name.vb: SaveHDR(String)
+- uid: Util.FloatImage.SavePFM(System.String)
+  commentId: M:Util.FloatImage.SavePFM(System.String)
+  id: SavePFM(System.String)
+  parent: Util.FloatImage
+  langs:
+  - csharp
+  - vb
+  name: SavePFM(string)
+  nameWithType: FloatImage.SavePFM(string)
+  fullName: Util.FloatImage.SavePFM(string)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/FloatImage.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: SavePFM
+    path: Util/FloatImage.cs
+    startLine: 1251
+  assemblies:
+  - rt004
+  namespace: Util
+  syntax:
+    content: public void SavePFM(string fileName)
+    parameters:
+    - id: fileName
+      type: System.String
+    content.vb: Public Sub SavePFM(fileName As String)
+  overload: Util.FloatImage.SavePFM*
+  nameWithType.vb: FloatImage.SavePFM(String)
+  fullName.vb: Util.FloatImage.SavePFM(String)
+  name.vb: SavePFM(String)
+references:
+- uid: Util
+  commentId: N:Util
+  href: Util.html
+  name: Util
+  nameWithType: Util
+  fullName: Util
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Single[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float[]
+  nameWithType: float[]
+  fullName: float[]
+  nameWithType.vb: Single()
+  fullName.vb: Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: (
+  - name: )
+- uid: Util.FloatImage.Data*
+  commentId: Overload:Util.FloatImage.Data
+  href: Util.FloatImage.html#Util_FloatImage_Data
+  name: Data
+  nameWithType: FloatImage.Data
+  fullName: Util.FloatImage.Data
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Util.FloatImage.Width*
+  commentId: Overload:Util.FloatImage.Width
+  href: Util.FloatImage.html#Util_FloatImage_Width
+  name: Width
+  nameWithType: FloatImage.Width
+  fullName: Util.FloatImage.Width
+- uid: Util.FloatImage.Height*
+  commentId: Overload:Util.FloatImage.Height
+  href: Util.FloatImage.html#Util_FloatImage_Height
+  name: Height
+  nameWithType: FloatImage.Height
+  fullName: Util.FloatImage.Height
+- uid: Util.FloatImage.Channels*
+  commentId: Overload:Util.FloatImage.Channels
+  href: Util.FloatImage.html#Util_FloatImage_Channels
+  name: Channels
+  nameWithType: FloatImage.Channels
+  fullName: Util.FloatImage.Channels
+- uid: Util.FloatImage.Scan0*
+  commentId: Overload:Util.FloatImage.Scan0
+  href: Util.FloatImage.html#Util_FloatImage_Scan0
+  name: Scan0
+  nameWithType: FloatImage.Scan0
+  fullName: Util.FloatImage.Scan0
+- uid: Util.FloatImage.Stride*
+  commentId: Overload:Util.FloatImage.Stride
+  href: Util.FloatImage.html#Util_FloatImage_Stride
+  name: Stride
+  nameWithType: FloatImage.Stride
+  fullName: Util.FloatImage.Stride
+- uid: Util.FloatImage.setAccelerators*
+  commentId: Overload:Util.FloatImage.setAccelerators
+  href: Util.FloatImage.html#Util_FloatImage_setAccelerators
+  name: setAccelerators
+  nameWithType: FloatImage.setAccelerators
+  fullName: Util.FloatImage.setAccelerators
+- uid: Util.FloatImage.init*
+  commentId: Overload:Util.FloatImage.init
+  href: Util.FloatImage.html#Util_FloatImage_init_System_Int32_System_Int32_System_Int32_System_Int32_System_Single___
+  name: init
+  nameWithType: FloatImage.init
+  fullName: Util.FloatImage.init
+- uid: Util.FloatImage.#ctor*
+  commentId: Overload:Util.FloatImage.#ctor
+  href: Util.FloatImage.html#Util_FloatImage__ctor_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: FloatImage
+  nameWithType: FloatImage.FloatImage
+  fullName: Util.FloatImage.FloatImage
+  nameWithType.vb: FloatImage.New
+  fullName.vb: Util.FloatImage.New
+  name.vb: New
+- uid: Util.FloatImage
+  commentId: T:Util.FloatImage
+  parent: Util
+  href: Util.FloatImage.html
+  name: FloatImage
+  nameWithType: FloatImage
+  fullName: Util.FloatImage
+- uid: Util.FloatImage.GrayImage*
+  commentId: Overload:Util.FloatImage.GrayImage
+  href: Util.FloatImage.html#Util_FloatImage_GrayImage_System_Boolean_System_Double_
+  name: GrayImage
+  nameWithType: FloatImage.GrayImage
+  fullName: Util.FloatImage.GrayImage
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: Util.FloatImage.SetBorder*
+  commentId: Overload:Util.FloatImage.SetBorder
+  href: Util.FloatImage.html#Util_FloatImage_SetBorder_System_Int32_
+  name: SetBorder
+  nameWithType: FloatImage.SetBorder
+  fullName: Util.FloatImage.SetBorder
+- uid: Util.FloatImage.AssertMinBorder*
+  commentId: Overload:Util.FloatImage.AssertMinBorder
+  href: Util.FloatImage.html#Util_FloatImage_AssertMinBorder_System_Int32_
+  name: AssertMinBorder
+  nameWithType: FloatImage.AssertMinBorder
+  fullName: Util.FloatImage.AssertMinBorder
+- uid: Util.FloatImage.ComputeBorder*
+  commentId: Overload:Util.FloatImage.ComputeBorder
+  href: Util.FloatImage.html#Util_FloatImage_ComputeBorder_System_Int32_
+  name: ComputeBorder
+  nameWithType: FloatImage.ComputeBorder
+  fullName: Util.FloatImage.ComputeBorder
+- uid: Util.FloatImage.GetPixel*
+  commentId: Overload:Util.FloatImage.GetPixel
+  href: Util.FloatImage.html#Util_FloatImage_GetPixel_System_Int32_System_Int32_System_Single___
+  name: GetPixel
+  nameWithType: FloatImage.GetPixel
+  fullName: Util.FloatImage.GetPixel
+- uid: Util.FloatImage.GetGray*
+  commentId: Overload:Util.FloatImage.GetGray
+  href: Util.FloatImage.html#Util_FloatImage_GetGray_System_Int32_System_Int32_
+  name: GetGray
+  nameWithType: FloatImage.GetGray
+  fullName: Util.FloatImage.GetGray
+- uid: Util.FloatImage.PutPixel*
+  commentId: Overload:Util.FloatImage.PutPixel
+  href: Util.FloatImage.html#Util_FloatImage_PutPixel_System_Int32_System_Int32_System_Single___
+  name: PutPixel
+  nameWithType: FloatImage.PutPixel
+  fullName: Util.FloatImage.PutPixel
+- uid: Util.FloatImage.MAD*
+  commentId: Overload:Util.FloatImage.MAD
+  href: Util.FloatImage.html#Util_FloatImage_MAD_Util_FloatImage_
+  name: MAD
+  nameWithType: FloatImage.MAD
+  fullName: Util.FloatImage.MAD
+- uid: Util.FloatImage.Blur*
+  commentId: Overload:Util.FloatImage.Blur
+  href: Util.FloatImage.html#Util_FloatImage_Blur_System_Boolean_
+  name: Blur
+  nameWithType: FloatImage.Blur
+  fullName: Util.FloatImage.Blur
+- uid: Util.FloatImage.Resize*
+  commentId: Overload:Util.FloatImage.Resize
+  href: Util.FloatImage.html#Util_FloatImage_Resize_System_Int32_
+  name: Resize
+  nameWithType: FloatImage.Resize
+  fullName: Util.FloatImage.Resize
+- uid: Util.FloatImage.Contrast*
+  commentId: Overload:Util.FloatImage.Contrast
+  href: Util.FloatImage.html#Util_FloatImage_Contrast_System_Double__System_Double__
+  name: Contrast
+  nameWithType: FloatImage.Contrast
+  fullName: Util.FloatImage.Contrast
+- uid: System.Double[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double[]
+  nameWithType: double[]
+  fullName: double[]
+  nameWithType.vb: Double()
+  fullName.vb: Double()
+  name.vb: Double()
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: (
+  - name: )
+- uid: Util.FloatImage.PrepareCdf*
+  commentId: Overload:Util.FloatImage.PrepareCdf
+  href: Util.FloatImage.html#Util_FloatImage_PrepareCdf_System_Int32_
+  name: PrepareCdf
+  nameWithType: FloatImage.PrepareCdf
+  fullName: Util.FloatImage.PrepareCdf
+- uid: Util.FloatImage.GetSample*
+  commentId: Overload:Util.FloatImage.GetSample
+  href: Util.FloatImage.html#Util_FloatImage_GetSample_System_Double__System_Double__System_Double_System_Random_
+  name: GetSample
+  nameWithType: FloatImage.GetSample
+  fullName: Util.FloatImage.GetSample
+- uid: System.Random
+  commentId: T:System.Random
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.random
+  name: Random
+  nameWithType: Random
+  fullName: System.Random
+- uid: Util.FloatImage.Exposure*
+  commentId: Overload:Util.FloatImage.Exposure
+  href: Util.FloatImage.html#Util_FloatImage_Exposure_System_Byte___System_Double_System_Double_
+  name: Exposure
+  nameWithType: FloatImage.Exposure
+  fullName: Util.FloatImage.Exposure
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: Util.FloatImage.FromFile*
+  commentId: Overload:Util.FloatImage.FromFile
+  href: Util.FloatImage.html#Util_FloatImage_FromFile_System_String_
+  name: FromFile
+  nameWithType: FloatImage.FromFile
+  fullName: Util.FloatImage.FromFile
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Util.FloatImage.SaveHDR*
+  commentId: Overload:Util.FloatImage.SaveHDR
+  href: Util.FloatImage.html#Util_FloatImage_SaveHDR_System_String_
+  name: SaveHDR
+  nameWithType: FloatImage.SaveHDR
+  fullName: Util.FloatImage.SaveHDR
+- uid: Util.FloatImage.SavePFM*
+  commentId: Overload:Util.FloatImage.SavePFM
+  href: Util.FloatImage.html#Util_FloatImage_SavePFM_System_String_
+  name: SavePFM
+  nameWithType: FloatImage.SavePFM
+  fullName: Util.FloatImage.SavePFM

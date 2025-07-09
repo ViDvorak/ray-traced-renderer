@@ -17,7 +17,7 @@ namespace rt004.Materials
         Texture BaseColor;
 
         /// <summary>
-        /// The specular reflection texture, defining the specularity (shininess/metalness) of the material.
+        /// The specular reflection texture, defining the secularity (shininess/meatless) of the material.
         /// </summary>
         MonochromeTexture SpecularTexture;
 

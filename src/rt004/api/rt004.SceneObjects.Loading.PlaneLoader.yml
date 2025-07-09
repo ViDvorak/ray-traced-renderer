@@ -1,0 +1,648 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.SceneObjects.Loading.PlaneLoader
+  commentId: T:rt004.SceneObjects.Loading.PlaneLoader
+  id: PlaneLoader
+  parent: rt004.SceneObjects.Loading
+  children:
+  - rt004.SceneObjects.Loading.PlaneLoader.#ctor
+  - rt004.SceneObjects.Loading.PlaneLoader.#ctor(rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Loading.MaterialLoader)
+  - rt004.SceneObjects.Loading.PlaneLoader.CreateInstance(rt004.Scene)
+  langs:
+  - csharp
+  - vb
+  name: PlaneLoader
+  nameWithType: PlaneLoader
+  fullName: rt004.SceneObjects.Loading.PlaneLoader
+  type: Class
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PlaneLoader
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 91
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects.Loading
+  summary: Loader class for deserializing and instantiating <xref href="rt004.SceneObjects.Plane" data-throw-if-not-resolved="false"></xref> objects from scene data.
+  example: []
+  syntax:
+    content: 'public class PlaneLoader : SolidLoader'
+    content.vb: Public Class PlaneLoader Inherits SolidLoader
+  inheritance:
+  - System.Object
+  - rt004.SceneObjects.Loading.SceneObjectLoader
+  - rt004.SceneObjects.Loading.SolidLoader
+  inheritedMembers:
+  - rt004.SceneObjects.Loading.SolidLoader.material
+  - rt004.SceneObjects.Loading.SceneObjectLoader.position
+  - rt004.SceneObjects.Loading.SceneObjectLoader.rotation
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.SceneObjects.Loading.PlaneLoader.#ctor
+  commentId: M:rt004.SceneObjects.Loading.PlaneLoader.#ctor
+  id: '#ctor'
+  parent: rt004.SceneObjects.Loading.PlaneLoader
+  langs:
+  - csharp
+  - vb
+  name: PlaneLoader()
+  nameWithType: PlaneLoader.PlaneLoader()
+  fullName: rt004.SceneObjects.Loading.PlaneLoader.PlaneLoader()
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 96
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects.Loading
+  summary: Initializes a new instance of the <xref href="rt004.SceneObjects.Loading.PlaneLoader" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public PlaneLoader()
+    content.vb: Public Sub New()
+  overload: rt004.SceneObjects.Loading.PlaneLoader.#ctor*
+  nameWithType.vb: PlaneLoader.New()
+  fullName.vb: rt004.SceneObjects.Loading.PlaneLoader.New()
+  name.vb: New()
+- uid: rt004.SceneObjects.Loading.PlaneLoader.#ctor(rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Loading.MaterialLoader)
+  commentId: M:rt004.SceneObjects.Loading.PlaneLoader.#ctor(rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Loading.MaterialLoader)
+  id: '#ctor(rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Loading.MaterialLoader)'
+  parent: rt004.SceneObjects.Loading.PlaneLoader
+  langs:
+  - csharp
+  - vb
+  name: PlaneLoader(Point3D, Vector3, MaterialLoader)
+  nameWithType: PlaneLoader.PlaneLoader(Point3D, Vector3, MaterialLoader)
+  fullName: rt004.SceneObjects.Loading.PlaneLoader.PlaneLoader(rt004.Util.Point3D, OpenTK.Mathematics.Vector3, rt004.Materials.Loading.MaterialLoader)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 104
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects.Loading
+  summary: Initializes a new instance of the <xref href="rt004.SceneObjects.Loading.PlaneLoader" data-throw-if-not-resolved="false"></xref> class with specified parameters.
+  example: []
+  syntax:
+    content: public PlaneLoader(Point3D position, Vector3 rotation, MaterialLoader material)
+    parameters:
+    - id: position
+      type: rt004.Util.Point3D
+      description: The position of the plane.
+    - id: rotation
+      type: OpenTK.Mathematics.Vector3
+      description: The rotation of the plane.
+    - id: material
+      type: rt004.Materials.Loading.MaterialLoader
+      description: The material loader for the plane.
+    content.vb: Public Sub New(position As Point3D, rotation As Vector3, material As MaterialLoader)
+  overload: rt004.SceneObjects.Loading.PlaneLoader.#ctor*
+  nameWithType.vb: PlaneLoader.New(Point3D, Vector3, MaterialLoader)
+  fullName.vb: rt004.SceneObjects.Loading.PlaneLoader.New(rt004.Util.Point3D, OpenTK.Mathematics.Vector3, rt004.Materials.Loading.MaterialLoader)
+  name.vb: New(Point3D, Vector3, MaterialLoader)
+- uid: rt004.SceneObjects.Loading.PlaneLoader.CreateInstance(rt004.Scene)
+  commentId: M:rt004.SceneObjects.Loading.PlaneLoader.CreateInstance(rt004.Scene)
+  id: CreateInstance(rt004.Scene)
+  parent: rt004.SceneObjects.Loading.PlaneLoader
+  langs:
+  - csharp
+  - vb
+  name: CreateInstance(Scene)
+  nameWithType: PlaneLoader.CreateInstance(Scene)
+  fullName: rt004.SceneObjects.Loading.PlaneLoader.CreateInstance(rt004.Scene)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: CreateInstance
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 111
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects.Loading
+  summary: Creates an instance of a <xref href="rt004.SceneObjects.Plane" data-throw-if-not-resolved="false"></xref> using the loader's configuration.
+  example: []
+  syntax:
+    content: public override SceneObject CreateInstance(Scene parentScene)
+    parameters:
+    - id: parentScene
+      type: rt004.Scene
+      description: The parent scene to which the plane will be added.
+    return:
+      type: rt004.SceneObjects.SceneObject
+      description: A new <xref href="rt004.SceneObjects.Plane" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Public Overrides Function CreateInstance(parentScene As Scene) As SceneObject
+  overridden: rt004.SceneObjects.Loading.SceneObjectLoader.CreateInstance(rt004.Scene)
+  overload: rt004.SceneObjects.Loading.PlaneLoader.CreateInstance*
+references:
+- uid: rt004.SceneObjects.Plane
+  commentId: T:rt004.SceneObjects.Plane
+  href: rt004.SceneObjects.Plane.html
+  name: Plane
+  nameWithType: Plane
+  fullName: rt004.SceneObjects.Plane
+- uid: rt004.SceneObjects.Loading
+  commentId: N:rt004.SceneObjects.Loading
+  href: rt004.html
+  name: rt004.SceneObjects.Loading
+  nameWithType: rt004.SceneObjects.Loading
+  fullName: rt004.SceneObjects.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  - name: .
+  - uid: rt004.SceneObjects.Loading
+    name: Loading
+    href: rt004.SceneObjects.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  - name: .
+  - uid: rt004.SceneObjects.Loading
+    name: Loading
+    href: rt004.SceneObjects.Loading.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.SceneObjects.Loading.SceneObjectLoader
+  commentId: T:rt004.SceneObjects.Loading.SceneObjectLoader
+  parent: rt004.SceneObjects.Loading
+  href: rt004.SceneObjects.Loading.SceneObjectLoader.html
+  name: SceneObjectLoader
+  nameWithType: SceneObjectLoader
+  fullName: rt004.SceneObjects.Loading.SceneObjectLoader
+- uid: rt004.SceneObjects.Loading.SolidLoader
+  commentId: T:rt004.SceneObjects.Loading.SolidLoader
+  parent: rt004.SceneObjects.Loading
+  href: rt004.SceneObjects.Loading.SolidLoader.html
+  name: SolidLoader
+  nameWithType: SolidLoader
+  fullName: rt004.SceneObjects.Loading.SolidLoader
+- uid: rt004.SceneObjects.Loading.SolidLoader.material
+  commentId: F:rt004.SceneObjects.Loading.SolidLoader.material
+  parent: rt004.SceneObjects.Loading.SolidLoader
+  href: rt004.SceneObjects.Loading.SolidLoader.html#rt004_SceneObjects_Loading_SolidLoader_material
+  name: material
+  nameWithType: SolidLoader.material
+  fullName: rt004.SceneObjects.Loading.SolidLoader.material
+- uid: rt004.SceneObjects.Loading.SceneObjectLoader.position
+  commentId: F:rt004.SceneObjects.Loading.SceneObjectLoader.position
+  parent: rt004.SceneObjects.Loading.SceneObjectLoader
+  href: rt004.SceneObjects.Loading.SceneObjectLoader.html#rt004_SceneObjects_Loading_SceneObjectLoader_position
+  name: position
+  nameWithType: SceneObjectLoader.position
+  fullName: rt004.SceneObjects.Loading.SceneObjectLoader.position
+- uid: rt004.SceneObjects.Loading.SceneObjectLoader.rotation
+  commentId: F:rt004.SceneObjects.Loading.SceneObjectLoader.rotation
+  parent: rt004.SceneObjects.Loading.SceneObjectLoader
+  href: rt004.SceneObjects.Loading.SceneObjectLoader.html#rt004_SceneObjects_Loading_SceneObjectLoader_rotation
+  name: rotation
+  nameWithType: SceneObjectLoader.rotation
+  fullName: rt004.SceneObjects.Loading.SceneObjectLoader.rotation
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: rt004.SceneObjects.Loading.PlaneLoader
+  commentId: T:rt004.SceneObjects.Loading.PlaneLoader
+  href: rt004.SceneObjects.Loading.PlaneLoader.html
+  name: PlaneLoader
+  nameWithType: PlaneLoader
+  fullName: rt004.SceneObjects.Loading.PlaneLoader
+- uid: rt004.SceneObjects.Loading.PlaneLoader.#ctor*
+  commentId: Overload:rt004.SceneObjects.Loading.PlaneLoader.#ctor
+  href: rt004.SceneObjects.Loading.PlaneLoader.html#rt004_SceneObjects_Loading_PlaneLoader__ctor
+  name: PlaneLoader
+  nameWithType: PlaneLoader.PlaneLoader
+  fullName: rt004.SceneObjects.Loading.PlaneLoader.PlaneLoader
+  nameWithType.vb: PlaneLoader.New
+  fullName.vb: rt004.SceneObjects.Loading.PlaneLoader.New
+  name.vb: New
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: OpenTK.Mathematics.Vector3
+  commentId: T:OpenTK.Mathematics.Vector3
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: OpenTK.Mathematics.Vector3
+- uid: rt004.Materials.Loading.MaterialLoader
+  commentId: T:rt004.Materials.Loading.MaterialLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.MaterialLoader.html
+  name: MaterialLoader
+  nameWithType: MaterialLoader
+  fullName: rt004.Materials.Loading.MaterialLoader
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.Materials.Loading
+  commentId: N:rt004.Materials.Loading
+  href: rt004.html
+  name: rt004.Materials.Loading
+  nameWithType: rt004.Materials.Loading
+  fullName: rt004.Materials.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+- uid: rt004.SceneObjects.Loading.SceneObjectLoader.CreateInstance(rt004.Scene)
+  commentId: M:rt004.SceneObjects.Loading.SceneObjectLoader.CreateInstance(rt004.Scene)
+  parent: rt004.SceneObjects.Loading.SceneObjectLoader
+  href: rt004.SceneObjects.Loading.SceneObjectLoader.html#rt004_SceneObjects_Loading_SceneObjectLoader_CreateInstance_rt004_Scene_
+  name: CreateInstance(Scene)
+  nameWithType: SceneObjectLoader.CreateInstance(Scene)
+  fullName: rt004.SceneObjects.Loading.SceneObjectLoader.CreateInstance(rt004.Scene)
+  spec.csharp:
+  - uid: rt004.SceneObjects.Loading.SceneObjectLoader.CreateInstance(rt004.Scene)
+    name: CreateInstance
+    href: rt004.SceneObjects.Loading.SceneObjectLoader.html#rt004_SceneObjects_Loading_SceneObjectLoader_CreateInstance_rt004_Scene_
+  - name: (
+  - uid: rt004.Scene
+    name: Scene
+    href: rt004.Scene.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.Loading.SceneObjectLoader.CreateInstance(rt004.Scene)
+    name: CreateInstance
+    href: rt004.SceneObjects.Loading.SceneObjectLoader.html#rt004_SceneObjects_Loading_SceneObjectLoader_CreateInstance_rt004_Scene_
+  - name: (
+  - uid: rt004.Scene
+    name: Scene
+    href: rt004.Scene.html
+  - name: )
+- uid: rt004.SceneObjects.Loading.PlaneLoader.CreateInstance*
+  commentId: Overload:rt004.SceneObjects.Loading.PlaneLoader.CreateInstance
+  href: rt004.SceneObjects.Loading.PlaneLoader.html#rt004_SceneObjects_Loading_PlaneLoader_CreateInstance_rt004_Scene_
+  name: CreateInstance
+  nameWithType: PlaneLoader.CreateInstance
+  fullName: rt004.SceneObjects.Loading.PlaneLoader.CreateInstance
+- uid: rt004.Scene
+  commentId: T:rt004.Scene
+  parent: rt004
+  href: rt004.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: rt004.Scene
+- uid: rt004.SceneObjects.SceneObject
+  commentId: T:rt004.SceneObjects.SceneObject
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.SceneObject.html
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: rt004.SceneObjects.SceneObject
+- uid: rt004
+  commentId: N:rt004
+  href: rt004.html
+  name: rt004
+  nameWithType: rt004
+  fullName: rt004
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  href: rt004.html
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html

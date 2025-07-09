@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Solid | Renderer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Solid | Renderer ">
+      
+      <meta name="description" content="Abstract base class for all solid objects that can be rendered in a scene. Provides common functionality for ray-solid intersection tests and material properties.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/new/main/apiSpec/new?filename=rt004_SceneObjects_Solid.md&amp;value=---%0Auid%3A%20rt004.SceneObjects.Solid%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Raytraced Renderer">
+            Raytraced Renderer
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rt004.SceneObjects.Solid">
+
+
+
+  <h1 id="rt004_SceneObjects_Solid" data-uid="rt004.SceneObjects.Solid" class="text-break">
+Class Solid  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rt004.html">rt004</a>.<a class="xref" href="rt004.SceneObjects.html">SceneObjects</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rt004.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Abstract base class for all solid objects that can be rendered in a scene.
+Provides common functionality for ray-solid intersection tests and material properties.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Solid : SceneObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="rt004.SceneObjects.SceneObject.html">SceneObject</a></div>
+      <div><span class="xref">Solid</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="rt004.SceneObjects.Plane.html">Plane</a></div>
+      <div><a class="xref" href="rt004.SceneObjects.Sphere.html">Sphere</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_parentScene">SceneObject.parentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_dirtyGlobalPosition">SceneObject.dirtyGlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Position">SceneObject.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GlobalPosition">SceneObject.GlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Rotation">SceneObject.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentScene">SceneObject.ParentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentObject">SceneObject.ParentObject</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding">SceneObject.GetLocalHeding()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading">SceneObject.GetGlobalHeading()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition">SceneObject.GetGlobalPosition()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix">SceneObject.GetLocalToWorldTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix">SceneObject.GetWorldToLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix">SceneObject.GetLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix">SceneObject.GetLocalInverseTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_">SceneObject.ToWorldSpace(Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_">SceneObject.ToWorldSpace(Point3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rt004_SceneObjects_Solid__ctor_" data-uid="rt004.SceneObjects.Solid.#ctor*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_" data-uid="rt004.SceneObjects.Solid.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3)">
+  Solid(Scene, Point3D, Vector3)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a> class with default material.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Solid(Scene parentScene, Point3D position, Vector3 rotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentScene</code> <a class="xref" href="rt004.Scene.html">Scene</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The scene that contains this solid.</p>
+</dd>
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The position of the solid in 3D space.</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Vector3</span></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The rotation of the solid as Euler angles.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Solid__ctor_" data-uid="rt004.SceneObjects.Solid.#ctor*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_rt004_Materials_Material_" data-uid="rt004.SceneObjects.Solid.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Material)">
+  Solid(Scene, Point3D, Vector3, Material)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a> class with a specified material.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Solid(Scene parentScene, Point3D position, Vector3 rotation, Material material)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentScene</code> <a class="xref" href="rt004.Scene.html">Scene</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The scene that contains this solid.</p>
+</dd>
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The position of the solid in 3D space.</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Vector3</span></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The rotation of the solid as Euler angles.</p>
+</dd>
+    <dt><code>material</code> <a class="xref" href="rt004.Materials.Material.html">Material</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The material to assign to this solid.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidcastexception">InvalidCastException</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Thrown when the material is not compatible with the current light model.</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="rt004_SceneObjects_Solid_material_" data-uid="rt004.SceneObjects.Solid.material*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid_material" data-uid="rt004.SceneObjects.Solid.material">
+  material
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Gets or sets the material that defines the visual properties of this solid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material material { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Materials.Material.html">Material</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rt004_SceneObjects_Solid_GetNormalAt_" data-uid="rt004.SceneObjects.Solid.GetNormalAt*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid_GetNormalAt_rt004_Util_Point3D_" data-uid="rt004.SceneObjects.Solid.GetNormalAt(rt004.Util.Point3D)">
+  GetNormalAt(Point3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Gets normal of this object at specified position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Vector3D GetNormalAt(Point3D globalPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>globalPosition</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Position, where the normal should be start on the solid side or edge. In world coordinates</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Returns normal of the object at specified position</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Solid_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@)">
+  TryGetRayIntersection(Ray, out double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Tests whether a ray intersects with this solid and returns the distance to the intersection point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool TryGetRayIntersection(Ray ray, out double distance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">When this method returns, contains the distance from the ray origin to the intersection point if an intersection exists.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1"><code>true</code> if the ray intersects with this solid; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Solid_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__rt004_Util_Point2D__" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)">
+  TryGetRayIntersection(Ray, out double, out Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Tests whether a ray intersects with this solid and returns the distance and UV coordinates of the intersection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool TryGetRayIntersection(Ray ray, out double distance, out Point2D uvCoord)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">When this method returns, contains the distance from the ray origin to the intersection point if an intersection exists.</p>
+</dd>
+    <dt><code>uvCoord</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">When this method returns, contains the UV texture coordinates at the intersection point if an intersection exists.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1"><code>true</code> if the ray intersects with this solid; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Solid_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@)">
+  TryGetRayIntersection(Ray, out IntersectionProperties)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Tests whether a ray intersects with this solid and returns complete intersection properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetRayIntersection(Ray ray, out IntersectionProperties intersection)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>intersection</code> <a class="xref" href="rt004.SceneObjects.IntersectionProperties.html">IntersectionProperties</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">When this method returns, contains the complete intersection properties if an intersection exists.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1"><code>true</code> if the ray intersects with this solid; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Solid_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@)">
+  TryGetRayIntersection(Ray, out Point3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Computes closest intersection from line.Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetRayIntersection(Ray ray, out Point3D intersection)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Ray to intersect with</p>
+</dd>
+    <dt><code>intersection</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">closest intersection point</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">true if ray intersects with the object, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Solid_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__rt004_Util_Point2D__" data-uid="rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@,rt004.Util.Point2D@)">
+  TryGetRayIntersection(Ray, out Point3D, out Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">Tests whether a ray intersects with this solid and returns the intersection point and UV coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetRayIntersection(Ray ray, out Point3D intersection, out Point2D uvCoord)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>intersection</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">When this method returns, contains the 3D intersection point if an intersection exists.</p>
+</dd>
+    <dt><code>uvCoord</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1">When this method returns, contains the UV texture coordinates at the intersection point if an intersection exists.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Solid.yml" sourcestartlinenumber="1"><code>true</code> if the ray intersects with this solid; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Solid.cs/#L15" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

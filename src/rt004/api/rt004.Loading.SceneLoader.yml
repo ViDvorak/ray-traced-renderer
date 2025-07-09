@@ -1,0 +1,689 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Loading.SceneLoader
+  commentId: T:rt004.Loading.SceneLoader
+  id: SceneLoader
+  parent: rt004.Loading
+  children:
+  - rt004.Loading.SceneLoader.CreateInstance
+  - rt004.Loading.SceneLoader.ExtractChildren(rt004.SceneObjects.InnerSceneObject,System.Collections.Generic.List{rt004.SceneObjects.SceneObject}@)
+  - rt004.Loading.SceneLoader.ambientLightColor
+  - rt004.Loading.SceneLoader.ambientLightIntensity
+  - rt004.Loading.SceneLoader.sceneObjectLoaders
+  langs:
+  - csharp
+  - vb
+  name: SceneLoader
+  nameWithType: SceneLoader
+  fullName: rt004.Loading.SceneLoader
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Scene.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: SceneLoader
+    path: Scene.cs
+    startLine: 484
+  assemblies:
+  - rt004
+  namespace: rt004.Loading
+  summary: >-
+    Provides functionality for loading and creating scene instances from configuration data.
+
+    Handles the creation of scene objects and their hierarchy from loaded data.
+  example: []
+  syntax:
+    content: public class SceneLoader
+    content.vb: Public Class SceneLoader
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.Loading.SceneLoader.ambientLightColor
+  commentId: F:rt004.Loading.SceneLoader.ambientLightColor
+  id: ambientLightColor
+  parent: rt004.Loading.SceneLoader
+  langs:
+  - csharp
+  - vb
+  name: ambientLightColor
+  nameWithType: SceneLoader.ambientLightColor
+  fullName: rt004.Loading.SceneLoader.ambientLightColor
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Scene.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: ambientLightColor
+    path: Scene.cs
+    startLine: 489
+  assemblies:
+  - rt004
+  namespace: rt004.Loading
+  summary: Gets or sets the ambient light color for the scene.
+  example: []
+  syntax:
+    content: public Color4 ambientLightColor
+    return:
+      type: OpenTK.Mathematics.Color4
+    content.vb: Public ambientLightColor As Color4
+- uid: rt004.Loading.SceneLoader.ambientLightIntensity
+  commentId: F:rt004.Loading.SceneLoader.ambientLightIntensity
+  id: ambientLightIntensity
+  parent: rt004.Loading.SceneLoader
+  langs:
+  - csharp
+  - vb
+  name: ambientLightIntensity
+  nameWithType: SceneLoader.ambientLightIntensity
+  fullName: rt004.Loading.SceneLoader.ambientLightIntensity
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Scene.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: ambientLightIntensity
+    path: Scene.cs
+    startLine: 494
+  assemblies:
+  - rt004
+  namespace: rt004.Loading
+  summary: Gets or sets the ambient light intensity for the scene.
+  example: []
+  syntax:
+    content: public float ambientLightIntensity
+    return:
+      type: System.Single
+    content.vb: Public ambientLightIntensity As Single
+- uid: rt004.Loading.SceneLoader.sceneObjectLoaders
+  commentId: F:rt004.Loading.SceneLoader.sceneObjectLoaders
+  id: sceneObjectLoaders
+  parent: rt004.Loading.SceneLoader
+  langs:
+  - csharp
+  - vb
+  name: sceneObjectLoaders
+  nameWithType: SceneLoader.sceneObjectLoaders
+  fullName: rt004.Loading.SceneLoader.sceneObjectLoaders
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Scene.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: sceneObjectLoaders
+    path: Scene.cs
+    startLine: 499
+  assemblies:
+  - rt004
+  namespace: rt004.Loading
+  summary: Gets or sets the list of scene object loaders that define the objects to be created in the scene.
+  example: []
+  syntax:
+    content: public List<SceneObjectLoader> sceneObjectLoaders
+    return:
+      type: System.Collections.Generic.List{rt004.SceneObjects.Loading.SceneObjectLoader}
+    content.vb: Public sceneObjectLoaders As List(Of SceneObjectLoader)
+- uid: rt004.Loading.SceneLoader.CreateInstance
+  commentId: M:rt004.Loading.SceneLoader.CreateInstance
+  id: CreateInstance
+  parent: rt004.Loading.SceneLoader
+  langs:
+  - csharp
+  - vb
+  name: CreateInstance()
+  nameWithType: SceneLoader.CreateInstance()
+  fullName: rt004.Loading.SceneLoader.CreateInstance()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Scene.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: CreateInstance
+    path: Scene.cs
+    startLine: 505
+  assemblies:
+  - rt004
+  namespace: rt004.Loading
+  summary: Creates a new <xref href="rt004.Scene" data-throw-if-not-resolved="false"></xref> instance from the loaded configuration data.
+  example: []
+  syntax:
+    content: public Scene CreateInstance()
+    return:
+      type: rt004.Scene
+      description: A fully configured scene with all objects and hierarchy established.
+    content.vb: Public Function CreateInstance() As Scene
+  overload: rt004.Loading.SceneLoader.CreateInstance*
+- uid: rt004.Loading.SceneLoader.ExtractChildren(rt004.SceneObjects.InnerSceneObject,System.Collections.Generic.List{rt004.SceneObjects.SceneObject}@)
+  commentId: M:rt004.Loading.SceneLoader.ExtractChildren(rt004.SceneObjects.InnerSceneObject,System.Collections.Generic.List{rt004.SceneObjects.SceneObject}@)
+  id: ExtractChildren(rt004.SceneObjects.InnerSceneObject,System.Collections.Generic.List{rt004.SceneObjects.SceneObject}@)
+  parent: rt004.Loading.SceneLoader
+  langs:
+  - csharp
+  - vb
+  name: ExtractChildren(InnerSceneObject, in List<SceneObject>)
+  nameWithType: SceneLoader.ExtractChildren(InnerSceneObject, in List<SceneObject>)
+  fullName: rt004.Loading.SceneLoader.ExtractChildren(rt004.SceneObjects.InnerSceneObject, in System.Collections.Generic.List<rt004.SceneObjects.SceneObject>)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Scene.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: ExtractChildren
+    path: Scene.cs
+    startLine: 528
+  assemblies:
+  - rt004
+  namespace: rt004.Loading
+  summary: Recursively extracts all children from a scene object hierarchy and adds them to a flat list.
+  example: []
+  syntax:
+    content: public static void ExtractChildren(InnerSceneObject parentObject, in List<SceneObject> allChildren)
+    parameters:
+    - id: parentObject
+      type: rt004.SceneObjects.InnerSceneObject
+      description: The parent scene object to extract children from.
+    - id: allChildren
+      type: System.Collections.Generic.List{rt004.SceneObjects.SceneObject}
+      description: The list to add all extracted children to.
+    content.vb: Public Shared Sub ExtractChildren(parentObject As InnerSceneObject, allChildren As List(Of SceneObject))
+  overload: rt004.Loading.SceneLoader.ExtractChildren*
+  nameWithType.vb: SceneLoader.ExtractChildren(InnerSceneObject, List(Of SceneObject))
+  fullName.vb: rt004.Loading.SceneLoader.ExtractChildren(rt004.SceneObjects.InnerSceneObject, System.Collections.Generic.List(Of rt004.SceneObjects.SceneObject))
+  name.vb: ExtractChildren(InnerSceneObject, List(Of SceneObject))
+references:
+- uid: rt004.Loading
+  commentId: N:rt004.Loading
+  href: rt004.html
+  name: rt004.Loading
+  nameWithType: rt004.Loading
+  fullName: rt004.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Loading
+    name: Loading
+    href: rt004.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Loading
+    name: Loading
+    href: rt004.Loading.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OpenTK.Mathematics.Color4
+  commentId: T:OpenTK.Mathematics.Color4
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Color4
+  nameWithType: Color4
+  fullName: OpenTK.Mathematics.Color4
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Collections.Generic.List{rt004.SceneObjects.Loading.SceneObjectLoader}
+  commentId: T:System.Collections.Generic.List{rt004.SceneObjects.Loading.SceneObjectLoader}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SceneObjectLoader>
+  nameWithType: List<SceneObjectLoader>
+  fullName: System.Collections.Generic.List<rt004.SceneObjects.Loading.SceneObjectLoader>
+  nameWithType.vb: List(Of SceneObjectLoader)
+  fullName.vb: System.Collections.Generic.List(Of rt004.SceneObjects.Loading.SceneObjectLoader)
+  name.vb: List(Of SceneObjectLoader)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: rt004.SceneObjects.Loading.SceneObjectLoader
+    name: SceneObjectLoader
+    href: rt004.SceneObjects.Loading.SceneObjectLoader.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: rt004.SceneObjects.Loading.SceneObjectLoader
+    name: SceneObjectLoader
+    href: rt004.SceneObjects.Loading.SceneObjectLoader.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: rt004.Scene
+  commentId: T:rt004.Scene
+  parent: rt004
+  href: rt004.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: rt004.Scene
+- uid: rt004.Loading.SceneLoader.CreateInstance*
+  commentId: Overload:rt004.Loading.SceneLoader.CreateInstance
+  href: rt004.Loading.SceneLoader.html#rt004_Loading_SceneLoader_CreateInstance
+  name: CreateInstance
+  nameWithType: SceneLoader.CreateInstance
+  fullName: rt004.Loading.SceneLoader.CreateInstance
+- uid: rt004
+  commentId: N:rt004
+  href: rt004.html
+  name: rt004
+  nameWithType: rt004
+  fullName: rt004
+- uid: rt004.Loading.SceneLoader.ExtractChildren*
+  commentId: Overload:rt004.Loading.SceneLoader.ExtractChildren
+  href: rt004.Loading.SceneLoader.html#rt004_Loading_SceneLoader_ExtractChildren_rt004_SceneObjects_InnerSceneObject_System_Collections_Generic_List_rt004_SceneObjects_SceneObject___
+  name: ExtractChildren
+  nameWithType: SceneLoader.ExtractChildren
+  fullName: rt004.Loading.SceneLoader.ExtractChildren
+- uid: rt004.SceneObjects.InnerSceneObject
+  commentId: T:rt004.SceneObjects.InnerSceneObject
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.InnerSceneObject.html
+  name: InnerSceneObject
+  nameWithType: InnerSceneObject
+  fullName: rt004.SceneObjects.InnerSceneObject
+- uid: System.Collections.Generic.List{rt004.SceneObjects.SceneObject}
+  commentId: T:System.Collections.Generic.List{rt004.SceneObjects.SceneObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SceneObject>
+  nameWithType: List<SceneObject>
+  fullName: System.Collections.Generic.List<rt004.SceneObjects.SceneObject>
+  nameWithType.vb: List(Of SceneObject)
+  fullName.vb: System.Collections.Generic.List(Of rt004.SceneObjects.SceneObject)
+  name.vb: List(Of SceneObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: rt004.SceneObjects.SceneObject
+    name: SceneObject
+    href: rt004.SceneObjects.SceneObject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: rt004.SceneObjects.SceneObject
+    name: SceneObject
+    href: rt004.SceneObjects.SceneObject.html
+  - name: )
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  href: rt004.html
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html

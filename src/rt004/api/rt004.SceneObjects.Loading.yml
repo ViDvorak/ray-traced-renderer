@@ -1,0 +1,113 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.SceneObjects.Loading
+  commentId: N:rt004.SceneObjects.Loading
+  id: rt004.SceneObjects.Loading
+  children:
+  - rt004.SceneObjects.Loading.CameraLoader
+  - rt004.SceneObjects.Loading.InnerSceneObjectLoader
+  - rt004.SceneObjects.Loading.LightSourceLoader
+  - rt004.SceneObjects.Loading.PerspectiveCameraLoader
+  - rt004.SceneObjects.Loading.PlaneLoader
+  - rt004.SceneObjects.Loading.PointLightLoader
+  - rt004.SceneObjects.Loading.SceneObjectLoader
+  - rt004.SceneObjects.Loading.SolidLoader
+  - rt004.SceneObjects.Loading.SphereLoader
+  langs:
+  - csharp
+  - vb
+  name: rt004.SceneObjects.Loading
+  nameWithType: rt004.SceneObjects.Loading
+  fullName: rt004.SceneObjects.Loading
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.SceneObjects.Loading.CameraLoader
+  commentId: T:rt004.SceneObjects.Loading.CameraLoader
+  parent: rt004.SceneObjects.Loading
+  href: rt004.SceneObjects.Loading.CameraLoader.html
+  name: CameraLoader
+  nameWithType: CameraLoader
+  fullName: rt004.SceneObjects.Loading.CameraLoader
+- uid: rt004.SceneObjects.Loading.PerspectiveCameraLoader
+  commentId: T:rt004.SceneObjects.Loading.PerspectiveCameraLoader
+  href: rt004.SceneObjects.Loading.PerspectiveCameraLoader.html
+  name: PerspectiveCameraLoader
+  nameWithType: PerspectiveCameraLoader
+  fullName: rt004.SceneObjects.Loading.PerspectiveCameraLoader
+- uid: rt004.SceneObjects.Loading.InnerSceneObjectLoader
+  commentId: T:rt004.SceneObjects.Loading.InnerSceneObjectLoader
+  href: rt004.SceneObjects.Loading.InnerSceneObjectLoader.html
+  name: InnerSceneObjectLoader
+  nameWithType: InnerSceneObjectLoader
+  fullName: rt004.SceneObjects.Loading.InnerSceneObjectLoader
+- uid: rt004.SceneObjects.Loading.LightSourceLoader
+  commentId: T:rt004.SceneObjects.Loading.LightSourceLoader
+  parent: rt004.SceneObjects.Loading
+  href: rt004.SceneObjects.Loading.LightSourceLoader.html
+  name: LightSourceLoader
+  nameWithType: LightSourceLoader
+  fullName: rt004.SceneObjects.Loading.LightSourceLoader
+- uid: rt004.SceneObjects.Loading.PointLightLoader
+  commentId: T:rt004.SceneObjects.Loading.PointLightLoader
+  href: rt004.SceneObjects.Loading.PointLightLoader.html
+  name: PointLightLoader
+  nameWithType: PointLightLoader
+  fullName: rt004.SceneObjects.Loading.PointLightLoader
+- uid: rt004.SceneObjects.Loading.SceneObjectLoader
+  commentId: T:rt004.SceneObjects.Loading.SceneObjectLoader
+  parent: rt004.SceneObjects.Loading
+  href: rt004.SceneObjects.Loading.SceneObjectLoader.html
+  name: SceneObjectLoader
+  nameWithType: SceneObjectLoader
+  fullName: rt004.SceneObjects.Loading.SceneObjectLoader
+- uid: rt004.SceneObjects.Loading.PlaneLoader
+  commentId: T:rt004.SceneObjects.Loading.PlaneLoader
+  href: rt004.SceneObjects.Loading.PlaneLoader.html
+  name: PlaneLoader
+  nameWithType: PlaneLoader
+  fullName: rt004.SceneObjects.Loading.PlaneLoader
+- uid: rt004.SceneObjects.Loading.SolidLoader
+  commentId: T:rt004.SceneObjects.Loading.SolidLoader
+  parent: rt004.SceneObjects.Loading
+  href: rt004.SceneObjects.Loading.SolidLoader.html
+  name: SolidLoader
+  nameWithType: SolidLoader
+  fullName: rt004.SceneObjects.Loading.SolidLoader
+- uid: rt004.SceneObjects.Loading.SphereLoader
+  commentId: T:rt004.SceneObjects.Loading.SphereLoader
+  href: rt004.SceneObjects.Loading.SphereLoader.html
+  name: SphereLoader
+  nameWithType: SphereLoader
+  fullName: rt004.SceneObjects.Loading.SphereLoader
+- uid: rt004.SceneObjects.Loading
+  commentId: N:rt004.SceneObjects.Loading
+  href: rt004.html
+  name: rt004.SceneObjects.Loading
+  nameWithType: rt004.SceneObjects.Loading
+  fullName: rt004.SceneObjects.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  - name: .
+  - uid: rt004.SceneObjects.Loading
+    name: Loading
+    href: rt004.SceneObjects.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  - name: .
+  - uid: rt004.SceneObjects.Loading
+    name: Loading
+    href: rt004.SceneObjects.Loading.html

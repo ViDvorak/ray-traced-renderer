@@ -84,7 +84,7 @@ namespace rt004.SceneObjects
         }
 
         /// <summary>
-        /// Renders an image of the scene from the perspective of this camera.
+        /// Renders an image of the scene from the perspective of this camera in a perspective view.
         /// </summary>
         /// <returns>A <see cref="FloatImage"/> containing the rendered image of the scene.</returns>
         public override FloatImage RenderImage()
@@ -100,12 +100,12 @@ namespace rt004.SceneObjects
                     Vector4 pixelColor = Vector4.Zero;
 
                     // Anti-aliasing loop
-                    double step = 1f / RendererSettings.AntialiasingFraquency;
-                    int oddFactor = (RendererSettings.AntialiasingFraquency - 1) % 2;
+                    double step = 1f / RendererSettings.AntialiasingFrequency;
+                    int oddFactor = (RendererSettings.AntialiasingFrequency - 1) % 2;
 
-                    for (int i = 0; i < RendererSettings.AntialiasingFraquency; ++i)
+                    for (int i = 0; i < RendererSettings.AntialiasingFrequency; ++i)
                     {
-                        for (int j = 0; j < RendererSettings.AntialiasingFraquency; ++j)
+                        for (int j = 0; j < RendererSettings.AntialiasingFrequency; ++j)
                         {
                             Ray ray = GetRayFromScreenSpace(x + i * step + oddFactor * step / 2, y + j * step + oddFactor * step / 2);
 
@@ -117,7 +117,7 @@ namespace rt004.SceneObjects
                         }
                     }
 
-                    int pixelCount = RendererSettings.AntialiasingFraquency * RendererSettings.AntialiasingFraquency;
+                    int pixelCount = RendererSettings.AntialiasingFrequency * RendererSettings.AntialiasingFrequency;
 
                     image.PutPixel(x, y, new float[] {
                         pixelColor[0] / pixelCount + backgroundColor.R,

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Sphere | Renderer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Sphere | Renderer ">
+      
+      <meta name="description" content="Represents a mathematically perfect sphere solid object in a 3D scene. Provides ray-sphere intersection calculations and surface normal computation.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/new/main/apiSpec/new?filename=rt004_SceneObjects_Sphere.md&amp;value=---%0Auid%3A%20rt004.SceneObjects.Sphere%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Raytraced Renderer">
+            Raytraced Renderer
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rt004.SceneObjects.Sphere">
+
+
+
+  <h1 id="rt004_SceneObjects_Sphere" data-uid="rt004.SceneObjects.Sphere" class="text-break">
+Class Sphere  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Sphere.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rt004.html">rt004</a>.<a class="xref" href="rt004.SceneObjects.html">SceneObjects</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rt004.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">Represents a mathematically perfect sphere solid object in a 3D scene.
+Provides ray-sphere intersection calculations and surface normal computation.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Sphere : Solid</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="rt004.SceneObjects.SceneObject.html">SceneObject</a></div>
+      <div><a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a></div>
+      <div><span class="xref">Sphere</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_material">Solid.material</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__">Solid.TryGetRayIntersection(Ray, out Point3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__rt004_Util_Point2D__">Solid.TryGetRayIntersection(Ray, out Point3D, out Point2D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__">Solid.TryGetRayIntersection(Ray, out IntersectionProperties)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_parentScene">SceneObject.parentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_dirtyGlobalPosition">SceneObject.dirtyGlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Position">SceneObject.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GlobalPosition">SceneObject.GlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Rotation">SceneObject.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentScene">SceneObject.ParentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentObject">SceneObject.ParentObject</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding">SceneObject.GetLocalHeding()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading">SceneObject.GetGlobalHeading()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition">SceneObject.GetGlobalPosition()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix">SceneObject.GetLocalToWorldTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix">SceneObject.GetWorldToLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix">SceneObject.GetLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix">SceneObject.GetLocalInverseTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_">SceneObject.ToWorldSpace(Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_">SceneObject.ToWorldSpace(Point3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rt004_SceneObjects_Sphere__ctor_" data-uid="rt004.SceneObjects.Sphere.#ctor*"></a>
+
+  <h3 id="rt004_SceneObjects_Sphere__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_rt004_Materials_Material_System_Single_" data-uid="rt004.SceneObjects.Sphere.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Material,System.Single)">
+  Sphere(Scene, Point3D, Vector3, Material, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Sphere.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.SceneObjects.Sphere.html">Sphere</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sphere(Scene parentScene, Point3D position, Vector3 rotation, Material material, float radius)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentScene</code> <a class="xref" href="rt004.Scene.html">Scene</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The scene that contains this sphere.</p>
+</dd>
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The position of the sphere's center in 3D space.</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Vector3</span></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The rotation of the sphere as Euler angles.</p>
+</dd>
+    <dt><code>material</code> <a class="xref" href="rt004.Materials.Material.html">Material</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The material that defines the visual properties of the sphere.</p>
+</dd>
+    <dt><code>radius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The radius of the sphere.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="rt004_SceneObjects_Sphere_radius" data-uid="rt004.SceneObjects.Sphere.radius">
+  radius
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Sphere.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The radius of the sphere.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly float radius</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rt004_SceneObjects_Sphere_GetNormalAt_" data-uid="rt004.SceneObjects.Sphere.GetNormalAt*"></a>
+
+  <h3 id="rt004_SceneObjects_Sphere_GetNormalAt_rt004_Util_Point3D_" data-uid="rt004.SceneObjects.Sphere.GetNormalAt(rt004.Util.Point3D)">
+  GetNormalAt(Point3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Sphere.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">Gets the surface normal vector at the specified position on the sphere.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D GetNormalAt(Point3D position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The position on the sphere surface in world coordinates.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The normalized surface normal vector pointing outward from the sphere at the specified position.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Sphere_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Sphere.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Sphere_TryGetRayIntersection_rt004_Util_Ray_System_Double__" data-uid="rt004.SceneObjects.Sphere.TryGetRayIntersection(rt004.Util.Ray,System.Double@)">
+  TryGetRayIntersection(Ray, out double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Sphere.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">Tests whether a ray intersects with this sphere and returns the distance to the closest intersection point.
+Uses the quadratic formula to solve for ray-sphere intersection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool TryGetRayIntersection(Ray ray, out double parameter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>parameter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">When this method returns, contains the distance from the ray origin to the closest intersection point if an intersection exists.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1"><code>true</code> if the ray intersects with the sphere and the intersection is in front of the ray origin; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Sphere_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Sphere.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Sphere_TryGetRayIntersection_rt004_Util_Ray_System_Double__rt004_Util_Point2D__" data-uid="rt004.SceneObjects.Sphere.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)">
+  TryGetRayIntersection(Ray, out double, out Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Sphere.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">Tests whether a ray intersects with this sphere and returns both the distance and UV texture coordinates.
+Calculates UV coordinates based on spherical coordinate mapping.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool TryGetRayIntersection(Ray ray, out double distance, out Point2D uvCoord)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">When this method returns, contains the distance from the ray origin to the intersection point if an intersection exists.</p>
+</dd>
+    <dt><code>uvCoord</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1">When this method returns, contains the UV texture coordinates at the intersection point if an intersection exists.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Sphere.yml" sourcestartlinenumber="1"><code>true</code> if the ray intersects with the sphere; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Sphere.cs/#L12" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

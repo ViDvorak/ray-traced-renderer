@@ -1,0 +1,144 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.LightModel
+  commentId: T:rt004.Util.LightModel
+  id: LightModel
+  parent: rt004.Util
+  children:
+  - rt004.Util.LightModel.PhongModel
+  langs:
+  - csharp
+  - vb
+  name: LightModel
+  nameWithType: LightModel
+  fullName: rt004.Util.LightModel
+  type: Enum
+  source:
+    remote:
+      path: src/rt004/Util/RendererSettings.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: LightModel
+    path: Util/RendererSettings.cs
+    startLine: 45
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  syntax:
+    content: public enum LightModel
+    content.vb: Public Enum LightModel
+  extensionMethods:
+  - rt004.Util.LightModel.rt004.Util.LightModelExtensions.GetLightModelComputation
+- uid: rt004.Util.LightModel.PhongModel
+  commentId: F:rt004.Util.LightModel.PhongModel
+  id: PhongModel
+  parent: rt004.Util.LightModel
+  langs:
+  - csharp
+  - vb
+  name: PhongModel
+  nameWithType: LightModel.PhongModel
+  fullName: rt004.Util.LightModel.PhongModel
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/RendererSettings.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PhongModel
+    path: Util/RendererSettings.cs
+    startLine: 47
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  syntax:
+    content: PhongModel = 0
+    return:
+      type: rt004.Util.LightModel
+references:
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: rt004.Util.LightModel.rt004.Util.LightModelExtensions.GetLightModelComputation
+  commentId: M:rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+  parent: rt004.Util.LightModelExtensions
+  definition: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+  href: rt004.Util.LightModelExtensions.html#rt004_Util_LightModelExtensions_GetLightModelComputation_rt004_Util_LightModel_
+  name: GetLightModelComputation(LightModel)
+  nameWithType: LightModelExtensions.GetLightModelComputation(LightModel)
+  fullName: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+  spec.csharp:
+  - uid: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+    name: GetLightModelComputation
+    href: rt004.Util.LightModelExtensions.html#rt004_Util_LightModelExtensions_GetLightModelComputation_rt004_Util_LightModel_
+  - name: (
+  - uid: rt004.Util.LightModel
+    name: LightModel
+    href: rt004.Util.LightModel.html
+  - name: )
+  spec.vb:
+  - uid: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+    name: GetLightModelComputation
+    href: rt004.Util.LightModelExtensions.html#rt004_Util_LightModelExtensions_GetLightModelComputation_rt004_Util_LightModel_
+  - name: (
+  - uid: rt004.Util.LightModel
+    name: LightModel
+    href: rt004.Util.LightModel.html
+  - name: )
+- uid: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+  commentId: M:rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+  href: rt004.Util.LightModelExtensions.html#rt004_Util_LightModelExtensions_GetLightModelComputation_rt004_Util_LightModel_
+  name: GetLightModelComputation(LightModel)
+  nameWithType: LightModelExtensions.GetLightModelComputation(LightModel)
+  fullName: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+  spec.csharp:
+  - uid: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+    name: GetLightModelComputation
+    href: rt004.Util.LightModelExtensions.html#rt004_Util_LightModelExtensions_GetLightModelComputation_rt004_Util_LightModel_
+  - name: (
+  - uid: rt004.Util.LightModel
+    name: LightModel
+    href: rt004.Util.LightModel.html
+  - name: )
+  spec.vb:
+  - uid: rt004.Util.LightModelExtensions.GetLightModelComputation(rt004.Util.LightModel)
+    name: GetLightModelComputation
+    href: rt004.Util.LightModelExtensions.html#rt004_Util_LightModelExtensions_GetLightModelComputation_rt004_Util_LightModel_
+  - name: (
+  - uid: rt004.Util.LightModel
+    name: LightModel
+    href: rt004.Util.LightModel.html
+  - name: )
+- uid: rt004.Util.LightModelExtensions
+  commentId: T:rt004.Util.LightModelExtensions
+  parent: rt004.Util
+  href: rt004.Util.LightModelExtensions.html
+  name: LightModelExtensions
+  nameWithType: LightModelExtensions
+  fullName: rt004.Util.LightModelExtensions
+- uid: rt004.Util.LightModel
+  commentId: T:rt004.Util.LightModel
+  parent: rt004.Util
+  href: rt004.Util.LightModel.html
+  name: LightModel
+  nameWithType: LightModel
+  fullName: rt004.Util.LightModel

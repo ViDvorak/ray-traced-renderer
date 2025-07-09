@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004_tests
+  commentId: N:rt004_tests
+  id: rt004_tests
+  children:
+  - rt004_tests.Tests
+  langs:
+  - csharp
+  - vb
+  name: rt004_tests
+  nameWithType: rt004_tests
+  fullName: rt004_tests
+  type: Namespace
+  assemblies:
+  - rt004_tests
+references:
+- uid: rt004_tests.Tests
+  commentId: T:rt004_tests.Tests
+  href: rt004_tests.Tests.html
+  name: Tests
+  nameWithType: Tests
+  fullName: rt004_tests.Tests

@@ -2,3 +2,5 @@
   href: UserDocumentation.md
 - name: Programing Documentaion
   href: ProgDocumentation.md
+- name: Specification
+  href: Specification.md

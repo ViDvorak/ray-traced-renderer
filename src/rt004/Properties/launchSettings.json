@@ -2,7 +2,7 @@
   "profiles": {
     "rt004": {
       "commandName": "Project",
-      "commandLineArgs": "-Output=\"../NewResult.pfm\"",
+      "commandLineArgs": "-output=\"../NewResult.pfm\"",
       "workingDirectory": "$(ProjectDir)"
     }
   }

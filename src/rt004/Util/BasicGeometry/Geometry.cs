@@ -72,11 +72,11 @@ namespace rt004.Util
         }
 
         /// <summary>
-        /// Computes distance of ray origin point to an intesection of the ray and BasicPlane
+        /// Computes distance of ray origin point to an intersection of the ray and BasicPlane
         /// </summary>
         /// <param name="ray">ray to intersect</param>
         /// <param name="plane">plane to intersect with the ray</param>
-        /// <param name="distance">disatance of the intersection to the ray origin point</param>
+        /// <param name="distance">distance of the intersection to the ray origin point</param>
         /// <returns>True if the ray has an intersection, otherwise false</returns>
         public static bool TryToIntersect(Ray ray, BasicPlane plane, out double distance)
         {
@@ -96,7 +96,7 @@ namespace rt004.Util
         }
 
         /// <summary>
-        /// Compures scale of two vectors such that scaled vectors added to startPoint will reach terget
+        /// Computes scale of two vectors such that scaled vectors added to startPoint will reach target
         /// </summary>
         /// <param name="startPoint">point to add vectors to</param>
         /// <param name="vector1">vector to scale</param>
@@ -120,7 +120,7 @@ namespace rt004.Util
         }
 
         /// <summary>
-        /// Compures scale of two vectors such that scaled vectors added together will reach terget.
+        /// Computes scale of two vectors such that scaled vectors added together will reach target.
         /// </summary>
         /// <param name="vector1">vector to scale</param>
         /// <param name="vector2">vector to scale</param>
@@ -140,7 +140,7 @@ namespace rt004.Util
         public static bool IsLinearCombination(Point3D startPoint, Vector3D vector1, Vector3D vector2, Point3D target, out Vector2d scale)
         {
             scale = LinearCombination(startPoint, vector1, vector2, target);
-            return (scale.X * vector1.Z + scale.Y * vector2.Z + startPoint.Z).IsFloatEqual( target.Z );// check if Z coordiante is equal to the resut linear combination
+            return (scale.X * vector1.Z + scale.Y * vector2.Z + startPoint.Z).IsFloatEqual( target.Z );// check if Z coordinate is equal to the result linear combination
         }
 
         /// <summary>

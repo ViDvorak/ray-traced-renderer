@@ -4,6 +4,7 @@ namespace rt004_tests
     using rt004;
     using rt004.Loading;
     using rt004.MaterialLoading;
+    using rt004.Materials;
     using rt004.Materials.Loading;
     using rt004.SceneObjects;
     using rt004.SceneObjects.Loading;
@@ -22,11 +23,11 @@ namespace rt004_tests
 
             var rendererSetting = new RendererSettingsLoader();
             rendererSetting.lightModel = "PhongModel";
-            var materialYellow = new PhongMaterialLoader(new Color4(1f, 1f, 0.2f, 1f), 0.2f, 0.5f, 10f, 1f);
-            var materialBlue = new PhongMaterialLoader(new Color4(0.2f, 0.3f, 1f, 1f), 0.5f, 0.5f, 150f, 1f);
-            var materialRed = new PhongMaterialLoader(new Color4(0.8f, 0.2f, 0.2f, 1f), 0.4f, 0.5f, 80f, 1f);
-            var materialGold = new PhongMaterialLoader(new Color4(0.3f, 0.2f, 0f, 1f), 0.8f, 0.5f, 400f, 1f);
-            var materialWhite = new PhongMaterialLoader(new Color4(0.9f, 0.9f, 0.9f, 1f), 0.4f, 0.5f, 80f, 1f);
+            var materialYellow = new PhongMaterialLoader(new Color4(1f, 1f, 0.2f, 1f), 0.2f, 0.5f, 10f, 1f, rendererSetting.defaultIndexOfRefraction);
+            var materialBlue = new PhongMaterialLoader(new Color4(0.2f, 0.3f, 1f, 1f), 0.5f, 0.5f, 150f, 1f, rendererSetting.defaultIndexOfRefraction);
+            var materialRed = new PhongMaterialLoader(new Color4(0.8f, 0.2f, 0.2f, 1f), 0.4f, 0.5f, 80f, 1f, rendererSetting.defaultIndexOfRefraction);
+            var materialGold = new PhongMaterialLoader(new Color4(0.3f, 0.2f, 0f, 1f), 0.8f, 0.5f, 400f, 1f, rendererSetting.defaultIndexOfRefraction);
+            var materialWhite = new PhongMaterialLoader(new Color4(0.9f, 0.9f, 0.9f, 1f), 0.4f, 0.5f, 80f, 1f, rendererSetting.defaultIndexOfRefraction);
 
 
 

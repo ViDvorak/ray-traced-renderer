@@ -1,0 +1,748 @@
+{
+  "source_base_path": "C:/Users/Lenovo/OneDrive/Documents/Skola/Fotorealisticka_grafika/ray-traced-renderer/src/rt004",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Util.FloatImage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Util.FloatImage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Util.RadianceHDRFormat.HDRInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Util.RadianceHDRFormat.HDRInstance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Util.RadianceHDRFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Util.RadianceHDRFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Util.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Loading.SceneLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Loading.SceneLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Loading.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Loading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.MaterialLoading.PhongMaterialLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.MaterialLoading.PhongMaterialLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.MaterialLoading.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.MaterialLoading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Loading.MaterialLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Loading.MaterialLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Loading.MonochromeImageTextureLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Loading.MonochromeImageTextureLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Loading.MonochromeTextureLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Loading.MonochromeTextureLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Loading.MonochromeUniformTextureLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Loading.MonochromeUniformTextureLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Loading.TextureLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Loading.TextureLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Loading.UniformTextureLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Loading.UniformTextureLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Loading.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Loading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Material.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Material.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.MonochromeImageTexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.MonochromeImageTexture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.MonochromeTexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.MonochromeTexture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.MonochromeUniformTexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.MonochromeUniformTexture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.Texture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.Texture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.UniformTexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.UniformTexture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Materials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Materials.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Scene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Scene.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Camera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Camera.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.InnerSceneObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.InnerSceneObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.IntersectionProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.IntersectionProperties.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.LightSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.LightSource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.CameraLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.CameraLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.InnerSceneObjectLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.InnerSceneObjectLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.LightSourceLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.LightSourceLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.PerspectiveCameraLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.PerspectiveCameraLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.PlaneLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.PlaneLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.PointLightLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.PointLightLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.SceneObjectLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.SceneObjectLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.SolidLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.SolidLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.SphereLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.SphereLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Loading.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Loading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.PerspectiveCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.PerspectiveCamera.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Plane.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Plane.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.PointLight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.PointLight.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.SceneObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.SceneObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Solid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Solid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.Sphere.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.Sphere.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.SceneObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.SceneObjects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.ArgumentParser.DataLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.ArgumentParser.DataLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.ArgumentParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.ArgumentParser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.BasicPlane.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.BasicPlane.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.LightModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.LightModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.LightModelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.LightModelExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.LightModels.LightModelComputation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.LightModels.LightModelComputation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.LightModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.LightModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.Point2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.Point2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.Point3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.Point3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.Ray.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.Ray.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.Vector2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.Vector2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.Vector3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.Vector3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.Util.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.UtilLoading.RendererSettingsLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.UtilLoading.RendererSettingsLoader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.UtilLoading.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.UtilLoading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004_tests.Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004_tests.Tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/rt004_tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/rt004_tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "doc/ProgDocumentation.md",
+      "output": {
+        ".html": {
+          "relative_path": "doc/ProgDocumentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "doc/Specification.md",
+      "output": {
+        ".html": {
+          "relative_path": "doc/Specification.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "doc/UserDocumentation.md",
+      "output": {
+        ".html": {
+          "relative_path": "doc/UserDocumentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "doc/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "doc/toc.html"
+        },
+        ".json": {
+          "relative_path": "doc/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/class_structure.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/class_structure.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ray-traced_renderer_flowchart.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ray-traced_renderer_flowchart.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

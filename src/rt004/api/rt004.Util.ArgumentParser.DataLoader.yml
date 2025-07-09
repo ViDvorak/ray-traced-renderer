@@ -1,0 +1,439 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.ArgumentParser.DataLoader
+  commentId: T:rt004.Util.ArgumentParser.DataLoader
+  id: ArgumentParser.DataLoader
+  parent: rt004.Util
+  children:
+  - rt004.Util.ArgumentParser.DataLoader.output
+  - rt004.Util.ArgumentParser.DataLoader.rendererSettings
+  - rt004.Util.ArgumentParser.DataLoader.sceneLoader
+  langs:
+  - csharp
+  - vb
+  name: ArgumentParser.DataLoader
+  nameWithType: ArgumentParser.DataLoader
+  fullName: rt004.Util.ArgumentParser.DataLoader
+  type: Struct
+  source:
+    remote:
+      path: src/rt004/Util/ArgumentParser.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: DataLoader
+    path: Util/ArgumentParser.cs
+    startLine: 325
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: >-
+    Data structure to facilitate loading from XML file.
+
+    Contains all necessary information for scene creation and rendering configuration.
+  example: []
+  syntax:
+    content: public struct ArgumentParser.DataLoader
+    content.vb: Public Structure ArgumentParser.DataLoader
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: rt004.Util.ArgumentParser.DataLoader.output
+  commentId: F:rt004.Util.ArgumentParser.DataLoader.output
+  id: output
+  parent: rt004.Util.ArgumentParser.DataLoader
+  langs:
+  - csharp
+  - vb
+  name: output
+  nameWithType: ArgumentParser.DataLoader.output
+  fullName: rt004.Util.ArgumentParser.DataLoader.output
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/ArgumentParser.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: output
+    path: Util/ArgumentParser.cs
+    startLine: 330
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets or sets the output file path where the rendered image will be saved.
+  example: []
+  syntax:
+    content: public string output
+    return:
+      type: System.String
+    content.vb: Public output As String
+- uid: rt004.Util.ArgumentParser.DataLoader.rendererSettings
+  commentId: F:rt004.Util.ArgumentParser.DataLoader.rendererSettings
+  id: rendererSettings
+  parent: rt004.Util.ArgumentParser.DataLoader
+  langs:
+  - csharp
+  - vb
+  name: rendererSettings
+  nameWithType: ArgumentParser.DataLoader.rendererSettings
+  fullName: rt004.Util.ArgumentParser.DataLoader.rendererSettings
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/ArgumentParser.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: rendererSettings
+    path: Util/ArgumentParser.cs
+    startLine: 335
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets or sets the renderer settings loader that contains rendering configuration options.
+  example: []
+  syntax:
+    content: public RendererSettingsLoader rendererSettings
+    return:
+      type: rt004.UtilLoading.RendererSettingsLoader
+    content.vb: Public rendererSettings As RendererSettingsLoader
+- uid: rt004.Util.ArgumentParser.DataLoader.sceneLoader
+  commentId: F:rt004.Util.ArgumentParser.DataLoader.sceneLoader
+  id: sceneLoader
+  parent: rt004.Util.ArgumentParser.DataLoader
+  langs:
+  - csharp
+  - vb
+  name: sceneLoader
+  nameWithType: ArgumentParser.DataLoader.sceneLoader
+  fullName: rt004.Util.ArgumentParser.DataLoader.sceneLoader
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/ArgumentParser.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: sceneLoader
+    path: Util/ArgumentParser.cs
+    startLine: 340
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets or sets the scene loader that contains scene object definitions and hierarchy.
+  example: []
+  syntax:
+    content: public SceneLoader sceneLoader
+    return:
+      type: rt004.Loading.SceneLoader
+    content.vb: Public sceneLoader As SceneLoader
+references:
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: rt004.UtilLoading.RendererSettingsLoader
+  commentId: T:rt004.UtilLoading.RendererSettingsLoader
+  parent: rt004.UtilLoading
+  href: rt004.UtilLoading.RendererSettingsLoader.html
+  name: RendererSettingsLoader
+  nameWithType: RendererSettingsLoader
+  fullName: rt004.UtilLoading.RendererSettingsLoader
+- uid: rt004.UtilLoading
+  commentId: N:rt004.UtilLoading
+  href: rt004.html
+  name: rt004.UtilLoading
+  nameWithType: rt004.UtilLoading
+  fullName: rt004.UtilLoading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.UtilLoading
+    name: UtilLoading
+    href: rt004.UtilLoading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.UtilLoading
+    name: UtilLoading
+    href: rt004.UtilLoading.html
+- uid: rt004.Loading.SceneLoader
+  commentId: T:rt004.Loading.SceneLoader
+  parent: rt004.Loading
+  href: rt004.Loading.SceneLoader.html
+  name: SceneLoader
+  nameWithType: SceneLoader
+  fullName: rt004.Loading.SceneLoader
+- uid: rt004.Loading
+  commentId: N:rt004.Loading
+  href: rt004.html
+  name: rt004.Loading
+  nameWithType: rt004.Loading
+  fullName: rt004.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Loading
+    name: Loading
+    href: rt004.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Loading
+    name: Loading
+    href: rt004.Loading.html

@@ -1,0 +1,449 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Materials.Loading.TextureLoader
+  commentId: T:rt004.Materials.Loading.TextureLoader
+  id: TextureLoader
+  parent: rt004.Materials.Loading
+  children:
+  - rt004.Materials.Loading.TextureLoader.GetInstance
+  - rt004.Materials.Loading.TextureLoader.height
+  - rt004.Materials.Loading.TextureLoader.width
+  langs:
+  - csharp
+  - vb
+  name: TextureLoader
+  nameWithType: TextureLoader
+  fullName: rt004.Materials.Loading.TextureLoader
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: TextureLoader
+    path: Materials/Texture.cs
+    startLine: 46
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: Represents a base class for loading textures, with support for XML serialization.
+  example: []
+  syntax:
+    content: public abstract class TextureLoader
+    content.vb: Public MustInherit Class TextureLoader
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - rt004.Materials.Loading.MonochromeTextureLoader
+  - rt004.Materials.Loading.UniformTextureLoader
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.Materials.Loading.TextureLoader.width
+  commentId: F:rt004.Materials.Loading.TextureLoader.width
+  id: width
+  parent: rt004.Materials.Loading.TextureLoader
+  langs:
+  - csharp
+  - vb
+  name: width
+  nameWithType: TextureLoader.width
+  fullName: rt004.Materials.Loading.TextureLoader.width
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: width
+    path: Materials/Texture.cs
+    startLine: 52
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: The width of the texture to load in pixels.
+  example: []
+  syntax:
+    content: public uint width
+    return:
+      type: System.UInt32
+    content.vb: Public width As UInteger
+- uid: rt004.Materials.Loading.TextureLoader.height
+  commentId: F:rt004.Materials.Loading.TextureLoader.height
+  id: height
+  parent: rt004.Materials.Loading.TextureLoader
+  langs:
+  - csharp
+  - vb
+  name: height
+  nameWithType: TextureLoader.height
+  fullName: rt004.Materials.Loading.TextureLoader.height
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: height
+    path: Materials/Texture.cs
+    startLine: 57
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: The height of the texture to load in pixels.
+  example: []
+  syntax:
+    content: public uint height
+    return:
+      type: System.UInt32
+    content.vb: Public height As UInteger
+- uid: rt004.Materials.Loading.TextureLoader.GetInstance
+  commentId: M:rt004.Materials.Loading.TextureLoader.GetInstance
+  id: GetInstance
+  parent: rt004.Materials.Loading.TextureLoader
+  langs:
+  - csharp
+  - vb
+  name: GetInstance()
+  nameWithType: TextureLoader.GetInstance()
+  fullName: rt004.Materials.Loading.TextureLoader.GetInstance()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetInstance
+    path: Materials/Texture.cs
+    startLine: 63
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: Creates an instance of a <xref href="rt004.Materials.Texture" data-throw-if-not-resolved="false"></xref> based on the current settings.
+  example: []
+  syntax:
+    content: public abstract Texture GetInstance()
+    return:
+      type: rt004.Materials.Texture
+      description: A new instance of <xref href="rt004.Materials.Texture" data-throw-if-not-resolved="false"></xref> configured with specified width and height.
+    content.vb: Public MustOverride Function GetInstance() As Texture
+  overload: rt004.Materials.Loading.TextureLoader.GetInstance*
+references:
+- uid: rt004.Materials.Loading
+  commentId: N:rt004.Materials.Loading
+  href: rt004.html
+  name: rt004.Materials.Loading
+  nameWithType: rt004.Materials.Loading
+  fullName: rt004.Materials.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: rt004.Materials.Texture
+  commentId: T:rt004.Materials.Texture
+  parent: rt004.Materials
+  href: rt004.Materials.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: rt004.Materials.Texture
+- uid: rt004.Materials.Loading.TextureLoader.GetInstance*
+  commentId: Overload:rt004.Materials.Loading.TextureLoader.GetInstance
+  href: rt004.Materials.Loading.TextureLoader.html#rt004_Materials_Loading_TextureLoader_GetInstance
+  name: GetInstance
+  nameWithType: TextureLoader.GetInstance
+  fullName: rt004.Materials.Loading.TextureLoader.GetInstance
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html

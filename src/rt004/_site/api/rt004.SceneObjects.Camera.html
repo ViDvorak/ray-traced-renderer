@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Camera | Renderer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Camera | Renderer ">
+      
+      <meta name="description" content="Represents an abstract base class for cameras within the scene, defining basic properties and methods.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/new/main/apiSpec/new?filename=rt004_SceneObjects_Camera.md&amp;value=---%0Auid%3A%20rt004.SceneObjects.Camera%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Raytraced Renderer">
+            Raytraced Renderer
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rt004.SceneObjects.Camera">
+
+
+
+  <h1 id="rt004_SceneObjects_Camera" data-uid="rt004.SceneObjects.Camera" class="text-break">
+Class Camera  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rt004.html">rt004</a>.<a class="xref" href="rt004.SceneObjects.html">SceneObjects</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rt004.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Represents an abstract base class for cameras within the scene, defining basic properties and methods.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Camera : SceneObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="rt004.SceneObjects.SceneObject.html">SceneObject</a></div>
+      <div><span class="xref">Camera</span></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="rt004.SceneObjects.PerspectiveCamera.html">PerspectiveCamera</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_parentScene">SceneObject.parentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_dirtyGlobalPosition">SceneObject.dirtyGlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Position">SceneObject.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GlobalPosition">SceneObject.GlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Rotation">SceneObject.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentScene">SceneObject.ParentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentObject">SceneObject.ParentObject</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding">SceneObject.GetLocalHeding()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading">SceneObject.GetGlobalHeading()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition">SceneObject.GetGlobalPosition()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix">SceneObject.GetLocalToWorldTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix">SceneObject.GetWorldToLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix">SceneObject.GetLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix">SceneObject.GetLocalInverseTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_">SceneObject.ToWorldSpace(Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_">SceneObject.ToWorldSpace(Point3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rt004_SceneObjects_Camera__ctor_" data-uid="rt004.SceneObjects.Camera.#ctor*"></a>
+
+  <h3 id="rt004_SceneObjects_Camera__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_System_UInt32_System_UInt32_" data-uid="rt004.SceneObjects.Camera.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,System.UInt32,System.UInt32)">
+  Camera(Scene, Point3D, Vector3, uint, uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.SceneObjects.Camera.html">Camera</a> class with specified parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Camera(Scene parentScene, Point3D position, Vector3 rotation, uint width, uint height)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentScene</code> <a class="xref" href="rt004.Scene.html">Scene</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The parent scene to which this camera belongs.</p>
+</dd>
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The position of the camera within the scene.</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Vector3</span></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The rotation of the camera within the scene.</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The width of the camera resolution in pixels.</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The height of the camera resolution in pixels.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="rt004_SceneObjects_Camera_height" data-uid="rt004.SceneObjects.Camera.height">
+  height
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The height of the camera in pixels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected uint height</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rt004_SceneObjects_Camera_maxRenderingDistanceSquered" data-uid="rt004.SceneObjects.Camera.maxRenderingDistanceSquered">
+  maxRenderingDistanceSquered
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The maximum rendering distance squared, defining how far the camera can render objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected float maxRenderingDistanceSquered</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="rt004_SceneObjects_Camera_width" data-uid="rt004.SceneObjects.Camera.width">
+  width
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The width of the camera in pixels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected uint width</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="rt004_SceneObjects_Camera_Height_" data-uid="rt004.SceneObjects.Camera.Height*"></a>
+
+  <h3 id="rt004_SceneObjects_Camera_Height" data-uid="rt004.SceneObjects.Camera.Height">
+  Height
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Gets or sets the height of the camera's resolution.
+Setting this property updates the resolution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint Height { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Camera_MaxRenderingDistance_" data-uid="rt004.SceneObjects.Camera.MaxRenderingDistance*"></a>
+
+  <h3 id="rt004_SceneObjects_Camera_MaxRenderingDistance" data-uid="rt004.SceneObjects.Camera.MaxRenderingDistance">
+  MaxRenderingDistance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Gets or sets the maximum rendering distance of the camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxRenderingDistance { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Camera_Width_" data-uid="rt004.SceneObjects.Camera.Width*"></a>
+
+  <h3 id="rt004_SceneObjects_Camera_Width" data-uid="rt004.SceneObjects.Camera.Width">
+  Width
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Gets or sets the width of the camera's resolution.
+Setting this property updates the resolution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint Width { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rt004_SceneObjects_Camera_GetResolution_" data-uid="rt004.SceneObjects.Camera.GetResolution*"></a>
+
+  <h3 id="rt004_SceneObjects_Camera_GetResolution" data-uid="rt004.SceneObjects.Camera.GetResolution">
+  GetResolution()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Gets the current resolution of the camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (uint, uint) GetResolution()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>)</dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">A tuple of <code>uint</code> representing the width and height, respectively.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Camera_RenderImage_" data-uid="rt004.SceneObjects.Camera.RenderImage*"></a>
+
+  <h3 id="rt004_SceneObjects_Camera_RenderImage" data-uid="rt004.SceneObjects.Camera.RenderImage">
+  RenderImage()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Renders an image of the scene from the camera's perspective.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract FloatImage RenderImage()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Util.FloatImage.html">FloatImage</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">A <a class="xref" href="Util.FloatImage.html">FloatImage</a> representing the rendered scene image.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Camera_SetResolution_" data-uid="rt004.SceneObjects.Camera.SetResolution*"></a>
+
+  <h3 id="rt004_SceneObjects_Camera_SetResolution_System_UInt32_System_UInt32_" data-uid="rt004.SceneObjects.Camera.SetResolution(System.UInt32,System.UInt32)">
+  SetResolution(uint, uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">Sets the resolution of the camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void SetResolution(uint width, uint height)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The width of the resolution in pixels.</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Camera.yml" sourcestartlinenumber="1">The height of the resolution in pixels.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Cameras/Camera.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

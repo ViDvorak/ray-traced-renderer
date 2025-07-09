@@ -1,0 +1,517 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Materials.Texture
+  commentId: T:rt004.Materials.Texture
+  id: Texture
+  parent: rt004.Materials
+  children:
+  - rt004.Materials.Texture.#ctor(System.UInt32,System.UInt32)
+  - rt004.Materials.Texture.GetColorAt(System.Single,System.Single)
+  - rt004.Materials.Texture.height
+  - rt004.Materials.Texture.width
+  langs:
+  - csharp
+  - vb
+  name: Texture
+  nameWithType: Texture
+  fullName: rt004.Materials.Texture
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Texture
+    path: Materials/Texture.cs
+    startLine: 8
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Represents a base class for textures, providing common properties and methods for textures.
+  example: []
+  syntax:
+    content: public abstract class Texture
+    content.vb: Public MustInherit Class Texture
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - rt004.Materials.MonochromeTexture
+  - rt004.Materials.UniformTexture
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.Materials.Texture.width
+  commentId: F:rt004.Materials.Texture.width
+  id: width
+  parent: rt004.Materials.Texture
+  langs:
+  - csharp
+  - vb
+  name: width
+  nameWithType: Texture.width
+  fullName: rt004.Materials.Texture.width
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: width
+    path: Materials/Texture.cs
+    startLine: 13
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: The width of the texture in pixels.
+  example: []
+  syntax:
+    content: public readonly uint width
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly width As UInteger
+- uid: rt004.Materials.Texture.height
+  commentId: F:rt004.Materials.Texture.height
+  id: height
+  parent: rt004.Materials.Texture
+  langs:
+  - csharp
+  - vb
+  name: height
+  nameWithType: Texture.height
+  fullName: rt004.Materials.Texture.height
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: height
+    path: Materials/Texture.cs
+    startLine: 18
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: The height of the texture in pixels.
+  example: []
+  syntax:
+    content: public readonly uint height
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly height As UInteger
+- uid: rt004.Materials.Texture.#ctor(System.UInt32,System.UInt32)
+  commentId: M:rt004.Materials.Texture.#ctor(System.UInt32,System.UInt32)
+  id: '#ctor(System.UInt32,System.UInt32)'
+  parent: rt004.Materials.Texture
+  langs:
+  - csharp
+  - vb
+  name: Texture(uint, uint)
+  nameWithType: Texture.Texture(uint, uint)
+  fullName: rt004.Materials.Texture.Texture(uint, uint)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Materials/Texture.cs
+    startLine: 25
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Initializes a new instance of the <xref href="rt004.Materials.Texture" data-throw-if-not-resolved="false"></xref> class with specified width and height.
+  example: []
+  syntax:
+    content: public Texture(uint width, uint height)
+    parameters:
+    - id: width
+      type: System.UInt32
+      description: The width of the texture in pixels.
+    - id: height
+      type: System.UInt32
+      description: The height of the texture in pixels.
+    content.vb: Public Sub New(width As UInteger, height As UInteger)
+  overload: rt004.Materials.Texture.#ctor*
+  nameWithType.vb: Texture.New(UInteger, UInteger)
+  fullName.vb: rt004.Materials.Texture.New(UInteger, UInteger)
+  name.vb: New(UInteger, UInteger)
+- uid: rt004.Materials.Texture.GetColorAt(System.Single,System.Single)
+  commentId: M:rt004.Materials.Texture.GetColorAt(System.Single,System.Single)
+  id: GetColorAt(System.Single,System.Single)
+  parent: rt004.Materials.Texture
+  langs:
+  - csharp
+  - vb
+  name: GetColorAt(float, float)
+  nameWithType: Texture.GetColorAt(float, float)
+  fullName: rt004.Materials.Texture.GetColorAt(float, float)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/Texture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetColorAt
+    path: Materials/Texture.cs
+    startLine: 37
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Gets the color at a specified position in the texture.
+  example: []
+  syntax:
+    content: public abstract Color4 GetColorAt(float u, float v)
+    parameters:
+    - id: u
+      type: System.Single
+      description: The horizontal coordinate, typically in normalized UV space.
+    - id: v
+      type: System.Single
+      description: The vertical coordinate, typically in normalized UV space.
+    return:
+      type: OpenTK.Mathematics.Color4
+      description: The color at the specified (u, v) coordinates.
+    content.vb: Public MustOverride Function GetColorAt(u As Single, v As Single) As Color4
+  overload: rt004.Materials.Texture.GetColorAt*
+  nameWithType.vb: Texture.GetColorAt(Single, Single)
+  fullName.vb: rt004.Materials.Texture.GetColorAt(Single, Single)
+  name.vb: GetColorAt(Single, Single)
+references:
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: rt004.Materials.Texture
+  commentId: T:rt004.Materials.Texture
+  parent: rt004.Materials
+  href: rt004.Materials.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: rt004.Materials.Texture
+- uid: rt004.Materials.Texture.#ctor*
+  commentId: Overload:rt004.Materials.Texture.#ctor
+  href: rt004.Materials.Texture.html#rt004_Materials_Texture__ctor_System_UInt32_System_UInt32_
+  name: Texture
+  nameWithType: Texture.Texture
+  fullName: rt004.Materials.Texture.Texture
+  nameWithType.vb: Texture.New
+  fullName.vb: rt004.Materials.Texture.New
+  name.vb: New
+- uid: rt004.Materials.Texture.GetColorAt*
+  commentId: Overload:rt004.Materials.Texture.GetColorAt
+  href: rt004.Materials.Texture.html#rt004_Materials_Texture_GetColorAt_System_Single_System_Single_
+  name: GetColorAt
+  nameWithType: Texture.GetColorAt
+  fullName: rt004.Materials.Texture.GetColorAt
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: OpenTK.Mathematics.Color4
+  commentId: T:OpenTK.Mathematics.Color4
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Color4
+  nameWithType: Color4
+  fullName: OpenTK.Mathematics.Color4
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true

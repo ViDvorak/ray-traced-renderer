@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Point2D | Renderer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Point2D | Renderer ">
+      
+      <meta name="description" content="Represents a 2D point with double precision, defined by X and Y coordinates.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/new/main/apiSpec/new?filename=rt004_Util_Point2D.md&amp;value=---%0Auid%3A%20rt004.Util.Point2D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Raytraced Renderer">
+            Raytraced Renderer
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rt004.Util.Point2D">
+
+
+
+  <h1 id="rt004_Util_Point2D" data-uid="rt004.Util.Point2D" class="text-break">
+Struct Point2D  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rt004.html">rt004</a>.<a class="xref" href="rt004.Util.html">Util</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rt004.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Represents a 2D point with double precision, defined by X and Y coordinates.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly struct Point2D</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rt004_Util_Point2D__ctor_" data-uid="rt004.Util.Point2D.#ctor*"></a>
+
+  <h3 id="rt004_Util_Point2D__ctor_OpenTK_Mathematics_Vector2_" data-uid="rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2)">
+  Point2D(Vector2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> struct from a <span class="xref">OpenTK.Mathematics.Vector2</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point2D(Vector2 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <span class="xref">Vector2</span></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The position of the point.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D__ctor_" data-uid="rt004.Util.Point2D.#ctor*"></a>
+
+  <h3 id="rt004_Util_Point2D__ctor_OpenTK_Mathematics_Vector2d_" data-uid="rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2d)">
+  Point2D(Vector2d)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> struct from a <span class="xref">OpenTK.Mathematics.Vector2d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point2D(Vector2d position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <span class="xref">Vector2d</span></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The position of the point.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D__ctor_" data-uid="rt004.Util.Point2D.#ctor*"></a>
+
+  <h3 id="rt004_Util_Point2D__ctor_System_Double_System_Double_" data-uid="rt004.Util.Point2D.#ctor(System.Double,System.Double)">
+  Point2D(double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> struct from the specified X and Y coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point2D(double x, double y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The X coordinate of the point.</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The Y coordinate of the point.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="rt004_Util_Point2D_AsVector_" data-uid="rt004.Util.Point2D.AsVector*"></a>
+
+  <h3 id="rt004_Util_Point2D_AsVector" data-uid="rt004.Util.Point2D.AsVector">
+  AsVector
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Gets the position of the point as a <span class="xref">OpenTK.Mathematics.Vector2d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2d AsVector { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2d</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_DistanceFromOrigin_" data-uid="rt004.Util.Point2D.DistanceFromOrigin*"></a>
+
+  <h3 id="rt004_Util_Point2D_DistanceFromOrigin" data-uid="rt004.Util.Point2D.DistanceFromOrigin">
+  DistanceFromOrigin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Gets the distance of the point from the origin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double DistanceFromOrigin { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_DistanceFromOriginSquared_" data-uid="rt004.Util.Point2D.DistanceFromOriginSquared*"></a>
+
+  <h3 id="rt004_Util_Point2D_DistanceFromOriginSquared" data-uid="rt004.Util.Point2D.DistanceFromOriginSquared">
+  DistanceFromOriginSquared
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Gets the square of the distance of the point from the origin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double DistanceFromOriginSquared { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_X_" data-uid="rt004.Util.Point2D.X*"></a>
+
+  <h3 id="rt004_Util_Point2D_X" data-uid="rt004.Util.Point2D.X">
+  X
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Gets the X coordinate of the point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double X { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_Y_" data-uid="rt004.Util.Point2D.Y*"></a>
+
+  <h3 id="rt004_Util_Point2D_Y" data-uid="rt004.Util.Point2D.Y">
+  Y
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Gets the Y coordinate of the point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Y { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_Zero_" data-uid="rt004.Util.Point2D.Zero*"></a>
+
+  <h3 id="rt004_Util_Point2D_Zero" data-uid="rt004.Util.Point2D.Zero">
+  Zero
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Gets a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance representing the point (0, 0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D Zero { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rt004_Util_Point2D_Equals_" data-uid="rt004.Util.Point2D.Equals*"></a>
+
+  <h3 id="rt004_Util_Point2D_Equals_System_Object_" data-uid="rt004.Util.Point2D.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Determines whether two <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instances are equal by comparing their X and Y coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The object to compare to.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">True if the objects are equal, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_Equals_" data-uid="rt004.Util.Point2D.Equals*"></a>
+
+  <h3 id="rt004_Util_Point2D_Equals_rt004_Util_Point2D_" data-uid="rt004.Util.Point2D.Equals(rt004.Util.Point2D)">
+  Equals(Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Determines whether this <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> is equal to another <a class="xref" href="rt004.Util.Point2D.html">Point2D</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Point2D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> to compare with the current instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1"><code>true</code> if the specified <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> has the same X and Y values as the current instance;
+otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_GetHashCode_" data-uid="rt004.Util.Point2D.GetHashCode*"></a>
+
+  <h3 id="rt004_Util_Point2D_GetHashCode" data-uid="rt004.Util.Point2D.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Returns the hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">An integer representing the hash code.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_RoundDown_" data-uid="rt004.Util.Point2D.RoundDown*"></a>
+
+  <h3 id="rt004_Util_Point2D_RoundDown" data-uid="rt004.Util.Point2D.RoundDown">
+  RoundDown()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Rounds the X and Y coordinates of the point down to the nearest integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int, int) RoundDown()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A tuple containing the rounded X and Y coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_RoundDown_" data-uid="rt004.Util.Point2D.RoundDown*"></a>
+
+  <h3 id="rt004_Util_Point2D_RoundDown_rt004_Util_Point2D_" data-uid="rt004.Util.Point2D.RoundDown(rt004.Util.Point2D)">
+  RoundDown(Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Rounds the X and Y coordinates of a given point down.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D RoundDown(Point2D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The point to round down.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance with the rounded coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_RoundUp_" data-uid="rt004.Util.Point2D.RoundUp*"></a>
+
+  <h3 id="rt004_Util_Point2D_RoundUp" data-uid="rt004.Util.Point2D.RoundUp">
+  RoundUp()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Rounds the X and Y coordinates of the point up to the nearest integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int, int) RoundUp()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A tuple containing the rounded X and Y coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_RoundUp_" data-uid="rt004.Util.Point2D.RoundUp*"></a>
+
+  <h3 id="rt004_Util_Point2D_RoundUp_rt004_Util_Point2D_" data-uid="rt004.Util.Point2D.RoundUp(rt004.Util.Point2D)">
+  RoundUp(Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Rounds the X and Y coordinates of a given point up.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D RoundUp(Point2D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The point to round up.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance with the rounded coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_ToString_" data-uid="rt004.Util.Point2D.ToString*"></a>
+
+  <h3 id="rt004_Util_Point2D_ToString" data-uid="rt004.Util.Point2D.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L282"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Returns a string that represents the current point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A string in the format &quot;[X, Y]&quot;.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="rt004_Util_Point2D_op_Addition_" data-uid="rt004.Util.Point2D.op_Addition*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Addition_rt004_Util_Point2D_rt004_Util_Vector2D_" data-uid="rt004.Util.Point2D.op_Addition(rt004.Util.Point2D,rt004.Util.Vector2D)">
+  operator +(Point2D, Vector2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Adds a <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a> to a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D operator +(Point2D point, Vector2D vector)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a> instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> resulting from the addition.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Division_" data-uid="rt004.Util.Point2D.op_Division*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Division_rt004_Util_Point2D_System_Double_" data-uid="rt004.Util.Point2D.op_Division(rt004.Util.Point2D,System.Double)">
+  operator /(Point2D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Divides a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> by a scalar value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D operator /(Point2D point, double scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The scalar value to divide by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> resulting from the division.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Division_" data-uid="rt004.Util.Point2D.op_Division*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Division_rt004_Util_Point2D_rt004_Util_Vector2D_" data-uid="rt004.Util.Point2D.op_Division(rt004.Util.Point2D,rt004.Util.Vector2D)">
+  operator /(Point2D, Vector2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Divides a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> by a <span class="xref">OpenTK.Mathematics.Vector2d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D operator /(Point2D p, Vector2D scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>p</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <span class="xref">OpenTK.Mathematics.Vector2d</span> to divide by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> resulting from the division.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Equality_" data-uid="rt004.Util.Point2D.op_Equality*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Equality_rt004_Util_Point2D_rt004_Util_Point2D_" data-uid="rt004.Util.Point2D.op_Equality(rt004.Util.Point2D,rt004.Util.Point2D)">
+  operator ==(Point2D, Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Compares two <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instances for equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Point2D value, Point2D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The first <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The second <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">True if the X and Y coordinates are equal, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Explicit_" data-uid="rt004.Util.Point2D.op_Explicit*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Explicit_rt004_Util_Point2D__OpenTK_Mathematics_Vector2" data-uid="rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2">
+  explicit operator Vector2(Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Explicitly converts a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> to a <span class="xref">OpenTK.Mathematics.Vector2</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator Vector2(Point2D dir)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dir</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance to convert.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Explicit_" data-uid="rt004.Util.Point2D.op_Explicit*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Explicit_rt004_Util_Point2D__OpenTK_Mathematics_Vector2d" data-uid="rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2d">
+  explicit operator Vector2d(Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Explicitly converts a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> to a <span class="xref">OpenTK.Mathematics.Vector2d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator Vector2d(Point2D dir)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dir</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance to convert.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2d</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Inequality_" data-uid="rt004.Util.Point2D.op_Inequality*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Inequality_rt004_Util_Point2D_rt004_Util_Point2D_" data-uid="rt004.Util.Point2D.op_Inequality(rt004.Util.Point2D,rt004.Util.Point2D)">
+  operator !=(Point2D, Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Compares two <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instances for inequality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Point2D value, Point2D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The first <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+    <dt><code>other</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The second <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">True if the X and Y coordinates are not equal, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Multiply_" data-uid="rt004.Util.Point2D.op_Multiply*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Multiply_rt004_Util_Point2D_System_Double_" data-uid="rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,System.Double)">
+  operator *(Point2D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Multiplies a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> by a scalar value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D operator *(Point2D point, double scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The scalar value to multiply by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> resulting from the multiplication.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Multiply_" data-uid="rt004.Util.Point2D.op_Multiply*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Multiply_rt004_Util_Point2D_rt004_Util_Vector2D_" data-uid="rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,rt004.Util.Vector2D)">
+  operator *(Point2D, Vector2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L240"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Multiplies a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> by a <span class="xref">OpenTK.Mathematics.Vector2d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D operator *(Point2D point, Vector2D scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <span class="xref">OpenTK.Mathematics.Vector2d</span> to multiply by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> resulting from the multiplication.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Subtraction_" data-uid="rt004.Util.Point2D.op_Subtraction*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Subtraction_rt004_Util_Point2D_rt004_Util_Point2D_" data-uid="rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Point2D)">
+  operator -(Point2D, Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Subtracts one <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> from another, returning the result as a <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2D operator -(Point2D point1, Point2D point2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point1</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The first <a class="xref" href="rt004.Util.Point2D.html">Point2D</a>.</p>
+</dd>
+    <dt><code>point2</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The second <a class="xref" href="rt004.Util.Point2D.html">Point2D</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a> representing the difference.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_Subtraction_" data-uid="rt004.Util.Point2D.op_Subtraction*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_Subtraction_rt004_Util_Point2D_rt004_Util_Vector2D_" data-uid="rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Vector2D)">
+  operator -(Point2D, Vector2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Subtracts a <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a> from a <a class="xref" href="rt004.Util.Point2D.html">Point2D</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D operator -(Point2D position, Vector2D direction)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> position.</p>
+</dd>
+    <dt><code>direction</code> <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Vector2D.html">Vector2D</a> direction.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> resulting from the subtraction.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Point2D_op_UnaryNegation_" data-uid="rt004.Util.Point2D.op_UnaryNegation*"></a>
+
+  <h3 id="rt004_Util_Point2D_op_UnaryNegation_rt004_Util_Point2D_" data-uid="rt004.Util.Point2D.op_UnaryNegation(rt004.Util.Point2D)">
+  operator -(Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">Negates the coordinates of this <a class="xref" href="rt004.Util.Point2D.html">Point2D</a>, returning a new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> with the opposite values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point2D operator -(Point2D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">The <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> instance to negate.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.Util.Point2D.yml" sourcestartlinenumber="1">A new <a class="xref" href="rt004.Util.Point2D.html">Point2D</a> with X and Y values negated.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Point2D.cs/#L8" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

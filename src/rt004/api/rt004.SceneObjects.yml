@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  id: rt004.SceneObjects
+  children:
+  - rt004.SceneObjects.Camera
+  - rt004.SceneObjects.InnerSceneObject
+  - rt004.SceneObjects.IntersectionProperties
+  - rt004.SceneObjects.LightSource
+  - rt004.SceneObjects.PerspectiveCamera
+  - rt004.SceneObjects.Plane
+  - rt004.SceneObjects.PointLight
+  - rt004.SceneObjects.SceneObject
+  - rt004.SceneObjects.Solid
+  - rt004.SceneObjects.Sphere
+  langs:
+  - csharp
+  - vb
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.SceneObjects.Camera
+  commentId: T:rt004.SceneObjects.Camera
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.Camera.html
+  name: Camera
+  nameWithType: Camera
+  fullName: rt004.SceneObjects.Camera
+- uid: rt004.SceneObjects.PerspectiveCamera
+  commentId: T:rt004.SceneObjects.PerspectiveCamera
+  href: rt004.SceneObjects.PerspectiveCamera.html
+  name: PerspectiveCamera
+  nameWithType: PerspectiveCamera
+  fullName: rt004.SceneObjects.PerspectiveCamera
+- uid: rt004.SceneObjects.InnerSceneObject
+  commentId: T:rt004.SceneObjects.InnerSceneObject
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.InnerSceneObject.html
+  name: InnerSceneObject
+  nameWithType: InnerSceneObject
+  fullName: rt004.SceneObjects.InnerSceneObject
+- uid: rt004.SceneObjects.LightSource
+  commentId: T:rt004.SceneObjects.LightSource
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.LightSource.html
+  name: LightSource
+  nameWithType: LightSource
+  fullName: rt004.SceneObjects.LightSource
+- uid: rt004.SceneObjects.PointLight
+  commentId: T:rt004.SceneObjects.PointLight
+  href: rt004.SceneObjects.PointLight.html
+  name: PointLight
+  nameWithType: PointLight
+  fullName: rt004.SceneObjects.PointLight
+- uid: rt004.SceneObjects.SceneObject
+  commentId: T:rt004.SceneObjects.SceneObject
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.SceneObject.html
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: rt004.SceneObjects.SceneObject
+- uid: rt004.SceneObjects.Plane
+  commentId: T:rt004.SceneObjects.Plane
+  href: rt004.SceneObjects.Plane.html
+  name: Plane
+  nameWithType: Plane
+  fullName: rt004.SceneObjects.Plane
+- uid: rt004.SceneObjects.Solid
+  commentId: T:rt004.SceneObjects.Solid
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.Solid.html
+  name: Solid
+  nameWithType: Solid
+  fullName: rt004.SceneObjects.Solid
+- uid: rt004.SceneObjects.IntersectionProperties
+  commentId: T:rt004.SceneObjects.IntersectionProperties
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.IntersectionProperties.html
+  name: IntersectionProperties
+  nameWithType: IntersectionProperties
+  fullName: rt004.SceneObjects.IntersectionProperties
+- uid: rt004.SceneObjects.Sphere
+  commentId: T:rt004.SceneObjects.Sphere
+  href: rt004.SceneObjects.Sphere.html
+  name: Sphere
+  nameWithType: Sphere
+  fullName: rt004.SceneObjects.Sphere
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  href: rt004.html
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html

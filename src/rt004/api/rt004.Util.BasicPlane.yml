@@ -1,0 +1,619 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.BasicPlane
+  commentId: T:rt004.Util.BasicPlane
+  id: BasicPlane
+  parent: rt004.Util
+  children:
+  - rt004.Util.BasicPlane.#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)
+  - rt004.Util.BasicPlane.GetAxisOnPlane
+  - rt004.Util.BasicPlane.GetD
+  - rt004.Util.BasicPlane.Normal
+  - rt004.Util.BasicPlane.PointOnPlane
+  langs:
+  - csharp
+  - vb
+  name: BasicPlane
+  nameWithType: BasicPlane
+  fullName: rt004.Util.BasicPlane
+  type: Struct
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/BasicPlane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: BasicPlane
+    path: Util/BasicGeometry/BasicPlane.cs
+    startLine: 7
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: represents Plane in 3D
+  example: []
+  syntax:
+    content: 'public record struct BasicPlane : IEquatable<BasicPlane>'
+    content.vb: Public Structure BasicPlane Implements IEquatable(Of BasicPlane)
+  implements:
+  - System.IEquatable{rt004.Util.BasicPlane}
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: rt004.Util.BasicPlane.PointOnPlane
+  commentId: F:rt004.Util.BasicPlane.PointOnPlane
+  id: PointOnPlane
+  parent: rt004.Util.BasicPlane
+  langs:
+  - csharp
+  - vb
+  name: PointOnPlane
+  nameWithType: BasicPlane.PointOnPlane
+  fullName: rt004.Util.BasicPlane.PointOnPlane
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/BasicPlane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PointOnPlane
+    path: Util/BasicGeometry/BasicPlane.cs
+    startLine: 9
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  syntax:
+    content: public readonly Point3D PointOnPlane
+    return:
+      type: rt004.Util.Point3D
+    content.vb: Public ReadOnly PointOnPlane As Point3D
+- uid: rt004.Util.BasicPlane.Normal
+  commentId: F:rt004.Util.BasicPlane.Normal
+  id: Normal
+  parent: rt004.Util.BasicPlane
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: BasicPlane.Normal
+  fullName: rt004.Util.BasicPlane.Normal
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/BasicPlane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Normal
+    path: Util/BasicGeometry/BasicPlane.cs
+    startLine: 13
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Normal vector represented as vector with lenght of 1
+  example: []
+  syntax:
+    content: public readonly Vector3D Normal
+    return:
+      type: rt004.Util.Vector3D
+    content.vb: Public ReadOnly Normal As Vector3D
+- uid: rt004.Util.BasicPlane.#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.BasicPlane.#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)
+  id: '#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)'
+  parent: rt004.Util.BasicPlane
+  langs:
+  - csharp
+  - vb
+  name: BasicPlane(Point3D, Vector3D)
+  nameWithType: BasicPlane.BasicPlane(Point3D, Vector3D)
+  fullName: rt004.Util.BasicPlane.BasicPlane(rt004.Util.Point3D, rt004.Util.Vector3D)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/BasicPlane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/BasicGeometry/BasicPlane.cs
+    startLine: 20
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Creates BasicPlane based on point on the plane and normal of the plane.
+  example: []
+  syntax:
+    content: public BasicPlane(Point3D pointOnPlane, Vector3D normal)
+    parameters:
+    - id: pointOnPlane
+      type: rt004.Util.Point3D
+      description: Point on the plane as center of rotation
+    - id: normal
+      type: rt004.Util.Vector3D
+      description: Normal of the plane
+    content.vb: Public Sub New(pointOnPlane As Point3D, normal As Vector3D)
+  overload: rt004.Util.BasicPlane.#ctor*
+  nameWithType.vb: BasicPlane.New(Point3D, Vector3D)
+  fullName.vb: rt004.Util.BasicPlane.New(rt004.Util.Point3D, rt004.Util.Vector3D)
+  name.vb: New(Point3D, Vector3D)
+- uid: rt004.Util.BasicPlane.GetD
+  commentId: M:rt004.Util.BasicPlane.GetD
+  id: GetD
+  parent: rt004.Util.BasicPlane
+  langs:
+  - csharp
+  - vb
+  name: GetD()
+  nameWithType: BasicPlane.GetD()
+  fullName: rt004.Util.BasicPlane.GetD()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/BasicPlane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetD
+    path: Util/BasicGeometry/BasicPlane.cs
+    startLine: 31
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: computes constant d from general equation of a plane (aX + bY + cZ + d = 0)
+  example: []
+  syntax:
+    content: public double GetD()
+    return:
+      type: System.Double
+      description: Returns constant d
+    content.vb: Public Function GetD() As Double
+  overload: rt004.Util.BasicPlane.GetD*
+- uid: rt004.Util.BasicPlane.GetAxisOnPlane
+  commentId: M:rt004.Util.BasicPlane.GetAxisOnPlane
+  id: GetAxisOnPlane
+  parent: rt004.Util.BasicPlane
+  langs:
+  - csharp
+  - vb
+  name: GetAxisOnPlane()
+  nameWithType: BasicPlane.GetAxisOnPlane()
+  fullName: rt004.Util.BasicPlane.GetAxisOnPlane()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/BasicPlane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetAxisOnPlane
+    path: Util/BasicGeometry/BasicPlane.cs
+    startLine: 40
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets to axies on the plane
+  example: []
+  syntax:
+    content: public (Vector3D axisA, Vector3D axisB) GetAxisOnPlane()
+    return:
+      type: System.ValueTuple{rt004.Util.Vector3D,rt004.Util.Vector3D}
+      description: pair of vectors at the plane penpendicular to each other
+    content.vb: Public Function GetAxisOnPlane() As (axisA As Vector3D, axisB As Vector3D)
+  overload: rt004.Util.BasicPlane.GetAxisOnPlane*
+references:
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: System.IEquatable{rt004.Util.BasicPlane}
+  commentId: T:System.IEquatable{rt004.Util.BasicPlane}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<BasicPlane>
+  nameWithType: IEquatable<BasicPlane>
+  fullName: System.IEquatable<rt004.Util.BasicPlane>
+  nameWithType.vb: IEquatable(Of BasicPlane)
+  fullName.vb: System.IEquatable(Of rt004.Util.BasicPlane)
+  name.vb: IEquatable(Of BasicPlane)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: rt004.Util.BasicPlane
+    name: BasicPlane
+    href: rt004.Util.BasicPlane.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: rt004.Util.BasicPlane
+    name: BasicPlane
+    href: rt004.Util.BasicPlane.html
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: rt004.Util.Vector3D
+  commentId: T:rt004.Util.Vector3D
+  parent: rt004.Util
+  href: rt004.Util.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: rt004.Util.Vector3D
+- uid: rt004.Util.BasicPlane.#ctor*
+  commentId: Overload:rt004.Util.BasicPlane.#ctor
+  href: rt004.Util.BasicPlane.html#rt004_Util_BasicPlane__ctor_rt004_Util_Point3D_rt004_Util_Vector3D_
+  name: BasicPlane
+  nameWithType: BasicPlane.BasicPlane
+  fullName: rt004.Util.BasicPlane.BasicPlane
+  nameWithType.vb: BasicPlane.New
+  fullName.vb: rt004.Util.BasicPlane.New
+  name.vb: New
+- uid: rt004.Util.BasicPlane.GetD*
+  commentId: Overload:rt004.Util.BasicPlane.GetD
+  href: rt004.Util.BasicPlane.html#rt004_Util_BasicPlane_GetD
+  name: GetD
+  nameWithType: BasicPlane.GetD
+  fullName: rt004.Util.BasicPlane.GetD
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: rt004.Util.BasicPlane.GetAxisOnPlane*
+  commentId: Overload:rt004.Util.BasicPlane.GetAxisOnPlane
+  href: rt004.Util.BasicPlane.html#rt004_Util_BasicPlane_GetAxisOnPlane
+  name: GetAxisOnPlane
+  nameWithType: BasicPlane.GetAxisOnPlane
+  fullName: rt004.Util.BasicPlane.GetAxisOnPlane
+- uid: System.ValueTuple{rt004.Util.Vector3D,rt004.Util.Vector3D}
+  commentId: T:System.ValueTuple{rt004.Util.Vector3D,rt004.Util.Vector3D}
+  parent: System
+  definition: System.ValueTuple`2
+  href: rt004.Util.Vector3D.html
+  name: (Vector3D axisA, Vector3D axisB)
+  nameWithType: (Vector3D axisA, Vector3D axisB)
+  fullName: (rt004.Util.Vector3D axisA, rt004.Util.Vector3D axisB)
+  nameWithType.vb: (axisA As Vector3D, axisB As Vector3D)
+  fullName.vb: (axisA As rt004.Util.Vector3D, axisB As rt004.Util.Vector3D)
+  name.vb: (axisA As Vector3D, axisB As Vector3D)
+  spec.csharp:
+  - name: (
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: " "
+  - uid: System.ValueTuple{rt004.Util.Vector3D,rt004.Util.Vector3D}.axisA
+    name: axisA
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-rt004.util.vector3d,rt004.util.vector3d-.axisa
+  - name: ','
+  - name: " "
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: " "
+  - uid: System.ValueTuple{rt004.Util.Vector3D,rt004.Util.Vector3D}.axisB
+    name: axisB
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-rt004.util.vector3d,rt004.util.vector3d-.axisb
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{rt004.Util.Vector3D,rt004.Util.Vector3D}.axisA
+    name: axisA
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-rt004.util.vector3d,rt004.util.vector3d-.axisa
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{rt004.Util.Vector3D,rt004.Util.Vector3D}.axisB
+    name: axisB
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-rt004.util.vector3d,rt004.util.vector3d-.axisb
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )

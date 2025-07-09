@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Plane | Renderer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Plane | Renderer ">
+      
+      <meta name="description" content="Represents an infinite plane solid in 3D space for ray tracing and intersection tests.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/new/main/apiSpec/new?filename=rt004_SceneObjects_Plane.md&amp;value=---%0Auid%3A%20rt004.SceneObjects.Plane%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Raytraced Renderer">
+            Raytraced Renderer
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rt004.SceneObjects.Plane">
+
+
+
+  <h1 id="rt004_SceneObjects_Plane" data-uid="rt004.SceneObjects.Plane" class="text-break">
+Class Plane  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Plane.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rt004.html">rt004</a>.<a class="xref" href="rt004.SceneObjects.html">SceneObjects</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rt004.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">Represents an infinite plane solid in 3D space for ray tracing and intersection tests.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Plane : Solid</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="rt004.SceneObjects.SceneObject.html">SceneObject</a></div>
+      <div><a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a></div>
+      <div><span class="xref">Plane</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_material">Solid.material</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__">Solid.TryGetRayIntersection(Ray, out Point3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__rt004_Util_Point2D__">Solid.TryGetRayIntersection(Ray, out Point3D, out Point2D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__">Solid.TryGetRayIntersection(Ray, out IntersectionProperties)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_parentScene">SceneObject.parentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_dirtyGlobalPosition">SceneObject.dirtyGlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Position">SceneObject.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GlobalPosition">SceneObject.GlobalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Rotation">SceneObject.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentScene">SceneObject.ParentScene</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentObject">SceneObject.ParentObject</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding">SceneObject.GetLocalHeding()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading">SceneObject.GetGlobalHeading()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition">SceneObject.GetGlobalPosition()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix">SceneObject.GetLocalToWorldTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix">SceneObject.GetWorldToLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix">SceneObject.GetLocalTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix">SceneObject.GetLocalInverseTransformMatrix()</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_">SceneObject.ToWorldSpace(Vector3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_">SceneObject.ToWorldSpace(Point3D)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rt004_SceneObjects_Plane__ctor_" data-uid="rt004.SceneObjects.Plane.#ctor*"></a>
+
+  <h3 id="rt004_SceneObjects_Plane__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_" data-uid="rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3)">
+  Plane(Scene, Point3D, Vector3)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Plane.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.SceneObjects.Plane.html">Plane</a> class with the default material for the current lighting model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane(Scene parentScene, Point3D position, Vector3 rotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentScene</code> <a class="xref" href="rt004.Scene.html">Scene</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The parent scene to which this plane belongs.</p>
+</dd>
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The position of the plane in world coordinates.</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Vector3</span></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The rotation of the plane in Euler angles (degrees or radians as per convention).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Plane__ctor_" data-uid="rt004.SceneObjects.Plane.#ctor*"></a>
+
+  <h3 id="rt004_SceneObjects_Plane__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_rt004_Materials_Material_" data-uid="rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Material)">
+  Plane(Scene, Point3D, Vector3, Material)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Plane.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.SceneObjects.Plane.html">Plane</a> class with a specified material.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Plane(Scene parentScene, Point3D position, Vector3 rotation, Material material)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentScene</code> <a class="xref" href="rt004.Scene.html">Scene</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The parent scene to which this plane belongs.</p>
+</dd>
+    <dt><code>position</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The position of the plane in world coordinates.</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Vector3</span></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The rotation of the plane in Euler angles (degrees or radians as per convention).</p>
+</dd>
+    <dt><code>material</code> <a class="xref" href="rt004.Materials.Material.html">Material</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The material to use for rendering the plane.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidcastexception">InvalidCastException</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">Thrown if the provided material is not compatible with the current renderer settings.</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rt004_SceneObjects_Plane_GetNormalAt_" data-uid="rt004.SceneObjects.Plane.GetNormalAt*"></a>
+
+  <h3 id="rt004_SceneObjects_Plane_GetNormalAt_rt004_Util_Point3D_" data-uid="rt004.SceneObjects.Plane.GetNormalAt(rt004.Util.Point3D)">
+  GetNormalAt(Point3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Plane.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">Gets the normal vector of the plane at the specified global position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector3D GetNormalAt(Point3D globalPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>globalPosition</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The position on the plane (unused, as the normal is constant).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The normal vector of the plane.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Plane_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Plane.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Plane_TryGetRayIntersection_rt004_Util_Ray_System_Double__" data-uid="rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@)">
+  TryGetRayIntersection(Ray, out double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Plane.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">Attempts to compute the intersection between a ray and this plane.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool TryGetRayIntersection(Ray line, out double parameter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>line</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>parameter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">If intersection occurs, contains the distance along the ray to the intersection point.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">True if the ray intersects the plane; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_SceneObjects_Plane_TryGetRayIntersection_" data-uid="rt004.SceneObjects.Plane.TryGetRayIntersection*"></a>
+
+  <h3 id="rt004_SceneObjects_Plane_TryGetRayIntersection_rt004_Util_Ray_System_Double__rt004_Util_Point2D__" data-uid="rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)">
+  TryGetRayIntersection(Ray, out double, out Point2D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Plane.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">Attempts to compute the intersection between a ray and this plane, and calculates the UV coordinates at the intersection point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool TryGetRayIntersection(Ray ray, out double distance, out Point2D uvCoord)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">The ray to test for intersection.</p>
+</dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">If intersection occurs, contains the distance along the ray to the intersection point.</p>
+</dd>
+    <dt><code>uvCoord</code> <a class="xref" href="rt004.Util.Point2D.html">Point2D</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">If intersection occurs, contains the UV coordinates at the intersection point on the plane.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.SceneObjects.Plane.yml" sourcestartlinenumber="1">True if the ray intersects the plane; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/SceneObjects/Solids/Plane.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

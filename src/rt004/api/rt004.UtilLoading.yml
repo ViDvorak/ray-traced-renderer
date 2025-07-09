@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.UtilLoading
+  commentId: N:rt004.UtilLoading
+  id: rt004.UtilLoading
+  children:
+  - rt004.UtilLoading.RendererSettingsLoader
+  langs:
+  - csharp
+  - vb
+  name: rt004.UtilLoading
+  nameWithType: rt004.UtilLoading
+  fullName: rt004.UtilLoading
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.UtilLoading.RendererSettingsLoader
+  commentId: T:rt004.UtilLoading.RendererSettingsLoader
+  parent: rt004.UtilLoading
+  href: rt004.UtilLoading.RendererSettingsLoader.html
+  name: RendererSettingsLoader
+  nameWithType: RendererSettingsLoader
+  fullName: rt004.UtilLoading.RendererSettingsLoader
+- uid: rt004.UtilLoading
+  commentId: N:rt004.UtilLoading
+  href: rt004.html
+  name: rt004.UtilLoading
+  nameWithType: rt004.UtilLoading
+  fullName: rt004.UtilLoading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.UtilLoading
+    name: UtilLoading
+    href: rt004.UtilLoading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.UtilLoading
+    name: UtilLoading
+    href: rt004.UtilLoading.html

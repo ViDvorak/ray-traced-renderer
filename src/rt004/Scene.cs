@@ -5,25 +5,61 @@ using Util;
 
 namespace rt004
 {
+    /// <summary>
+    /// Represents a 3D scene containing cameras, solid objects, and light sources.
+    /// Provides functionality for managing scene hierarchy, rendering, and ray-object intersection testing.
+    /// </summary>
     public class Scene
     {
+        /// <summary>
+        /// The main camera used for rendering when no specific camera is specified.
+        /// </summary>
         private Camera? mainCamera;
 
+        /// <summary>
+        /// Gets or sets the ambient light color that illuminates all objects in the scene uniformly.
+        /// </summary>
         public Color4 AmbientLightColor { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the intensity factor for ambient lighting in the scene.
+        /// </summary>
         public float AmbientLightIntensity { get; set; }
 
+        /// <summary>
+        /// Collection of all cameras in the scene.
+        /// </summary>
         private readonly HashSet<Camera> cameras        = new HashSet<Camera>();
+        
+        /// <summary>
+        /// Collection of all solid objects in the scene that can be intersected by rays.
+        /// </summary>
         private readonly HashSet<Solid> solids          = new HashSet<Solid>();
+        
+        /// <summary>
+        /// Collection of all light sources in the scene.
+        /// </summary>
         private readonly HashSet<LightSource> lights    = new HashSet<LightSource>();
 
+        /// <summary>
+        /// The root object of the scene hierarchy tree.
+        /// </summary>
         public readonly InnerSceneObject rootSceneObject;
 
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Scene"/> class with default ambient light settings.
+        /// </summary>
+        /// <param name="rootHierarchyNode">When this method returns, contains the root hierarchy node of the scene.</param>
         public Scene(out InnerSceneObject rootHierarchyNode)
             : this(out rootHierarchyNode, RendererSettings.defaultAmbientLightColor, RendererSettings.defaultAmbientLightFactor)
         { }
 
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Scene"/> class with specified ambient light settings.
+        /// </summary>
+        /// <param name="rootHierarchyNode">When this method returns, contains the root hierarchy node of the scene.</param>
+        /// <param name="ambientLightColor">The ambient light color for the scene.</param>
+        /// <param name="ambientLightIntensity">The ambient light intensity for the scene.</param>
         public Scene(out InnerSceneObject rootHierarchyNode, Color4 ambientLightColor, float ambientLightIntensity)
         {
             rootHierarchyNode = new InnerSceneObject(this, Point3D.Zero, Vector3.Zero);
@@ -45,13 +81,14 @@ namespace rt004
         }
 
         /// <summary>
-        /// Gets root object of the scene.
+        /// Gets the root object of the scene hierarchy.
         /// </summary>
         public InnerSceneObject RootObject {  get { return rootSceneObject; } }
 
         /// <summary>
-        /// Main Camera to render from by default
+        /// Gets or sets the main camera used for rendering by default.
         /// </summary>
+        /// <exception cref="KeyNotFoundException">Thrown when attempting to set a camera that is not in the scene hierarchy.</exception>
         public Camera? MainCamera
         {
             get
@@ -64,7 +101,7 @@ namespace rt004
                 {
                     if (!cameras.Contains(value))
                     {
-                        throw new KeyNotFoundException("Camera is not inhierarchy. You must add it to hierarchy before assignement as mainCamera");
+                        throw new KeyNotFoundException("Camera is not in hierarchy. You must add it to hierarchy before assignment as mainCamera");
                     }
                     mainCamera = value;
                 }
@@ -72,11 +109,11 @@ namespace rt004
         }
 
         /// <summary>
-        /// Adds camera to scene
+        /// Adds a camera to the scene and optionally sets it as the main camera.
         /// </summary>
-        /// <param name="parentSceneObject">Parent object of this camera in scene hierarchy</param>
-        /// <param name="camera">camrera to add</param>
-        /// <param name="setAsMain">defines if the camera should be set as mainCamera or not(it is set automaticly if there is no MainCamera)</param>
+        /// <param name="parentSceneObject">The parent object of this camera in the scene hierarchy.</param>
+        /// <param name="camera">The camera to add to the scene.</param>
+        /// <param name="setAsMain">If true, sets this camera as the main camera. If false, sets as main only if no main camera exists.</param>
         public void AddCamera(InnerSceneObject parentSceneObject, Camera camera, bool setAsMain = false)
         {
             cameras.Add(camera);
@@ -88,17 +125,17 @@ namespace rt004
         }
 
         /// <summary>
-        /// Gets shallow copy of array with all cameras in the scene.
+        /// Gets a shallow copy of an array containing all cameras in the scene.
         /// </summary>
-        /// <returns>returns array of cameras</returns>
+        /// <returns>An array of all cameras in the scene.</returns>
         public Camera[] GetCameras() {
             return cameras.ToArray();
         }
 
         /// <summary>
-        /// Remove camera from scene
+        /// Removes a camera from the scene and updates the main camera if necessary.
         /// </summary>
-        /// <param name="camera">camera to remove</param>
+        /// <param name="camera">The camera to remove from the scene.</param>
         public void RemoveCamera(Camera camera)
         {
             cameras.Remove(camera);
@@ -112,60 +149,60 @@ namespace rt004
         }
         
         /// <summary>
-        /// Adds solid to scene
+        /// Adds a solid object to the scene.
         /// </summary>
-        /// <param name="solid">solid to add</param>
+        /// <param name="parentSceneObject">The parent object of this solid in the scene hierarchy.</param>
+        /// <param name="solid">The solid object to add to the scene.</param>
         public void AddSolid(InnerSceneObject parentSceneObject, Solid solid)
         {
             solids.Add(solid);
         }
 
         /// <summary>
-        /// Removes an solid from the scene
+        /// Removes a solid object from the scene.
         /// </summary>
-        /// <param name="solid">Solid to remove</param>
+        /// <param name="solid">The solid object to remove from the scene.</param>
         public void RemoveSolid(Solid solid) {
             solids.Remove(solid);
         }
 
         /// <summary>
-        /// Gets all solids in scene
+        /// Gets a shallow copy of an array containing all solid objects in the scene.
         /// </summary>
-        /// <returns>Returns array of all solids in scene</returns>
+        /// <returns>An array of all solid objects in the scene.</returns>
         public Solid[] GetSolids() => solids.ToArray();
 
         /// <summary>
-        /// Add LightSource from the scene
+        /// Adds a light source to the scene.
         /// </summary>
-        /// <param name="light">LightSource to add</param>
+        /// <param name="parentObject">The parent object of this light source in the scene hierarchy.</param>
+        /// <param name="light">The light source to add to the scene.</param>
         public void AddLight(InnerSceneObject parentObject, LightSource light)
         {
             lights.Add(light);
         }
 
         /// <summary>
-        /// Removes LightSource from the scene
+        /// Removes a light source from the scene.
         /// </summary>
-        /// <param name="light">LightSource to remove</param>
+        /// <param name="light">The light source to remove from the scene.</param>
         public void RemoveLight(LightSource light)
         {
             lights.Remove(light);
         }
 
-
         /// <summary>
-        /// Gets array of all light sources from scene
+        /// Gets a shallow copy of an array containing all light sources in the scene.
         /// </summary>
-        /// <returns>Returns array of light sources</returns>
+        /// <returns>An array of all light sources in the scene.</returns>
         public LightSource[] GetLightSources() => lights.ToArray();
 
-
         /// <summary>
-        /// Adds an SceneObject to scene.
+        /// Adds a scene object to the scene, automatically determining its type and adding it to the appropriate collection.
         /// </summary>
-        /// <param name="parentSceneObject">Object to add to sceneObject as child</param>
-        /// <param name="sceneObject">Scene object to add</param>
-        /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
+        /// <param name="parentSceneObject">The parent object to add the scene object to as a child.</param>
+        /// <param name="sceneObject">The scene object to add to the scene.</param>
+        /// <exception cref="NotImplementedException">Thrown when the scene object is not a recognized type (Camera, Solid, LightSource, or InnerSceneObject).</exception>
         public void AddSceneObject(InnerSceneObject parentSceneObject, SceneObject sceneObject)
         {
             if (sceneObject is Camera camera)
@@ -196,15 +233,15 @@ namespace rt004
                 throw new NotImplementedException("not known class derived from SceneObject" + sceneObject.GetType());
             }
 
-            BasicAddPrecedure(parentSceneObject, sceneObject);
+            BasicAddProcedure(parentSceneObject, sceneObject);
         }
 
         /// <summary>
-        /// registers an object to their new parent a unregisters it from previus
+        /// Registers an object to its new parent and unregisters it from its previous parent.
         /// </summary>
-        /// <param name="parent">new parent object to register to</param>
-        /// <param name="child">child to register</param>
-        private void BasicAddPrecedure(InnerSceneObject parent, SceneObject child)
+        /// <param name="parent">The new parent object to register the child to.</param>
+        /// <param name="child">The child object to register.</param>
+        private void BasicAddProcedure(InnerSceneObject parent, SceneObject child)
         {
             if (child.ParentObject is not null)
                 child.ParentObject.UnRegisterChild(child);
@@ -215,13 +252,12 @@ namespace rt004
             child.ParentScene = parent.ParentScene;
         }
 
-
         /// <summary>
-        /// Runs basic removal of SceneObject from Scene
+        /// Performs basic removal operations for a scene object from the scene hierarchy.
         /// </summary>
-        /// <param name="sceneObject">The sceneObject to remove</param>
-        /// <exception cref="InvalidOperationException"></exception>
-        private void BasicRemovePrecedure(SceneObject sceneObject)
+        /// <param name="sceneObject">The scene object to remove.</param>
+        /// <exception cref="InvalidOperationException">Thrown when the scene object does not have an assigned parent scene or parent object.</exception>
+        private void BasicRemoveProcedure(SceneObject sceneObject)
         {
             if (sceneObject.ParentScene is null)
                 throw new InvalidOperationException("The SceneObject does not have assigned parentScene");
@@ -237,12 +273,11 @@ namespace rt004
             sceneObject.ParentScene = null;
         }
 
-
         /// <summary>
-        /// Removes an SceneObject from scene.
+        /// Removes a scene object from the scene, automatically determining its type and removing it from the appropriate collection.
         /// </summary>
-        /// <param name="sceneObject">Scene object to remove</param>
-        /// <exception cref="NotImplementedException">thrown when sceneObject is not derived from Camera, Solid or Light</exception>
+        /// <param name="sceneObject">The scene object to remove from the scene.</param>
+        /// <exception cref="NotImplementedException">Thrown when the scene object is not a recognized type.</exception>
         public void RemoveSceneObject(SceneObject sceneObject)
         {
             if (sceneObject is Camera camera)
@@ -266,16 +301,14 @@ namespace rt004
             {
                 throw new NotImplementedException("Not known class, derived from SceneObject");
             }
-            BasicRemovePrecedure(sceneObject);
+            BasicRemoveProcedure(sceneObject);
         }
 
-
-
         /// <summary>
-        /// Renders image from main camera
+        /// Renders an image from the main camera's perspective.
         /// </summary>
-        /// <returns>Returns rendered image</returns>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <returns>A rendered image from the main camera.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when no main camera exists and no cameras are available in the scene.</exception>
         public FloatImage RenderScene() {
             if (mainCamera == null)
             {
@@ -288,9 +321,9 @@ namespace rt004
         }
 
         /// <summary>
-        /// Renderes images from all cameras in scene
+        /// Renders images from all cameras in the scene.
         /// </summary>
-        /// <returns>Array of rendered images</returns>
+        /// <returns>An array of rendered images, one from each camera in the scene.</returns>
         public FloatImage[] RenderSceneWithAllCameras() {
             List<FloatImage> images = new List<FloatImage>();
             Solid[] bodies = GetSolids();
@@ -301,28 +334,31 @@ namespace rt004
             return images.ToArray();
         }
 
-
-        #region IntersectionsWithScene
+        #region Ray-Scene Intersection Methods
+        /// <summary>
+        /// Contains methods for testing ray intersections with objects in the scene.
+        /// These methods are used for rendering, shadow calculation, and collision detection.
+        /// </summary>
 
         /// <summary>
-        /// Casts ray in a scene and checks for intersections with Solids.
+        /// Casts a ray in the scene and checks for intersections with solid objects.
         /// </summary>
-        /// <param name="ray">ray to cast</param>
-        /// <param name="distance">return value of distance from ray origin</param>
-        /// <returns>true when any object is intersected by ray and distance is in beatween min and max distances</returns>
+        /// <param name="ray">The ray to cast in the scene.</param>
+        /// <param name="distance">When this method returns, contains the distance from the ray origin to the closest intersection point.</param>
+        /// <returns>True if any object is intersected by the ray; otherwise, false.</returns>
         public bool CastRay(Ray ray, out double distance)
         {
             return CastRay(ray, out distance, out Solid intersectedBody);
         }
 
         /// <summary>
-        /// Casts ray in a scene and checks for intersections with Solids.
+        /// Casts a ray in the scene and checks for intersections with solid objects within specified distance limits.
         /// </summary>
-        /// <param name="ray">ray to cast</param>
-        /// <param name="distance">return value of distance from ray origin</param>
-        /// <param name="maxDistance">maximal value of distance</param>
-        /// <param name="minDistance">minimal distance of value</param>
-        /// <returns>true when any object is intersected by ray and distance is in beatween min and max distances otherwise retunrs false</returns>
+        /// <param name="ray">The ray to cast in the scene.</param>
+        /// <param name="distance">When this method returns, contains the distance from the ray origin to the closest intersection point.</param>
+        /// <param name="maxDistance">The maximum distance to consider for intersections.</param>
+        /// <param name="minDistance">The minimum distance to consider for intersections.</param>
+        /// <returns>True if any object is intersected by the ray within the specified distance range; otherwise, false.</returns>
         public bool CastRay(Ray ray, out double distance, double maxDistance, double minDistance = 0d)
         {
             var isIntersecting = CastRay(ray, out distance);
@@ -333,14 +369,13 @@ namespace rt004
             return isIntersecting;
         }
 
-
         /// <summary>
-        /// Casts ray in a scene and checks for intersections with Solids.
+        /// Casts a ray in the scene and checks for intersections with solid objects, returning the intersected object.
         /// </summary>
-        /// <param name="ray">ray to cast</param>
-        /// <param name="distance">return value of distance from ray origin</param>
-        /// <param name="intersectedBody">returns the closest intersected solid</param>
-        /// <returns>true when any object is intersected by ray</returns>
+        /// <param name="ray">The ray to cast in the scene.</param>
+        /// <param name="distance">When this method returns, contains the distance from the ray origin to the closest intersection point.</param>
+        /// <param name="intersectedBody">When this method returns, contains the closest intersected solid object.</param>
+        /// <returns>True if any object is intersected by the ray; otherwise, false.</returns>
         public bool CastRay(Ray ray, out double distance, out Solid intersectedBody)
         {
             double closestIntersection = double.MaxValue;
@@ -364,28 +399,25 @@ namespace rt004
             return hasIntersected;
         }
 
-
-
-
         /// <summary>
-        /// Casts ray in the scene and checks for closest intersections with a SceneObject without distance limit
+        /// Casts a ray in the scene and returns detailed intersection properties for the closest intersection.
         /// </summary>
-        /// <param name="ray">Ray to cast</param>
-        /// <param name="properties">Returned properties of the closest intersection</param>
-        /// <returns>Returns true if an intersection is found else false</returns>
+        /// <param name="ray">The ray to cast in the scene.</param>
+        /// <param name="properties">When this method returns, contains the detailed properties of the closest intersection.</param>
+        /// <returns>True if an intersection is found; otherwise, false.</returns>
         public bool CastRay(Ray ray, out IntersectionProperties properties)
         {
             return CastRay(ray, out properties, double.MaxValue);
         }
 
         /// <summary>
-        /// Casts ray in the scene and checks for closest intersections with a SceneObject without distance limit
+        /// Casts a ray in the scene and returns detailed intersection properties for the closest intersection within distance limits.
         /// </summary>
-        /// <param name="ray">Ray to cast</param>
-        /// <param name="properties">Returned properties of the closest intersection</param>
-        /// <param name="maxDistance">max distance of the intersection from camera postion</param>
-        /// <param name="minDistance">min distance of the intersection from camera position</param>
-        /// <returns>Returns true if an intersection is found else false</returns>
+        /// <param name="ray">The ray to cast in the scene.</param>
+        /// <param name="properties">When this method returns, contains the detailed properties of the closest intersection.</param>
+        /// <param name="maxDistance">The maximum distance from the ray origin to consider for intersections.</param>
+        /// <param name="minDistance">The minimum distance from the ray origin to consider for intersections.</param>
+        /// <returns>True if an intersection is found within the specified distance range; otherwise, false.</returns>
         public bool CastRay(Ray ray, out IntersectionProperties properties, double maxDistance, double minDistance = 0)
         {
             double closestIntersection = double.MaxValue;
@@ -410,13 +442,12 @@ namespace rt004
             return hasIntersected;
         }
 
-
         /// <summary>
-        /// Casts ray in scene and intersect with scene objects.
+        /// Casts a ray in the scene and returns the closest intersection point.
         /// </summary>
-        /// <param name="ray">Ray to cast</param>
-        /// <param name="closestIntersection">ClosestIntersection point with the closest intersected object in scene. Sensible value only when function returns true</param>
-        /// <returns>Returns true if intersection has been found, otherwise false.</returns>
+        /// <param name="ray">The ray to cast in the scene.</param>
+        /// <param name="closestIntersection">When this method returns, contains the closest intersection point. Valid only when the method returns true.</param>
+        /// <returns>True if an intersection is found; otherwise, false.</returns>
         public bool CastRay( Ray ray, out Point3D closestIntersection)
         {
             bool hasIntersected = CastRay(ray, out double parameter);
@@ -425,12 +456,12 @@ namespace rt004
         }
 
         /// <summary>
-        /// Casts ray in scene and intersect with scene objects.
+        /// Casts a ray in the scene and returns the closest intersection point and the intersected object.
         /// </summary>
-        /// <param name="ray">Ray to cast</param>
-        /// <param name="closestIntersection">ClosestIntersection point with the closest intersected object in scene. Sensible value only when function returns true</param>
-        /// <param name="intersectedBody">The closest intersected body, Sansible value only when function retruns true</param>
-        /// <returns>Returns true if intersection has been found, otherwise false.</returns>
+        /// <param name="ray">The ray to cast in the scene.</param>
+        /// <param name="closestIntersection">When this method returns, contains the closest intersection point. Valid only when the method returns true.</param>
+        /// <param name="intersectedBody">When this method returns, contains the closest intersected solid object. Valid only when the method returns true.</param>
+        /// <returns>True if an intersection is found; otherwise, false.</returns>
         public bool CastRay(Ray ray, out Point3D closestIntersection, out Solid intersectedBody)
         {
             bool hasIntersected = CastRay(ray, out double parameter, out intersectedBody);
@@ -438,7 +469,7 @@ namespace rt004
             return hasIntersected;
         }
 
-        #endregion IntersectionsWithScene
+        #endregion Ray-Scene Intersection Methods
     }
 }
 
@@ -447,18 +478,31 @@ namespace rt004.Loading
 {
     using rt004.SceneObjects.Loading;
 
+    /// <summary>
+    /// Provides functionality for loading and creating scene instances from configuration data.
+    /// Handles the creation of scene objects and their hierarchy from loaded data.
+    /// </summary>
     public class SceneLoader
     {
+        /// <summary>
+        /// Gets or sets the ambient light color for the scene.
+        /// </summary>
         public Color4 ambientLightColor;
+        
+        /// <summary>
+        /// Gets or sets the ambient light intensity for the scene.
+        /// </summary>
         public float ambientLightIntensity;
 
+        /// <summary>
+        /// Gets or sets the list of scene object loaders that define the objects to be created in the scene.
+        /// </summary>
         public List<SceneObjectLoader> sceneObjectLoaders = new List<SceneObjectLoader>();
 
-
         /// <summary>
-        /// Creates Scene from loaded data
+        /// Creates a new <see cref="Scene"/> instance from the loaded configuration data.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A fully configured scene with all objects and hierarchy established.</returns>
         public Scene CreateInstance()
         {
             InnerSceneObject rootSceneObject;
@@ -478,10 +522,10 @@ namespace rt004.Loading
         }
 
         /// <summary>
-        /// Recursivly loads children and adds them to the parentObject
+        /// Recursively extracts all children from a scene object hierarchy and adds them to a flat list.
         /// </summary>
-        /// <param name="parentObject">SceneObject to add children to</param>
-        /// <param name="allChildren">Children to add</param>
+        /// <param name="parentObject">The parent scene object to extract children from.</param>
+        /// <param name="allChildren">The list to add all extracted children to.</param>
         public static void ExtractChildren(InnerSceneObject parentObject, in List<SceneObject> allChildren)
         {
             foreach (SceneObject child in parentObject.GetChildren())

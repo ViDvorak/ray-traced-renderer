@@ -1,0 +1,640 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Materials.MonochromeUniformTexture
+  commentId: T:rt004.Materials.MonochromeUniformTexture
+  id: MonochromeUniformTexture
+  parent: rt004.Materials
+  children:
+  - rt004.Materials.MonochromeUniformTexture.#ctor(System.Single)
+  - rt004.Materials.MonochromeUniformTexture.GetColorAt(System.Single,System.Single)
+  - rt004.Materials.MonochromeUniformTexture.GetFactorAt(System.Single,System.Single)
+  - rt004.Materials.MonochromeUniformTexture.value
+  langs:
+  - csharp
+  - vb
+  name: MonochromeUniformTexture
+  nameWithType: MonochromeUniformTexture
+  fullName: rt004.Materials.MonochromeUniformTexture
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Materials/MonochromeUniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: MonochromeUniformTexture
+    path: Materials/MonochromeUniformTexture.cs
+    startLine: 7
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Represents a monochrome uniform texture with a single grayscale value across its surface.
+  example: []
+  syntax:
+    content: 'public class MonochromeUniformTexture : MonochromeTexture'
+    content.vb: Public Class MonochromeUniformTexture Inherits MonochromeTexture
+  inheritance:
+  - System.Object
+  - rt004.Materials.Texture
+  - rt004.Materials.MonochromeTexture
+  inheritedMembers:
+  - rt004.Materials.Texture.width
+  - rt004.Materials.Texture.height
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.Materials.MonochromeUniformTexture.value
+  commentId: F:rt004.Materials.MonochromeUniformTexture.value
+  id: value
+  parent: rt004.Materials.MonochromeUniformTexture
+  langs:
+  - csharp
+  - vb
+  name: value
+  nameWithType: MonochromeUniformTexture.value
+  fullName: rt004.Materials.MonochromeUniformTexture.value
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/MonochromeUniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: value
+    path: Materials/MonochromeUniformTexture.cs
+    startLine: 12
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: The grayscale value of the texture, consistent across the entire surface.
+  example: []
+  syntax:
+    content: public float value
+    return:
+      type: System.Single
+    content.vb: Public value As Single
+- uid: rt004.Materials.MonochromeUniformTexture.#ctor(System.Single)
+  commentId: M:rt004.Materials.MonochromeUniformTexture.#ctor(System.Single)
+  id: '#ctor(System.Single)'
+  parent: rt004.Materials.MonochromeUniformTexture
+  langs:
+  - csharp
+  - vb
+  name: MonochromeUniformTexture(float)
+  nameWithType: MonochromeUniformTexture.MonochromeUniformTexture(float)
+  fullName: rt004.Materials.MonochromeUniformTexture.MonochromeUniformTexture(float)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Materials/MonochromeUniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Materials/MonochromeUniformTexture.cs
+    startLine: 18
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Initializes a new instance of the <xref href="rt004.Materials.MonochromeUniformTexture" data-throw-if-not-resolved="false"></xref> class with a specified grayscale value.
+  example: []
+  syntax:
+    content: public MonochromeUniformTexture(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The grayscale intensity value for the texture.
+    content.vb: Public Sub New(value As Single)
+  overload: rt004.Materials.MonochromeUniformTexture.#ctor*
+  nameWithType.vb: MonochromeUniformTexture.New(Single)
+  fullName.vb: rt004.Materials.MonochromeUniformTexture.New(Single)
+  name.vb: New(Single)
+- uid: rt004.Materials.MonochromeUniformTexture.GetColorAt(System.Single,System.Single)
+  commentId: M:rt004.Materials.MonochromeUniformTexture.GetColorAt(System.Single,System.Single)
+  id: GetColorAt(System.Single,System.Single)
+  parent: rt004.Materials.MonochromeUniformTexture
+  langs:
+  - csharp
+  - vb
+  name: GetColorAt(float, float)
+  nameWithType: MonochromeUniformTexture.GetColorAt(float, float)
+  fullName: rt004.Materials.MonochromeUniformTexture.GetColorAt(float, float)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/MonochromeUniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetColorAt
+    path: Materials/MonochromeUniformTexture.cs
+    startLine: 30
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: >-
+    Gets the color representation of the grayscale value at any UV coordinates.
+
+    Since this is a uniform texture, the color is the same at all coordinates.
+  example: []
+  syntax:
+    content: public override Color4 GetColorAt(float u, float v)
+    parameters:
+    - id: u
+      type: System.Single
+      description: The horizontal coordinate (ignored in this class).
+    - id: v
+      type: System.Single
+      description: The vertical coordinate (ignored in this class).
+    return:
+      type: OpenTK.Mathematics.Color4
+      description: The color representation of the grayscale value, encoded as (value, value, value, 1).
+    content.vb: Public Overrides Function GetColorAt(u As Single, v As Single) As Color4
+  overridden: rt004.Materials.MonochromeTexture.GetColorAt(System.Single,System.Single)
+  overload: rt004.Materials.MonochromeUniformTexture.GetColorAt*
+  nameWithType.vb: MonochromeUniformTexture.GetColorAt(Single, Single)
+  fullName.vb: rt004.Materials.MonochromeUniformTexture.GetColorAt(Single, Single)
+  name.vb: GetColorAt(Single, Single)
+- uid: rt004.Materials.MonochromeUniformTexture.GetFactorAt(System.Single,System.Single)
+  commentId: M:rt004.Materials.MonochromeUniformTexture.GetFactorAt(System.Single,System.Single)
+  id: GetFactorAt(System.Single,System.Single)
+  parent: rt004.Materials.MonochromeUniformTexture
+  langs:
+  - csharp
+  - vb
+  name: GetFactorAt(float, float)
+  nameWithType: MonochromeUniformTexture.GetFactorAt(float, float)
+  fullName: rt004.Materials.MonochromeUniformTexture.GetFactorAt(float, float)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/MonochromeUniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetFactorAt
+    path: Materials/MonochromeUniformTexture.cs
+    startLine: 41
+  assemblies:
+  - rt004
+  namespace: rt004.Materials
+  summary: Gets the grayscale intensity factor of the texture at any UV coordinates.
+  example: []
+  syntax:
+    content: public override float GetFactorAt(float u, float v)
+    parameters:
+    - id: u
+      type: System.Single
+      description: The horizontal coordinate (ignored in this class).
+    - id: v
+      type: System.Single
+      description: The vertical coordinate (ignored in this class).
+    return:
+      type: System.Single
+      description: The grayscale intensity factor.
+    content.vb: Public Overrides Function GetFactorAt(u As Single, v As Single) As Single
+  overridden: rt004.Materials.MonochromeTexture.GetFactorAt(System.Single,System.Single)
+  overload: rt004.Materials.MonochromeUniformTexture.GetFactorAt*
+  nameWithType.vb: MonochromeUniformTexture.GetFactorAt(Single, Single)
+  fullName.vb: rt004.Materials.MonochromeUniformTexture.GetFactorAt(Single, Single)
+  name.vb: GetFactorAt(Single, Single)
+references:
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.Materials.Texture
+  commentId: T:rt004.Materials.Texture
+  parent: rt004.Materials
+  href: rt004.Materials.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: rt004.Materials.Texture
+- uid: rt004.Materials.MonochromeTexture
+  commentId: T:rt004.Materials.MonochromeTexture
+  parent: rt004.Materials
+  href: rt004.Materials.MonochromeTexture.html
+  name: MonochromeTexture
+  nameWithType: MonochromeTexture
+  fullName: rt004.Materials.MonochromeTexture
+- uid: rt004.Materials.Texture.width
+  commentId: F:rt004.Materials.Texture.width
+  parent: rt004.Materials.Texture
+  href: rt004.Materials.Texture.html#rt004_Materials_Texture_width
+  name: width
+  nameWithType: Texture.width
+  fullName: rt004.Materials.Texture.width
+- uid: rt004.Materials.Texture.height
+  commentId: F:rt004.Materials.Texture.height
+  parent: rt004.Materials.Texture
+  href: rt004.Materials.Texture.html#rt004_Materials_Texture_height
+  name: height
+  nameWithType: Texture.height
+  fullName: rt004.Materials.Texture.height
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: rt004.Materials.MonochromeUniformTexture
+  commentId: T:rt004.Materials.MonochromeUniformTexture
+  href: rt004.Materials.MonochromeUniformTexture.html
+  name: MonochromeUniformTexture
+  nameWithType: MonochromeUniformTexture
+  fullName: rt004.Materials.MonochromeUniformTexture
+- uid: rt004.Materials.MonochromeUniformTexture.#ctor*
+  commentId: Overload:rt004.Materials.MonochromeUniformTexture.#ctor
+  href: rt004.Materials.MonochromeUniformTexture.html#rt004_Materials_MonochromeUniformTexture__ctor_System_Single_
+  name: MonochromeUniformTexture
+  nameWithType: MonochromeUniformTexture.MonochromeUniformTexture
+  fullName: rt004.Materials.MonochromeUniformTexture.MonochromeUniformTexture
+  nameWithType.vb: MonochromeUniformTexture.New
+  fullName.vb: rt004.Materials.MonochromeUniformTexture.New
+  name.vb: New
+- uid: rt004.Materials.MonochromeTexture.GetColorAt(System.Single,System.Single)
+  commentId: M:rt004.Materials.MonochromeTexture.GetColorAt(System.Single,System.Single)
+  parent: rt004.Materials.MonochromeTexture
+  isExternal: true
+  href: rt004.Materials.MonochromeTexture.html#rt004_Materials_MonochromeTexture_GetColorAt_System_Single_System_Single_
+  name: GetColorAt(float, float)
+  nameWithType: MonochromeTexture.GetColorAt(float, float)
+  fullName: rt004.Materials.MonochromeTexture.GetColorAt(float, float)
+  nameWithType.vb: MonochromeTexture.GetColorAt(Single, Single)
+  fullName.vb: rt004.Materials.MonochromeTexture.GetColorAt(Single, Single)
+  name.vb: GetColorAt(Single, Single)
+  spec.csharp:
+  - uid: rt004.Materials.MonochromeTexture.GetColorAt(System.Single,System.Single)
+    name: GetColorAt
+    href: rt004.Materials.MonochromeTexture.html#rt004_Materials_MonochromeTexture_GetColorAt_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: rt004.Materials.MonochromeTexture.GetColorAt(System.Single,System.Single)
+    name: GetColorAt
+    href: rt004.Materials.MonochromeTexture.html#rt004_Materials_MonochromeTexture_GetColorAt_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: rt004.Materials.MonochromeUniformTexture.GetColorAt*
+  commentId: Overload:rt004.Materials.MonochromeUniformTexture.GetColorAt
+  href: rt004.Materials.MonochromeUniformTexture.html#rt004_Materials_MonochromeUniformTexture_GetColorAt_System_Single_System_Single_
+  name: GetColorAt
+  nameWithType: MonochromeUniformTexture.GetColorAt
+  fullName: rt004.Materials.MonochromeUniformTexture.GetColorAt
+- uid: OpenTK.Mathematics.Color4
+  commentId: T:OpenTK.Mathematics.Color4
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Color4
+  nameWithType: Color4
+  fullName: OpenTK.Mathematics.Color4
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.Materials.MonochromeTexture.GetFactorAt(System.Single,System.Single)
+  commentId: M:rt004.Materials.MonochromeTexture.GetFactorAt(System.Single,System.Single)
+  parent: rt004.Materials.MonochromeTexture
+  isExternal: true
+  href: rt004.Materials.MonochromeTexture.html#rt004_Materials_MonochromeTexture_GetFactorAt_System_Single_System_Single_
+  name: GetFactorAt(float, float)
+  nameWithType: MonochromeTexture.GetFactorAt(float, float)
+  fullName: rt004.Materials.MonochromeTexture.GetFactorAt(float, float)
+  nameWithType.vb: MonochromeTexture.GetFactorAt(Single, Single)
+  fullName.vb: rt004.Materials.MonochromeTexture.GetFactorAt(Single, Single)
+  name.vb: GetFactorAt(Single, Single)
+  spec.csharp:
+  - uid: rt004.Materials.MonochromeTexture.GetFactorAt(System.Single,System.Single)
+    name: GetFactorAt
+    href: rt004.Materials.MonochromeTexture.html#rt004_Materials_MonochromeTexture_GetFactorAt_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: rt004.Materials.MonochromeTexture.GetFactorAt(System.Single,System.Single)
+    name: GetFactorAt
+    href: rt004.Materials.MonochromeTexture.html#rt004_Materials_MonochromeTexture_GetFactorAt_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: rt004.Materials.MonochromeUniformTexture.GetFactorAt*
+  commentId: Overload:rt004.Materials.MonochromeUniformTexture.GetFactorAt
+  href: rt004.Materials.MonochromeUniformTexture.html#rt004_Materials_MonochromeUniformTexture_GetFactorAt_System_Single_System_Single_
+  name: GetFactorAt
+  nameWithType: MonochromeUniformTexture.GetFactorAt
+  fullName: rt004.Materials.MonochromeUniformTexture.GetFactorAt

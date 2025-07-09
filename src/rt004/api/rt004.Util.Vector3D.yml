@@ -1,0 +1,2178 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.Vector3D
+  commentId: T:rt004.Util.Vector3D
+  id: Vector3D
+  parent: rt004.Util
+  children:
+  - rt004.Util.Vector3D.#ctor(OpenTK.Mathematics.Vector3d)
+  - rt004.Util.Vector3D.#ctor(System.Double,System.Double,System.Double)
+  - rt004.Util.Vector3D.AsVector
+  - rt004.Util.Vector3D.Cross(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.Dot(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.Equals(System.Object)
+  - rt004.Util.Vector3D.Equals(rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.GetHashCode
+  - rt004.Util.Vector3D.Length
+  - rt004.Util.Vector3D.LengthSquared
+  - rt004.Util.Vector3D.Normalize
+  - rt004.Util.Vector3D.Normalized
+  - rt004.Util.Vector3D.OneX
+  - rt004.Util.Vector3D.OneY
+  - rt004.Util.Vector3D.OneZ
+  - rt004.Util.Vector3D.RoundDown
+  - rt004.Util.Vector3D.RoundDown(rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.RoundUp
+  - rt004.Util.Vector3D.RoundUp(rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.ToString
+  - rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Matrix4d)
+  - rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Quaternion)
+  - rt004.Util.Vector3D.X
+  - rt004.Util.Vector3D.Y
+  - rt004.Util.Vector3D.Z
+  - rt004.Util.Vector3D.Zero
+  - rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Point3D)
+  - rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  - rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,System.Double)
+  - rt004.Util.Vector3D.op_Equality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3
+  - rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3d
+  - rt004.Util.Vector3D.op_Inequality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  - rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,System.Double)
+  - rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Point3D)
+  - rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  - rt004.Util.Vector3D.op_UnaryNegation(rt004.Util.Vector3D)
+  langs:
+  - csharp
+  - vb
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: rt004.Util.Vector3D
+  type: Struct
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Vector3D
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 8
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Represents an immutable 3-dimensional vector.
+  example: []
+  syntax:
+    content: public struct Vector3D
+    content.vb: Public Structure Vector3D
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: rt004.Util.Vector3D.Length
+  commentId: P:rt004.Util.Vector3D.Length
+  id: Length
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: Vector3D.Length
+  fullName: rt004.Util.Vector3D.Length
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Length
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 18
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the length (magnitude) of the vector.
+  example: []
+  syntax:
+    content: public double Length { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Length As Double
+  overload: rt004.Util.Vector3D.Length*
+- uid: rt004.Util.Vector3D.LengthSquared
+  commentId: P:rt004.Util.Vector3D.LengthSquared
+  id: LengthSquared
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: LengthSquared
+  nameWithType: Vector3D.LengthSquared
+  fullName: rt004.Util.Vector3D.LengthSquared
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: LengthSquared
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 23
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the square of the vector's length (X*X + Y*Y + Z*Z), avoiding the cost of a square root calculation.
+  example: []
+  syntax:
+    content: public double LengthSquared { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property LengthSquared As Double
+  overload: rt004.Util.Vector3D.LengthSquared*
+- uid: rt004.Util.Vector3D.AsVector
+  commentId: P:rt004.Util.Vector3D.AsVector
+  id: AsVector
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: AsVector
+  nameWithType: Vector3D.AsVector
+  fullName: rt004.Util.Vector3D.AsVector
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: AsVector
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 28
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns the vector's internal representation as a <xref href="OpenTK.Mathematics.Vector3d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Vector3d AsVector { get; }
+    parameters: []
+    return:
+      type: OpenTK.Mathematics.Vector3d
+    content.vb: Public ReadOnly Property AsVector As Vector3d
+  overload: rt004.Util.Vector3D.AsVector*
+- uid: rt004.Util.Vector3D.X
+  commentId: P:rt004.Util.Vector3D.X
+  id: X
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Vector3D.X
+  fullName: rt004.Util.Vector3D.X
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: X
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 33
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the X coordinate of the vector.
+  example: []
+  syntax:
+    content: public double X { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property X As Double
+  overload: rt004.Util.Vector3D.X*
+- uid: rt004.Util.Vector3D.Y
+  commentId: P:rt004.Util.Vector3D.Y
+  id: Y
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Vector3D.Y
+  fullName: rt004.Util.Vector3D.Y
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Y
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 38
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the Y coordinate of the vector.
+  example: []
+  syntax:
+    content: public double Y { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Y As Double
+  overload: rt004.Util.Vector3D.Y*
+- uid: rt004.Util.Vector3D.Z
+  commentId: P:rt004.Util.Vector3D.Z
+  id: Z
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: Vector3D.Z
+  fullName: rt004.Util.Vector3D.Z
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Z
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 43
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the Z coordinate of the vector.
+  example: []
+  syntax:
+    content: public double Z { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Z As Double
+  overload: rt004.Util.Vector3D.Z*
+- uid: rt004.Util.Vector3D.Zero
+  commentId: P:rt004.Util.Vector3D.Zero
+  id: Zero
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Zero
+  nameWithType: Vector3D.Zero
+  fullName: rt004.Util.Vector3D.Zero
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Zero
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 48
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a new instance of a zero vector (0, 0, 0).
+  example: []
+  syntax:
+    content: public static Vector3D Zero { get; }
+    parameters: []
+    return:
+      type: rt004.Util.Vector3D
+    content.vb: Public Shared ReadOnly Property Zero As Vector3D
+  overload: rt004.Util.Vector3D.Zero*
+- uid: rt004.Util.Vector3D.OneX
+  commentId: P:rt004.Util.Vector3D.OneX
+  id: OneX
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: OneX
+  nameWithType: Vector3D.OneX
+  fullName: rt004.Util.Vector3D.OneX
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: OneX
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 53
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a unit vector along the X axis.
+  example: []
+  syntax:
+    content: public static Vector3D OneX { get; }
+    parameters: []
+    return:
+      type: rt004.Util.Vector3D
+    content.vb: Public Shared ReadOnly Property OneX As Vector3D
+  overload: rt004.Util.Vector3D.OneX*
+- uid: rt004.Util.Vector3D.OneY
+  commentId: P:rt004.Util.Vector3D.OneY
+  id: OneY
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: OneY
+  nameWithType: Vector3D.OneY
+  fullName: rt004.Util.Vector3D.OneY
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: OneY
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 58
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a unit vector along the Y axis.
+  example: []
+  syntax:
+    content: public static Vector3D OneY { get; }
+    parameters: []
+    return:
+      type: rt004.Util.Vector3D
+    content.vb: Public Shared ReadOnly Property OneY As Vector3D
+  overload: rt004.Util.Vector3D.OneY*
+- uid: rt004.Util.Vector3D.OneZ
+  commentId: P:rt004.Util.Vector3D.OneZ
+  id: OneZ
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: OneZ
+  nameWithType: Vector3D.OneZ
+  fullName: rt004.Util.Vector3D.OneZ
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: OneZ
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 63
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a unit vector along the Z axis.
+  example: []
+  syntax:
+    content: public static Vector3D OneZ { get; }
+    parameters: []
+    return:
+      type: rt004.Util.Vector3D
+    content.vb: Public Shared ReadOnly Property OneZ As Vector3D
+  overload: rt004.Util.Vector3D.OneZ*
+- uid: rt004.Util.Vector3D.#ctor(OpenTK.Mathematics.Vector3d)
+  commentId: M:rt004.Util.Vector3D.#ctor(OpenTK.Mathematics.Vector3d)
+  id: '#ctor(OpenTK.Mathematics.Vector3d)'
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Vector3D(Vector3d)
+  nameWithType: Vector3D.Vector3D(Vector3d)
+  fullName: rt004.Util.Vector3D.Vector3D(OpenTK.Mathematics.Vector3d)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 69
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Initializes a new instance of the <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> struct from a <xref href="OpenTK.Mathematics.Vector3d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Vector3D(Vector3d vector)
+    parameters:
+    - id: vector
+      type: OpenTK.Mathematics.Vector3d
+      description: The vector to initialize from.
+    content.vb: Public Sub New(vector As Vector3d)
+  overload: rt004.Util.Vector3D.#ctor*
+  nameWithType.vb: Vector3D.New(Vector3d)
+  fullName.vb: rt004.Util.Vector3D.New(OpenTK.Mathematics.Vector3d)
+  name.vb: New(Vector3d)
+- uid: rt004.Util.Vector3D.#ctor(System.Double,System.Double,System.Double)
+  commentId: M:rt004.Util.Vector3D.#ctor(System.Double,System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double,System.Double)'
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Vector3D(double, double, double)
+  nameWithType: Vector3D.Vector3D(double, double, double)
+  fullName: rt004.Util.Vector3D.Vector3D(double, double, double)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 80
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Initializes a new instance of the <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> struct from the specified X, Y, and Z coordinates.
+  example: []
+  syntax:
+    content: public Vector3D(double x, double y, double z)
+    parameters:
+    - id: x
+      type: System.Double
+      description: The X coordinate of the vector.
+    - id: y
+      type: System.Double
+      description: The Y coordinate of the vector.
+    - id: z
+      type: System.Double
+      description: The Z coordinate of the vector.
+    content.vb: Public Sub New(x As Double, y As Double, z As Double)
+  overload: rt004.Util.Vector3D.#ctor*
+  nameWithType.vb: Vector3D.New(Double, Double, Double)
+  fullName.vb: rt004.Util.Vector3D.New(Double, Double, Double)
+  name.vb: New(Double, Double, Double)
+- uid: rt004.Util.Vector3D.Normalized
+  commentId: M:rt004.Util.Vector3D.Normalized
+  id: Normalized
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Normalized()
+  nameWithType: Vector3D.Normalized()
+  fullName: rt004.Util.Vector3D.Normalized()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Normalized
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 89
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a normalized (unit length) version of this vector.
+  example: []
+  syntax:
+    content: public Vector3D Normalized()
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> with unit length.
+    content.vb: Public Function Normalized() As Vector3D
+  overload: rt004.Util.Vector3D.Normalized*
+- uid: rt004.Util.Vector3D.Normalize
+  commentId: M:rt004.Util.Vector3D.Normalize
+  id: Normalize
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Normalize()
+  nameWithType: Vector3D.Normalize()
+  fullName: rt004.Util.Vector3D.Normalize()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Normalize
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 98
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Normalizes the vector in place, updating its direction to unit length.
+  example: []
+  syntax:
+    content: public void Normalize()
+    content.vb: Public Sub Normalize()
+  overload: rt004.Util.Vector3D.Normalize*
+- uid: rt004.Util.Vector3D.RoundUp
+  commentId: M:rt004.Util.Vector3D.RoundUp
+  id: RoundUp
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: RoundUp()
+  nameWithType: Vector3D.RoundUp()
+  fullName: rt004.Util.Vector3D.RoundUp()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundUp
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 107
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Rounds up the X, Y, and Z coordinates of the vector to the nearest integer.
+  example: []
+  syntax:
+    content: public (int X, int Y, int Z) RoundUp()
+    return:
+      type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+      description: A tuple containing the rounded X, Y, and Z coordinates.
+    content.vb: Public Function RoundUp() As (X As Integer, Y As Integer, Z As Integer)
+  overload: rt004.Util.Vector3D.RoundUp*
+- uid: rt004.Util.Vector3D.RoundDown
+  commentId: M:rt004.Util.Vector3D.RoundDown
+  id: RoundDown
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: RoundDown()
+  nameWithType: Vector3D.RoundDown()
+  fullName: rt004.Util.Vector3D.RoundDown()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundDown
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 123
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Rounds down the X, Y, and Z coordinates of the vector to the nearest integer.
+  example: []
+  syntax:
+    content: public (int X, int Y, int Z) RoundDown()
+    return:
+      type: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+      description: A tuple containing the rounded X, Y, and Z coordinates.
+    content.vb: Public Function RoundDown() As (X As Integer, Y As Integer, Z As Integer)
+  overload: rt004.Util.Vector3D.RoundDown*
+- uid: rt004.Util.Vector3D.RoundDown(rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.RoundDown(rt004.Util.Vector3D)
+  id: RoundDown(rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: RoundDown(Vector3D)
+  nameWithType: Vector3D.RoundDown(Vector3D)
+  fullName: rt004.Util.Vector3D.RoundDown(rt004.Util.Vector3D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundDown
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 140
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a new vector with the X, Y, and Z coordinates rounded down.
+  example: []
+  syntax:
+    content: public static Vector3D RoundDown(Vector3D point)
+    parameters:
+    - id: point
+      type: rt004.Util.Vector3D
+      description: The vector to round down.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance with rounded coordinates.
+    content.vb: Public Shared Function RoundDown(point As Vector3D) As Vector3D
+  overload: rt004.Util.Vector3D.RoundDown*
+- uid: rt004.Util.Vector3D.RoundUp(rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.RoundUp(rt004.Util.Vector3D)
+  id: RoundUp(rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: RoundUp(Vector3D)
+  nameWithType: Vector3D.RoundUp(Vector3D)
+  fullName: rt004.Util.Vector3D.RoundUp(rt004.Util.Vector3D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundUp
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 150
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a new vector with the X, Y, and Z coordinates rounded up.
+  example: []
+  syntax:
+    content: public static Vector3D RoundUp(Vector3D point)
+    parameters:
+    - id: point
+      type: rt004.Util.Vector3D
+      description: The vector to round up.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance with rounded coordinates.
+    content.vb: Public Shared Function RoundUp(point As Vector3D) As Vector3D
+  overload: rt004.Util.Vector3D.RoundUp*
+- uid: rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3d
+  commentId: M:rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3d
+  id: op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3d
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: explicit operator Vector3d(Vector3D)
+  nameWithType: Vector3D.explicit operator Vector3d(Vector3D)
+  fullName: rt004.Util.Vector3D.explicit operator OpenTK.Mathematics.Vector3d(rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Explicit
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 161
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Explicitly converts a <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> to a <xref href="OpenTK.Mathematics.Vector3d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static explicit operator Vector3d(Vector3D dir)
+    parameters:
+    - id: dir
+      type: rt004.Util.Vector3D
+      description: The <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance to convert.
+    return:
+      type: OpenTK.Mathematics.Vector3d
+    content.vb: Public Shared Narrowing Operator CType(dir As Vector3D) As Vector3d
+  overload: rt004.Util.Vector3D.op_Explicit*
+  nameWithType.vb: Vector3D.CType(Vector3D)
+  fullName.vb: rt004.Util.Vector3D.CType(rt004.Util.Vector3D)
+  name.vb: CType(Vector3D)
+- uid: rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3
+  commentId: M:rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3
+  id: op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: explicit operator Vector3(Vector3D)
+  nameWithType: Vector3D.explicit operator Vector3(Vector3D)
+  fullName: rt004.Util.Vector3D.explicit operator OpenTK.Mathematics.Vector3(rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Explicit
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 167
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Explicitly converts a <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> to a <xref href="OpenTK.Mathematics.Vector3" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static explicit operator Vector3(Vector3D dir)
+    parameters:
+    - id: dir
+      type: rt004.Util.Vector3D
+      description: The <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance to convert.
+    return:
+      type: OpenTK.Mathematics.Vector3
+    content.vb: Public Shared Narrowing Operator CType(dir As Vector3D) As Vector3
+  overload: rt004.Util.Vector3D.op_Explicit*
+  nameWithType.vb: Vector3D.CType(Vector3D)
+  fullName.vb: rt004.Util.Vector3D.CType(rt004.Util.Vector3D)
+  name.vb: CType(Vector3D)
+- uid: rt004.Util.Vector3D.op_UnaryNegation(rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.op_UnaryNegation(rt004.Util.Vector3D)
+  id: op_UnaryNegation(rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator -(Vector3D)
+  nameWithType: Vector3D.operator -(Vector3D)
+  fullName: rt004.Util.Vector3D.operator -(rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_UnaryNegation
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 174
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Negates the vector, flipping its direction.
+  example: []
+  syntax:
+    content: public static Vector3D operator -(Vector3D vector)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance to negate.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> pointing in the opposite direction.
+    content.vb: Public Shared Operator -(vector As Vector3D) As Vector3D
+  overload: rt004.Util.Vector3D.op_UnaryNegation*
+  nameWithType.vb: Vector3D.-(Vector3D)
+  fullName.vb: rt004.Util.Vector3D.-(rt004.Util.Vector3D)
+  name.vb: -(Vector3D)
+- uid: rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  id: op_Subtraction(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator -(Vector3D, Vector3D)
+  nameWithType: Vector3D.operator -(Vector3D, Vector3D)
+  fullName: rt004.Util.Vector3D.operator -(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Subtraction
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 182
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Subtracts one <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> from another.
+  example: []
+  syntax:
+    content: public static Vector3D operator -(Vector3D vector1, Vector3D vector2)
+    parameters:
+    - id: vector1
+      type: rt004.Util.Vector3D
+      description: The first vector.
+    - id: vector2
+      type: rt004.Util.Vector3D
+      description: The second vector to subtract from the first.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the difference.
+    content.vb: Public Shared Operator -(vector1 As Vector3D, vector2 As Vector3D) As Vector3D
+  overload: rt004.Util.Vector3D.op_Subtraction*
+  nameWithType.vb: Vector3D.-(Vector3D, Vector3D)
+  fullName.vb: rt004.Util.Vector3D.-(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  name.vb: -(Vector3D, Vector3D)
+- uid: rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Point3D)
+  commentId: M:rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Point3D)
+  id: op_Subtraction(rt004.Util.Vector3D,rt004.Util.Point3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator -(Vector3D, Point3D)
+  nameWithType: Vector3D.operator -(Vector3D, Point3D)
+  fullName: rt004.Util.Vector3D.operator -(rt004.Util.Vector3D, rt004.Util.Point3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Subtraction
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 193
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Subtracts a <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> from a <xref href="rt004.Util.Point3D" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Point3D operator -(Vector3D vector, Point3D point)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The vector to subtract.
+    - id: point
+      type: rt004.Util.Point3D
+      description: The point from which to subtract the vector.
+    return:
+      type: rt004.Util.Point3D
+      description: A new <xref href="rt004.Util.Point3D" data-throw-if-not-resolved="false"></xref> representing the result of the subtraction.
+    content.vb: Public Shared Operator -(vector As Vector3D, point As Point3D) As Point3D
+  overload: rt004.Util.Vector3D.op_Subtraction*
+  nameWithType.vb: Vector3D.-(Vector3D, Point3D)
+  fullName.vb: rt004.Util.Vector3D.-(rt004.Util.Vector3D, rt004.Util.Point3D)
+  name.vb: -(Vector3D, Point3D)
+- uid: rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  id: op_Addition(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator +(Vector3D, Vector3D)
+  nameWithType: Vector3D.operator +(Vector3D, Vector3D)
+  fullName: rt004.Util.Vector3D.operator +(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Addition
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 204
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Adds two <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instances.
+  example: []
+  syntax:
+    content: public static Vector3D operator +(Vector3D vector1, Vector3D vector2)
+    parameters:
+    - id: vector1
+      type: rt004.Util.Vector3D
+      description: The first vector.
+    - id: vector2
+      type: rt004.Util.Vector3D
+      description: The second vector.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the sum of the two vectors.
+    content.vb: Public Shared Operator +(vector1 As Vector3D, vector2 As Vector3D) As Vector3D
+  overload: rt004.Util.Vector3D.op_Addition*
+  nameWithType.vb: Vector3D.+(Vector3D, Vector3D)
+  fullName.vb: rt004.Util.Vector3D.+(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  name.vb: +(Vector3D, Vector3D)
+- uid: rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Point3D)
+  commentId: M:rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Point3D)
+  id: op_Addition(rt004.Util.Vector3D,rt004.Util.Point3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator +(Vector3D, Point3D)
+  nameWithType: Vector3D.operator +(Vector3D, Point3D)
+  fullName: rt004.Util.Vector3D.operator +(rt004.Util.Vector3D, rt004.Util.Point3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Addition
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 215
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Adds a <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> and a <xref href="rt004.Util.Point3D" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Point3D operator +(Vector3D vector, Point3D point)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The vector to add.
+    - id: point
+      type: rt004.Util.Point3D
+      description: The point to add to the vector.
+    return:
+      type: rt004.Util.Point3D
+      description: A new <xref href="rt004.Util.Point3D" data-throw-if-not-resolved="false"></xref> representing the result of the addition.
+    content.vb: Public Shared Operator +(vector As Vector3D, point As Point3D) As Point3D
+  overload: rt004.Util.Vector3D.op_Addition*
+  nameWithType.vb: Vector3D.+(Vector3D, Point3D)
+  fullName.vb: rt004.Util.Vector3D.+(rt004.Util.Vector3D, rt004.Util.Point3D)
+  name.vb: +(Vector3D, Point3D)
+- uid: rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,System.Double)
+  commentId: M:rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,System.Double)
+  id: op_Multiply(rt004.Util.Vector3D,System.Double)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator *(Vector3D, double)
+  nameWithType: Vector3D.operator *(Vector3D, double)
+  fullName: rt004.Util.Vector3D.operator *(rt004.Util.Vector3D, double)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Multiply
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 226
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Multiplies a vector by a scalar.
+  example: []
+  syntax:
+    content: public static Vector3D operator *(Vector3D vector, double scale)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The vector to scale.
+    - id: scale
+      type: System.Double
+      description: The scalar multiplier.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the scaled vector.
+    content.vb: Public Shared Operator *(vector As Vector3D, scale As Double) As Vector3D
+  overload: rt004.Util.Vector3D.op_Multiply*
+  nameWithType.vb: Vector3D.*(Vector3D, Double)
+  fullName.vb: rt004.Util.Vector3D.*(rt004.Util.Vector3D, Double)
+  name.vb: '*(Vector3D, Double)'
+- uid: rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  id: op_Multiply(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator *(Vector3D, Vector3D)
+  nameWithType: Vector3D.operator *(Vector3D, Vector3D)
+  fullName: rt004.Util.Vector3D.operator *(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Multiply
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 237
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Multiplies two vectors component-wise.
+  example: []
+  syntax:
+    content: public static Vector3D operator *(Vector3D vector, Vector3D scale)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The vector to scale.
+    - id: scale
+      type: rt004.Util.Vector3D
+      description: The vector to scale by.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the scaled vector.
+    content.vb: Public Shared Operator *(vector As Vector3D, scale As Vector3D) As Vector3D
+  overload: rt004.Util.Vector3D.op_Multiply*
+  nameWithType.vb: Vector3D.*(Vector3D, Vector3D)
+  fullName.vb: rt004.Util.Vector3D.*(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  name.vb: '*(Vector3D, Vector3D)'
+- uid: rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  commentId: M:rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  id: op_Multiply(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator *(Vector3D, Vector3d)
+  nameWithType: Vector3D.operator *(Vector3D, Vector3d)
+  fullName: rt004.Util.Vector3D.operator *(rt004.Util.Vector3D, OpenTK.Mathematics.Vector3d)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Multiply
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 248
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Multiplies a <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> by a <xref href="OpenTK.Mathematics.Vector3d" data-throw-if-not-resolved="false"></xref> component-wise.
+  example: []
+  syntax:
+    content: public static Vector3D operator *(Vector3D vector, Vector3d scale)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> to multiply.
+    - id: scale
+      type: OpenTK.Mathematics.Vector3d
+      description: The <xref href="OpenTK.Mathematics.Vector3d" data-throw-if-not-resolved="false"></xref> to multiply by.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the result of the component-wise multiplication.
+    content.vb: Public Shared Operator *(vector As Vector3D, scale As Vector3d) As Vector3D
+  overload: rt004.Util.Vector3D.op_Multiply*
+  nameWithType.vb: Vector3D.*(Vector3D, Vector3d)
+  fullName.vb: rt004.Util.Vector3D.*(rt004.Util.Vector3D, OpenTK.Mathematics.Vector3d)
+  name.vb: '*(Vector3D, Vector3d)'
+- uid: rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  commentId: M:rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  id: op_Division(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator /(Vector3D, Vector3d)
+  nameWithType: Vector3D.operator /(Vector3D, Vector3d)
+  fullName: rt004.Util.Vector3D.operator /(rt004.Util.Vector3D, OpenTK.Mathematics.Vector3d)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Division
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 259
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Divides a vector by another vector component-wise.
+  example: []
+  syntax:
+    content: public static Vector3D operator /(Vector3D vector, Vector3d scale)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The vector to divide.
+    - id: scale
+      type: OpenTK.Mathematics.Vector3d
+      description: The vector to divide by.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the divided vector.
+    content.vb: Public Shared Operator /(vector As Vector3D, scale As Vector3d) As Vector3D
+  overload: rt004.Util.Vector3D.op_Division*
+  nameWithType.vb: Vector3D./(Vector3D, Vector3d)
+  fullName.vb: rt004.Util.Vector3D./(rt004.Util.Vector3D, OpenTK.Mathematics.Vector3d)
+  name.vb: /(Vector3D, Vector3d)
+- uid: rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,System.Double)
+  commentId: M:rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,System.Double)
+  id: op_Division(rt004.Util.Vector3D,System.Double)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator /(Vector3D, double)
+  nameWithType: Vector3D.operator /(Vector3D, double)
+  fullName: rt004.Util.Vector3D.operator /(rt004.Util.Vector3D, double)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Division
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 271
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Divides a vector by a scalar.
+  example: []
+  syntax:
+    content: public static Vector3D operator /(Vector3D dir, double scale)
+    parameters:
+    - id: dir
+      type: rt004.Util.Vector3D
+      description: The vector to divide.
+    - id: scale
+      type: System.Double
+      description: The scalar to divide by.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the scaled vector.
+    content.vb: Public Shared Operator /(dir As Vector3D, scale As Double) As Vector3D
+  overload: rt004.Util.Vector3D.op_Division*
+  nameWithType.vb: Vector3D./(Vector3D, Double)
+  fullName.vb: rt004.Util.Vector3D./(rt004.Util.Vector3D, Double)
+  name.vb: /(Vector3D, Double)
+- uid: rt004.Util.Vector3D.Cross(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.Cross(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  id: Cross(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Cross(Vector3D, Vector3D)
+  nameWithType: Vector3D.Cross(Vector3D, Vector3D)
+  fullName: rt004.Util.Vector3D.Cross(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Cross
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 284
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Computes the cross product of two vectors.
+  example: []
+  syntax:
+    content: public static Vector3D Cross(Vector3D vector1, Vector3D vector2)
+    parameters:
+    - id: vector1
+      type: rt004.Util.Vector3D
+      description: The first vector.
+    - id: vector2
+      type: rt004.Util.Vector3D
+      description: The second vector.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> representing the cross product.
+    content.vb: Public Shared Function Cross(vector1 As Vector3D, vector2 As Vector3D) As Vector3D
+  overload: rt004.Util.Vector3D.Cross*
+- uid: rt004.Util.Vector3D.Dot(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.Dot(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  id: Dot(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Dot(Vector3D, Vector3D)
+  nameWithType: Vector3D.Dot(Vector3D, Vector3D)
+  fullName: rt004.Util.Vector3D.Dot(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Dot
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 295
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Calculates the dot product of two vectors.
+  example: []
+  syntax:
+    content: public static double Dot(Vector3D vector1, Vector3D vector2)
+    parameters:
+    - id: vector1
+      type: rt004.Util.Vector3D
+      description: The first vector.
+    - id: vector2
+      type: rt004.Util.Vector3D
+      description: The second vector.
+    return:
+      type: System.Double
+      description: The dot product result as a double.
+    content.vb: Public Shared Function Dot(vector1 As Vector3D, vector2 As Vector3D) As Double
+  overload: rt004.Util.Vector3D.Dot*
+- uid: rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Quaternion)
+  commentId: M:rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Quaternion)
+  id: Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Quaternion)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Transform(Vector3D, Quaternion)
+  nameWithType: Vector3D.Transform(Vector3D, Quaternion)
+  fullName: rt004.Util.Vector3D.Transform(rt004.Util.Vector3D, OpenTK.Mathematics.Quaternion)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Transform
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 306
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Transforms a vector by applying the specified quaternion rotation.
+  example: []
+  syntax:
+    content: public static Vector3D Transform(Vector3D vector, Quaternion rotation)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The vector to rotate.
+    - id: rotation
+      type: OpenTK.Mathematics.Quaternion
+      description: The rotation quaternion.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> resulting from the rotation.
+    content.vb: Public Shared Function Transform(vector As Vector3D, rotation As Quaternion) As Vector3D
+  overload: rt004.Util.Vector3D.Transform*
+- uid: rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Matrix4d)
+  commentId: M:rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Matrix4d)
+  id: Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Matrix4d)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Transform(Vector3D, Matrix4d)
+  nameWithType: Vector3D.Transform(Vector3D, Matrix4d)
+  fullName: rt004.Util.Vector3D.Transform(rt004.Util.Vector3D, OpenTK.Mathematics.Matrix4d)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Transform
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 317
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Transforms a direction vector by the given matrix, ignoring any translation.
+  example: []
+  syntax:
+    content: public static Vector3D Transform(Vector3D vector, Matrix4d transform)
+    parameters:
+    - id: vector
+      type: rt004.Util.Vector3D
+      description: The vector to transform.
+    - id: transform
+      type: OpenTK.Mathematics.Matrix4d
+      description: The transformation matrix.
+    return:
+      type: rt004.Util.Vector3D
+      description: A new <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> resulting from the transformation.
+    content.vb: Public Shared Function Transform(vector As Vector3D, transform As Matrix4d) As Vector3D
+  overload: rt004.Util.Vector3D.Transform*
+- uid: rt004.Util.Vector3D.GetHashCode
+  commentId: M:rt004.Util.Vector3D.GetHashCode
+  id: GetHashCode
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Vector3D.GetHashCode()
+  fullName: rt004.Util.Vector3D.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetHashCode
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 326
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: An integer representing the hash code.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: rt004.Util.Vector3D.GetHashCode*
+- uid: rt004.Util.Vector3D.ToString
+  commentId: M:rt004.Util.Vector3D.ToString
+  id: ToString
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Vector3D.ToString()
+  fullName: rt004.Util.Vector3D.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: ToString
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 335
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a string that represents the current vector.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string in the format "[X, Y, Z]".
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: rt004.Util.Vector3D.ToString*
+- uid: rt004.Util.Vector3D.Equals(rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.Equals(rt004.Util.Vector3D)
+  id: Equals(rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Equals(Vector3D)
+  nameWithType: Vector3D.Equals(Vector3D)
+  fullName: rt004.Util.Vector3D.Equals(rt004.Util.Vector3D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Equals
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 349
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Determines whether this <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> is equal to another <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public bool Equals(Vector3D other)
+    parameters:
+    - id: other
+      type: rt004.Util.Vector3D
+      description: The <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: >-
+        <code>true</code> if the specified <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> is equal to the current instance;
+
+        otherwise, <code>false</code>.
+    content.vb: Public Function Equals(other As Vector3D) As Boolean
+  overload: rt004.Util.Vector3D.Equals*
+- uid: rt004.Util.Vector3D.op_Equality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.op_Equality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  id: op_Equality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator ==(Vector3D, Vector3D)
+  nameWithType: Vector3D.operator ==(Vector3D, Vector3D)
+  fullName: rt004.Util.Vector3D.operator ==(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Equality
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 360
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Determines whether two <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instances are equal by comparing their components.
+  example: []
+  syntax:
+    content: public static bool operator ==(Vector3D left, Vector3D right)
+    parameters:
+    - id: left
+      type: rt004.Util.Vector3D
+      description: The first <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: right
+      type: rt004.Util.Vector3D
+      description: The second <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the components of both vectors are equal; otherwise, <code>false</code>.
+    content.vb: Public Shared Operator =(left As Vector3D, right As Vector3D) As Boolean
+  overload: rt004.Util.Vector3D.op_Equality*
+  nameWithType.vb: Vector3D.=(Vector3D, Vector3D)
+  fullName.vb: rt004.Util.Vector3D.=(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  name.vb: =(Vector3D, Vector3D)
+- uid: rt004.Util.Vector3D.op_Inequality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Vector3D.op_Inequality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  id: op_Inequality(rt004.Util.Vector3D,rt004.Util.Vector3D)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: operator !=(Vector3D, Vector3D)
+  nameWithType: Vector3D.operator !=(Vector3D, Vector3D)
+  fullName: rt004.Util.Vector3D.operator !=(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Inequality
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 371
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Determines whether two <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instances are not equal by comparing their components.
+  example: []
+  syntax:
+    content: public static bool operator !=(Vector3D left, Vector3D right)
+    parameters:
+    - id: left
+      type: rt004.Util.Vector3D
+      description: The first <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: right
+      type: rt004.Util.Vector3D
+      description: The second <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the components of both vectors are not equal; otherwise, <code>false</code>.
+    content.vb: Public Shared Operator <>(left As Vector3D, right As Vector3D) As Boolean
+  overload: rt004.Util.Vector3D.op_Inequality*
+  nameWithType.vb: Vector3D.<>(Vector3D, Vector3D)
+  fullName.vb: rt004.Util.Vector3D.<>(rt004.Util.Vector3D, rt004.Util.Vector3D)
+  name.vb: <>(Vector3D, Vector3D)
+- uid: rt004.Util.Vector3D.Equals(System.Object)
+  commentId: M:rt004.Util.Vector3D.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: Vector3D.Equals(object?)
+  fullName: rt004.Util.Vector3D.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Vector3D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Equals
+    path: Util/BasicGeometry/Vector3D.cs
+    startLine: 384
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Determines whether this instance of <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> is equal to a specified object.
+  example: []
+  syntax:
+    content: public override bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Boolean
+      description: >-
+        <code>true</code> if <code class="paramref">obj</code> is a <xref href="rt004.Util.Vector3D" data-throw-if-not-resolved="false"></xref> and has the same X, Y, and Z values
+
+        as the current instance; otherwise, <code>false</code>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: rt004.Util.Vector3D.Equals*
+  nameWithType.vb: Vector3D.Equals(Object)
+  fullName.vb: rt004.Util.Vector3D.Equals(Object)
+  name.vb: Equals(Object)
+references:
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: rt004.Util.Vector3D.Length*
+  commentId: Overload:rt004.Util.Vector3D.Length
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Length
+  name: Length
+  nameWithType: Vector3D.Length
+  fullName: rt004.Util.Vector3D.Length
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: rt004.Util.Vector3D.LengthSquared*
+  commentId: Overload:rt004.Util.Vector3D.LengthSquared
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_LengthSquared
+  name: LengthSquared
+  nameWithType: Vector3D.LengthSquared
+  fullName: rt004.Util.Vector3D.LengthSquared
+- uid: OpenTK.Mathematics.Vector3d
+  commentId: T:OpenTK.Mathematics.Vector3d
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector3d
+  nameWithType: Vector3d
+  fullName: OpenTK.Mathematics.Vector3d
+- uid: rt004.Util.Vector3D.AsVector*
+  commentId: Overload:rt004.Util.Vector3D.AsVector
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_AsVector
+  name: AsVector
+  nameWithType: Vector3D.AsVector
+  fullName: rt004.Util.Vector3D.AsVector
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.Util.Vector3D.X*
+  commentId: Overload:rt004.Util.Vector3D.X
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_X
+  name: X
+  nameWithType: Vector3D.X
+  fullName: rt004.Util.Vector3D.X
+- uid: rt004.Util.Vector3D.Y*
+  commentId: Overload:rt004.Util.Vector3D.Y
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Y
+  name: Y
+  nameWithType: Vector3D.Y
+  fullName: rt004.Util.Vector3D.Y
+- uid: rt004.Util.Vector3D.Z*
+  commentId: Overload:rt004.Util.Vector3D.Z
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Z
+  name: Z
+  nameWithType: Vector3D.Z
+  fullName: rt004.Util.Vector3D.Z
+- uid: rt004.Util.Vector3D.Zero*
+  commentId: Overload:rt004.Util.Vector3D.Zero
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Zero
+  name: Zero
+  nameWithType: Vector3D.Zero
+  fullName: rt004.Util.Vector3D.Zero
+- uid: rt004.Util.Vector3D
+  commentId: T:rt004.Util.Vector3D
+  parent: rt004.Util
+  href: rt004.Util.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: rt004.Util.Vector3D
+- uid: rt004.Util.Vector3D.OneX*
+  commentId: Overload:rt004.Util.Vector3D.OneX
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_OneX
+  name: OneX
+  nameWithType: Vector3D.OneX
+  fullName: rt004.Util.Vector3D.OneX
+- uid: rt004.Util.Vector3D.OneY*
+  commentId: Overload:rt004.Util.Vector3D.OneY
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_OneY
+  name: OneY
+  nameWithType: Vector3D.OneY
+  fullName: rt004.Util.Vector3D.OneY
+- uid: rt004.Util.Vector3D.OneZ*
+  commentId: Overload:rt004.Util.Vector3D.OneZ
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_OneZ
+  name: OneZ
+  nameWithType: Vector3D.OneZ
+  fullName: rt004.Util.Vector3D.OneZ
+- uid: rt004.Util.Vector3D.#ctor*
+  commentId: Overload:rt004.Util.Vector3D.#ctor
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D__ctor_OpenTK_Mathematics_Vector3d_
+  name: Vector3D
+  nameWithType: Vector3D.Vector3D
+  fullName: rt004.Util.Vector3D.Vector3D
+  nameWithType.vb: Vector3D.New
+  fullName.vb: rt004.Util.Vector3D.New
+  name.vb: New
+- uid: rt004.Util.Vector3D.Normalized*
+  commentId: Overload:rt004.Util.Vector3D.Normalized
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Normalized
+  name: Normalized
+  nameWithType: Vector3D.Normalized
+  fullName: rt004.Util.Vector3D.Normalized
+- uid: rt004.Util.Vector3D.Normalize*
+  commentId: Overload:rt004.Util.Vector3D.Normalize
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Normalize
+  name: Normalize
+  nameWithType: Vector3D.Normalize
+  fullName: rt004.Util.Vector3D.Normalize
+- uid: rt004.Util.Vector3D.RoundUp*
+  commentId: Overload:rt004.Util.Vector3D.RoundUp
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_RoundUp
+  name: RoundUp
+  nameWithType: Vector3D.RoundUp
+  fullName: rt004.Util.Vector3D.RoundUp
+- uid: System.ValueTuple{System.Int32,System.Int32,System.Int32}
+  commentId: T:System.ValueTuple{System.Int32,System.Int32,System.Int32}
+  parent: System
+  definition: System.ValueTuple`3
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: (int, int, int)
+  nameWithType: (int, int, int)
+  fullName: (int, int, int)
+  nameWithType.vb: (Integer, Integer, Integer)
+  fullName.vb: (Integer, Integer, Integer)
+  name.vb: (Integer, Integer, Integer)
+  spec.csharp:
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.ValueTuple`3
+  commentId: T:System.ValueTuple`3
+  name: (T1, T2, T3)
+  nameWithType: (T1, T2, T3)
+  fullName: (T1, T2, T3)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: rt004.Util.Vector3D.RoundDown*
+  commentId: Overload:rt004.Util.Vector3D.RoundDown
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_RoundDown
+  name: RoundDown
+  nameWithType: Vector3D.RoundDown
+  fullName: rt004.Util.Vector3D.RoundDown
+- uid: rt004.Util.Vector3D.op_Explicit*
+  commentId: Overload:rt004.Util.Vector3D.op_Explicit
+  name: explicit operator
+  nameWithType: Vector3D.explicit operator
+  fullName: rt004.Util.Vector3D.explicit operator
+  nameWithType.vb: Vector3D.CType
+  fullName.vb: rt004.Util.Vector3D.CType
+  name.vb: CType
+  spec.csharp:
+  - name: explicit
+  - name: " "
+  - name: operator
+- uid: OpenTK.Mathematics.Vector3
+  commentId: T:OpenTK.Mathematics.Vector3
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: OpenTK.Mathematics.Vector3
+- uid: rt004.Util.Vector3D.op_UnaryNegation*
+  commentId: Overload:rt004.Util.Vector3D.op_UnaryNegation
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_UnaryNegation_rt004_Util_Vector3D_
+  name: operator -
+  nameWithType: Vector3D.operator -
+  fullName: rt004.Util.Vector3D.operator -
+  nameWithType.vb: Vector3D.-
+  fullName.vb: rt004.Util.Vector3D.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Vector3D.op_UnaryNegation*
+    name: '-'
+    href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_UnaryNegation_rt004_Util_Vector3D_
+- uid: rt004.Util.Vector3D.op_Subtraction*
+  commentId: Overload:rt004.Util.Vector3D.op_Subtraction
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Subtraction_rt004_Util_Vector3D_rt004_Util_Vector3D_
+  name: operator -
+  nameWithType: Vector3D.operator -
+  fullName: rt004.Util.Vector3D.operator -
+  nameWithType.vb: Vector3D.-
+  fullName.vb: rt004.Util.Vector3D.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Vector3D.op_Subtraction*
+    name: '-'
+    href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Subtraction_rt004_Util_Vector3D_rt004_Util_Vector3D_
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: rt004.Util.Vector3D.op_Addition*
+  commentId: Overload:rt004.Util.Vector3D.op_Addition
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Addition_rt004_Util_Vector3D_rt004_Util_Vector3D_
+  name: operator +
+  nameWithType: Vector3D.operator +
+  fullName: rt004.Util.Vector3D.operator +
+  nameWithType.vb: Vector3D.+
+  fullName.vb: rt004.Util.Vector3D.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Vector3D.op_Addition*
+    name: +
+    href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Addition_rt004_Util_Vector3D_rt004_Util_Vector3D_
+- uid: rt004.Util.Vector3D.op_Multiply*
+  commentId: Overload:rt004.Util.Vector3D.op_Multiply
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Multiply_rt004_Util_Vector3D_System_Double_
+  name: operator *
+  nameWithType: Vector3D.operator *
+  fullName: rt004.Util.Vector3D.operator *
+  nameWithType.vb: Vector3D.*
+  fullName.vb: rt004.Util.Vector3D.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Vector3D.op_Multiply*
+    name: '*'
+    href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Multiply_rt004_Util_Vector3D_System_Double_
+- uid: rt004.Util.Vector3D.op_Division*
+  commentId: Overload:rt004.Util.Vector3D.op_Division
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Division_rt004_Util_Vector3D_OpenTK_Mathematics_Vector3d_
+  name: operator /
+  nameWithType: Vector3D.operator /
+  fullName: rt004.Util.Vector3D.operator /
+  nameWithType.vb: Vector3D./
+  fullName.vb: rt004.Util.Vector3D./
+  name.vb: /
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Vector3D.op_Division*
+    name: /
+    href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Division_rt004_Util_Vector3D_OpenTK_Mathematics_Vector3d_
+- uid: rt004.Util.Vector3D.Cross*
+  commentId: Overload:rt004.Util.Vector3D.Cross
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Cross_rt004_Util_Vector3D_rt004_Util_Vector3D_
+  name: Cross
+  nameWithType: Vector3D.Cross
+  fullName: rt004.Util.Vector3D.Cross
+- uid: rt004.Util.Vector3D.Dot*
+  commentId: Overload:rt004.Util.Vector3D.Dot
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Dot_rt004_Util_Vector3D_rt004_Util_Vector3D_
+  name: Dot
+  nameWithType: Vector3D.Dot
+  fullName: rt004.Util.Vector3D.Dot
+- uid: rt004.Util.Vector3D.Transform*
+  commentId: Overload:rt004.Util.Vector3D.Transform
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Transform_rt004_Util_Vector3D_OpenTK_Mathematics_Quaternion_
+  name: Transform
+  nameWithType: Vector3D.Transform
+  fullName: rt004.Util.Vector3D.Transform
+- uid: OpenTK.Mathematics.Quaternion
+  commentId: T:OpenTK.Mathematics.Quaternion
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: OpenTK.Mathematics.Quaternion
+- uid: OpenTK.Mathematics.Matrix4d
+  commentId: T:OpenTK.Mathematics.Matrix4d
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Matrix4d
+  nameWithType: Matrix4d
+  fullName: OpenTK.Mathematics.Matrix4d
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: rt004.Util.Vector3D.GetHashCode*
+  commentId: Overload:rt004.Util.Vector3D.GetHashCode
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_GetHashCode
+  name: GetHashCode
+  nameWithType: Vector3D.GetHashCode
+  fullName: rt004.Util.Vector3D.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: rt004.Util.Vector3D.ToString*
+  commentId: Overload:rt004.Util.Vector3D.ToString
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_ToString
+  name: ToString
+  nameWithType: Vector3D.ToString
+  fullName: rt004.Util.Vector3D.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: rt004.Util.Vector3D.Equals*
+  commentId: Overload:rt004.Util.Vector3D.Equals
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_Equals_rt004_Util_Vector3D_
+  name: Equals
+  nameWithType: Vector3D.Equals
+  fullName: rt004.Util.Vector3D.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: rt004.Util.Vector3D.op_Equality*
+  commentId: Overload:rt004.Util.Vector3D.op_Equality
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Equality_rt004_Util_Vector3D_rt004_Util_Vector3D_
+  name: operator ==
+  nameWithType: Vector3D.operator ==
+  fullName: rt004.Util.Vector3D.operator ==
+  nameWithType.vb: Vector3D.=
+  fullName.vb: rt004.Util.Vector3D.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Vector3D.op_Equality*
+    name: ==
+    href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Equality_rt004_Util_Vector3D_rt004_Util_Vector3D_
+- uid: rt004.Util.Vector3D.op_Inequality*
+  commentId: Overload:rt004.Util.Vector3D.op_Inequality
+  href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Inequality_rt004_Util_Vector3D_rt004_Util_Vector3D_
+  name: operator !=
+  nameWithType: Vector3D.operator !=
+  fullName: rt004.Util.Vector3D.operator !=
+  nameWithType.vb: Vector3D.<>
+  fullName.vb: rt004.Util.Vector3D.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Vector3D.op_Inequality*
+    name: '!='
+    href: rt004.Util.Vector3D.html#rt004_Util_Vector3D_op_Inequality_rt004_Util_Vector3D_rt004_Util_Vector3D_
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )

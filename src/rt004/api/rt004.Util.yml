@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  id: rt004.Util
+  children:
+  - rt004.Util.ArgumentParser
+  - rt004.Util.ArgumentParser.DataLoader
+  - rt004.Util.BasicPlane
+  - rt004.Util.LightModel
+  - rt004.Util.LightModelExtensions
+  - rt004.Util.Point2D
+  - rt004.Util.Point3D
+  - rt004.Util.Ray
+  - rt004.Util.Vector2D
+  - rt004.Util.Vector3D
+  langs:
+  - csharp
+  - vb
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.Util.ArgumentParser
+  commentId: T:rt004.Util.ArgumentParser
+  href: rt004.Util.ArgumentParser.html
+  name: ArgumentParser
+  nameWithType: ArgumentParser
+  fullName: rt004.Util.ArgumentParser
+- uid: rt004.Util.ArgumentParser.DataLoader
+  commentId: T:rt004.Util.ArgumentParser.DataLoader
+  href: rt004.Util.ArgumentParser.html
+  name: ArgumentParser.DataLoader
+  nameWithType: ArgumentParser.DataLoader
+  fullName: rt004.Util.ArgumentParser.DataLoader
+  spec.csharp:
+  - uid: rt004.Util.ArgumentParser
+    name: ArgumentParser
+    href: rt004.Util.ArgumentParser.html
+  - name: .
+  - uid: rt004.Util.ArgumentParser.DataLoader
+    name: DataLoader
+    href: rt004.Util.ArgumentParser.DataLoader.html
+  spec.vb:
+  - uid: rt004.Util.ArgumentParser
+    name: ArgumentParser
+    href: rt004.Util.ArgumentParser.html
+  - name: .
+  - uid: rt004.Util.ArgumentParser.DataLoader
+    name: DataLoader
+    href: rt004.Util.ArgumentParser.DataLoader.html
+- uid: rt004.Util.BasicPlane
+  commentId: T:rt004.Util.BasicPlane
+  href: rt004.Util.BasicPlane.html
+  name: BasicPlane
+  nameWithType: BasicPlane
+  fullName: rt004.Util.BasicPlane
+- uid: rt004.Util.Point2D
+  commentId: T:rt004.Util.Point2D
+  parent: rt004.Util
+  href: rt004.Util.Point2D.html
+  name: Point2D
+  nameWithType: Point2D
+  fullName: rt004.Util.Point2D
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: rt004.Util.Ray
+  commentId: T:rt004.Util.Ray
+  parent: rt004.Util
+  href: rt004.Util.Ray.html
+  name: Ray
+  nameWithType: Ray
+  fullName: rt004.Util.Ray
+- uid: rt004.Util.Vector2D
+  commentId: T:rt004.Util.Vector2D
+  parent: rt004.Util
+  href: rt004.Util.Vector2D.html
+  name: Vector2D
+  nameWithType: Vector2D
+  fullName: rt004.Util.Vector2D
+- uid: rt004.Util.Vector3D
+  commentId: T:rt004.Util.Vector3D
+  parent: rt004.Util
+  href: rt004.Util.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: rt004.Util.Vector3D
+- uid: rt004.Util.LightModel
+  commentId: T:rt004.Util.LightModel
+  parent: rt004.Util
+  href: rt004.Util.LightModel.html
+  name: LightModel
+  nameWithType: LightModel
+  fullName: rt004.Util.LightModel
+- uid: rt004.Util.LightModelExtensions
+  commentId: T:rt004.Util.LightModelExtensions
+  parent: rt004.Util
+  href: rt004.Util.LightModelExtensions.html
+  name: LightModelExtensions
+  nameWithType: LightModelExtensions
+  fullName: rt004.Util.LightModelExtensions
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html

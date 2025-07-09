@@ -1,0 +1,763 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.MaterialLoading.PhongMaterialLoader
+  commentId: T:rt004.MaterialLoading.PhongMaterialLoader
+  id: PhongMaterialLoader
+  parent: rt004.MaterialLoading
+  children:
+  - rt004.MaterialLoading.PhongMaterialLoader.#ctor
+  - rt004.MaterialLoading.PhongMaterialLoader.#ctor(OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single,System.Single,System.Single)
+  - rt004.MaterialLoading.PhongMaterialLoader.CreateInstance
+  - rt004.MaterialLoading.PhongMaterialLoader.baseColor
+  - rt004.MaterialLoading.PhongMaterialLoader.diffuseTexture
+  - rt004.MaterialLoading.PhongMaterialLoader.indexOfRefractionTexture
+  - rt004.MaterialLoading.PhongMaterialLoader.shininessTexture
+  - rt004.MaterialLoading.PhongMaterialLoader.specularTexture
+  - rt004.MaterialLoading.PhongMaterialLoader.transparencyTexture
+  langs:
+  - csharp
+  - vb
+  name: PhongMaterialLoader
+  nameWithType: PhongMaterialLoader
+  fullName: rt004.MaterialLoading.PhongMaterialLoader
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: PhongMaterialLoader
+    path: Materials/PhongMaterial.cs
+    startLine: 199
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: A loader class for creating instances of <xref href="rt004.Materials.PhongMaterial" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public class PhongMaterialLoader : MaterialLoader'
+    content.vb: Public Class PhongMaterialLoader Inherits MaterialLoader
+  inheritance:
+  - System.Object
+  - rt004.Materials.Loading.MaterialLoader
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.MaterialLoading.PhongMaterialLoader.baseColor
+  commentId: F:rt004.MaterialLoading.PhongMaterialLoader.baseColor
+  id: baseColor
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: baseColor
+  nameWithType: PhongMaterialLoader.baseColor
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.baseColor
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: baseColor
+    path: Materials/PhongMaterial.cs
+    startLine: 204
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: The loader for the base color texture.
+  example: []
+  syntax:
+    content: public TextureLoader baseColor
+    return:
+      type: rt004.Materials.Loading.TextureLoader
+    content.vb: Public baseColor As TextureLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader.specularTexture
+  commentId: F:rt004.MaterialLoading.PhongMaterialLoader.specularTexture
+  id: specularTexture
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: specularTexture
+  nameWithType: PhongMaterialLoader.specularTexture
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.specularTexture
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: specularTexture
+    path: Materials/PhongMaterial.cs
+    startLine: 209
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: The loader for the specular texture.
+  example: []
+  syntax:
+    content: public MonochromeTextureLoader specularTexture
+    return:
+      type: rt004.Materials.Loading.MonochromeTextureLoader
+    content.vb: Public specularTexture As MonochromeTextureLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader.shininessTexture
+  commentId: F:rt004.MaterialLoading.PhongMaterialLoader.shininessTexture
+  id: shininessTexture
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: shininessTexture
+  nameWithType: PhongMaterialLoader.shininessTexture
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.shininessTexture
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: shininessTexture
+    path: Materials/PhongMaterial.cs
+    startLine: 214
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: The loader for the shininess texture.
+  example: []
+  syntax:
+    content: public MonochromeTextureLoader shininessTexture
+    return:
+      type: rt004.Materials.Loading.MonochromeTextureLoader
+    content.vb: Public shininessTexture As MonochromeTextureLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader.diffuseTexture
+  commentId: F:rt004.MaterialLoading.PhongMaterialLoader.diffuseTexture
+  id: diffuseTexture
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: diffuseTexture
+  nameWithType: PhongMaterialLoader.diffuseTexture
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.diffuseTexture
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: diffuseTexture
+    path: Materials/PhongMaterial.cs
+    startLine: 219
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: The loader for the diffuse texture.
+  example: []
+  syntax:
+    content: public MonochromeTextureLoader diffuseTexture
+    return:
+      type: rt004.Materials.Loading.MonochromeTextureLoader
+    content.vb: Public diffuseTexture As MonochromeTextureLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader.transparencyTexture
+  commentId: F:rt004.MaterialLoading.PhongMaterialLoader.transparencyTexture
+  id: transparencyTexture
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: transparencyTexture
+  nameWithType: PhongMaterialLoader.transparencyTexture
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.transparencyTexture
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: transparencyTexture
+    path: Materials/PhongMaterial.cs
+    startLine: 224
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: The loader for the transparency texture.
+  example: []
+  syntax:
+    content: public MonochromeTextureLoader transparencyTexture
+    return:
+      type: rt004.Materials.Loading.MonochromeTextureLoader
+    content.vb: Public transparencyTexture As MonochromeTextureLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader.indexOfRefractionTexture
+  commentId: F:rt004.MaterialLoading.PhongMaterialLoader.indexOfRefractionTexture
+  id: indexOfRefractionTexture
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: indexOfRefractionTexture
+  nameWithType: PhongMaterialLoader.indexOfRefractionTexture
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.indexOfRefractionTexture
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: indexOfRefractionTexture
+    path: Materials/PhongMaterial.cs
+    startLine: 229
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: The loader for the index of refraction texture.
+  example: []
+  syntax:
+    content: public MonochromeTextureLoader indexOfRefractionTexture
+    return:
+      type: rt004.Materials.Loading.MonochromeTextureLoader
+    content.vb: Public indexOfRefractionTexture As MonochromeTextureLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader.#ctor
+  commentId: M:rt004.MaterialLoading.PhongMaterialLoader.#ctor
+  id: '#ctor'
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: PhongMaterialLoader()
+  nameWithType: PhongMaterialLoader.PhongMaterialLoader()
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.PhongMaterialLoader()
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Materials/PhongMaterial.cs
+    startLine: 234
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: Initializes a new instance of the <xref href="rt004.MaterialLoading.PhongMaterialLoader" data-throw-if-not-resolved="false"></xref> class with default textures.
+  example: []
+  syntax:
+    content: public PhongMaterialLoader()
+    content.vb: Public Sub New()
+  overload: rt004.MaterialLoading.PhongMaterialLoader.#ctor*
+  nameWithType.vb: PhongMaterialLoader.New()
+  fullName.vb: rt004.MaterialLoading.PhongMaterialLoader.New()
+  name.vb: New()
+- uid: rt004.MaterialLoading.PhongMaterialLoader.#ctor(OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single,System.Single,System.Single)
+  commentId: M:rt004.MaterialLoading.PhongMaterialLoader.#ctor(OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single,System.Single,System.Single)
+  id: '#ctor(OpenTK.Mathematics.Color4,System.Single,System.Single,System.Single,System.Single,System.Single)'
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: PhongMaterialLoader(Color4, float, float, float, float, float)
+  nameWithType: PhongMaterialLoader.PhongMaterialLoader(Color4, float, float, float, float, float)
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.PhongMaterialLoader(OpenTK.Mathematics.Color4, float, float, float, float, float)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Materials/PhongMaterial.cs
+    startLine: 245
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: Initializes a new instance of the <xref href="rt004.MaterialLoading.PhongMaterialLoader" data-throw-if-not-resolved="false"></xref> class with specified parameters.
+  example: []
+  syntax:
+    content: public PhongMaterialLoader(Color4 baseColor, float specular, float diffuse, float shininess, float transparency, float indexOfRefraction)
+    parameters:
+    - id: baseColor
+      type: OpenTK.Mathematics.Color4
+      description: The base color texture.
+    - id: specular
+      type: System.Single
+      description: The specular intensity.
+    - id: diffuse
+      type: System.Single
+      description: The diffuse intensity.
+    - id: shininess
+      type: System.Single
+      description: The shininess factor.
+    - id: transparency
+      type: System.Single
+      description: The transparency factor.
+    - id: indexOfRefraction
+      type: System.Single
+      description: The index of refraction.
+    content.vb: Public Sub New(baseColor As Color4, specular As Single, diffuse As Single, shininess As Single, transparency As Single, indexOfRefraction As Single)
+  overload: rt004.MaterialLoading.PhongMaterialLoader.#ctor*
+  nameWithType.vb: PhongMaterialLoader.New(Color4, Single, Single, Single, Single, Single)
+  fullName.vb: rt004.MaterialLoading.PhongMaterialLoader.New(OpenTK.Mathematics.Color4, Single, Single, Single, Single, Single)
+  name.vb: New(Color4, Single, Single, Single, Single, Single)
+- uid: rt004.MaterialLoading.PhongMaterialLoader.CreateInstance
+  commentId: M:rt004.MaterialLoading.PhongMaterialLoader.CreateInstance
+  id: CreateInstance
+  parent: rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: CreateInstance()
+  nameWithType: PhongMaterialLoader.CreateInstance()
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.CreateInstance()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/PhongMaterial.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: CreateInstance
+    path: Materials/PhongMaterial.cs
+    startLine: 266
+  assemblies:
+  - rt004
+  namespace: rt004.MaterialLoading
+  summary: Creates an instance of <xref href="rt004.Materials.PhongMaterial" data-throw-if-not-resolved="false"></xref> using the loaded textures and parameters.
+  example: []
+  syntax:
+    content: public override Material CreateInstance()
+    return:
+      type: rt004.Materials.Material
+      description: A new instance of <xref href="rt004.Materials.PhongMaterial" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Overrides Function CreateInstance() As Material
+  overridden: rt004.Materials.Loading.MaterialLoader.CreateInstance
+  overload: rt004.MaterialLoading.PhongMaterialLoader.CreateInstance*
+references:
+- uid: rt004.Materials.PhongMaterial
+  commentId: T:rt004.Materials.PhongMaterial
+  href: rt004.Materials.PhongMaterial.html
+  name: PhongMaterial
+  nameWithType: PhongMaterial
+  fullName: rt004.Materials.PhongMaterial
+- uid: rt004.MaterialLoading
+  commentId: N:rt004.MaterialLoading
+  href: rt004.html
+  name: rt004.MaterialLoading
+  nameWithType: rt004.MaterialLoading
+  fullName: rt004.MaterialLoading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.MaterialLoading
+    name: MaterialLoading
+    href: rt004.MaterialLoading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.MaterialLoading
+    name: MaterialLoading
+    href: rt004.MaterialLoading.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.Materials.Loading.MaterialLoader
+  commentId: T:rt004.Materials.Loading.MaterialLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.MaterialLoader.html
+  name: MaterialLoader
+  nameWithType: MaterialLoader
+  fullName: rt004.Materials.Loading.MaterialLoader
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: rt004.Materials.Loading
+  commentId: N:rt004.Materials.Loading
+  href: rt004.html
+  name: rt004.Materials.Loading
+  nameWithType: rt004.Materials.Loading
+  fullName: rt004.Materials.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+- uid: rt004.Materials.Loading.TextureLoader
+  commentId: T:rt004.Materials.Loading.TextureLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.TextureLoader.html
+  name: TextureLoader
+  nameWithType: TextureLoader
+  fullName: rt004.Materials.Loading.TextureLoader
+- uid: rt004.Materials.Loading.MonochromeTextureLoader
+  commentId: T:rt004.Materials.Loading.MonochromeTextureLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.MonochromeTextureLoader.html
+  name: MonochromeTextureLoader
+  nameWithType: MonochromeTextureLoader
+  fullName: rt004.Materials.Loading.MonochromeTextureLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader
+  commentId: T:rt004.MaterialLoading.PhongMaterialLoader
+  href: rt004.MaterialLoading.PhongMaterialLoader.html
+  name: PhongMaterialLoader
+  nameWithType: PhongMaterialLoader
+  fullName: rt004.MaterialLoading.PhongMaterialLoader
+- uid: rt004.MaterialLoading.PhongMaterialLoader.#ctor*
+  commentId: Overload:rt004.MaterialLoading.PhongMaterialLoader.#ctor
+  href: rt004.MaterialLoading.PhongMaterialLoader.html#rt004_MaterialLoading_PhongMaterialLoader__ctor
+  name: PhongMaterialLoader
+  nameWithType: PhongMaterialLoader.PhongMaterialLoader
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.PhongMaterialLoader
+  nameWithType.vb: PhongMaterialLoader.New
+  fullName.vb: rt004.MaterialLoading.PhongMaterialLoader.New
+  name.vb: New
+- uid: OpenTK.Mathematics.Color4
+  commentId: T:OpenTK.Mathematics.Color4
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Color4
+  nameWithType: Color4
+  fullName: OpenTK.Mathematics.Color4
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.Materials.Loading.MaterialLoader.CreateInstance
+  commentId: M:rt004.Materials.Loading.MaterialLoader.CreateInstance
+  parent: rt004.Materials.Loading.MaterialLoader
+  href: rt004.Materials.Loading.MaterialLoader.html#rt004_Materials_Loading_MaterialLoader_CreateInstance
+  name: CreateInstance()
+  nameWithType: MaterialLoader.CreateInstance()
+  fullName: rt004.Materials.Loading.MaterialLoader.CreateInstance()
+  spec.csharp:
+  - uid: rt004.Materials.Loading.MaterialLoader.CreateInstance
+    name: CreateInstance
+    href: rt004.Materials.Loading.MaterialLoader.html#rt004_Materials_Loading_MaterialLoader_CreateInstance
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.Materials.Loading.MaterialLoader.CreateInstance
+    name: CreateInstance
+    href: rt004.Materials.Loading.MaterialLoader.html#rt004_Materials_Loading_MaterialLoader_CreateInstance
+  - name: (
+  - name: )
+- uid: rt004.MaterialLoading.PhongMaterialLoader.CreateInstance*
+  commentId: Overload:rt004.MaterialLoading.PhongMaterialLoader.CreateInstance
+  href: rt004.MaterialLoading.PhongMaterialLoader.html#rt004_MaterialLoading_PhongMaterialLoader_CreateInstance
+  name: CreateInstance
+  nameWithType: PhongMaterialLoader.CreateInstance
+  fullName: rt004.MaterialLoading.PhongMaterialLoader.CreateInstance
+- uid: rt004.Materials.Material
+  commentId: T:rt004.Materials.Material
+  parent: rt004.Materials
+  href: rt004.Materials.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: rt004.Materials.Material
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html

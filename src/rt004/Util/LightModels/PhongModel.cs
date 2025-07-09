@@ -48,7 +48,7 @@ namespace rt004.Util.LightModels
             Vector4 ambientColor = baseColor * (Vector4)parentScene.AmbientLightColor * parentScene.AmbientLightIntensity;
             Vector4 diffuseColor = Vector4.Zero, specularColor = Vector4.Zero;
 
-            Vector3D intersectionToCamera = -intersection.incommingRay.Direction;
+            Vector3D intersectionToCamera = -intersection.incomingRay.Direction;
             Vector3D normal = intersection.normal;
 
             // Computes color contribution from each light source

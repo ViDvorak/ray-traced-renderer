@@ -1,0 +1,514 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.Ray
+  commentId: T:rt004.Util.Ray
+  id: Ray
+  parent: rt004.Util
+  children:
+  - rt004.Util.Ray.#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)
+  - rt004.Util.Ray.Direction
+  - rt004.Util.Ray.GetPointOnRay(System.Double)
+  - rt004.Util.Ray.Origin
+  langs:
+  - csharp
+  - vb
+  name: Ray
+  nameWithType: Ray
+  fullName: rt004.Util.Ray
+  type: Struct
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Ray.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Ray
+    path: Util/BasicGeometry/Ray.cs
+    startLine: 5
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Represents a line parametricly in 3D using Point and Vector
+  example: []
+  syntax:
+    content: 'public record struct Ray : IEquatable<Ray>'
+    content.vb: Public Structure Ray Implements IEquatable(Of Ray)
+  implements:
+  - System.IEquatable{rt004.Util.Ray}
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: rt004.Util.Ray.Origin
+  commentId: F:rt004.Util.Ray.Origin
+  id: Origin
+  parent: rt004.Util.Ray
+  langs:
+  - csharp
+  - vb
+  name: Origin
+  nameWithType: Ray.Origin
+  fullName: rt004.Util.Ray.Origin
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Ray.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Origin
+    path: Util/BasicGeometry/Ray.cs
+    startLine: 10
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: origin point of the ray
+  example: []
+  syntax:
+    content: public readonly Point3D Origin
+    return:
+      type: rt004.Util.Point3D
+    content.vb: Public ReadOnly Origin As Point3D
+- uid: rt004.Util.Ray.Direction
+  commentId: F:rt004.Util.Ray.Direction
+  id: Direction
+  parent: rt004.Util.Ray
+  langs:
+  - csharp
+  - vb
+  name: Direction
+  nameWithType: Ray.Direction
+  fullName: rt004.Util.Ray.Direction
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Ray.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Direction
+    path: Util/BasicGeometry/Ray.cs
+    startLine: 15
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Direction of line represented as vector of length 1
+  example: []
+  syntax:
+    content: public readonly Vector3D Direction
+    return:
+      type: rt004.Util.Vector3D
+    content.vb: Public ReadOnly Direction As Vector3D
+- uid: rt004.Util.Ray.#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)
+  commentId: M:rt004.Util.Ray.#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)
+  id: '#ctor(rt004.Util.Point3D,rt004.Util.Vector3D)'
+  parent: rt004.Util.Ray
+  langs:
+  - csharp
+  - vb
+  name: Ray(Point3D, Vector3D)
+  nameWithType: Ray.Ray(Point3D, Vector3D)
+  fullName: rt004.Util.Ray.Ray(rt004.Util.Point3D, rt004.Util.Vector3D)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Ray.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/BasicGeometry/Ray.cs
+    startLine: 17
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  syntax:
+    content: public Ray(Point3D position, Vector3D direction)
+    parameters:
+    - id: position
+      type: rt004.Util.Point3D
+    - id: direction
+      type: rt004.Util.Vector3D
+    content.vb: Public Sub New(position As Point3D, direction As Vector3D)
+  overload: rt004.Util.Ray.#ctor*
+  nameWithType.vb: Ray.New(Point3D, Vector3D)
+  fullName.vb: rt004.Util.Ray.New(rt004.Util.Point3D, rt004.Util.Vector3D)
+  name.vb: New(Point3D, Vector3D)
+- uid: rt004.Util.Ray.GetPointOnRay(System.Double)
+  commentId: M:rt004.Util.Ray.GetPointOnRay(System.Double)
+  id: GetPointOnRay(System.Double)
+  parent: rt004.Util.Ray
+  langs:
+  - csharp
+  - vb
+  name: GetPointOnRay(double)
+  nameWithType: Ray.GetPointOnRay(double)
+  fullName: rt004.Util.Ray.GetPointOnRay(double)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Ray.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetPointOnRay
+    path: Util/BasicGeometry/Ray.cs
+    startLine: 30
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Computes point on the line by multipling the parameter with normalized directional vector.
+  example: []
+  syntax:
+    content: public Point3D GetPointOnRay(double distance)
+    parameters:
+    - id: distance
+      type: System.Double
+      description: Distance, how far from position in direction of Direction is the point
+    return:
+      type: rt004.Util.Point3D
+      description: Point on the line
+    content.vb: Public Function GetPointOnRay(distance As Double) As Point3D
+  overload: rt004.Util.Ray.GetPointOnRay*
+  nameWithType.vb: Ray.GetPointOnRay(Double)
+  fullName.vb: rt004.Util.Ray.GetPointOnRay(Double)
+  name.vb: GetPointOnRay(Double)
+references:
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: System.IEquatable{rt004.Util.Ray}
+  commentId: T:System.IEquatable{rt004.Util.Ray}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<Ray>
+  nameWithType: IEquatable<Ray>
+  fullName: System.IEquatable<rt004.Util.Ray>
+  nameWithType.vb: IEquatable(Of Ray)
+  fullName.vb: System.IEquatable(Of rt004.Util.Ray)
+  name.vb: IEquatable(Of Ray)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: rt004.Util.Vector3D
+  commentId: T:rt004.Util.Vector3D
+  parent: rt004.Util
+  href: rt004.Util.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: rt004.Util.Vector3D
+- uid: rt004.Util.Ray.#ctor*
+  commentId: Overload:rt004.Util.Ray.#ctor
+  href: rt004.Util.Ray.html#rt004_Util_Ray__ctor_rt004_Util_Point3D_rt004_Util_Vector3D_
+  name: Ray
+  nameWithType: Ray.Ray
+  fullName: rt004.Util.Ray.Ray
+  nameWithType.vb: Ray.New
+  fullName.vb: rt004.Util.Ray.New
+  name.vb: New
+- uid: rt004.Util.Ray.GetPointOnRay*
+  commentId: Overload:rt004.Util.Ray.GetPointOnRay
+  href: rt004.Util.Ray.html#rt004_Util_Ray_GetPointOnRay_System_Double_
+  name: GetPointOnRay
+  nameWithType: Ray.GetPointOnRay
+  fullName: rt004.Util.Ray.GetPointOnRay
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double

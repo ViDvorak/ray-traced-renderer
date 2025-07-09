@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.MaterialLoading
+  commentId: N:rt004.MaterialLoading
+  id: rt004.MaterialLoading
+  children:
+  - rt004.MaterialLoading.PhongMaterialLoader
+  langs:
+  - csharp
+  - vb
+  name: rt004.MaterialLoading
+  nameWithType: rt004.MaterialLoading
+  fullName: rt004.MaterialLoading
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.MaterialLoading.PhongMaterialLoader
+  commentId: T:rt004.MaterialLoading.PhongMaterialLoader
+  href: rt004.MaterialLoading.PhongMaterialLoader.html
+  name: PhongMaterialLoader
+  nameWithType: PhongMaterialLoader
+  fullName: rt004.MaterialLoading.PhongMaterialLoader

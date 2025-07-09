@@ -1,0 +1,1693 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.Point2D
+  commentId: T:rt004.Util.Point2D
+  id: Point2D
+  parent: rt004.Util
+  children:
+  - rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2)
+  - rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2d)
+  - rt004.Util.Point2D.#ctor(System.Double,System.Double)
+  - rt004.Util.Point2D.AsVector
+  - rt004.Util.Point2D.DistanceFromOrigin
+  - rt004.Util.Point2D.DistanceFromOriginSquared
+  - rt004.Util.Point2D.Equals(System.Object)
+  - rt004.Util.Point2D.Equals(rt004.Util.Point2D)
+  - rt004.Util.Point2D.GetHashCode
+  - rt004.Util.Point2D.RoundDown
+  - rt004.Util.Point2D.RoundDown(rt004.Util.Point2D)
+  - rt004.Util.Point2D.RoundUp
+  - rt004.Util.Point2D.RoundUp(rt004.Util.Point2D)
+  - rt004.Util.Point2D.ToString
+  - rt004.Util.Point2D.X
+  - rt004.Util.Point2D.Y
+  - rt004.Util.Point2D.Zero
+  - rt004.Util.Point2D.op_Addition(rt004.Util.Point2D,rt004.Util.Vector2D)
+  - rt004.Util.Point2D.op_Division(rt004.Util.Point2D,System.Double)
+  - rt004.Util.Point2D.op_Division(rt004.Util.Point2D,rt004.Util.Vector2D)
+  - rt004.Util.Point2D.op_Equality(rt004.Util.Point2D,rt004.Util.Point2D)
+  - rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2
+  - rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2d
+  - rt004.Util.Point2D.op_Inequality(rt004.Util.Point2D,rt004.Util.Point2D)
+  - rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,System.Double)
+  - rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,rt004.Util.Vector2D)
+  - rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Point2D)
+  - rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Vector2D)
+  - rt004.Util.Point2D.op_UnaryNegation(rt004.Util.Point2D)
+  langs:
+  - csharp
+  - vb
+  name: Point2D
+  nameWithType: Point2D
+  fullName: rt004.Util.Point2D
+  type: Struct
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Point2D
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 7
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Represents a 2D point with double precision, defined by X and Y coordinates.
+  example: []
+  syntax:
+    content: public readonly struct Point2D
+    content.vb: Public Structure Point2D
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: rt004.Util.Point2D.AsVector
+  commentId: P:rt004.Util.Point2D.AsVector
+  id: AsVector
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: AsVector
+  nameWithType: Point2D.AsVector
+  fullName: rt004.Util.Point2D.AsVector
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: AsVector
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 17
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the position of the point as a <xref href="OpenTK.Mathematics.Vector2d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Vector2d AsVector { get; }
+    parameters: []
+    return:
+      type: OpenTK.Mathematics.Vector2d
+    content.vb: Public ReadOnly Property AsVector As Vector2d
+  overload: rt004.Util.Point2D.AsVector*
+- uid: rt004.Util.Point2D.X
+  commentId: P:rt004.Util.Point2D.X
+  id: X
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Point2D.X
+  fullName: rt004.Util.Point2D.X
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: X
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 22
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the X coordinate of the point.
+  example: []
+  syntax:
+    content: public double X { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property X As Double
+  overload: rt004.Util.Point2D.X*
+- uid: rt004.Util.Point2D.Y
+  commentId: P:rt004.Util.Point2D.Y
+  id: Y
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Point2D.Y
+  fullName: rt004.Util.Point2D.Y
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Y
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 27
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the Y coordinate of the point.
+  example: []
+  syntax:
+    content: public double Y { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property Y As Double
+  overload: rt004.Util.Point2D.Y*
+- uid: rt004.Util.Point2D.DistanceFromOrigin
+  commentId: P:rt004.Util.Point2D.DistanceFromOrigin
+  id: DistanceFromOrigin
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: DistanceFromOrigin
+  nameWithType: Point2D.DistanceFromOrigin
+  fullName: rt004.Util.Point2D.DistanceFromOrigin
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: DistanceFromOrigin
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 32
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the distance of the point from the origin.
+  example: []
+  syntax:
+    content: public double DistanceFromOrigin { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property DistanceFromOrigin As Double
+  overload: rt004.Util.Point2D.DistanceFromOrigin*
+- uid: rt004.Util.Point2D.DistanceFromOriginSquared
+  commentId: P:rt004.Util.Point2D.DistanceFromOriginSquared
+  id: DistanceFromOriginSquared
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: DistanceFromOriginSquared
+  nameWithType: Point2D.DistanceFromOriginSquared
+  fullName: rt004.Util.Point2D.DistanceFromOriginSquared
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: DistanceFromOriginSquared
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 37
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets the square of the distance of the point from the origin.
+  example: []
+  syntax:
+    content: public double DistanceFromOriginSquared { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property DistanceFromOriginSquared As Double
+  overload: rt004.Util.Point2D.DistanceFromOriginSquared*
+- uid: rt004.Util.Point2D.Zero
+  commentId: P:rt004.Util.Point2D.Zero
+  id: Zero
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: Zero
+  nameWithType: Point2D.Zero
+  fullName: rt004.Util.Point2D.Zero
+  type: Property
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Zero
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 42
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Gets a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance representing the point (0, 0).
+  example: []
+  syntax:
+    content: public static Point2D Zero { get; }
+    parameters: []
+    return:
+      type: rt004.Util.Point2D
+    content.vb: Public Shared ReadOnly Property Zero As Point2D
+  overload: rt004.Util.Point2D.Zero*
+- uid: rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2)
+  commentId: M:rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2)
+  id: '#ctor(OpenTK.Mathematics.Vector2)'
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: Point2D(Vector2)
+  nameWithType: Point2D.Point2D(Vector2)
+  fullName: rt004.Util.Point2D.Point2D(OpenTK.Mathematics.Vector2)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 48
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Initializes a new instance of the <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> struct from a <xref href="OpenTK.Mathematics.Vector2" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Point2D(Vector2 position)
+    parameters:
+    - id: position
+      type: OpenTK.Mathematics.Vector2
+      description: The position of the point.
+    content.vb: Public Sub New(position As Vector2)
+  overload: rt004.Util.Point2D.#ctor*
+  nameWithType.vb: Point2D.New(Vector2)
+  fullName.vb: rt004.Util.Point2D.New(OpenTK.Mathematics.Vector2)
+  name.vb: New(Vector2)
+- uid: rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2d)
+  commentId: M:rt004.Util.Point2D.#ctor(OpenTK.Mathematics.Vector2d)
+  id: '#ctor(OpenTK.Mathematics.Vector2d)'
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: Point2D(Vector2d)
+  nameWithType: Point2D.Point2D(Vector2d)
+  fullName: rt004.Util.Point2D.Point2D(OpenTK.Mathematics.Vector2d)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 57
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Initializes a new instance of the <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> struct from a <xref href="OpenTK.Mathematics.Vector2d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Point2D(Vector2d position)
+    parameters:
+    - id: position
+      type: OpenTK.Mathematics.Vector2d
+      description: The position of the point.
+    content.vb: Public Sub New(position As Vector2d)
+  overload: rt004.Util.Point2D.#ctor*
+  nameWithType.vb: Point2D.New(Vector2d)
+  fullName.vb: rt004.Util.Point2D.New(OpenTK.Mathematics.Vector2d)
+  name.vb: New(Vector2d)
+- uid: rt004.Util.Point2D.#ctor(System.Double,System.Double)
+  commentId: M:rt004.Util.Point2D.#ctor(System.Double,System.Double)
+  id: '#ctor(System.Double,System.Double)'
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: Point2D(double, double)
+  nameWithType: Point2D.Point2D(double, double)
+  fullName: rt004.Util.Point2D.Point2D(double, double)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 67
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Initializes a new instance of the <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> struct from the specified X and Y coordinates.
+  example: []
+  syntax:
+    content: public Point2D(double x, double y)
+    parameters:
+    - id: x
+      type: System.Double
+      description: The X coordinate of the point.
+    - id: y
+      type: System.Double
+      description: The Y coordinate of the point.
+    content.vb: Public Sub New(x As Double, y As Double)
+  overload: rt004.Util.Point2D.#ctor*
+  nameWithType.vb: Point2D.New(Double, Double)
+  fullName.vb: rt004.Util.Point2D.New(Double, Double)
+  name.vb: New(Double, Double)
+- uid: rt004.Util.Point2D.RoundUp
+  commentId: M:rt004.Util.Point2D.RoundUp
+  id: RoundUp
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: RoundUp()
+  nameWithType: Point2D.RoundUp()
+  fullName: rt004.Util.Point2D.RoundUp()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundUp
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 76
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Rounds the X and Y coordinates of the point up to the nearest integer.
+  example: []
+  syntax:
+    content: public (int, int) RoundUp()
+    return:
+      type: System.ValueTuple{System.Int32,System.Int32}
+      description: A tuple containing the rounded X and Y coordinates.
+    content.vb: Public Function RoundUp() As (Integer, Integer)
+  overload: rt004.Util.Point2D.RoundUp*
+- uid: rt004.Util.Point2D.RoundDown
+  commentId: M:rt004.Util.Point2D.RoundDown
+  id: RoundDown
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: RoundDown()
+  nameWithType: Point2D.RoundDown()
+  fullName: rt004.Util.Point2D.RoundDown()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundDown
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 90
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Rounds the X and Y coordinates of the point down to the nearest integer.
+  example: []
+  syntax:
+    content: public (int, int) RoundDown()
+    return:
+      type: System.ValueTuple{System.Int32,System.Int32}
+      description: A tuple containing the rounded X and Y coordinates.
+    content.vb: Public Function RoundDown() As (Integer, Integer)
+  overload: rt004.Util.Point2D.RoundDown*
+- uid: rt004.Util.Point2D.RoundDown(rt004.Util.Point2D)
+  commentId: M:rt004.Util.Point2D.RoundDown(rt004.Util.Point2D)
+  id: RoundDown(rt004.Util.Point2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: RoundDown(Point2D)
+  nameWithType: Point2D.RoundDown(Point2D)
+  fullName: rt004.Util.Point2D.RoundDown(rt004.Util.Point2D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundDown
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 105
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Rounds the X and Y coordinates of a given point down.
+  example: []
+  syntax:
+    content: public static Point2D RoundDown(Point2D point)
+    parameters:
+    - id: point
+      type: rt004.Util.Point2D
+      description: The point to round down.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance with the rounded coordinates.
+    content.vb: Public Shared Function RoundDown(point As Point2D) As Point2D
+  overload: rt004.Util.Point2D.RoundDown*
+- uid: rt004.Util.Point2D.RoundUp(rt004.Util.Point2D)
+  commentId: M:rt004.Util.Point2D.RoundUp(rt004.Util.Point2D)
+  id: RoundUp(rt004.Util.Point2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: RoundUp(Point2D)
+  nameWithType: Point2D.RoundUp(Point2D)
+  fullName: rt004.Util.Point2D.RoundUp(rt004.Util.Point2D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: RoundUp
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 115
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Rounds the X and Y coordinates of a given point up.
+  example: []
+  syntax:
+    content: public static Point2D RoundUp(Point2D point)
+    parameters:
+    - id: point
+      type: rt004.Util.Point2D
+      description: The point to round up.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance with the rounded coordinates.
+    content.vb: Public Shared Function RoundUp(point As Point2D) As Point2D
+  overload: rt004.Util.Point2D.RoundUp*
+- uid: rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2
+  commentId: M:rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2
+  id: op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: explicit operator Vector2(Point2D)
+  nameWithType: Point2D.explicit operator Vector2(Point2D)
+  fullName: rt004.Util.Point2D.explicit operator OpenTK.Mathematics.Vector2(rt004.Util.Point2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Explicit
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 126
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Explicitly converts a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> to a <xref href="OpenTK.Mathematics.Vector2" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static explicit operator Vector2(Point2D dir)
+    parameters:
+    - id: dir
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance to convert.
+    return:
+      type: OpenTK.Mathematics.Vector2
+    content.vb: Public Shared Narrowing Operator CType(dir As Point2D) As Vector2
+  overload: rt004.Util.Point2D.op_Explicit*
+  nameWithType.vb: Point2D.CType(Point2D)
+  fullName.vb: rt004.Util.Point2D.CType(rt004.Util.Point2D)
+  name.vb: CType(Point2D)
+- uid: rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2d
+  commentId: M:rt004.Util.Point2D.op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2d
+  id: op_Explicit(rt004.Util.Point2D)~OpenTK.Mathematics.Vector2d
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: explicit operator Vector2d(Point2D)
+  nameWithType: Point2D.explicit operator Vector2d(Point2D)
+  fullName: rt004.Util.Point2D.explicit operator OpenTK.Mathematics.Vector2d(rt004.Util.Point2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Explicit
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 132
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Explicitly converts a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> to a <xref href="OpenTK.Mathematics.Vector2d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static explicit operator Vector2d(Point2D dir)
+    parameters:
+    - id: dir
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance to convert.
+    return:
+      type: OpenTK.Mathematics.Vector2d
+    content.vb: Public Shared Narrowing Operator CType(dir As Point2D) As Vector2d
+  overload: rt004.Util.Point2D.op_Explicit*
+  nameWithType.vb: Point2D.CType(Point2D)
+  fullName.vb: rt004.Util.Point2D.CType(rt004.Util.Point2D)
+  name.vb: CType(Point2D)
+- uid: rt004.Util.Point2D.Equals(System.Object)
+  commentId: M:rt004.Util.Point2D.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: Point2D.Equals(object?)
+  fullName: rt004.Util.Point2D.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Equals
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 139
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Determines whether two <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instances are equal by comparing their X and Y coordinates.
+  example: []
+  syntax:
+    content: public override bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare to.
+    return:
+      type: System.Boolean
+      description: True if the objects are equal, false otherwise.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: rt004.Util.Point2D.Equals*
+  nameWithType.vb: Point2D.Equals(Object)
+  fullName.vb: rt004.Util.Point2D.Equals(Object)
+  name.vb: Equals(Object)
+- uid: rt004.Util.Point2D.Equals(rt004.Util.Point2D)
+  commentId: M:rt004.Util.Point2D.Equals(rt004.Util.Point2D)
+  id: Equals(rt004.Util.Point2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: Equals(Point2D)
+  nameWithType: Point2D.Equals(Point2D)
+  fullName: rt004.Util.Point2D.Equals(rt004.Util.Point2D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Equals
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 152
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Determines whether this <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> is equal to another <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public bool Equals(Point2D other)
+    parameters:
+    - id: other
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: >-
+        <code>true</code> if the specified <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> has the same X and Y values as the current instance;
+
+        otherwise, <code>false</code>.
+    content.vb: Public Function Equals(other As Point2D) As Boolean
+  overload: rt004.Util.Point2D.Equals*
+- uid: rt004.Util.Point2D.op_Equality(rt004.Util.Point2D,rt004.Util.Point2D)
+  commentId: M:rt004.Util.Point2D.op_Equality(rt004.Util.Point2D,rt004.Util.Point2D)
+  id: op_Equality(rt004.Util.Point2D,rt004.Util.Point2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator ==(Point2D, Point2D)
+  nameWithType: Point2D.operator ==(Point2D, Point2D)
+  fullName: rt004.Util.Point2D.operator ==(rt004.Util.Point2D, rt004.Util.Point2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Equality
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 163
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Compares two <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instances for equality.
+  example: []
+  syntax:
+    content: public static bool operator ==(Point2D value, Point2D other)
+    parameters:
+    - id: value
+      type: rt004.Util.Point2D
+      description: The first <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: other
+      type: rt004.Util.Point2D
+      description: The second <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Boolean
+      description: True if the X and Y coordinates are equal, false otherwise.
+    content.vb: Public Shared Operator =(value As Point2D, other As Point2D) As Boolean
+  overload: rt004.Util.Point2D.op_Equality*
+  nameWithType.vb: Point2D.=(Point2D, Point2D)
+  fullName.vb: rt004.Util.Point2D.=(rt004.Util.Point2D, rt004.Util.Point2D)
+  name.vb: =(Point2D, Point2D)
+- uid: rt004.Util.Point2D.op_Inequality(rt004.Util.Point2D,rt004.Util.Point2D)
+  commentId: M:rt004.Util.Point2D.op_Inequality(rt004.Util.Point2D,rt004.Util.Point2D)
+  id: op_Inequality(rt004.Util.Point2D,rt004.Util.Point2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator !=(Point2D, Point2D)
+  nameWithType: Point2D.operator !=(Point2D, Point2D)
+  fullName: rt004.Util.Point2D.operator !=(rt004.Util.Point2D, rt004.Util.Point2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Inequality
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 174
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Compares two <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instances for inequality.
+  example: []
+  syntax:
+    content: public static bool operator !=(Point2D value, Point2D other)
+    parameters:
+    - id: value
+      type: rt004.Util.Point2D
+      description: The first <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: other
+      type: rt004.Util.Point2D
+      description: The second <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Boolean
+      description: True if the X and Y coordinates are not equal, false otherwise.
+    content.vb: Public Shared Operator <>(value As Point2D, other As Point2D) As Boolean
+  overload: rt004.Util.Point2D.op_Inequality*
+  nameWithType.vb: Point2D.<>(Point2D, Point2D)
+  fullName.vb: rt004.Util.Point2D.<>(rt004.Util.Point2D, rt004.Util.Point2D)
+  name.vb: <>(Point2D, Point2D)
+- uid: rt004.Util.Point2D.op_Addition(rt004.Util.Point2D,rt004.Util.Vector2D)
+  commentId: M:rt004.Util.Point2D.op_Addition(rt004.Util.Point2D,rt004.Util.Vector2D)
+  id: op_Addition(rt004.Util.Point2D,rt004.Util.Vector2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator +(Point2D, Vector2D)
+  nameWithType: Point2D.operator +(Point2D, Vector2D)
+  fullName: rt004.Util.Point2D.operator +(rt004.Util.Point2D, rt004.Util.Vector2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Addition
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 185
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Adds a <xref href="rt004.Util.Vector2D" data-throw-if-not-resolved="false"></xref> to a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Point2D operator +(Point2D point, Vector2D vector)
+    parameters:
+    - id: point
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: vector
+      type: rt004.Util.Vector2D
+      description: The <xref href="rt004.Util.Vector2D" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> resulting from the addition.
+    content.vb: Public Shared Operator +(point As Point2D, vector As Vector2D) As Point2D
+  overload: rt004.Util.Point2D.op_Addition*
+  nameWithType.vb: Point2D.+(Point2D, Vector2D)
+  fullName.vb: rt004.Util.Point2D.+(rt004.Util.Point2D, rt004.Util.Vector2D)
+  name.vb: +(Point2D, Vector2D)
+- uid: rt004.Util.Point2D.op_UnaryNegation(rt004.Util.Point2D)
+  commentId: M:rt004.Util.Point2D.op_UnaryNegation(rt004.Util.Point2D)
+  id: op_UnaryNegation(rt004.Util.Point2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator -(Point2D)
+  nameWithType: Point2D.operator -(Point2D)
+  fullName: rt004.Util.Point2D.operator -(rt004.Util.Point2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_UnaryNegation
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 195
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Negates the coordinates of this <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref>, returning a new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> with the opposite values.
+  example: []
+  syntax:
+    content: public static Point2D operator -(Point2D point)
+    parameters:
+    - id: point
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance to negate.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> with X and Y values negated.
+    content.vb: Public Shared Operator -(point As Point2D) As Point2D
+  overload: rt004.Util.Point2D.op_UnaryNegation*
+  nameWithType.vb: Point2D.-(Point2D)
+  fullName.vb: rt004.Util.Point2D.-(rt004.Util.Point2D)
+  name.vb: -(Point2D)
+- uid: rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Point2D)
+  commentId: M:rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Point2D)
+  id: op_Subtraction(rt004.Util.Point2D,rt004.Util.Point2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator -(Point2D, Point2D)
+  nameWithType: Point2D.operator -(Point2D, Point2D)
+  fullName: rt004.Util.Point2D.operator -(rt004.Util.Point2D, rt004.Util.Point2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Subtraction
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 206
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Subtracts one <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> from another, returning the result as a <xref href="rt004.Util.Vector2D" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Vector2D operator -(Point2D point1, Point2D point2)
+    parameters:
+    - id: point1
+      type: rt004.Util.Point2D
+      description: The first <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref>.
+    - id: point2
+      type: rt004.Util.Point2D
+      description: The second <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: rt004.Util.Vector2D
+      description: A <xref href="rt004.Util.Vector2D" data-throw-if-not-resolved="false"></xref> representing the difference.
+    content.vb: Public Shared Operator -(point1 As Point2D, point2 As Point2D) As Vector2D
+  overload: rt004.Util.Point2D.op_Subtraction*
+  nameWithType.vb: Point2D.-(Point2D, Point2D)
+  fullName.vb: rt004.Util.Point2D.-(rt004.Util.Point2D, rt004.Util.Point2D)
+  name.vb: -(Point2D, Point2D)
+- uid: rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Vector2D)
+  commentId: M:rt004.Util.Point2D.op_Subtraction(rt004.Util.Point2D,rt004.Util.Vector2D)
+  id: op_Subtraction(rt004.Util.Point2D,rt004.Util.Vector2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator -(Point2D, Vector2D)
+  nameWithType: Point2D.operator -(Point2D, Vector2D)
+  fullName: rt004.Util.Point2D.operator -(rt004.Util.Point2D, rt004.Util.Vector2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Subtraction
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 217
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Subtracts a <xref href="rt004.Util.Vector2D" data-throw-if-not-resolved="false"></xref> from a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Point2D operator -(Point2D position, Vector2D direction)
+    parameters:
+    - id: position
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> position.
+    - id: direction
+      type: rt004.Util.Vector2D
+      description: The <xref href="rt004.Util.Vector2D" data-throw-if-not-resolved="false"></xref> direction.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> resulting from the subtraction.
+    content.vb: Public Shared Operator -(position As Point2D, direction As Vector2D) As Point2D
+  overload: rt004.Util.Point2D.op_Subtraction*
+  nameWithType.vb: Point2D.-(Point2D, Vector2D)
+  fullName.vb: rt004.Util.Point2D.-(rt004.Util.Point2D, rt004.Util.Vector2D)
+  name.vb: -(Point2D, Vector2D)
+- uid: rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,System.Double)
+  commentId: M:rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,System.Double)
+  id: op_Multiply(rt004.Util.Point2D,System.Double)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator *(Point2D, double)
+  nameWithType: Point2D.operator *(Point2D, double)
+  fullName: rt004.Util.Point2D.operator *(rt004.Util.Point2D, double)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Multiply
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 228
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Multiplies a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> by a scalar value.
+  example: []
+  syntax:
+    content: public static Point2D operator *(Point2D point, double scale)
+    parameters:
+    - id: point
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: scale
+      type: System.Double
+      description: The scalar value to multiply by.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> resulting from the multiplication.
+    content.vb: Public Shared Operator *(point As Point2D, scale As Double) As Point2D
+  overload: rt004.Util.Point2D.op_Multiply*
+  nameWithType.vb: Point2D.*(Point2D, Double)
+  fullName.vb: rt004.Util.Point2D.*(rt004.Util.Point2D, Double)
+  name.vb: '*(Point2D, Double)'
+- uid: rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,rt004.Util.Vector2D)
+  commentId: M:rt004.Util.Point2D.op_Multiply(rt004.Util.Point2D,rt004.Util.Vector2D)
+  id: op_Multiply(rt004.Util.Point2D,rt004.Util.Vector2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator *(Point2D, Vector2D)
+  nameWithType: Point2D.operator *(Point2D, Vector2D)
+  fullName: rt004.Util.Point2D.operator *(rt004.Util.Point2D, rt004.Util.Vector2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Multiply
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 239
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Multiplies a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> by a <xref href="OpenTK.Mathematics.Vector2d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Point2D operator *(Point2D point, Vector2D scale)
+    parameters:
+    - id: point
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: scale
+      type: rt004.Util.Vector2D
+      description: The <xref href="OpenTK.Mathematics.Vector2d" data-throw-if-not-resolved="false"></xref> to multiply by.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> resulting from the multiplication.
+    content.vb: Public Shared Operator *(point As Point2D, scale As Vector2D) As Point2D
+  overload: rt004.Util.Point2D.op_Multiply*
+  nameWithType.vb: Point2D.*(Point2D, Vector2D)
+  fullName.vb: rt004.Util.Point2D.*(rt004.Util.Point2D, rt004.Util.Vector2D)
+  name.vb: '*(Point2D, Vector2D)'
+- uid: rt004.Util.Point2D.op_Division(rt004.Util.Point2D,System.Double)
+  commentId: M:rt004.Util.Point2D.op_Division(rt004.Util.Point2D,System.Double)
+  id: op_Division(rt004.Util.Point2D,System.Double)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator /(Point2D, double)
+  nameWithType: Point2D.operator /(Point2D, double)
+  fullName: rt004.Util.Point2D.operator /(rt004.Util.Point2D, double)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Division
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 250
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Divides a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> by a scalar value.
+  example: []
+  syntax:
+    content: public static Point2D operator /(Point2D point, double scale)
+    parameters:
+    - id: point
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: scale
+      type: System.Double
+      description: The scalar value to divide by.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> resulting from the division.
+    content.vb: Public Shared Operator /(point As Point2D, scale As Double) As Point2D
+  overload: rt004.Util.Point2D.op_Division*
+  nameWithType.vb: Point2D./(Point2D, Double)
+  fullName.vb: rt004.Util.Point2D./(rt004.Util.Point2D, Double)
+  name.vb: /(Point2D, Double)
+- uid: rt004.Util.Point2D.op_Division(rt004.Util.Point2D,rt004.Util.Vector2D)
+  commentId: M:rt004.Util.Point2D.op_Division(rt004.Util.Point2D,rt004.Util.Vector2D)
+  id: op_Division(rt004.Util.Point2D,rt004.Util.Vector2D)
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: operator /(Point2D, Vector2D)
+  nameWithType: Point2D.operator /(Point2D, Vector2D)
+  fullName: rt004.Util.Point2D.operator /(rt004.Util.Point2D, rt004.Util.Vector2D)
+  type: Operator
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: op_Division
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 261
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Divides a <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> by a <xref href="OpenTK.Mathematics.Vector2d" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static Point2D operator /(Point2D p, Vector2D scale)
+    parameters:
+    - id: p
+      type: rt004.Util.Point2D
+      description: The <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> instance.
+    - id: scale
+      type: rt004.Util.Vector2D
+      description: The <xref href="OpenTK.Mathematics.Vector2d" data-throw-if-not-resolved="false"></xref> to divide by.
+    return:
+      type: rt004.Util.Point2D
+      description: A new <xref href="rt004.Util.Point2D" data-throw-if-not-resolved="false"></xref> resulting from the division.
+    content.vb: Public Shared Operator /(p As Point2D, scale As Vector2D) As Point2D
+  overload: rt004.Util.Point2D.op_Division*
+  nameWithType.vb: Point2D./(Point2D, Vector2D)
+  fullName.vb: rt004.Util.Point2D./(rt004.Util.Point2D, rt004.Util.Vector2D)
+  name.vb: /(Point2D, Vector2D)
+- uid: rt004.Util.Point2D.GetHashCode
+  commentId: M:rt004.Util.Point2D.GetHashCode
+  id: GetHashCode
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Point2D.GetHashCode()
+  fullName: rt004.Util.Point2D.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetHashCode
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 272
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: An integer representing the hash code.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: rt004.Util.Point2D.GetHashCode*
+- uid: rt004.Util.Point2D.ToString
+  commentId: M:rt004.Util.Point2D.ToString
+  id: ToString
+  parent: rt004.Util.Point2D
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Point2D.ToString()
+  fullName: rt004.Util.Point2D.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/BasicGeometry/Point2D.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: ToString
+    path: Util/BasicGeometry/Point2D.cs
+    startLine: 281
+  assemblies:
+  - rt004
+  namespace: rt004.Util
+  summary: Returns a string that represents the current point.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string in the format "[X, Y]".
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: rt004.Util.Point2D.ToString*
+references:
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OpenTK.Mathematics.Vector2d
+  commentId: T:OpenTK.Mathematics.Vector2d
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector2d
+  nameWithType: Vector2d
+  fullName: OpenTK.Mathematics.Vector2d
+- uid: rt004.Util.Point2D.AsVector*
+  commentId: Overload:rt004.Util.Point2D.AsVector
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_AsVector
+  name: AsVector
+  nameWithType: Point2D.AsVector
+  fullName: rt004.Util.Point2D.AsVector
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.Util.Point2D.X*
+  commentId: Overload:rt004.Util.Point2D.X
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_X
+  name: X
+  nameWithType: Point2D.X
+  fullName: rt004.Util.Point2D.X
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: rt004.Util.Point2D.Y*
+  commentId: Overload:rt004.Util.Point2D.Y
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_Y
+  name: Y
+  nameWithType: Point2D.Y
+  fullName: rt004.Util.Point2D.Y
+- uid: rt004.Util.Point2D.DistanceFromOrigin*
+  commentId: Overload:rt004.Util.Point2D.DistanceFromOrigin
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_DistanceFromOrigin
+  name: DistanceFromOrigin
+  nameWithType: Point2D.DistanceFromOrigin
+  fullName: rt004.Util.Point2D.DistanceFromOrigin
+- uid: rt004.Util.Point2D.DistanceFromOriginSquared*
+  commentId: Overload:rt004.Util.Point2D.DistanceFromOriginSquared
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_DistanceFromOriginSquared
+  name: DistanceFromOriginSquared
+  nameWithType: Point2D.DistanceFromOriginSquared
+  fullName: rt004.Util.Point2D.DistanceFromOriginSquared
+- uid: rt004.Util.Point2D
+  commentId: T:rt004.Util.Point2D
+  parent: rt004.Util
+  href: rt004.Util.Point2D.html
+  name: Point2D
+  nameWithType: Point2D
+  fullName: rt004.Util.Point2D
+- uid: rt004.Util.Point2D.Zero*
+  commentId: Overload:rt004.Util.Point2D.Zero
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_Zero
+  name: Zero
+  nameWithType: Point2D.Zero
+  fullName: rt004.Util.Point2D.Zero
+- uid: OpenTK.Mathematics.Vector2
+  commentId: T:OpenTK.Mathematics.Vector2
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: OpenTK.Mathematics.Vector2
+- uid: rt004.Util.Point2D.#ctor*
+  commentId: Overload:rt004.Util.Point2D.#ctor
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D__ctor_OpenTK_Mathematics_Vector2_
+  name: Point2D
+  nameWithType: Point2D.Point2D
+  fullName: rt004.Util.Point2D.Point2D
+  nameWithType.vb: Point2D.New
+  fullName.vb: rt004.Util.Point2D.New
+  name.vb: New
+- uid: rt004.Util.Point2D.RoundUp*
+  commentId: Overload:rt004.Util.Point2D.RoundUp
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_RoundUp
+  name: RoundUp
+  nameWithType: Point2D.RoundUp
+  fullName: rt004.Util.Point2D.RoundUp
+- uid: System.ValueTuple{System.Int32,System.Int32}
+  commentId: T:System.ValueTuple{System.Int32,System.Int32}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: (int, int)
+  nameWithType: (int, int)
+  fullName: (int, int)
+  nameWithType.vb: (Integer, Integer)
+  fullName.vb: (Integer, Integer)
+  name.vb: (Integer, Integer)
+  spec.csharp:
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: rt004.Util.Point2D.RoundDown*
+  commentId: Overload:rt004.Util.Point2D.RoundDown
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_RoundDown
+  name: RoundDown
+  nameWithType: Point2D.RoundDown
+  fullName: rt004.Util.Point2D.RoundDown
+- uid: rt004.Util.Point2D.op_Explicit*
+  commentId: Overload:rt004.Util.Point2D.op_Explicit
+  name: explicit operator
+  nameWithType: Point2D.explicit operator
+  fullName: rt004.Util.Point2D.explicit operator
+  nameWithType.vb: Point2D.CType
+  fullName.vb: rt004.Util.Point2D.CType
+  name.vb: CType
+  spec.csharp:
+  - name: explicit
+  - name: " "
+  - name: operator
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: rt004.Util.Point2D.Equals*
+  commentId: Overload:rt004.Util.Point2D.Equals
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_Equals_System_Object_
+  name: Equals
+  nameWithType: Point2D.Equals
+  fullName: rt004.Util.Point2D.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: rt004.Util.Point2D.op_Equality*
+  commentId: Overload:rt004.Util.Point2D.op_Equality
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Equality_rt004_Util_Point2D_rt004_Util_Point2D_
+  name: operator ==
+  nameWithType: Point2D.operator ==
+  fullName: rt004.Util.Point2D.operator ==
+  nameWithType.vb: Point2D.=
+  fullName.vb: rt004.Util.Point2D.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Point2D.op_Equality*
+    name: ==
+    href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Equality_rt004_Util_Point2D_rt004_Util_Point2D_
+- uid: rt004.Util.Point2D.op_Inequality*
+  commentId: Overload:rt004.Util.Point2D.op_Inequality
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Inequality_rt004_Util_Point2D_rt004_Util_Point2D_
+  name: operator !=
+  nameWithType: Point2D.operator !=
+  fullName: rt004.Util.Point2D.operator !=
+  nameWithType.vb: Point2D.<>
+  fullName.vb: rt004.Util.Point2D.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Point2D.op_Inequality*
+    name: '!='
+    href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Inequality_rt004_Util_Point2D_rt004_Util_Point2D_
+- uid: rt004.Util.Vector2D
+  commentId: T:rt004.Util.Vector2D
+  parent: rt004.Util
+  href: rt004.Util.Vector2D.html
+  name: Vector2D
+  nameWithType: Vector2D
+  fullName: rt004.Util.Vector2D
+- uid: rt004.Util.Point2D.op_Addition*
+  commentId: Overload:rt004.Util.Point2D.op_Addition
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Addition_rt004_Util_Point2D_rt004_Util_Vector2D_
+  name: operator +
+  nameWithType: Point2D.operator +
+  fullName: rt004.Util.Point2D.operator +
+  nameWithType.vb: Point2D.+
+  fullName.vb: rt004.Util.Point2D.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Point2D.op_Addition*
+    name: +
+    href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Addition_rt004_Util_Point2D_rt004_Util_Vector2D_
+- uid: rt004.Util.Point2D.op_UnaryNegation*
+  commentId: Overload:rt004.Util.Point2D.op_UnaryNegation
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_UnaryNegation_rt004_Util_Point2D_
+  name: operator -
+  nameWithType: Point2D.operator -
+  fullName: rt004.Util.Point2D.operator -
+  nameWithType.vb: Point2D.-
+  fullName.vb: rt004.Util.Point2D.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Point2D.op_UnaryNegation*
+    name: '-'
+    href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_UnaryNegation_rt004_Util_Point2D_
+- uid: rt004.Util.Point2D.op_Subtraction*
+  commentId: Overload:rt004.Util.Point2D.op_Subtraction
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Subtraction_rt004_Util_Point2D_rt004_Util_Point2D_
+  name: operator -
+  nameWithType: Point2D.operator -
+  fullName: rt004.Util.Point2D.operator -
+  nameWithType.vb: Point2D.-
+  fullName.vb: rt004.Util.Point2D.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Point2D.op_Subtraction*
+    name: '-'
+    href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Subtraction_rt004_Util_Point2D_rt004_Util_Point2D_
+- uid: rt004.Util.Point2D.op_Multiply*
+  commentId: Overload:rt004.Util.Point2D.op_Multiply
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Multiply_rt004_Util_Point2D_System_Double_
+  name: operator *
+  nameWithType: Point2D.operator *
+  fullName: rt004.Util.Point2D.operator *
+  nameWithType.vb: Point2D.*
+  fullName.vb: rt004.Util.Point2D.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Point2D.op_Multiply*
+    name: '*'
+    href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Multiply_rt004_Util_Point2D_System_Double_
+- uid: rt004.Util.Point2D.op_Division*
+  commentId: Overload:rt004.Util.Point2D.op_Division
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Division_rt004_Util_Point2D_System_Double_
+  name: operator /
+  nameWithType: Point2D.operator /
+  fullName: rt004.Util.Point2D.operator /
+  nameWithType.vb: Point2D./
+  fullName.vb: rt004.Util.Point2D./
+  name.vb: /
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: rt004.Util.Point2D.op_Division*
+    name: /
+    href: rt004.Util.Point2D.html#rt004_Util_Point2D_op_Division_rt004_Util_Point2D_System_Double_
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: rt004.Util.Point2D.GetHashCode*
+  commentId: Overload:rt004.Util.Point2D.GetHashCode
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_GetHashCode
+  name: GetHashCode
+  nameWithType: Point2D.GetHashCode
+  fullName: rt004.Util.Point2D.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: rt004.Util.Point2D.ToString*
+  commentId: Overload:rt004.Util.Point2D.ToString
+  href: rt004.Util.Point2D.html#rt004_Util_Point2D_ToString
+  name: ToString
+  nameWithType: Point2D.ToString
+  fullName: rt004.Util.Point2D.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

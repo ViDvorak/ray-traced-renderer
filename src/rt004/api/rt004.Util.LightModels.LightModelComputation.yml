@@ -1,0 +1,516 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Util.LightModels.LightModelComputation
+  commentId: T:rt004.Util.LightModels.LightModelComputation
+  id: LightModelComputation
+  parent: rt004.Util.LightModels
+  children:
+  - rt004.Util.LightModels.LightModelComputation.ComputeLightColor(rt004.SceneObjects.IntersectionProperties,OpenTK.Mathematics.Color4,rt004.SceneObjects.LightSource[])
+  - rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel(rt004.Util.LightModel)
+  langs:
+  - csharp
+  - vb
+  name: LightModelComputation
+  nameWithType: LightModelComputation
+  fullName: rt004.Util.LightModels.LightModelComputation
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Util/LightModels/LightModelComputation.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: LightModelComputation
+    path: Util/LightModels/LightModelComputation.cs
+    startLine: 8
+  assemblies:
+  - rt004
+  namespace: rt004.Util.LightModels
+  summary: Abstract class for light model computation.
+  example: []
+  syntax:
+    content: public abstract class LightModelComputation
+    content.vb: Public MustInherit Class LightModelComputation
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.Util.LightModels.LightModelComputation.ComputeLightColor(rt004.SceneObjects.IntersectionProperties,OpenTK.Mathematics.Color4,rt004.SceneObjects.LightSource[])
+  commentId: M:rt004.Util.LightModels.LightModelComputation.ComputeLightColor(rt004.SceneObjects.IntersectionProperties,OpenTK.Mathematics.Color4,rt004.SceneObjects.LightSource[])
+  id: ComputeLightColor(rt004.SceneObjects.IntersectionProperties,OpenTK.Mathematics.Color4,rt004.SceneObjects.LightSource[])
+  parent: rt004.Util.LightModels.LightModelComputation
+  langs:
+  - csharp
+  - vb
+  name: ComputeLightColor(IntersectionProperties, Color4, LightSource[])
+  nameWithType: LightModelComputation.ComputeLightColor(IntersectionProperties, Color4, LightSource[])
+  fullName: rt004.Util.LightModels.LightModelComputation.ComputeLightColor(rt004.SceneObjects.IntersectionProperties, OpenTK.Mathematics.Color4, rt004.SceneObjects.LightSource[])
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/LightModels/LightModelComputation.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: ComputeLightColor
+    path: Util/LightModels/LightModelComputation.cs
+    startLine: 17
+  assemblies:
+  - rt004
+  namespace: rt004.Util.LightModels
+  summary: Computes color at the intersection
+  example: []
+  syntax:
+    content: public abstract Color4 ComputeLightColor(IntersectionProperties intersection, Color4 backgroundColor, LightSource[] lights)
+    parameters:
+    - id: intersection
+      type: rt004.SceneObjects.IntersectionProperties
+      description: Intersection properties of ray - scene intersection
+    - id: backgroundColor
+      type: OpenTK.Mathematics.Color4
+      description: background color of the scene
+    - id: lights
+      type: rt004.SceneObjects.LightSource[]
+      description: light sources to compute lighting with
+    return:
+      type: OpenTK.Mathematics.Color4
+      description: Returns color at the intersection position
+    content.vb: Public MustOverride Function ComputeLightColor(intersection As IntersectionProperties, backgroundColor As Color4, lights As LightSource()) As Color4
+  overload: rt004.Util.LightModels.LightModelComputation.ComputeLightColor*
+  nameWithType.vb: LightModelComputation.ComputeLightColor(IntersectionProperties, Color4, LightSource())
+  fullName.vb: rt004.Util.LightModels.LightModelComputation.ComputeLightColor(rt004.SceneObjects.IntersectionProperties, OpenTK.Mathematics.Color4, rt004.SceneObjects.LightSource())
+  name.vb: ComputeLightColor(IntersectionProperties, Color4, LightSource())
+- uid: rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel(rt004.Util.LightModel)
+  commentId: M:rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel(rt004.Util.LightModel)
+  id: GetCorrectLightModel(rt004.Util.LightModel)
+  parent: rt004.Util.LightModels.LightModelComputation
+  langs:
+  - csharp
+  - vb
+  name: GetCorrectLightModel(LightModel)
+  nameWithType: LightModelComputation.GetCorrectLightModel(LightModel)
+  fullName: rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel(rt004.Util.LightModel)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Util/LightModels/LightModelComputation.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetCorrectLightModel
+    path: Util/LightModels/LightModelComputation.cs
+    startLine: 37
+  assemblies:
+  - rt004
+  namespace: rt004.Util.LightModels
+  summary: Gets appropriate light computation model based on enum
+  example: []
+  syntax:
+    content: public static LightModelComputation GetCorrectLightModel(LightModel lightModel)
+    parameters:
+    - id: lightModel
+      type: rt004.Util.LightModel
+      description: ''
+    return:
+      type: rt004.Util.LightModels.LightModelComputation
+      description: Returns LightModelComputation appropriate for lightModel
+    content.vb: Public Shared Function GetCorrectLightModel(lightModel As LightModel) As LightModelComputation
+  overload: rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel*
+references:
+- uid: rt004.Util.LightModels
+  commentId: N:rt004.Util.LightModels
+  href: rt004.html
+  name: rt004.Util.LightModels
+  nameWithType: rt004.Util.LightModels
+  fullName: rt004.Util.LightModels
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  - name: .
+  - uid: rt004.Util.LightModels
+    name: LightModels
+    href: rt004.Util.LightModels.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  - name: .
+  - uid: rt004.Util.LightModels
+    name: LightModels
+    href: rt004.Util.LightModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: rt004.Util.LightModels.LightModelComputation.ComputeLightColor*
+  commentId: Overload:rt004.Util.LightModels.LightModelComputation.ComputeLightColor
+  href: rt004.Util.LightModels.LightModelComputation.html#rt004_Util_LightModels_LightModelComputation_ComputeLightColor_rt004_SceneObjects_IntersectionProperties_OpenTK_Mathematics_Color4_rt004_SceneObjects_LightSource___
+  name: ComputeLightColor
+  nameWithType: LightModelComputation.ComputeLightColor
+  fullName: rt004.Util.LightModels.LightModelComputation.ComputeLightColor
+- uid: rt004.SceneObjects.IntersectionProperties
+  commentId: T:rt004.SceneObjects.IntersectionProperties
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.IntersectionProperties.html
+  name: IntersectionProperties
+  nameWithType: IntersectionProperties
+  fullName: rt004.SceneObjects.IntersectionProperties
+- uid: OpenTK.Mathematics.Color4
+  commentId: T:OpenTK.Mathematics.Color4
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Color4
+  nameWithType: Color4
+  fullName: OpenTK.Mathematics.Color4
+- uid: rt004.SceneObjects.LightSource[]
+  isExternal: true
+  href: rt004.SceneObjects.LightSource.html
+  name: LightSource[]
+  nameWithType: LightSource[]
+  fullName: rt004.SceneObjects.LightSource[]
+  nameWithType.vb: LightSource()
+  fullName.vb: rt004.SceneObjects.LightSource()
+  name.vb: LightSource()
+  spec.csharp:
+  - uid: rt004.SceneObjects.LightSource
+    name: LightSource
+    href: rt004.SceneObjects.LightSource.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: rt004.SceneObjects.LightSource
+    name: LightSource
+    href: rt004.SceneObjects.LightSource.html
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  href: rt004.html
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel*
+  commentId: Overload:rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel
+  href: rt004.Util.LightModels.LightModelComputation.html#rt004_Util_LightModels_LightModelComputation_GetCorrectLightModel_rt004_Util_LightModel_
+  name: GetCorrectLightModel
+  nameWithType: LightModelComputation.GetCorrectLightModel
+  fullName: rt004.Util.LightModels.LightModelComputation.GetCorrectLightModel
+- uid: rt004.Util.LightModel
+  commentId: T:rt004.Util.LightModel
+  parent: rt004.Util
+  href: rt004.Util.LightModel.html
+  name: LightModel
+  nameWithType: LightModel
+  fullName: rt004.Util.LightModel
+- uid: rt004.Util.LightModels.LightModelComputation
+  commentId: T:rt004.Util.LightModels.LightModelComputation
+  parent: rt004.Util.LightModels
+  href: rt004.Util.LightModels.LightModelComputation.html
+  name: LightModelComputation
+  nameWithType: LightModelComputation
+  fullName: rt004.Util.LightModels.LightModelComputation
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html

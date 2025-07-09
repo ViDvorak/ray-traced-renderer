@@ -35,7 +35,7 @@ namespace rt004.Util
         public static bool          reflections                         = true;
         public static bool          refractions                         = false;
         public static float         minRayContribution                  = 0.001f;
-        public static int           AntialiasingFraquency               = 3;
+        public static int           AntialiasingFrequency               = 3;
 
         public static string        DefaultOutputFile                   = "output.pfm";
         public static string        DefaultConfigFile                   = "config.xml";
@@ -73,7 +73,7 @@ namespace rt004.UtilLoading
     {
         public float epsilon = RendererSettings.epsilon;
 
-        public Color4 defaultBacgroundColor = RendererSettings.defaultBackgroundColor;
+        public Color4 defaultBackgroundColor = RendererSettings.defaultBackgroundColor;
         public Color4 defaultSolidColor = RendererSettings.defaultSolidColor;
         public static uint defaultCameraWidth = RendererSettings.defaultCameraWidth;
         public static uint defaultCameraHeight = RendererSettings.defaultCameraHeight;
@@ -103,7 +103,7 @@ namespace rt004.UtilLoading
         {
             RendererSettings.epsilon = epsilon;
 
-            RendererSettings.defaultBackgroundColor = defaultBacgroundColor;
+            RendererSettings.defaultBackgroundColor = defaultBackgroundColor;
             RendererSettings.defaultSolidColor = defaultSolidColor;
             RendererSettings.defaultCameraWidth = defaultCameraWidth;
             RendererSettings.defaultCameraHeight = defaultCameraHeight;

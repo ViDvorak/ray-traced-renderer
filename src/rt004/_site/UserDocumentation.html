@@ -1,0 +1,819 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>User Documentation | ProgramingDocumentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="User Documentation | ProgramingDocumentation ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/UserDocumentation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="ProgramingDocumentation">
+            ProgramingDocumentation
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="user-documentation">User Documentation</h1>
+
+<p>This is user documantation for ray-tracing renderer created by Vít Dvořák for Fotorealistic graphics. Later used as credit program for programming in C#.</p>
+<ul>
+<li><a href="#user-documentation">User Documentation</a>
+<ul>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#run-program">Run program</a></li>
+<li><a href="#command-line-arguments">Command line arguments</a></li>
+<li><a href="#configuration-file">Configuration file</a>
+<ul>
+<li><a href="#renderersettings">RendererSettings</a></li>
+<li><a href="#sceneloader-structure">SceneLoader structure</a>
+<ul>
+<li><a href="#ambient-light-properties">Ambient Light properties</a></li>
+<li><a href="#sceneobjectloaders">SceneObjectLoaders</a>
+<ul>
+<li><a href="#universal-properties">Universal Properties</a></li>
+<li><a href="#prespective-camera">Prespective Camera</a></li>
+<li><a href="#point-light">Point Light</a></li>
+<li><a href="#plane">Plane</a></li>
+<li><a href="#sphere">Sphere</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#support-objects">Support Objects</a>
+<ul>
+<li><a href="#basic-types">basic types</a>
+<ul>
+<li><a href="#values">Values</a></li>
+</ul>
+</li>
+<li><a href="#light-calculation">Light calculation</a></li>
+<li><a href="#material">Material</a></li>
+<li><a href="#textures">Textures</a></li>
+</ul>
+</li>
+<li><a href="#variables">Variables</a>
+<ul>
+<li><a href="#variable-definition">Variable definition</a></li>
+<li><a href="#variable-usage">Variable usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<h3 id="run-program">Run program</h3>
+<p>Program is executed by calling rt004.exe file in .../src/rt004/bin/Debug/net7.0 [TODO] change the address
+Or double clicking on the rt004.exe file in your File explorer.</p>
+<h3 id="command-line-arguments">Command line arguments</h3>
+<p>There is an option to set some parameters from command line as arguments.
+When executed from command line, then specified arguments have priority over parameters set in config file.</p>
+<p>Arguments settable from command line:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Argument</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">expected value</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">config</td>
+<td style="text-align: center;">cwd/config.xml</td>
+<td style="text-align: center;">[path]</td>
+<td>Sets path to the file containing scene definition</td>
+</tr>
+<tr>
+<td style="text-align: center;">output</td>
+<td style="text-align: center;">cwd/output.pfm</td>
+<td style="text-align: center;">[path]</td>
+<td>Sets path where should be the resut saved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration-file">Configuration file</h3>
+<hr>
+<p>The scene is described in a xml file. Which follows cople of rules. The file is automaticly deserialied</p>
+<p>The File contains 2 sections</p>
+<ul>
+<li>variables - Defines variables used in the second section of loading.</li>
+<li>dataLoader - Handels all scene loading.
+<ul>
+<li>rendererSetting - Defines rendering settings or defalut values.</li>
+<li>sceneLoader - Defines the scene structure with objects and their properties.</li>
+</ul>
+</li>
+</ul>
+<p>Structure of the file:</p>
+<pre><code class="lang-xml">&lt;DataLoader&gt;
+  &lt;variables&gt;
+    ...
+  &lt;/variables&gt;
+  
+  &lt;rendererSettings&gt;
+    ...
+  &lt;/rendererSettings&gt;
+
+  &lt;sceneLoader&gt;
+    ...
+  &lt;/sceneLoader&gt;
+&lt;/DataLoader&gt;
+</code></pre>
+<h4 id="renderersettings">RendererSettings</h4>
+<p>Sets rendering properties and their default values.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">tag</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">shadows</td>
+<td style="text-align: center;">true</td>
+<td style="text-align: center;">true / false</td>
+<td>Turns on and off shadow computation in the scene.</td>
+</tr>
+<tr>
+<td style="text-align: center;">reflections</td>
+<td style="text-align: center;">true</td>
+<td style="text-align: center;">true / false</td>
+<td>Turns on and off reflection computation in the scene</td>
+</tr>
+<tr>
+<td style="text-align: center;">refractions</td>
+<td style="text-align: center;">false</td>
+<td style="text-align: center;">true / false</td>
+<td>Turns on and off refraction compitation in the scene</td>
+</tr>
+<tr>
+<td style="text-align: center;">epsilon</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">positive float</td>
+<td>Sets the precition of computation in the scene</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultBackgroundColor</td>
+<td style="text-align: center;">RGBA(0.5, 0.5, 0.5, 1)</td>
+<td style="text-align: center;">tags R, G, B, A</td>
+<td>Sets default value of of scene</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultSolidColor</td>
+<td style="text-align: center;">RGBA(0, 1, 0, 1)</td>
+<td style="text-align: center;">tags R, G, B, A</td>
+<td>Sets default base color for all Solid objects scene</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultCameraWidth</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">unsigned integer</td>
+<td>Sets default width of cameras in pixels</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultCameraHeight</td>
+<td style="text-align: center;">480</td>
+<td style="text-align: center;">unsigned integer</td>
+<td>Sets default height of cameras in pixels</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultSpecularFactor</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">float 0-1</td>
+<td>Sets default specular factor for materials. Specualar factor effects rays bounced perfectlly</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultDiffuseFactor</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">float 0-1</td>
+<td>Sets default diffuse factor for materials. Diffuse factor effects rays bounced in all directions</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultShininessFactor</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">float</td>
+<td>Sets default shininess factor for materials. Shininess factor effects final color intensity</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultIndexOfRefraction</td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">float</td>
+<td>Sets default index of refraction.</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultAmbientLightFactor</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">float</td>
+<td>Sets the intensity factor of ambient light</td>
+</tr>
+<tr>
+<td style="text-align: center;">defaultAmbientLightColor</td>
+<td style="text-align: center;">RGBA(1,1,1,1)</td>
+<td style="text-align: center;">tags R, G, B, A</td>
+<td>Default ambient light color in the scene</td>
+</tr>
+<tr>
+<td style="text-align: center;">lightModel</td>
+<td style="text-align: center;">PhongModel</td>
+<td style="text-align: center;"><a href="#light-calculation">Light calculation model</a></td>
+<td>Defines light model to use for rendering</td>
+</tr>
+<tr>
+<td style="text-align: center;">maxReflectionDepth</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">unsigned integer</td>
+<td>Max number of hits a recursive ray reflectance can have.</td>
+</tr>
+<tr>
+<td style="text-align: center;">minRayContribution</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">float</td>
+<td>Minimal contribution of an recursive ray can have to be considered and computed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sceneloader-structure">SceneLoader structure</h4>
+<p>SceneLoader is seperated to two sections:</p>
+<ul>
+<li>ambient light properties - Defines ambient scene light</li>
+<li>sceneObjectLoaders - Defines scene tree</li>
+</ul>
+<pre><code class="lang-xml">&lt;sceneLoader&gt;
+  &lt;ambientLightColor&gt;
+    &lt;R&gt;1&lt;/R&gt;
+    &lt;G&gt;1&lt;/G&gt;
+    &lt;B&gt;1&lt;/B&gt;
+    &lt;A&gt;1&lt;/A&gt;
+  &lt;/ambientLightColor&gt;
+  &lt;ambientLightIntensity&gt;0.1&lt;/ambientLightIntensity&gt;
+
+  &lt;sceneObjectLoaders&gt;
+    
+  &lt;/sceneObjectLoaders&gt;
+&lt;/sceneLoader&gt;
+</code></pre>
+<p>Some Tags must have a specific type defined. For example SceneObjectLoader must define specific type of the sceneObject.</p>
+<pre><code class="lang-xml">&lt;SceneObjectLoader xsi:type=SphereObjectLoader&gt;
+  ...
+&lt;/SceneObjectLoader&gt;
+</code></pre>
+<h5 id="ambient-light-properties">Ambient Light properties</h5>
+<p>Can defined tags:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">tag</th>
+<th style="text-align: center;">dafault value</th>
+<th style="text-align: center;">expected value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">ambientLightColor</td>
+<td style="text-align: center;">RGBA(1,1,1,1)</td>
+<td style="text-align: center;">[tags: R, G, B, A ]</td>
+<td>Defines ambient color</td>
+</tr>
+<tr>
+<td style="text-align: center;">ambientLightIntensity</td>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">[value]</td>
+<td>Defines ambient light intensity</td>
+</tr>
+</tbody>
+</table>
+<h5 id="sceneobjectloaders">SceneObjectLoaders</h5>
+<p>Contains SceneObjects and theyer properties. As a property InnerSceneObjectLoader optionally contains property:&quot;children&quot;, which is a list of SceneObjectLoader-s. This recursion forms a structure of scene tree. In the tree, position and rotation of a object is specified relative to the immediate parent SceneObjectLoader position.</p>
+<p>Each SceneObject is defined by &lt;SceneObjectLoader xsi:type=[<strong>Loader</strong>]&gt; tag. Where <strong>Loader</strong> can be these types.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">InnerSceneObjectLoader</td>
+<td>Used as intermediate node in a tree to connect parent node with multiple othere SceneObjectLoader-s.</td>
+</tr>
+<tr>
+<td style="text-align: center;">PerspectiveCameraLoader</td>
+<td>Perspective Camera to see into the scene.</td>
+</tr>
+<tr>
+<td style="text-align: center;">PointLightLoader</td>
+<td>Point light casting light to the scene.</td>
+</tr>
+<tr>
+<td style="text-align: center;">SphereLoader</td>
+<td>SceneObjectLoader representing mathematicly perfect sphere</td>
+</tr>
+<tr>
+<td style="text-align: center;">PlaneLoader</td>
+<td>SceneObjectLoader representing mathematicly perfect infinite plane</td>
+</tr>
+</tbody>
+</table>
+<h6 id="universal-properties">Universal Properties</h6>
+<p>Properties universal for all SceneObjects.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">property (tag)</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">expected value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">position</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags x,y,z]</td>
+<td>relative position to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">rotation</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags x,y,z]</td>
+<td>relative Euler Angles to parent Object or scene origin</td>
+</tr>
+</tbody>
+</table>
+<h6 id="prespective-camera">Prespective Camera</h6>
+<p>A camera to reneder an image through. The view is oriented along local Z axis.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">property (tag)</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">expected value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">position</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative position to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">rotation</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative Euler Angles to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">backgroundColor</td>
+<td style="text-align: center;">RGBA(1,1,1,1)</td>
+<td style="text-align: center;">[tags R,G,B,A]</td>
+<td>Scene background color.</td>
+</tr>
+<tr>
+<td style="text-align: center;">fov</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">[float value]</td>
+<td>Camera field of view</td>
+</tr>
+<tr>
+<td style="text-align: center;">width</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">[int value]</td>
+<td>Width in pixels</td>
+</tr>
+<tr>
+<td style="text-align: center;">height</td>
+<td style="text-align: center;">480</td>
+<td style="text-align: center;">[int value]</td>
+<td>Height in pixels</td>
+</tr>
+</tbody>
+</table>
+<h6 id="point-light">Point Light</h6>
+<p>Represents light shinning from one point in all directions.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">property (tag)</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">expected value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">position</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative position to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">rotation</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative Euler Angles to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">lightColor</td>
+<td style="text-align: center;">RGBA(1,1,1,1)</td>
+<td style="text-align: center;">[tags R,G,B,A]</td>
+<td>Scene background color.</td>
+</tr>
+<tr>
+<td style="text-align: center;">intesity</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[float value]</td>
+<td>The intensity of the light</td>
+</tr>
+<tr>
+<td style="text-align: center;">diffuseFactor</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[float value]</td>
+<td>Defines how much is diffuse part of object lighting affected</td>
+</tr>
+<tr>
+<td style="text-align: center;">specularFactor</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[float value]</td>
+<td>Defines how much is specular part of object lighting affected</td>
+</tr>
+</tbody>
+</table>
+<h6 id="plane">Plane</h6>
+<p>Represents infinite plane in a Scene.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">property (tag)</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">expected value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">position</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative position to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">rotation</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative Euler Angles to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">lightColor</td>
+<td style="text-align: center;">RGBA(1,1,1,1)</td>
+<td style="text-align: center;">[tags R,G,B,A]</td>
+<td>Color of the object</td>
+</tr>
+<tr>
+<td style="text-align: center;">intesity</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[float value]</td>
+<td>The intensity of the light</td>
+</tr>
+<tr>
+<td style="text-align: center;">diffuseFactor</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[float value]</td>
+<td>Defines how much is diffuse part of object lighting affected</td>
+</tr>
+<tr>
+<td style="text-align: center;">specularFactor</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[float value]</td>
+<td>Defines how much is specular part of object lighting affected</td>
+</tr>
+</tbody>
+</table>
+<h6 id="sphere">Sphere</h6>
+<p>Represents a mathematiclly perfect sphere (perfectlly smooth) in a scene.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">property (tag)</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">expected value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">position</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative position to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">rotation</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative Euler Angles to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">lightColor</td>
+<td style="text-align: center;">RGBA(1,1,1,1)</td>
+<td style="text-align: center;">[tags R,G,B,A]</td>
+<td>Scene background color.</td>
+</tr>
+<tr>
+<td style="text-align: center;">diameter</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[float value]</td>
+<td>The diameter of sphere</td>
+</tr>
+<tr>
+<td style="text-align: center;">material</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">[tag material]</td>
+<td>Material representing properties of the object</td>
+</tr>
+</tbody>
+</table>
+<h4 id="support-objects">Support Objects</h4>
+<h5 id="basic-types">basic types</h5>
+<h6 id="values">Values</h6>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">value type</th>
+<th style="text-align: center;">example</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">integer</td>
+<td style="text-align: center;">0, 1, 2, 10, -5</td>
+<td>Integer values</td>
+</tr>
+<tr>
+<td style="text-align: center;">unsigned integer</td>
+<td style="text-align: center;">0, 1, 2, 10</td>
+<td>Only positive integer values and zaro</td>
+</tr>
+<tr>
+<td style="text-align: center;">float</td>
+<td style="text-align: center;">0.2, 3, -16.4</td>
+<td>Values which can be expressed using floating point</td>
+</tr>
+<tr>
+<td style="text-align: center;">tuple</td>
+<td style="text-align: center;">XYZ(1, 2, 10.3)</td>
+<td>It represents coule of information as [what it represents]([values sepreated by ,])</td>
+</tr>
+<tr>
+<td style="text-align: center;">RGBA</td>
+<td style="text-align: center;">RGBA(1,1,1,1)</td>
+<td>Represents color tuple seperated to channels including A for transparency.</td>
+</tr>
+<tr>
+<td style="text-align: center;">tag</td>
+<td style="text-align: center;">tags &lt;value1&gt;...&lt;/value1&gt; &lt;value2&gt;...&lt;/value2&gt;....</td>
+<td>escribes what subtags must be in side of a variable tag</td>
+</tr>
+</tbody>
+</table>
+<h5 id="light-calculation">Light calculation</h5>
+<p>There is a posibility to change type of light calculation. But right now there is only Phong type implemented and there isn't implemented the change.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Light calculation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">PhongModel</td>
+<td>Default calculation type using Blinn-Phong light calculation model.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="material">Material</h5>
+<p>Defines properties of an object depanding on Light calculation type. They effect the light hiting the object.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">property (tag)</th>
+<th style="text-align: center;">default value</th>
+<th style="text-align: center;">expected value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">position</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative position to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">rotation</td>
+<td style="text-align: center;">XYZ(0,0,0)</td>
+<td style="text-align: center;">[tags X,Y,Z]</td>
+<td>relative Euler Angles to parent Object or scene origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">baseColor</td>
+<td style="text-align: center;">----</td>
+<td style="text-align: center;">[tag texture]</td>
+<td>Color of the object</td>
+</tr>
+<tr>
+<td style="text-align: center;">specularTexture</td>
+<td style="text-align: center;">----</td>
+<td style="text-align: center;">[tag texture]</td>
+<td>texture defining specular property at the object. The color values should be in range 0-1.</td>
+</tr>
+<tr>
+<td style="text-align: center;">shininessTexture</td>
+<td style="text-align: center;">----</td>
+<td style="text-align: center;">[tag texture]</td>
+<td>texture defining shininess property at the object. The color values should be in range 0-1.</td>
+</tr>
+<tr>
+<td style="text-align: center;">diffuseTexture</td>
+<td style="text-align: center;">----</td>
+<td style="text-align: center;">[tag texture]</td>
+<td>texture defining diffuse property at the object. The color values should be in range 0-1.</td>
+</tr>
+<tr>
+<td style="text-align: center;">transparencyTexture</td>
+<td style="text-align: center;">----</td>
+<td style="text-align: center;">[tag texture]</td>
+<td>texture defining transparency property at the object. The color values should be in range 0-1.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="textures">Textures</h5>
+<p>Textures represents 2d information with U,V axies. Texture types represents color or just value information.</p>
+<p>As a reaminder types as used in conjunction of inital tag: &lt;[property name] xsi:type=[type]&gt; ....</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Texture type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">MonochromeUniformTextureLoader</td>
+<td>Represents just one float value on the whole texture space.</td>
+</tr>
+<tr>
+<td style="text-align: center;">UniformTextureLoader</td>
+<td>Represents one RGBA value on the whole texture space</td>
+</tr>
+</tbody>
+</table>
+<h4 id="variables">Variables</h4>
+<p>Variables can be defined as text (usually sections of xml structure) which is exactlly copyed. Replacing every instance of &lt;variableName/&gt; outside &lt;variables&gt; tag section.</p>
+<h5 id="variable-definition">Variable definition</h5>
+<p>The variable definitions must be inside a tag &quot;&lt;variables&gt;&quot; in a following structure. And there can be only one variable section. Variable names are not limited, except they <strong>can not</strong> be named the same as any tagname even for.</p>
+<pre><code class="lang-xml">&lt;DataLoader&gt;
+
+  &lt;variables&gt;
+    &lt;variable1Name&gt;
+      [ variable1 contents ]
+    &lt;/variable1Name&gt;
+
+    &lt;variable2Name&gt;
+      [ variable2 contents ]
+    &lt;/variable2Name&gt;
+    ...
+    
+  &lt;/variables&gt;
+  ...
+
+&lt;DataLoader&gt;
+</code></pre>
+<h5 id="variable-usage">Variable usage</h5>
+<p>Variables can be defined as text (usually sections of xml structure) which is exactlly copyed. Replacing every instance of &lt;variableName/&gt; outside &lt;variables&gt; tag section.</p>
+<p>For example:</p>
+<pre><code class="lang-xml">&lt;DataLoader&gt;
+  &lt;variables&gt;
+    &lt;MyVariable&gt;
+      &lt;SceneObjectLoader xsi:type=&quot;SphereLoader&quot;&gt;
+        &lt;position&gt;
+          &lt;X&gt;0&lt;/X&gt;
+          &lt;Y&gt;0&lt;/Y&gt;
+          &lt;Z&gt;0&lt;/Z&gt;
+        &lt;/position&gt;
+        &lt;rotation&gt;
+          &lt;X&gt;0&lt;/X&gt;
+          &lt;Y&gt;0&lt;/Y&gt;
+          &lt;Z&gt;0&lt;/Z&gt;
+        &lt;/rotation&gt;
+        ...
+        &lt;diameter&gt;1&lt;/diameter&gt;
+      &lt;/SceneObjectLoader&gt;
+    &lt;/MyVariable&gt;
+  &lt;/variables&gt;
+  ...
+
+  &lt;sceneObjectLoaders&gt;
+    &lt;MyVariable/&gt;
+  &lt;/sceneObjectLoaders&gt;
+&lt;DataLoader&gt;
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/UserDocumentation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

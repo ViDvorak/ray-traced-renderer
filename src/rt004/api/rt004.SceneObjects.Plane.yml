@@ -1,0 +1,1224 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.SceneObjects.Plane
+  commentId: T:rt004.SceneObjects.Plane
+  id: Plane
+  parent: rt004.SceneObjects
+  children:
+  - rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3)
+  - rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Material)
+  - rt004.SceneObjects.Plane.GetNormalAt(rt004.Util.Point3D)
+  - rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+  - rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+  langs:
+  - csharp
+  - vb
+  name: Plane
+  nameWithType: Plane
+  fullName: rt004.SceneObjects.Plane
+  type: Class
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: Plane
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 10
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Represents an infinite plane solid in 3D space for ray tracing and intersection tests.
+  example: []
+  syntax:
+    content: 'public class Plane : Solid'
+    content.vb: Public Class Plane Inherits Solid
+  inheritance:
+  - System.Object
+  - rt004.SceneObjects.SceneObject
+  - rt004.SceneObjects.Solid
+  inheritedMembers:
+  - rt004.SceneObjects.Solid.material
+  - rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@)
+  - rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@,rt004.Util.Point2D@)
+  - rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@)
+  - rt004.SceneObjects.SceneObject.parentScene
+  - rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  - rt004.SceneObjects.SceneObject.Position
+  - rt004.SceneObjects.SceneObject.GlobalPosition
+  - rt004.SceneObjects.SceneObject.Rotation
+  - rt004.SceneObjects.SceneObject.ParentScene
+  - rt004.SceneObjects.SceneObject.ParentObject
+  - rt004.SceneObjects.SceneObject.GetLocalHeding
+  - rt004.SceneObjects.SceneObject.GetGlobalHeading
+  - rt004.SceneObjects.SceneObject.GetGlobalPosition
+  - rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  - rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  - rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  - rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3)
+  commentId: M:rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3)
+  id: '#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3)'
+  parent: rt004.SceneObjects.Plane
+  langs:
+  - csharp
+  - vb
+  name: Plane(Scene, Point3D, Vector3)
+  nameWithType: Plane.Plane(Scene, Point3D, Vector3)
+  fullName: rt004.SceneObjects.Plane.Plane(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 20
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Initializes a new instance of the <xref href="rt004.SceneObjects.Plane" data-throw-if-not-resolved="false"></xref> class with the default material for the current lighting model.
+  example: []
+  syntax:
+    content: public Plane(Scene parentScene, Point3D position, Vector3 rotation)
+    parameters:
+    - id: parentScene
+      type: rt004.Scene
+      description: The parent scene to which this plane belongs.
+    - id: position
+      type: rt004.Util.Point3D
+      description: The position of the plane in world coordinates.
+    - id: rotation
+      type: OpenTK.Mathematics.Vector3
+      description: The rotation of the plane in Euler angles (degrees or radians as per convention).
+    content.vb: Public Sub New(parentScene As Scene, position As Point3D, rotation As Vector3)
+  overload: rt004.SceneObjects.Plane.#ctor*
+  nameWithType.vb: Plane.New(Scene, Point3D, Vector3)
+  fullName.vb: rt004.SceneObjects.Plane.New(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3)
+  name.vb: New(Scene, Point3D, Vector3)
+- uid: rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Material)
+  commentId: M:rt004.SceneObjects.Plane.#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Material)
+  id: '#ctor(rt004.Scene,rt004.Util.Point3D,OpenTK.Mathematics.Vector3,rt004.Materials.Material)'
+  parent: rt004.SceneObjects.Plane
+  langs:
+  - csharp
+  - vb
+  name: Plane(Scene, Point3D, Vector3, Material)
+  nameWithType: Plane.Plane(Scene, Point3D, Vector3, Material)
+  fullName: rt004.SceneObjects.Plane.Plane(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3, rt004.Materials.Material)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 32
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Initializes a new instance of the <xref href="rt004.SceneObjects.Plane" data-throw-if-not-resolved="false"></xref> class with a specified material.
+  example: []
+  syntax:
+    content: public Plane(Scene parentScene, Point3D position, Vector3 rotation, Material material)
+    parameters:
+    - id: parentScene
+      type: rt004.Scene
+      description: The parent scene to which this plane belongs.
+    - id: position
+      type: rt004.Util.Point3D
+      description: The position of the plane in world coordinates.
+    - id: rotation
+      type: OpenTK.Mathematics.Vector3
+      description: The rotation of the plane in Euler angles (degrees or radians as per convention).
+    - id: material
+      type: rt004.Materials.Material
+      description: The material to use for rendering the plane.
+    content.vb: Public Sub New(parentScene As Scene, position As Point3D, rotation As Vector3, material As Material)
+  overload: rt004.SceneObjects.Plane.#ctor*
+  exceptions:
+  - type: System.InvalidCastException
+    commentId: T:System.InvalidCastException
+    description: Thrown if the provided material is not compatible with the current renderer settings.
+  nameWithType.vb: Plane.New(Scene, Point3D, Vector3, Material)
+  fullName.vb: rt004.SceneObjects.Plane.New(rt004.Scene, rt004.Util.Point3D, OpenTK.Mathematics.Vector3, rt004.Materials.Material)
+  name.vb: New(Scene, Point3D, Vector3, Material)
+- uid: rt004.SceneObjects.Plane.GetNormalAt(rt004.Util.Point3D)
+  commentId: M:rt004.SceneObjects.Plane.GetNormalAt(rt004.Util.Point3D)
+  id: GetNormalAt(rt004.Util.Point3D)
+  parent: rt004.SceneObjects.Plane
+  langs:
+  - csharp
+  - vb
+  name: GetNormalAt(Point3D)
+  nameWithType: Plane.GetNormalAt(Point3D)
+  fullName: rt004.SceneObjects.Plane.GetNormalAt(rt004.Util.Point3D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetNormalAt
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 45
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Gets the normal vector of the plane at the specified global position.
+  example: []
+  syntax:
+    content: public override Vector3D GetNormalAt(Point3D globalPosition)
+    parameters:
+    - id: globalPosition
+      type: rt004.Util.Point3D
+      description: The position on the plane (unused, as the normal is constant).
+    return:
+      type: rt004.Util.Vector3D
+      description: The normal vector of the plane.
+    content.vb: Public Overrides Function GetNormalAt(globalPosition As Point3D) As Vector3D
+  overridden: rt004.SceneObjects.Solid.GetNormalAt(rt004.Util.Point3D)
+  overload: rt004.SceneObjects.Plane.GetNormalAt*
+- uid: rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+  commentId: M:rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+  id: TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+  parent: rt004.SceneObjects.Plane
+  langs:
+  - csharp
+  - vb
+  name: TryGetRayIntersection(Ray, out double)
+  nameWithType: Plane.TryGetRayIntersection(Ray, out double)
+  fullName: rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray, out double)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: TryGetRayIntersection
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 56
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Attempts to compute the intersection between a ray and this plane.
+  example: []
+  syntax:
+    content: public override bool TryGetRayIntersection(Ray line, out double parameter)
+    parameters:
+    - id: line
+      type: rt004.Util.Ray
+      description: The ray to test for intersection.
+    - id: parameter
+      type: System.Double
+      description: If intersection occurs, contains the distance along the ray to the intersection point.
+    return:
+      type: System.Boolean
+      description: True if the ray intersects the plane; otherwise, false.
+    content.vb: Public Overrides Function TryGetRayIntersection(line As Ray, parameter As Double) As Boolean
+  overridden: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+  overload: rt004.SceneObjects.Plane.TryGetRayIntersection*
+  nameWithType.vb: Plane.TryGetRayIntersection(Ray, Double)
+  fullName.vb: rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray, Double)
+  name.vb: TryGetRayIntersection(Ray, Double)
+- uid: rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+  commentId: M:rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+  id: TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+  parent: rt004.SceneObjects.Plane
+  langs:
+  - csharp
+  - vb
+  name: TryGetRayIntersection(Ray, out double, out Point2D)
+  nameWithType: Plane.TryGetRayIntersection(Ray, out double, out Point2D)
+  fullName: rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray, out double, out rt004.Util.Point2D)
+  type: Method
+  source:
+    remote:
+      path: src/rt004/SceneObjects/Solids/Plane.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: TryGetRayIntersection
+    path: SceneObjects/Solids/Plane.cs
+    startLine: 68
+  assemblies:
+  - rt004
+  namespace: rt004.SceneObjects
+  summary: Attempts to compute the intersection between a ray and this plane, and calculates the UV coordinates at the intersection point.
+  example: []
+  syntax:
+    content: public override bool TryGetRayIntersection(Ray ray, out double distance, out Point2D uvCoord)
+    parameters:
+    - id: ray
+      type: rt004.Util.Ray
+      description: The ray to test for intersection.
+    - id: distance
+      type: System.Double
+      description: If intersection occurs, contains the distance along the ray to the intersection point.
+    - id: uvCoord
+      type: rt004.Util.Point2D
+      description: If intersection occurs, contains the UV coordinates at the intersection point on the plane.
+    return:
+      type: System.Boolean
+      description: True if the ray intersects the plane; otherwise, false.
+    content.vb: Public Overrides Function TryGetRayIntersection(ray As Ray, distance As Double, uvCoord As Point2D) As Boolean
+  overridden: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+  overload: rt004.SceneObjects.Plane.TryGetRayIntersection*
+  nameWithType.vb: Plane.TryGetRayIntersection(Ray, Double, Point2D)
+  fullName.vb: rt004.SceneObjects.Plane.TryGetRayIntersection(rt004.Util.Ray, Double, rt004.Util.Point2D)
+  name.vb: TryGetRayIntersection(Ray, Double, Point2D)
+references:
+- uid: rt004.SceneObjects
+  commentId: N:rt004.SceneObjects
+  href: rt004.html
+  name: rt004.SceneObjects
+  nameWithType: rt004.SceneObjects
+  fullName: rt004.SceneObjects
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.SceneObjects
+    name: SceneObjects
+    href: rt004.SceneObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.SceneObjects.SceneObject
+  commentId: T:rt004.SceneObjects.SceneObject
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.SceneObject.html
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: rt004.SceneObjects.SceneObject
+- uid: rt004.SceneObjects.Solid
+  commentId: T:rt004.SceneObjects.Solid
+  parent: rt004.SceneObjects
+  href: rt004.SceneObjects.Solid.html
+  name: Solid
+  nameWithType: Solid
+  fullName: rt004.SceneObjects.Solid
+- uid: rt004.SceneObjects.Solid.material
+  commentId: P:rt004.SceneObjects.Solid.material
+  parent: rt004.SceneObjects.Solid
+  href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_material
+  name: material
+  nameWithType: Solid.material
+  fullName: rt004.SceneObjects.Solid.material
+- uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@)
+  commentId: M:rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@)
+  parent: rt004.SceneObjects.Solid
+  href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__
+  name: TryGetRayIntersection(Ray, out Point3D)
+  nameWithType: Solid.TryGetRayIntersection(Ray, out Point3D)
+  fullName: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, out rt004.Util.Point3D)
+  nameWithType.vb: Solid.TryGetRayIntersection(Ray, Point3D)
+  fullName.vb: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, rt004.Util.Point3D)
+  name.vb: TryGetRayIntersection(Ray, Point3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+- uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@,rt004.Util.Point2D@)
+  commentId: M:rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@,rt004.Util.Point2D@)
+  parent: rt004.SceneObjects.Solid
+  href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__rt004_Util_Point2D__
+  name: TryGetRayIntersection(Ray, out Point3D, out Point2D)
+  nameWithType: Solid.TryGetRayIntersection(Ray, out Point3D, out Point2D)
+  fullName: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, out rt004.Util.Point3D, out rt004.Util.Point2D)
+  nameWithType.vb: Solid.TryGetRayIntersection(Ray, Point3D, Point2D)
+  fullName.vb: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, rt004.Util.Point3D, rt004.Util.Point2D)
+  name.vb: TryGetRayIntersection(Ray, Point3D, Point2D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@,rt004.Util.Point2D@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__rt004_Util_Point2D__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: rt004.Util.Point2D
+    name: Point2D
+    href: rt004.Util.Point2D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.Util.Point3D@,rt004.Util.Point2D@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_Util_Point3D__rt004_Util_Point2D__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: ','
+  - name: " "
+  - uid: rt004.Util.Point2D
+    name: Point2D
+    href: rt004.Util.Point2D.html
+  - name: )
+- uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@)
+  commentId: M:rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@)
+  parent: rt004.SceneObjects.Solid
+  href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__
+  name: TryGetRayIntersection(Ray, out IntersectionProperties)
+  nameWithType: Solid.TryGetRayIntersection(Ray, out IntersectionProperties)
+  fullName: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, out rt004.SceneObjects.IntersectionProperties)
+  nameWithType.vb: Solid.TryGetRayIntersection(Ray, IntersectionProperties)
+  fullName.vb: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, rt004.SceneObjects.IntersectionProperties)
+  name.vb: TryGetRayIntersection(Ray, IntersectionProperties)
+  spec.csharp:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: rt004.SceneObjects.IntersectionProperties
+    name: IntersectionProperties
+    href: rt004.SceneObjects.IntersectionProperties.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - uid: rt004.SceneObjects.IntersectionProperties
+    name: IntersectionProperties
+    href: rt004.SceneObjects.IntersectionProperties.html
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.parentScene
+  commentId: F:rt004.SceneObjects.SceneObject.parentScene
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_parentScene
+  name: parentScene
+  nameWithType: SceneObject.parentScene
+  fullName: rt004.SceneObjects.SceneObject.parentScene
+- uid: rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  commentId: F:rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_dirtyGlobalPosition
+  name: dirtyGlobalPosition
+  nameWithType: SceneObject.dirtyGlobalPosition
+  fullName: rt004.SceneObjects.SceneObject.dirtyGlobalPosition
+- uid: rt004.SceneObjects.SceneObject.Position
+  commentId: P:rt004.SceneObjects.SceneObject.Position
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Position
+  name: Position
+  nameWithType: SceneObject.Position
+  fullName: rt004.SceneObjects.SceneObject.Position
+- uid: rt004.SceneObjects.SceneObject.GlobalPosition
+  commentId: P:rt004.SceneObjects.SceneObject.GlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GlobalPosition
+  name: GlobalPosition
+  nameWithType: SceneObject.GlobalPosition
+  fullName: rt004.SceneObjects.SceneObject.GlobalPosition
+- uid: rt004.SceneObjects.SceneObject.Rotation
+  commentId: P:rt004.SceneObjects.SceneObject.Rotation
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_Rotation
+  name: Rotation
+  nameWithType: SceneObject.Rotation
+  fullName: rt004.SceneObjects.SceneObject.Rotation
+- uid: rt004.SceneObjects.SceneObject.ParentScene
+  commentId: P:rt004.SceneObjects.SceneObject.ParentScene
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentScene
+  name: ParentScene
+  nameWithType: SceneObject.ParentScene
+  fullName: rt004.SceneObjects.SceneObject.ParentScene
+- uid: rt004.SceneObjects.SceneObject.ParentObject
+  commentId: P:rt004.SceneObjects.SceneObject.ParentObject
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ParentObject
+  name: ParentObject
+  nameWithType: SceneObject.ParentObject
+  fullName: rt004.SceneObjects.SceneObject.ParentObject
+- uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalHeding
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  name: GetLocalHeding()
+  nameWithType: SceneObject.GetLocalHeding()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalHeding()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+    name: GetLocalHeding
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalHeding
+    name: GetLocalHeding
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalHeding
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+  commentId: M:rt004.SceneObjects.SceneObject.GetGlobalHeading
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  name: GetGlobalHeading()
+  nameWithType: SceneObject.GetGlobalHeading()
+  fullName: rt004.SceneObjects.SceneObject.GetGlobalHeading()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+    name: GetGlobalHeading
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalHeading
+    name: GetGlobalHeading
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalHeading
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+  commentId: M:rt004.SceneObjects.SceneObject.GetGlobalPosition
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  name: GetGlobalPosition()
+  nameWithType: SceneObject.GetGlobalPosition()
+  fullName: rt004.SceneObjects.SceneObject.GetGlobalPosition()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+    name: GetGlobalPosition
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetGlobalPosition
+    name: GetGlobalPosition
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetGlobalPosition
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  name: GetLocalToWorldTransformMatrix()
+  nameWithType: SceneObject.GetLocalToWorldTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+    name: GetLocalToWorldTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalToWorldTransformMatrix
+    name: GetLocalToWorldTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalToWorldTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  name: GetWorldToLocalTransformMatrix()
+  nameWithType: SceneObject.GetWorldToLocalTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+    name: GetWorldToLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetWorldToLocalTransformMatrix
+    name: GetWorldToLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetWorldToLocalTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  name: GetLocalTransformMatrix()
+  nameWithType: SceneObject.GetLocalTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+    name: GetLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalTransformMatrix
+    name: GetLocalTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  commentId: M:rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  name: GetLocalInverseTransformMatrix()
+  nameWithType: SceneObject.GetLocalInverseTransformMatrix()
+  fullName: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix()
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+    name: GetLocalInverseTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.GetLocalInverseTransformMatrix
+    name: GetLocalInverseTransformMatrix
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_GetLocalInverseTransformMatrix
+  - name: (
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  commentId: M:rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  name: ToWorldSpace(Vector3D)
+  nameWithType: SceneObject.ToWorldSpace(Vector3D)
+  fullName: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  - name: (
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Vector3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Vector3D_
+  - name: (
+  - uid: rt004.Util.Vector3D
+    name: Vector3D
+    href: rt004.Util.Vector3D.html
+  - name: )
+- uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  commentId: M:rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  parent: rt004.SceneObjects.SceneObject
+  href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  name: ToWorldSpace(Point3D)
+  nameWithType: SceneObject.ToWorldSpace(Point3D)
+  fullName: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.SceneObject.ToWorldSpace(rt004.Util.Point3D)
+    name: ToWorldSpace
+    href: rt004.SceneObjects.SceneObject.html#rt004_SceneObjects_SceneObject_ToWorldSpace_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: rt004.SceneObjects.Plane
+  commentId: T:rt004.SceneObjects.Plane
+  href: rt004.SceneObjects.Plane.html
+  name: Plane
+  nameWithType: Plane
+  fullName: rt004.SceneObjects.Plane
+- uid: rt004.SceneObjects.Plane.#ctor*
+  commentId: Overload:rt004.SceneObjects.Plane.#ctor
+  href: rt004.SceneObjects.Plane.html#rt004_SceneObjects_Plane__ctor_rt004_Scene_rt004_Util_Point3D_OpenTK_Mathematics_Vector3_
+  name: Plane
+  nameWithType: Plane.Plane
+  fullName: rt004.SceneObjects.Plane.Plane
+  nameWithType.vb: Plane.New
+  fullName.vb: rt004.SceneObjects.Plane.New
+  name.vb: New
+- uid: rt004.Scene
+  commentId: T:rt004.Scene
+  parent: rt004
+  href: rt004.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: rt004.Scene
+- uid: rt004.Util.Point3D
+  commentId: T:rt004.Util.Point3D
+  parent: rt004.Util
+  href: rt004.Util.Point3D.html
+  name: Point3D
+  nameWithType: Point3D
+  fullName: rt004.Util.Point3D
+- uid: OpenTK.Mathematics.Vector3
+  commentId: T:OpenTK.Mathematics.Vector3
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: OpenTK.Mathematics.Vector3
+- uid: rt004
+  commentId: N:rt004
+  href: rt004.html
+  name: rt004
+  nameWithType: rt004
+  fullName: rt004
+- uid: rt004.Util
+  commentId: N:rt004.Util
+  href: rt004.html
+  name: rt004.Util
+  nameWithType: rt004.Util
+  fullName: rt004.Util
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Util
+    name: Util
+    href: rt004.Util.html
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: System.InvalidCastException
+  commentId: T:System.InvalidCastException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidcastexception
+  name: InvalidCastException
+  nameWithType: InvalidCastException
+  fullName: System.InvalidCastException
+- uid: rt004.Materials.Material
+  commentId: T:rt004.Materials.Material
+  parent: rt004.Materials
+  href: rt004.Materials.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: rt004.Materials.Material
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+- uid: rt004.SceneObjects.Solid.GetNormalAt(rt004.Util.Point3D)
+  commentId: M:rt004.SceneObjects.Solid.GetNormalAt(rt004.Util.Point3D)
+  parent: rt004.SceneObjects.Solid
+  href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_GetNormalAt_rt004_Util_Point3D_
+  name: GetNormalAt(Point3D)
+  nameWithType: Solid.GetNormalAt(Point3D)
+  fullName: rt004.SceneObjects.Solid.GetNormalAt(rt004.Util.Point3D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.Solid.GetNormalAt(rt004.Util.Point3D)
+    name: GetNormalAt
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_GetNormalAt_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.Solid.GetNormalAt(rt004.Util.Point3D)
+    name: GetNormalAt
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_GetNormalAt_rt004_Util_Point3D_
+  - name: (
+  - uid: rt004.Util.Point3D
+    name: Point3D
+    href: rt004.Util.Point3D.html
+  - name: )
+- uid: rt004.SceneObjects.Plane.GetNormalAt*
+  commentId: Overload:rt004.SceneObjects.Plane.GetNormalAt
+  href: rt004.SceneObjects.Plane.html#rt004_SceneObjects_Plane_GetNormalAt_rt004_Util_Point3D_
+  name: GetNormalAt
+  nameWithType: Plane.GetNormalAt
+  fullName: rt004.SceneObjects.Plane.GetNormalAt
+- uid: rt004.Util.Vector3D
+  commentId: T:rt004.Util.Vector3D
+  parent: rt004.Util
+  href: rt004.Util.Vector3D.html
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: rt004.Util.Vector3D
+- uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+  commentId: M:rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+  parent: rt004.SceneObjects.Solid
+  isExternal: true
+  href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__
+  name: TryGetRayIntersection(Ray, out double)
+  nameWithType: Solid.TryGetRayIntersection(Ray, out double)
+  fullName: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, out double)
+  nameWithType.vb: Solid.TryGetRayIntersection(Ray, Double)
+  fullName.vb: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, Double)
+  name.vb: TryGetRayIntersection(Ray, Double)
+  spec.csharp:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: rt004.SceneObjects.Plane.TryGetRayIntersection*
+  commentId: Overload:rt004.SceneObjects.Plane.TryGetRayIntersection
+  href: rt004.SceneObjects.Plane.html#rt004_SceneObjects_Plane_TryGetRayIntersection_rt004_Util_Ray_System_Double__
+  name: TryGetRayIntersection
+  nameWithType: Plane.TryGetRayIntersection
+  fullName: rt004.SceneObjects.Plane.TryGetRayIntersection
+- uid: rt004.Util.Ray
+  commentId: T:rt004.Util.Ray
+  parent: rt004.Util
+  href: rt004.Util.Ray.html
+  name: Ray
+  nameWithType: Ray
+  fullName: rt004.Util.Ray
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+  commentId: M:rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+  parent: rt004.SceneObjects.Solid
+  isExternal: true
+  href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__rt004_Util_Point2D__
+  name: TryGetRayIntersection(Ray, out double, out Point2D)
+  nameWithType: Solid.TryGetRayIntersection(Ray, out double, out Point2D)
+  fullName: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, out double, out rt004.Util.Point2D)
+  nameWithType.vb: Solid.TryGetRayIntersection(Ray, Double, Point2D)
+  fullName.vb: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray, Double, rt004.Util.Point2D)
+  name.vb: TryGetRayIntersection(Ray, Double, Point2D)
+  spec.csharp:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__rt004_Util_Point2D__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: rt004.Util.Point2D
+    name: Point2D
+    href: rt004.Util.Point2D.html
+  - name: )
+  spec.vb:
+  - uid: rt004.SceneObjects.Solid.TryGetRayIntersection(rt004.Util.Ray,System.Double@,rt004.Util.Point2D@)
+    name: TryGetRayIntersection
+    href: rt004.SceneObjects.Solid.html#rt004_SceneObjects_Solid_TryGetRayIntersection_rt004_Util_Ray_System_Double__rt004_Util_Point2D__
+  - name: (
+  - uid: rt004.Util.Ray
+    name: Ray
+    href: rt004.Util.Ray.html
+  - name: ','
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: ','
+  - name: " "
+  - uid: rt004.Util.Point2D
+    name: Point2D
+    href: rt004.Util.Point2D.html
+  - name: )
+- uid: rt004.Util.Point2D
+  commentId: T:rt004.Util.Point2D
+  parent: rt004.Util
+  href: rt004.Util.Point2D.html
+  name: Point2D
+  nameWithType: Point2D
+  fullName: rt004.Util.Point2D

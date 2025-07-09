@@ -1,0 +1,567 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Materials.Loading.UniformTextureLoader
+  commentId: T:rt004.Materials.Loading.UniformTextureLoader
+  id: UniformTextureLoader
+  parent: rt004.Materials.Loading
+  children:
+  - rt004.Materials.Loading.UniformTextureLoader.#ctor
+  - rt004.Materials.Loading.UniformTextureLoader.#ctor(OpenTK.Mathematics.Color4)
+  - rt004.Materials.Loading.UniformTextureLoader.GetInstance
+  - rt004.Materials.Loading.UniformTextureLoader.color
+  langs:
+  - csharp
+  - vb
+  name: UniformTextureLoader
+  nameWithType: UniformTextureLoader
+  fullName: rt004.Materials.Loading.UniformTextureLoader
+  type: Class
+  source:
+    remote:
+      path: src/rt004/Materials/UniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: UniformTextureLoader
+    path: Materials/UniformTexture.cs
+    startLine: 42
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: Represents a loader for creating <xref href="rt004.Materials.UniformTexture" data-throw-if-not-resolved="false"></xref> instances with a specified color.
+  example: []
+  syntax:
+    content: 'public class UniformTextureLoader : TextureLoader'
+    content.vb: Public Class UniformTextureLoader Inherits TextureLoader
+  inheritance:
+  - System.Object
+  - rt004.Materials.Loading.TextureLoader
+  inheritedMembers:
+  - rt004.Materials.Loading.TextureLoader.width
+  - rt004.Materials.Loading.TextureLoader.height
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: rt004.Materials.Loading.UniformTextureLoader.color
+  commentId: F:rt004.Materials.Loading.UniformTextureLoader.color
+  id: color
+  parent: rt004.Materials.Loading.UniformTextureLoader
+  langs:
+  - csharp
+  - vb
+  name: color
+  nameWithType: UniformTextureLoader.color
+  fullName: rt004.Materials.Loading.UniformTextureLoader.color
+  type: Field
+  source:
+    remote:
+      path: src/rt004/Materials/UniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: color
+    path: Materials/UniformTexture.cs
+    startLine: 47
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: The color used to initialize the <xref href="rt004.Materials.UniformTexture" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Color4 color
+    return:
+      type: OpenTK.Mathematics.Color4
+    content.vb: Public color As Color4
+- uid: rt004.Materials.Loading.UniformTextureLoader.#ctor
+  commentId: M:rt004.Materials.Loading.UniformTextureLoader.#ctor
+  id: '#ctor'
+  parent: rt004.Materials.Loading.UniformTextureLoader
+  langs:
+  - csharp
+  - vb
+  name: UniformTextureLoader()
+  nameWithType: UniformTextureLoader.UniformTextureLoader()
+  fullName: rt004.Materials.Loading.UniformTextureLoader.UniformTextureLoader()
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Materials/UniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Materials/UniformTexture.cs
+    startLine: 52
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: Initializes a new instance of the <xref href="rt004.Materials.Loading.UniformTextureLoader" data-throw-if-not-resolved="false"></xref> class with a default color (white).
+  example: []
+  syntax:
+    content: public UniformTextureLoader()
+    content.vb: Public Sub New()
+  overload: rt004.Materials.Loading.UniformTextureLoader.#ctor*
+  nameWithType.vb: UniformTextureLoader.New()
+  fullName.vb: rt004.Materials.Loading.UniformTextureLoader.New()
+  name.vb: New()
+- uid: rt004.Materials.Loading.UniformTextureLoader.#ctor(OpenTK.Mathematics.Color4)
+  commentId: M:rt004.Materials.Loading.UniformTextureLoader.#ctor(OpenTK.Mathematics.Color4)
+  id: '#ctor(OpenTK.Mathematics.Color4)'
+  parent: rt004.Materials.Loading.UniformTextureLoader
+  langs:
+  - csharp
+  - vb
+  name: UniformTextureLoader(Color4)
+  nameWithType: UniformTextureLoader.UniformTextureLoader(Color4)
+  fullName: rt004.Materials.Loading.UniformTextureLoader.UniformTextureLoader(OpenTK.Mathematics.Color4)
+  type: Constructor
+  source:
+    remote:
+      path: src/rt004/Materials/UniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: .ctor
+    path: Materials/UniformTexture.cs
+    startLine: 61
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: Initializes a new instance of the <xref href="rt004.Materials.Loading.UniformTextureLoader" data-throw-if-not-resolved="false"></xref> class with a specified color.
+  example: []
+  syntax:
+    content: public UniformTextureLoader(Color4 color)
+    parameters:
+    - id: color
+      type: OpenTK.Mathematics.Color4
+      description: The color to apply to the <xref href="rt004.Materials.UniformTexture" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub New(color As Color4)
+  overload: rt004.Materials.Loading.UniformTextureLoader.#ctor*
+  nameWithType.vb: UniformTextureLoader.New(Color4)
+  fullName.vb: rt004.Materials.Loading.UniformTextureLoader.New(OpenTK.Mathematics.Color4)
+  name.vb: New(Color4)
+- uid: rt004.Materials.Loading.UniformTextureLoader.GetInstance
+  commentId: M:rt004.Materials.Loading.UniformTextureLoader.GetInstance
+  id: GetInstance
+  parent: rt004.Materials.Loading.UniformTextureLoader
+  langs:
+  - csharp
+  - vb
+  name: GetInstance()
+  nameWithType: UniformTextureLoader.GetInstance()
+  fullName: rt004.Materials.Loading.UniformTextureLoader.GetInstance()
+  type: Method
+  source:
+    remote:
+      path: src/rt004/Materials/UniformTexture.cs
+      branch: main
+      repo: https://github.com/ViDvorak/ray-traced-renderer.git
+    id: GetInstance
+    path: Materials/UniformTexture.cs
+    startLine: 70
+  assemblies:
+  - rt004
+  namespace: rt004.Materials.Loading
+  summary: Creates a new instance of <xref href="rt004.Materials.UniformTexture" data-throw-if-not-resolved="false"></xref> with the specified color.
+  example: []
+  syntax:
+    content: public override Texture GetInstance()
+    return:
+      type: rt004.Materials.Texture
+      description: A new <xref href="rt004.Materials.UniformTexture" data-throw-if-not-resolved="false"></xref> instance initialized with the specified color.
+    content.vb: Public Overrides Function GetInstance() As Texture
+  overridden: rt004.Materials.Loading.TextureLoader.GetInstance
+  overload: rt004.Materials.Loading.UniformTextureLoader.GetInstance*
+references:
+- uid: rt004.Materials.UniformTexture
+  commentId: T:rt004.Materials.UniformTexture
+  href: rt004.Materials.UniformTexture.html
+  name: UniformTexture
+  nameWithType: UniformTexture
+  fullName: rt004.Materials.UniformTexture
+- uid: rt004.Materials.Loading
+  commentId: N:rt004.Materials.Loading
+  href: rt004.html
+  name: rt004.Materials.Loading
+  nameWithType: rt004.Materials.Loading
+  fullName: rt004.Materials.Loading
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  - name: .
+  - uid: rt004.Materials.Loading
+    name: Loading
+    href: rt004.Materials.Loading.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: rt004.Materials.Loading.TextureLoader
+  commentId: T:rt004.Materials.Loading.TextureLoader
+  parent: rt004.Materials.Loading
+  href: rt004.Materials.Loading.TextureLoader.html
+  name: TextureLoader
+  nameWithType: TextureLoader
+  fullName: rt004.Materials.Loading.TextureLoader
+- uid: rt004.Materials.Loading.TextureLoader.width
+  commentId: F:rt004.Materials.Loading.TextureLoader.width
+  parent: rt004.Materials.Loading.TextureLoader
+  href: rt004.Materials.Loading.TextureLoader.html#rt004_Materials_Loading_TextureLoader_width
+  name: width
+  nameWithType: TextureLoader.width
+  fullName: rt004.Materials.Loading.TextureLoader.width
+- uid: rt004.Materials.Loading.TextureLoader.height
+  commentId: F:rt004.Materials.Loading.TextureLoader.height
+  parent: rt004.Materials.Loading.TextureLoader
+  href: rt004.Materials.Loading.TextureLoader.html#rt004_Materials_Loading_TextureLoader_height
+  name: height
+  nameWithType: TextureLoader.height
+  fullName: rt004.Materials.Loading.TextureLoader.height
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OpenTK.Mathematics.Color4
+  commentId: T:OpenTK.Mathematics.Color4
+  parent: OpenTK.Mathematics
+  isExternal: true
+  name: Color4
+  nameWithType: Color4
+  fullName: OpenTK.Mathematics.Color4
+- uid: OpenTK.Mathematics
+  commentId: N:OpenTK.Mathematics
+  isExternal: true
+  name: OpenTK.Mathematics
+  nameWithType: OpenTK.Mathematics
+  fullName: OpenTK.Mathematics
+  spec.csharp:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+  spec.vb:
+  - uid: OpenTK
+    name: OpenTK
+    isExternal: true
+  - name: .
+  - uid: OpenTK.Mathematics
+    name: Mathematics
+    isExternal: true
+- uid: rt004.Materials.Loading.UniformTextureLoader
+  commentId: T:rt004.Materials.Loading.UniformTextureLoader
+  href: rt004.Materials.Loading.UniformTextureLoader.html
+  name: UniformTextureLoader
+  nameWithType: UniformTextureLoader
+  fullName: rt004.Materials.Loading.UniformTextureLoader
+- uid: rt004.Materials.Loading.UniformTextureLoader.#ctor*
+  commentId: Overload:rt004.Materials.Loading.UniformTextureLoader.#ctor
+  href: rt004.Materials.Loading.UniformTextureLoader.html#rt004_Materials_Loading_UniformTextureLoader__ctor
+  name: UniformTextureLoader
+  nameWithType: UniformTextureLoader.UniformTextureLoader
+  fullName: rt004.Materials.Loading.UniformTextureLoader.UniformTextureLoader
+  nameWithType.vb: UniformTextureLoader.New
+  fullName.vb: rt004.Materials.Loading.UniformTextureLoader.New
+  name.vb: New
+- uid: rt004.Materials.Loading.TextureLoader.GetInstance
+  commentId: M:rt004.Materials.Loading.TextureLoader.GetInstance
+  parent: rt004.Materials.Loading.TextureLoader
+  href: rt004.Materials.Loading.TextureLoader.html#rt004_Materials_Loading_TextureLoader_GetInstance
+  name: GetInstance()
+  nameWithType: TextureLoader.GetInstance()
+  fullName: rt004.Materials.Loading.TextureLoader.GetInstance()
+  spec.csharp:
+  - uid: rt004.Materials.Loading.TextureLoader.GetInstance
+    name: GetInstance
+    href: rt004.Materials.Loading.TextureLoader.html#rt004_Materials_Loading_TextureLoader_GetInstance
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: rt004.Materials.Loading.TextureLoader.GetInstance
+    name: GetInstance
+    href: rt004.Materials.Loading.TextureLoader.html#rt004_Materials_Loading_TextureLoader_GetInstance
+  - name: (
+  - name: )
+- uid: rt004.Materials.Loading.UniformTextureLoader.GetInstance*
+  commentId: Overload:rt004.Materials.Loading.UniformTextureLoader.GetInstance
+  href: rt004.Materials.Loading.UniformTextureLoader.html#rt004_Materials_Loading_UniformTextureLoader_GetInstance
+  name: GetInstance
+  nameWithType: UniformTextureLoader.GetInstance
+  fullName: rt004.Materials.Loading.UniformTextureLoader.GetInstance
+- uid: rt004.Materials.Texture
+  commentId: T:rt004.Materials.Texture
+  parent: rt004.Materials
+  href: rt004.Materials.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: rt004.Materials.Texture
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html

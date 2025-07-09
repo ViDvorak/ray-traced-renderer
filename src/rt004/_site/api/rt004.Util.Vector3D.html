@@ -1,0 +1,1647 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Vector3D | Renderer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Vector3D | Renderer ">
+      
+      <meta name="description" content="Represents an immutable 3-dimensional vector.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/new/main/apiSpec/new?filename=rt004_Util_Vector3D.md&amp;value=---%0Auid%3A%20rt004.Util.Vector3D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Raytraced Renderer">
+            Raytraced Renderer
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rt004.Util.Vector3D">
+
+
+
+  <h1 id="rt004_Util_Vector3D" data-uid="rt004.Util.Vector3D" class="text-break">
+Struct Vector3D  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rt004.html">rt004</a>.<a class="xref" href="rt004.Util.html">Util</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rt004.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an immutable 3-dimensional vector.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Vector3D</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rt004_Util_Vector3D__ctor_" data-uid="rt004.Util.Vector3D.#ctor*"></a>
+
+  <h3 id="rt004_Util_Vector3D__ctor_OpenTK_Mathematics_Vector3d_" data-uid="rt004.Util.Vector3D.#ctor(OpenTK.Mathematics.Vector3d)">
+  Vector3D(Vector3d)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> struct from a <span class="xref">OpenTK.Mathematics.Vector3d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D(Vector3d vector)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <span class="xref">Vector3d</span></dt>
+    <dd><p>The vector to initialize from.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D__ctor_" data-uid="rt004.Util.Vector3D.#ctor*"></a>
+
+  <h3 id="rt004_Util_Vector3D__ctor_System_Double_System_Double_System_Double_" data-uid="rt004.Util.Vector3D.#ctor(System.Double,System.Double,System.Double)">
+  Vector3D(double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> struct from the specified X, Y, and Z coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D(double x, double y, double z)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The X coordinate of the vector.</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The Y coordinate of the vector.</p>
+</dd>
+    <dt><code>z</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The Z coordinate of the vector.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="rt004_Util_Vector3D_AsVector_" data-uid="rt004.Util.Vector3D.AsVector*"></a>
+
+  <h3 id="rt004_Util_Vector3D_AsVector" data-uid="rt004.Util.Vector3D.AsVector">
+  AsVector
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the vector's internal representation as a <span class="xref">OpenTK.Mathematics.Vector3d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3d AsVector { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3d</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Length_" data-uid="rt004.Util.Vector3D.Length*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Length" data-uid="rt004.Util.Vector3D.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the length (magnitude) of the vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Length { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_LengthSquared_" data-uid="rt004.Util.Vector3D.LengthSquared*"></a>
+
+  <h3 id="rt004_Util_Vector3D_LengthSquared" data-uid="rt004.Util.Vector3D.LengthSquared">
+  LengthSquared
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the square of the vector's length (X<em>X + Y</em>Y + Z*Z), avoiding the cost of a square root calculation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LengthSquared { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_OneX_" data-uid="rt004.Util.Vector3D.OneX*"></a>
+
+  <h3 id="rt004_Util_Vector3D_OneX" data-uid="rt004.Util.Vector3D.OneX">
+  OneX
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a unit vector along the X axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D OneX { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_OneY_" data-uid="rt004.Util.Vector3D.OneY*"></a>
+
+  <h3 id="rt004_Util_Vector3D_OneY" data-uid="rt004.Util.Vector3D.OneY">
+  OneY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a unit vector along the Y axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D OneY { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_OneZ_" data-uid="rt004.Util.Vector3D.OneZ*"></a>
+
+  <h3 id="rt004_Util_Vector3D_OneZ" data-uid="rt004.Util.Vector3D.OneZ">
+  OneZ
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a unit vector along the Z axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D OneZ { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_X_" data-uid="rt004.Util.Vector3D.X*"></a>
+
+  <h3 id="rt004_Util_Vector3D_X" data-uid="rt004.Util.Vector3D.X">
+  X
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the X coordinate of the vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double X { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Y_" data-uid="rt004.Util.Vector3D.Y*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Y" data-uid="rt004.Util.Vector3D.Y">
+  Y
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Y coordinate of the vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Y { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Z_" data-uid="rt004.Util.Vector3D.Z*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Z" data-uid="rt004.Util.Vector3D.Z">
+  Z
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Z coordinate of the vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Z { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Zero_" data-uid="rt004.Util.Vector3D.Zero*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Zero" data-uid="rt004.Util.Vector3D.Zero">
+  Zero
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a new instance of a zero vector (0, 0, 0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Zero { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rt004_Util_Vector3D_Cross_" data-uid="rt004.Util.Vector3D.Cross*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Cross_rt004_Util_Vector3D_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.Cross(rt004.Util.Vector3D,rt004.Util.Vector3D)">
+  Cross(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Computes the cross product of two vectors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Cross(Vector3D vector1, Vector3D vector2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector1</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The first vector.</p>
+</dd>
+    <dt><code>vector2</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The second vector.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the cross product.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Dot_" data-uid="rt004.Util.Vector3D.Dot*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Dot_rt004_Util_Vector3D_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.Dot(rt004.Util.Vector3D,rt004.Util.Vector3D)">
+  Dot(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L296"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Calculates the dot product of two vectors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double Dot(Vector3D vector1, Vector3D vector2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector1</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The first vector.</p>
+</dd>
+    <dt><code>vector2</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The second vector.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The dot product result as a double.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Equals_" data-uid="rt004.Util.Vector3D.Equals*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Equals_System_Object_" data-uid="rt004.Util.Vector3D.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L385"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether this instance of <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> is equal to a specified object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to compare with the current <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if <code class="paramref">obj</code> is a <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> and has the same X, Y, and Z values
+as the current instance; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Equals_" data-uid="rt004.Util.Vector3D.Equals*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Equals_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.Equals(rt004.Util.Vector3D)">
+  Equals(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L350"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> is equal to another <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Vector3D other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> to compare with the current instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> is equal to the current instance;
+otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_GetHashCode_" data-uid="rt004.Util.Vector3D.GetHashCode*"></a>
+
+  <h3 id="rt004_Util_Vector3D_GetHashCode" data-uid="rt004.Util.Vector3D.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>An integer representing the hash code.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Normalize_" data-uid="rt004.Util.Vector3D.Normalize*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Normalize" data-uid="rt004.Util.Vector3D.Normalize">
+  Normalize()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Normalizes the vector in place, updating its direction to unit length.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Normalize()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Normalized_" data-uid="rt004.Util.Vector3D.Normalized*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Normalized" data-uid="rt004.Util.Vector3D.Normalized">
+  Normalized()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a normalized (unit length) version of this vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3D Normalized()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> with unit length.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_RoundDown_" data-uid="rt004.Util.Vector3D.RoundDown*"></a>
+
+  <h3 id="rt004_Util_Vector3D_RoundDown" data-uid="rt004.Util.Vector3D.RoundDown">
+  RoundDown()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rounds down the X, Y, and Z coordinates of the vector to the nearest integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int X, int Y, int Z) RoundDown()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
+    <dd><p>A tuple containing the rounded X, Y, and Z coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_RoundDown_" data-uid="rt004.Util.Vector3D.RoundDown*"></a>
+
+  <h3 id="rt004_Util_Vector3D_RoundDown_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.RoundDown(rt004.Util.Vector3D)">
+  RoundDown(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a new vector with the X, Y, and Z coordinates rounded down.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D RoundDown(Vector3D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to round down.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance with rounded coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_RoundUp_" data-uid="rt004.Util.Vector3D.RoundUp*"></a>
+
+  <h3 id="rt004_Util_Vector3D_RoundUp" data-uid="rt004.Util.Vector3D.RoundUp">
+  RoundUp()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rounds up the X, Y, and Z coordinates of the vector to the nearest integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int X, int Y, int Z) RoundUp()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
+    <dd><p>A tuple containing the rounded X, Y, and Z coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_RoundUp_" data-uid="rt004.Util.Vector3D.RoundUp*"></a>
+
+  <h3 id="rt004_Util_Vector3D_RoundUp_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.RoundUp(rt004.Util.Vector3D)">
+  RoundUp(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a new vector with the X, Y, and Z coordinates rounded up.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D RoundUp(Vector3D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to round up.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance with rounded coordinates.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_ToString_" data-uid="rt004.Util.Vector3D.ToString*"></a>
+
+  <h3 id="rt004_Util_Vector3D_ToString" data-uid="rt004.Util.Vector3D.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string in the format &quot;[X, Y, Z]&quot;.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Transform_" data-uid="rt004.Util.Vector3D.Transform*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Transform_rt004_Util_Vector3D_OpenTK_Mathematics_Matrix4d_" data-uid="rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Matrix4d)">
+  Transform(Vector3D, Matrix4d)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Transforms a direction vector by the given matrix, ignoring any translation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Transform(Vector3D vector, Matrix4d transform)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to transform.</p>
+</dd>
+    <dt><code>transform</code> <span class="xref">Matrix4d</span></dt>
+    <dd><p>The transformation matrix.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> resulting from the transformation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_Transform_" data-uid="rt004.Util.Vector3D.Transform*"></a>
+
+  <h3 id="rt004_Util_Vector3D_Transform_rt004_Util_Vector3D_OpenTK_Mathematics_Quaternion_" data-uid="rt004.Util.Vector3D.Transform(rt004.Util.Vector3D,OpenTK.Mathematics.Quaternion)">
+  Transform(Vector3D, Quaternion)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Transforms a vector by applying the specified quaternion rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D Transform(Vector3D vector, Quaternion rotation)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to rotate.</p>
+</dd>
+    <dt><code>rotation</code> <span class="xref">Quaternion</span></dt>
+    <dd><p>The rotation quaternion.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> resulting from the rotation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="rt004_Util_Vector3D_op_Addition_" data-uid="rt004.Util.Vector3D.op_Addition*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Addition_rt004_Util_Vector3D_rt004_Util_Point3D_" data-uid="rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Point3D)">
+  operator +(Vector3D, Point3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> and a <a class="xref" href="rt004.Util.Point3D.html">Point3D</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point3D operator +(Vector3D vector, Point3D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to add.</p>
+</dd>
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p>The point to add to the vector.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Point3D.html">Point3D</a> representing the result of the addition.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Addition_" data-uid="rt004.Util.Vector3D.op_Addition*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Addition_rt004_Util_Vector3D_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.op_Addition(rt004.Util.Vector3D,rt004.Util.Vector3D)">
+  operator +(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds two <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator +(Vector3D vector1, Vector3D vector2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector1</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The first vector.</p>
+</dd>
+    <dt><code>vector2</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The second vector.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the sum of the two vectors.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Division_" data-uid="rt004.Util.Vector3D.op_Division*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Division_rt004_Util_Vector3D_OpenTK_Mathematics_Vector3d_" data-uid="rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)">
+  operator /(Vector3D, Vector3d)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Divides a vector by another vector component-wise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator /(Vector3D vector, Vector3d scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to divide.</p>
+</dd>
+    <dt><code>scale</code> <span class="xref">Vector3d</span></dt>
+    <dd><p>The vector to divide by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the divided vector.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Division_" data-uid="rt004.Util.Vector3D.op_Division*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Division_rt004_Util_Vector3D_System_Double_" data-uid="rt004.Util.Vector3D.op_Division(rt004.Util.Vector3D,System.Double)">
+  operator /(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Divides a vector by a scalar.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator /(Vector3D dir, double scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dir</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to divide.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The scalar to divide by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the scaled vector.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Equality_" data-uid="rt004.Util.Vector3D.op_Equality*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Equality_rt004_Util_Vector3D_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.op_Equality(rt004.Util.Vector3D,rt004.Util.Vector3D)">
+  operator ==(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L361"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether two <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instances are equal by comparing their components.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Vector3D left, Vector3D right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The first <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The second <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the components of both vectors are equal; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Explicit_" data-uid="rt004.Util.Vector3D.op_Explicit*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Explicit_rt004_Util_Vector3D__OpenTK_Mathematics_Vector3" data-uid="rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3">
+  explicit operator Vector3(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Explicitly converts a <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> to a <span class="xref">OpenTK.Mathematics.Vector3</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator Vector3(Vector3D dir)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dir</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance to convert.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Explicit_" data-uid="rt004.Util.Vector3D.op_Explicit*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Explicit_rt004_Util_Vector3D__OpenTK_Mathematics_Vector3d" data-uid="rt004.Util.Vector3D.op_Explicit(rt004.Util.Vector3D)~OpenTK.Mathematics.Vector3d">
+  explicit operator Vector3d(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Explicitly converts a <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> to a <span class="xref">OpenTK.Mathematics.Vector3d</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator Vector3d(Vector3D dir)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dir</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance to convert.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3d</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Inequality_" data-uid="rt004.Util.Vector3D.op_Inequality*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Inequality_rt004_Util_Vector3D_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.op_Inequality(rt004.Util.Vector3D,rt004.Util.Vector3D)">
+  operator !=(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L372"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether two <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instances are not equal by comparing their components.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Vector3D left, Vector3D right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The first <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The second <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the components of both vectors are not equal; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Multiply_" data-uid="rt004.Util.Vector3D.op_Multiply*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Multiply_rt004_Util_Vector3D_OpenTK_Mathematics_Vector3d_" data-uid="rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,OpenTK.Mathematics.Vector3d)">
+  operator *(Vector3D, Vector3d)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Multiplies a <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> by a <span class="xref">OpenTK.Mathematics.Vector3d</span> component-wise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(Vector3D vector, Vector3d scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> to multiply.</p>
+</dd>
+    <dt><code>scale</code> <span class="xref">Vector3d</span></dt>
+    <dd><p>The <span class="xref">OpenTK.Mathematics.Vector3d</span> to multiply by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the result of the component-wise multiplication.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Multiply_" data-uid="rt004.Util.Vector3D.op_Multiply*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Multiply_rt004_Util_Vector3D_System_Double_" data-uid="rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,System.Double)">
+  operator *(Vector3D, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Multiplies a vector by a scalar.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(Vector3D vector, double scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to scale.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The scalar multiplier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the scaled vector.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Multiply_" data-uid="rt004.Util.Vector3D.op_Multiply*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Multiply_rt004_Util_Vector3D_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.op_Multiply(rt004.Util.Vector3D,rt004.Util.Vector3D)">
+  operator *(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Multiplies two vectors component-wise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator *(Vector3D vector, Vector3D scale)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to scale.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to scale by.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the scaled vector.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Subtraction_" data-uid="rt004.Util.Vector3D.op_Subtraction*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Subtraction_rt004_Util_Vector3D_rt004_Util_Point3D_" data-uid="rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Point3D)">
+  operator -(Vector3D, Point3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Subtracts a <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> from a <a class="xref" href="rt004.Util.Point3D.html">Point3D</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Point3D operator -(Vector3D vector, Point3D point)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The vector to subtract.</p>
+</dd>
+    <dt><code>point</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p>The point from which to subtract the vector.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Point3D.html">Point3D</a> representing the result of the subtraction.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_Subtraction_" data-uid="rt004.Util.Vector3D.op_Subtraction*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_Subtraction_rt004_Util_Vector3D_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.op_Subtraction(rt004.Util.Vector3D,rt004.Util.Vector3D)">
+  operator -(Vector3D, Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Subtracts one <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> from another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator -(Vector3D vector1, Vector3D vector2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector1</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The first vector.</p>
+</dd>
+    <dt><code>vector2</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The second vector to subtract from the first.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> representing the difference.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Util_Vector3D_op_UnaryNegation_" data-uid="rt004.Util.Vector3D.op_UnaryNegation*"></a>
+
+  <h3 id="rt004_Util_Vector3D_op_UnaryNegation_rt004_Util_Vector3D_" data-uid="rt004.Util.Vector3D.op_UnaryNegation(rt004.Util.Vector3D)">
+  operator -(Vector3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Negates the vector, flipping its direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3D operator -(Vector3D vector)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vector</code> <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>The <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> instance to negate.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a></dt>
+    <dd><p>A new <a class="xref" href="rt004.Util.Vector3D.html">Vector3D</a> pointing in the opposite direction.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Util/BasicGeometry/Vector3D.cs/#L9" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

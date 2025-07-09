@@ -1,0 +1,83 @@
+### YamlMime:ManagedReference
+items:
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  id: rt004.Materials
+  children:
+  - rt004.Materials.Material
+  - rt004.Materials.MonochromeImageTexture
+  - rt004.Materials.MonochromeTexture
+  - rt004.Materials.MonochromeUniformTexture
+  - rt004.Materials.Texture
+  - rt004.Materials.UniformTexture
+  langs:
+  - csharp
+  - vb
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: rt004.Materials.Material
+  commentId: T:rt004.Materials.Material
+  parent: rt004.Materials
+  href: rt004.Materials.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: rt004.Materials.Material
+- uid: rt004.Materials.MonochromeImageTexture
+  commentId: T:rt004.Materials.MonochromeImageTexture
+  href: rt004.Materials.MonochromeImageTexture.html
+  name: MonochromeImageTexture
+  nameWithType: MonochromeImageTexture
+  fullName: rt004.Materials.MonochromeImageTexture
+- uid: rt004.Materials.MonochromeTexture
+  commentId: T:rt004.Materials.MonochromeTexture
+  parent: rt004.Materials
+  href: rt004.Materials.MonochromeTexture.html
+  name: MonochromeTexture
+  nameWithType: MonochromeTexture
+  fullName: rt004.Materials.MonochromeTexture
+- uid: rt004.Materials.MonochromeUniformTexture
+  commentId: T:rt004.Materials.MonochromeUniformTexture
+  href: rt004.Materials.MonochromeUniformTexture.html
+  name: MonochromeUniformTexture
+  nameWithType: MonochromeUniformTexture
+  fullName: rt004.Materials.MonochromeUniformTexture
+- uid: rt004.Materials.Texture
+  commentId: T:rt004.Materials.Texture
+  parent: rt004.Materials
+  href: rt004.Materials.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: rt004.Materials.Texture
+- uid: rt004.Materials.UniformTexture
+  commentId: T:rt004.Materials.UniformTexture
+  href: rt004.Materials.UniformTexture.html
+  name: UniformTexture
+  nameWithType: UniformTexture
+  fullName: rt004.Materials.UniformTexture
+- uid: rt004.Materials
+  commentId: N:rt004.Materials
+  href: rt004.html
+  name: rt004.Materials
+  nameWithType: rt004.Materials
+  fullName: rt004.Materials
+  spec.csharp:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html
+  spec.vb:
+  - uid: rt004
+    name: rt004
+    href: rt004.html
+  - name: .
+  - uid: rt004.Materials
+    name: Materials
+    href: rt004.Materials.html

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Scene | Renderer </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Scene | Renderer ">
+      
+      <meta name="description" content="Represents a 3D scene containing cameras, solid objects, and light sources. Provides functionality for managing scene hierarchy, rendering, and ray-object intersection testing.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ViDvorak/ray-traced-renderer/new/main/apiSpec/new?filename=rt004_Scene.md&amp;value=---%0Auid%3A%20rt004.Scene%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Raytraced Renderer">
+            Raytraced Renderer
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="rt004.Scene">
+
+
+
+  <h1 id="rt004_Scene" data-uid="rt004.Scene" class="text-break">
+Class Scene  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="rt004.html">rt004</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>rt004.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Represents a 3D scene containing cameras, solid objects, and light sources.
+Provides functionality for managing scene hierarchy, rendering, and ray-object intersection testing.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Scene</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Scene</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="rt004_Scene__ctor_" data-uid="rt004.Scene.#ctor*"></a>
+
+  <h3 id="rt004_Scene__ctor_rt004_SceneObjects_InnerSceneObject__" data-uid="rt004.Scene.#ctor(rt004.SceneObjects.InnerSceneObject@)">
+  Scene(out InnerSceneObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.Scene.html">Scene</a> class with default ambient light settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene(out InnerSceneObject rootHierarchyNode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rootHierarchyNode</code> <a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the root hierarchy node of the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene__ctor_" data-uid="rt004.Scene.#ctor*"></a>
+
+  <h3 id="rt004_Scene__ctor_rt004_SceneObjects_InnerSceneObject__OpenTK_Mathematics_Color4_System_Single_" data-uid="rt004.Scene.#ctor(rt004.SceneObjects.InnerSceneObject@,OpenTK.Mathematics.Color4,System.Single)">
+  Scene(out InnerSceneObject, Color4, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Initializes a new instance of the <a class="xref" href="rt004.Scene.html">Scene</a> class with specified ambient light settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene(out InnerSceneObject rootHierarchyNode, Color4 ambientLightColor, float ambientLightIntensity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>rootHierarchyNode</code> <a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the root hierarchy node of the scene.</p>
+</dd>
+    <dt><code>ambientLightColor</code> <span class="xref">Color4</span></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ambient light color for the scene.</p>
+</dd>
+    <dt><code>ambientLightIntensity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ambient light intensity for the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="rt004_Scene_rootSceneObject" data-uid="rt004.Scene.rootSceneObject">
+  rootSceneObject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The root object of the scene hierarchy tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly InnerSceneObject rootSceneObject</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="rt004_Scene_AmbientLightColor_" data-uid="rt004.Scene.AmbientLightColor*"></a>
+
+  <h3 id="rt004_Scene_AmbientLightColor" data-uid="rt004.Scene.AmbientLightColor">
+  AmbientLightColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Gets or sets the ambient light color that illuminates all objects in the scene uniformly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color4 AmbientLightColor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Color4</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_AmbientLightIntensity_" data-uid="rt004.Scene.AmbientLightIntensity*"></a>
+
+  <h3 id="rt004_Scene_AmbientLightIntensity" data-uid="rt004.Scene.AmbientLightIntensity">
+  AmbientLightIntensity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Gets or sets the intensity factor for ambient lighting in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AmbientLightIntensity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_MainCamera_" data-uid="rt004.Scene.MainCamera*"></a>
+
+  <h3 id="rt004_Scene_MainCamera" data-uid="rt004.Scene.MainCamera">
+  MainCamera
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Gets or sets the main camera used for rendering by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Camera? MainCamera { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.SceneObjects.Camera.html">Camera</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keynotfoundexception">KeyNotFoundException</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Thrown when attempting to set a camera that is not in the scene hierarchy.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="rt004_Scene_RootObject_" data-uid="rt004.Scene.RootObject*"></a>
+
+  <h3 id="rt004_Scene_RootObject" data-uid="rt004.Scene.RootObject">
+  RootObject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Gets the root object of the scene hierarchy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InnerSceneObject RootObject { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="rt004_Scene_AddCamera_" data-uid="rt004.Scene.AddCamera*"></a>
+
+  <h3 id="rt004_Scene_AddCamera_rt004_SceneObjects_InnerSceneObject_rt004_SceneObjects_Camera_System_Boolean_" data-uid="rt004.Scene.AddCamera(rt004.SceneObjects.InnerSceneObject,rt004.SceneObjects.Camera,System.Boolean)">
+  AddCamera(InnerSceneObject, Camera, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Adds a camera to the scene and optionally sets it as the main camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddCamera(InnerSceneObject parentSceneObject, Camera camera, bool setAsMain = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentSceneObject</code> <a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The parent object of this camera in the scene hierarchy.</p>
+</dd>
+    <dt><code>camera</code> <a class="xref" href="rt004.SceneObjects.Camera.html">Camera</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The camera to add to the scene.</p>
+</dd>
+    <dt><code>setAsMain</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">If true, sets this camera as the main camera. If false, sets as main only if no main camera exists.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_AddLight_" data-uid="rt004.Scene.AddLight*"></a>
+
+  <h3 id="rt004_Scene_AddLight_rt004_SceneObjects_InnerSceneObject_rt004_SceneObjects_LightSource_" data-uid="rt004.Scene.AddLight(rt004.SceneObjects.InnerSceneObject,rt004.SceneObjects.LightSource)">
+  AddLight(InnerSceneObject, LightSource)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Adds a light source to the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddLight(InnerSceneObject parentObject, LightSource light)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentObject</code> <a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The parent object of this light source in the scene hierarchy.</p>
+</dd>
+    <dt><code>light</code> <a class="xref" href="rt004.SceneObjects.LightSource.html">LightSource</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The light source to add to the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_AddSceneObject_" data-uid="rt004.Scene.AddSceneObject*"></a>
+
+  <h3 id="rt004_Scene_AddSceneObject_rt004_SceneObjects_InnerSceneObject_rt004_SceneObjects_SceneObject_" data-uid="rt004.Scene.AddSceneObject(rt004.SceneObjects.InnerSceneObject,rt004.SceneObjects.SceneObject)">
+  AddSceneObject(InnerSceneObject, SceneObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Adds a scene object to the scene, automatically determining its type and adding it to the appropriate collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSceneObject(InnerSceneObject parentSceneObject, SceneObject sceneObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentSceneObject</code> <a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The parent object to add the scene object to as a child.</p>
+</dd>
+    <dt><code>sceneObject</code> <a class="xref" href="rt004.SceneObjects.SceneObject.html">SceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The scene object to add to the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Thrown when the scene object is not a recognized type (Camera, Solid, LightSource, or InnerSceneObject).</p>
+</dd>
+  </dl>
+
+
+
+  <a id="rt004_Scene_AddSolid_" data-uid="rt004.Scene.AddSolid*"></a>
+
+  <h3 id="rt004_Scene_AddSolid_rt004_SceneObjects_InnerSceneObject_rt004_SceneObjects_Solid_" data-uid="rt004.Scene.AddSolid(rt004.SceneObjects.InnerSceneObject,rt004.SceneObjects.Solid)">
+  AddSolid(InnerSceneObject, Solid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Adds a solid object to the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSolid(InnerSceneObject parentSceneObject, Solid solid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>parentSceneObject</code> <a class="xref" href="rt004.SceneObjects.InnerSceneObject.html">InnerSceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The parent object of this solid in the scene hierarchy.</p>
+</dd>
+    <dt><code>solid</code> <a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The solid object to add to the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_CastRay_" data-uid="rt004.Scene.CastRay*"></a>
+
+  <h3 id="rt004_Scene_CastRay_rt004_Util_Ray_System_Double__" data-uid="rt004.Scene.CastRay(rt004.Util.Ray,System.Double@)">
+  CastRay(Ray, out double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L349"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Contains methods for testing ray intersections with objects in the scene.
+These methods are used for rendering, shadow calculation, and collision detection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CastRay(Ray ray, out double distance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ray to cast in the scene.</p>
+</dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the distance from the ray origin to the closest intersection point.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">True if any object is intersected by the ray; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_CastRay_" data-uid="rt004.Scene.CastRay*"></a>
+
+  <h3 id="rt004_Scene_CastRay_rt004_Util_Ray_System_Double__System_Double_System_Double_" data-uid="rt004.Scene.CastRay(rt004.Util.Ray,System.Double@,System.Double,System.Double)">
+  CastRay(Ray, out double, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L362"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Casts a ray in the scene and checks for intersections with solid objects within specified distance limits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CastRay(Ray ray, out double distance, double maxDistance, double minDistance = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ray to cast in the scene.</p>
+</dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the distance from the ray origin to the closest intersection point.</p>
+</dd>
+    <dt><code>maxDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The maximum distance to consider for intersections.</p>
+</dd>
+    <dt><code>minDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The minimum distance to consider for intersections.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">True if any object is intersected by the ray within the specified distance range; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_CastRay_" data-uid="rt004.Scene.CastRay*"></a>
+
+  <h3 id="rt004_Scene_CastRay_rt004_Util_Ray_System_Double__rt004_SceneObjects_Solid__" data-uid="rt004.Scene.CastRay(rt004.Util.Ray,System.Double@,rt004.SceneObjects.Solid@)">
+  CastRay(Ray, out double, out Solid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L379"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Casts a ray in the scene and checks for intersections with solid objects, returning the intersected object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CastRay(Ray ray, out double distance, out Solid intersectedBody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ray to cast in the scene.</p>
+</dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the distance from the ray origin to the closest intersection point.</p>
+</dd>
+    <dt><code>intersectedBody</code> <a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the closest intersected solid object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">True if any object is intersected by the ray; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_CastRay_" data-uid="rt004.Scene.CastRay*"></a>
+
+  <h3 id="rt004_Scene_CastRay_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__" data-uid="rt004.Scene.CastRay(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@)">
+  CastRay(Ray, out IntersectionProperties)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L408"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Casts a ray in the scene and returns detailed intersection properties for the closest intersection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CastRay(Ray ray, out IntersectionProperties properties)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ray to cast in the scene.</p>
+</dd>
+    <dt><code>properties</code> <a class="xref" href="rt004.SceneObjects.IntersectionProperties.html">IntersectionProperties</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the detailed properties of the closest intersection.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">True if an intersection is found; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_CastRay_" data-uid="rt004.Scene.CastRay*"></a>
+
+  <h3 id="rt004_Scene_CastRay_rt004_Util_Ray_rt004_SceneObjects_IntersectionProperties__System_Double_System_Double_" data-uid="rt004.Scene.CastRay(rt004.Util.Ray,rt004.SceneObjects.IntersectionProperties@,System.Double,System.Double)">
+  CastRay(Ray, out IntersectionProperties, double, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L421"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Casts a ray in the scene and returns detailed intersection properties for the closest intersection within distance limits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CastRay(Ray ray, out IntersectionProperties properties, double maxDistance, double minDistance = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ray to cast in the scene.</p>
+</dd>
+    <dt><code>properties</code> <a class="xref" href="rt004.SceneObjects.IntersectionProperties.html">IntersectionProperties</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the detailed properties of the closest intersection.</p>
+</dd>
+    <dt><code>maxDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The maximum distance from the ray origin to consider for intersections.</p>
+</dd>
+    <dt><code>minDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The minimum distance from the ray origin to consider for intersections.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">True if an intersection is found within the specified distance range; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_CastRay_" data-uid="rt004.Scene.CastRay*"></a>
+
+  <h3 id="rt004_Scene_CastRay_rt004_Util_Ray_rt004_Util_Point3D__" data-uid="rt004.Scene.CastRay(rt004.Util.Ray,rt004.Util.Point3D@)">
+  CastRay(Ray, out Point3D)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L451"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Casts a ray in the scene and returns the closest intersection point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CastRay(Ray ray, out Point3D closestIntersection)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ray to cast in the scene.</p>
+</dd>
+    <dt><code>closestIntersection</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the closest intersection point. Valid only when the method returns true.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">True if an intersection is found; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_CastRay_" data-uid="rt004.Scene.CastRay*"></a>
+
+  <h3 id="rt004_Scene_CastRay_rt004_Util_Ray_rt004_Util_Point3D__rt004_SceneObjects_Solid__" data-uid="rt004.Scene.CastRay(rt004.Util.Ray,rt004.Util.Point3D@,rt004.SceneObjects.Solid@)">
+  CastRay(Ray, out Point3D, out Solid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L465"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Casts a ray in the scene and returns the closest intersection point and the intersected object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CastRay(Ray ray, out Point3D closestIntersection, out Solid intersectedBody)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ray</code> <a class="xref" href="rt004.Util.Ray.html">Ray</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The ray to cast in the scene.</p>
+</dd>
+    <dt><code>closestIntersection</code> <a class="xref" href="rt004.Util.Point3D.html">Point3D</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the closest intersection point. Valid only when the method returns true.</p>
+</dd>
+    <dt><code>intersectedBody</code> <a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">When this method returns, contains the closest intersected solid object. Valid only when the method returns true.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">True if an intersection is found; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_GetCameras_" data-uid="rt004.Scene.GetCameras*"></a>
+
+  <h3 id="rt004_Scene_GetCameras" data-uid="rt004.Scene.GetCameras">
+  GetCameras()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Gets a shallow copy of an array containing all cameras in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Camera[] GetCameras()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.SceneObjects.Camera.html">Camera</a>[]</dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">An array of all cameras in the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_GetLightSources_" data-uid="rt004.Scene.GetLightSources*"></a>
+
+  <h3 id="rt004_Scene_GetLightSources" data-uid="rt004.Scene.GetLightSources">
+  GetLightSources()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Gets a shallow copy of an array containing all light sources in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LightSource[] GetLightSources()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.SceneObjects.LightSource.html">LightSource</a>[]</dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">An array of all light sources in the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_GetSolids_" data-uid="rt004.Scene.GetSolids*"></a>
+
+  <h3 id="rt004_Scene_GetSolids" data-uid="rt004.Scene.GetSolids">
+  GetSolids()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Gets a shallow copy of an array containing all solid objects in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Solid[] GetSolids()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a>[]</dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">An array of all solid objects in the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_RemoveCamera_" data-uid="rt004.Scene.RemoveCamera*"></a>
+
+  <h3 id="rt004_Scene_RemoveCamera_rt004_SceneObjects_Camera_" data-uid="rt004.Scene.RemoveCamera(rt004.SceneObjects.Camera)">
+  RemoveCamera(Camera)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Removes a camera from the scene and updates the main camera if necessary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveCamera(Camera camera)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>camera</code> <a class="xref" href="rt004.SceneObjects.Camera.html">Camera</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The camera to remove from the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_RemoveLight_" data-uid="rt004.Scene.RemoveLight*"></a>
+
+  <h3 id="rt004_Scene_RemoveLight_rt004_SceneObjects_LightSource_" data-uid="rt004.Scene.RemoveLight(rt004.SceneObjects.LightSource)">
+  RemoveLight(LightSource)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Removes a light source from the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveLight(LightSource light)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>light</code> <a class="xref" href="rt004.SceneObjects.LightSource.html">LightSource</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The light source to remove from the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_RemoveSceneObject_" data-uid="rt004.Scene.RemoveSceneObject*"></a>
+
+  <h3 id="rt004_Scene_RemoveSceneObject_rt004_SceneObjects_SceneObject_" data-uid="rt004.Scene.RemoveSceneObject(rt004.SceneObjects.SceneObject)">
+  RemoveSceneObject(SceneObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L281"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Removes a scene object from the scene, automatically determining its type and removing it from the appropriate collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveSceneObject(SceneObject sceneObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sceneObject</code> <a class="xref" href="rt004.SceneObjects.SceneObject.html">SceneObject</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The scene object to remove from the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Thrown when the scene object is not a recognized type.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="rt004_Scene_RemoveSolid_" data-uid="rt004.Scene.RemoveSolid*"></a>
+
+  <h3 id="rt004_Scene_RemoveSolid_rt004_SceneObjects_Solid_" data-uid="rt004.Scene.RemoveSolid(rt004.SceneObjects.Solid)">
+  RemoveSolid(Solid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Removes a solid object from the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveSolid(Solid solid)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>solid</code> <a class="xref" href="rt004.SceneObjects.Solid.html">Solid</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">The solid object to remove from the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="rt004_Scene_RenderScene_" data-uid="rt004.Scene.RenderScene*"></a>
+
+  <h3 id="rt004_Scene_RenderScene" data-uid="rt004.Scene.RenderScene">
+  RenderScene()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Renders an image from the main camera's perspective.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatImage RenderScene()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Util.FloatImage.html">FloatImage</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">A rendered image from the main camera.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Thrown when no main camera exists and no cameras are available in the scene.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="rt004_Scene_RenderSceneWithAllCameras_" data-uid="rt004.Scene.RenderSceneWithAllCameras*"></a>
+
+  <h3 id="rt004_Scene_RenderSceneWithAllCameras" data-uid="rt004.Scene.RenderSceneWithAllCameras">
+  RenderSceneWithAllCameras()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">Renders images from all cameras in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FloatImage[] RenderSceneWithAllCameras()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Util.FloatImage.html">FloatImage</a>[]</dt>
+    <dd><p sourcefile="api/rt004.Scene.yml" sourcestartlinenumber="1">An array of rendered images, one from each camera in the scene.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ViDvorak/ray-traced-renderer/blob/main/src/rt004/Scene.cs/#L12" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

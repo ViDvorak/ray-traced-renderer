@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: Util
+  commentId: N:Util
+  id: Util
+  children:
+  - Util.FloatImage
+  - Util.RadianceHDRFormat
+  - Util.RadianceHDRFormat.HDRInstance
+  langs:
+  - csharp
+  - vb
+  name: Util
+  nameWithType: Util
+  fullName: Util
+  type: Namespace
+  assemblies:
+  - rt004
+references:
+- uid: Util.FloatImage
+  commentId: T:Util.FloatImage
+  parent: Util
+  href: Util.FloatImage.html
+  name: FloatImage
+  nameWithType: FloatImage
+  fullName: Util.FloatImage
+- uid: Util.RadianceHDRFormat
+  commentId: T:Util.RadianceHDRFormat
+  href: Util.RadianceHDRFormat.html
+  name: RadianceHDRFormat
+  nameWithType: RadianceHDRFormat
+  fullName: Util.RadianceHDRFormat
+- uid: Util.RadianceHDRFormat.HDRInstance
+  commentId: T:Util.RadianceHDRFormat.HDRInstance
+  href: Util.RadianceHDRFormat.html
+  name: RadianceHDRFormat.HDRInstance
+  nameWithType: RadianceHDRFormat.HDRInstance
+  fullName: Util.RadianceHDRFormat.HDRInstance
+  spec.csharp:
+  - uid: Util.RadianceHDRFormat
+    name: RadianceHDRFormat
+    href: Util.RadianceHDRFormat.html
+  - name: .
+  - uid: Util.RadianceHDRFormat.HDRInstance
+    name: HDRInstance
+    href: Util.RadianceHDRFormat.HDRInstance.html
+  spec.vb:
+  - uid: Util.RadianceHDRFormat
+    name: RadianceHDRFormat
+    href: Util.RadianceHDRFormat.html
+  - name: .
+  - uid: Util.RadianceHDRFormat.HDRInstance
+    name: HDRInstance
+    href: Util.RadianceHDRFormat.HDRInstance.html
+- uid: Util
+  commentId: N:Util
+  href: Util.html
+  name: Util
+  nameWithType: Util
+  fullName: Util
